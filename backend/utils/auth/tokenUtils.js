@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const { HttpError } = require('../errors');
 
 // Generate JWT token
 const generateToken = (userId) => {
@@ -20,10 +21,7 @@ const authenticateToken = (req, res, next) => {
   const token = authHeader && authHeader.split(' ')[1]; // Bearer TOKEN
 
   if (!token) {
-    return res.status(401).json({
-      status: 'error',
-      message: 'Access token required'
-    });
+    throw HttpError.unauthorized('Access token required');
   }
 
   try {
@@ -31,10 +29,13 @@ const authenticateToken = (req, res, next) => {
     req.userId = decoded.userId;
     next();
   } catch (error) {
-    return res.status(403).json({
-      status: 'error',
-      message: 'Invalid or expired token'
-    });
+    if (error.name === 'JsonWebTokenError') {
+      throw HttpError.unauthorized('Invalid token');
+    } else if (error.name === 'TokenExpiredError') {
+      throw HttpError.unauthorized('Token expired');
+    } else {
+      throw HttpError.unauthorized('Invalid or expired token');
+    }
   }
 };
 
