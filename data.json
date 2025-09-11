@@ -1,0 +1,70 @@
+[
+  {
+    "name": "Bachelor of Science in Computer Science",
+    "shortName": "BSC-CS",
+    "stream": "science",
+    "level": "undergraduate",
+    "duration": {
+      "years": 3,
+      "months": 0
+    },
+    "description": "A 3-year undergraduate course focused on the fundamentals of computer science, programming, and applications.",
+    "eligibility": {
+      "minimumClass": "12",
+      "requiredSubjects": ["Mathematics", "Physics"],
+      "minimumPercentage": 50,
+      "entranceExams": ["JEE Mains", "CUET"]
+    },
+    "careerOptions": [
+      {
+        "jobTitle": "Software Developer",
+        "description": "Designs, codes, and maintains software applications.",
+        "averageSalary": {
+          "min": 300000,
+          "max": 1000000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Data Analyst",
+        "description": "Analyzes data to help businesses make informed decisions.",
+        "averageSalary": {
+          "min": 250000,
+          "max": 800000,
+          "currency": "INR"
+        },
+        "growthProspects": "good",
+        "sector": "private"
+      }
+    ],
+    "higherStudyOptions": [
+      {
+        "courseName": "Master of Computer Applications",
+        "description": "A postgraduate degree focusing on advanced computer applications.",
+        "duration": "2 years"
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "IIT Delhi",
+        "type": "government",
+        "location": "Delhi, India",
+        "ranking": 1
+      },
+      {
+        "name": "BITS Pilani",
+        "type": "private",
+        "location": "Rajasthan, India",
+        "ranking": 5
+      }
+    ],
+    "skills": {
+      "technical": ["Programming", "Database Management", "Networking"],
+      "soft": ["Problem Solving", "Teamwork", "Communication"]
+    },
+    "isActive": true,
+    "popularity": 95
+  }
+]
