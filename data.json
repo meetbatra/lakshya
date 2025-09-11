@@ -48,16 +48,94 @@
     ],
     "topColleges": [
       {
-        "name": "IIT Delhi",
+        "name": "Indian Institute of Technology Bombay",
         "type": "government",
-        "location": "Delhi, India",
+        "location": "Mumbai, Maharashtra",
         "ranking": 1
       },
       {
-        "name": "BITS Pilani",
-        "type": "private",
-        "location": "Rajasthan, India",
+        "name": "Indian Institute of Technology Delhi",
+        "type": "government",
+        "location": "New Delhi, Delhi",
+        "ranking": 2
+      },
+      {
+        "name": "Indian Institute of Science Bangalore",
+        "type": "government",
+        "location": "Bengaluru, Karnataka",
+        "ranking": 3
+      },
+      {
+        "name": "Indian Institute of Technology Madras",
+        "type": "government",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 4
+      },
+      {
+        "name": "Indian Institute of Technology Kanpur",
+        "type": "government",
+        "location": "Kanpur, Uttar Pradesh",
         "ranking": 5
+      },
+      {
+        "name": "Indian Institute of Technology Kharagpur",
+        "type": "government",
+        "location": "Kharagpur, West Bengal",
+        "ranking": 6
+      },
+      {
+        "name": "Indian Institute of Technology Roorkee",
+        "type": "government",
+        "location": "Roorkee, Uttarakhand",
+        "ranking": 7
+      },
+      {
+        "name": "All India Institute of Medical Sciences New Delhi",
+        "type": "government",
+        "location": "New Delhi, Delhi",
+        "ranking": 8
+      },
+      {
+        "name": "Jawaharlal Nehru University",
+        "type": "government",
+        "location": "New Delhi, Delhi",
+        "ranking": 9
+      },
+      {
+        "name": "University of Delhi",
+        "type": "government",
+        "location": "Delhi, Delhi",
+        "ranking": 10
+      },
+      {
+        "name": "Birla Institute of Technology and Science Pilani",
+        "type": "private",
+        "location": "Pilani, Rajasthan",
+        "ranking": 11
+      },
+      {
+        "name": "Indian Institute of Technology Guwahati",
+        "type": "government",
+        "location": "Guwahati, Assam",
+        "ranking": 12
+      },
+      {
+        "name": "National Institute of Technology Trichy",
+        "type": "government",
+        "location": "Tiruchirappalli, Tamil Nadu",
+        "ranking": 13
+      },
+      {
+        "name": "Jadavpur University",
+        "type": "government",
+        "location": "Kolkata, West Bengal",
+        "ranking": 14
+      },
+      {
+        "name": "Amrita Vishwa Vidyapeetham",
+        "type": "deemed",
+        "location": "Coimbatore, Tamil Nadu",
+        "ranking": 15
       }
     ],
     "skills": {
@@ -68,3 +146,4 @@
     "popularity": 95
   }
 ]
+
