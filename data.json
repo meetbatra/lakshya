@@ -1083,5 +1083,1004 @@
     },
     "isActive": true,
     "popularity": 95
+  },
+  {
+    "name": "Bachelor of Technology in Computer Science and Engineering",
+    "shortName": "BTECH-CSE",
+    "stream": "engineering",
+    "level": "undergraduate",
+    "duration": {
+      "years": 4,
+      "months": 0
+    },
+    "description": "A 4-year undergraduate professional degree that provides in-depth knowledge of computer science, programming, algorithms, software development, and computer systems engineering.",
+    "eligibility": {
+      "minimumClass": "12",
+      "requiredSubjects": [
+        "Mathematics",
+        "Physics",
+        "Chemistry"
+      ],
+      "minimumPercentage": 60,
+      "entranceExams": [
+        "JEE Mains",
+        "JEE Advanced",
+        "State CETs",
+        "BITSAT"
+      ]
+    },
+    "careerOptions": [
+      {
+        "jobTitle": "Software Engineer",
+        "description": "Develops, tests, and maintains software systems and applications.",
+        "averageSalary": {
+          "min": 400000,
+          "max": 1200000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "AI/ML Engineer",
+        "description": "Designs and implements artificial intelligence and machine learning models for solving real-world problems.",
+        "averageSalary": {
+          "min": 600000,
+          "max": 1800000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Cybersecurity Analyst",
+        "description": "Protects systems and networks from cyber threats by identifying and addressing vulnerabilities.",
+        "averageSalary": {
+          "min": 500000,
+          "max": 1500000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Cloud Solutions Architect",
+        "description": "Designs and manages cloud infrastructure and services for scalable applications.",
+        "averageSalary": {
+          "min": 700000,
+          "max": 2000000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Blockchain Developer",
+        "description": "Develops decentralized applications (dApps) and blockchain solutions for industries like finance, supply chain, and healthcare.",
+        "averageSalary": {
+          "min": 600000,
+          "max": 1600000,
+          "currency": "INR"
+        },
+        "growthProspects": "good",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "DevOps Engineer",
+        "description": "Bridges the gap between development and operations teams, ensuring continuous integration and deployment.",
+        "averageSalary": {
+          "min": 500000,
+          "max": 1400000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Systems Engineer",
+        "description": "Manages and maintains IT infrastructure, including servers, networks, and enterprise systems.",
+        "averageSalary": {
+          "min": 400000,
+          "max": 1000000,
+          "currency": "INR"
+        },
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "UI/UX Designer",
+        "description": "Designs user-friendly interfaces and enhances user experience in software and web applications.",
+        "averageSalary": {
+          "min": 350000,
+          "max": 900000,
+          "currency": "INR"
+        },
+        "growthProspects": "good",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Research Scientist (CS)",
+        "description": "Conducts advanced research in areas like algorithms, AI, or quantum computing in academia or R&D labs.",
+        "averageSalary": {
+          "min": 500000,
+          "max": 1500000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "government"
+      },
+      {
+        "jobTitle": "Entrepreneur / Startup Founder",
+        "description": "Builds technology-driven businesses and products by leveraging CS engineering knowledge.",
+        "averageSalary": {
+          "min": 0,
+          "max": 10000000,
+          "currency": "INR"
+        },
+        "growthProspects": "varies",
+        "sector": "private"
+      }
+    ],
+    "higherStudyOptions": [
+      {
+        "courseName": "M.Tech in Computer Science and Engineering",
+        "description": "Postgraduate program focusing on advanced topics such as Artificial Intelligence, Machine Learning, Data Science, and Software Systems.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "MBA in Technology Management",
+        "description": "Management-oriented postgraduate program for leadership roles in technology-driven industries.",
+        "duration": "2 years"
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Indian Institute of Technology Bombay (IIT Bombay)",
+        "type": "government",
+        "location": "Mumbai, Maharashtra",
+        "ranking": 3
+      },
+      {
+        "name": "Indian Institute of Technology Delhi (IIT Delhi)",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 2
+      },
+      {
+        "name": "Indian Institute of Technology Madras (IIT Madras)",
+        "type": "government",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 1
+      },
+      {
+        "name": "Indian Institute of Technology Kanpur (IIT Kanpur)",
+        "type": "government",
+        "location": "Kanpur, Uttar Pradesh",
+        "ranking": 4
+      },
+      {
+        "name": "Indian Institute of Technology Kharagpur (IIT Kharagpur)",
+        "type": "government",
+        "location": "Kharagpur, West Bengal",
+        "ranking": 5
+      },
+      {
+        "name": "Indian Institute of Technology Roorkee (IIT Roorkee)",
+        "type": "government",
+        "location": "Roorkee, Uttarakhand",
+        "ranking": 6
+      },
+      {
+        "name": "Indian Institute of Technology Guwahati (IIT Guwahati)",
+        "type": "government",
+        "location": "Guwahati, Assam",
+        "ranking": 8
+      },
+      {
+        "name": "Birla Institute of Technology and Science (BITS Pilani)",
+        "type": "private",
+        "location": "Pilani, Rajasthan",
+        "ranking": 16
+      },
+      {
+        "name": "National Institute of Technology Trichy (NIT Trichy)",
+        "type": "government",
+        "location": "Tiruchirappalli, Tamil Nadu",
+        "ranking": 30
+      },
+      {
+        "name": "Delhi Technological University (DTU)",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 30
+      },
+      {
+        "name": "Vellore Institute of Technology (VIT)",
+        "type": "private",
+        "location": "Vellore, Tamil Nadu",
+        "ranking": 21
+      },
+      {
+        "name": "National Institute of Technology Surathkal (NITK)",
+        "type": "government",
+        "location": "Mangalore, Karnataka",
+        "ranking": 54
+      },
+      {
+        "name": "Amrita Vishwa Vidyapeetham",
+        "type": "deemed",
+        "location": "Coimbatore, Tamil Nadu",
+        "ranking": 17
+      },
+      {
+        "name": "SRM Institute of Science and Technology",
+        "type": "deemed",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 22
+      },
+      {
+        "name": "Manipal Institute of Technology (MIT Manipal)",
+        "type": "deemed",
+        "location": "Manipal, Karnataka",
+        "ranking": 14
+      }
+    ],
+    "skills": {
+      "technical": [
+        "Programming",
+        "Algorithms",
+        "Data Structures",
+        "Networking",
+        "Database Systems",
+        "Operating Systems",
+        "Cybersecurity",
+        "AI & Machine Learning"
+      ],
+      "soft": [
+        "Problem Solving",
+        "Critical Thinking",
+        "Teamwork",
+        "Leadership"
+      ]
+    },
+    "isActive": true,
+    "popularity": 100
+  },
+  {
+    "name": "Bachelor of Technology in Electronics and Communication Engineering",
+    "shortName": "BTECH-ECE",
+    "stream": "engineering",
+    "level": "undergraduate",
+    "duration": {
+      "years": 4,
+      "months": 0
+    },
+    "description": "A 4-year undergraduate engineering program focusing on electronic devices, circuits, communication systems, and related technologies.",
+    "eligibility": {
+      "minimumClass": "12",
+      "requiredSubjects": [
+        "Mathematics",
+        "Physics",
+        "Chemistry"
+      ],
+      "minimumPercentage": 60,
+      "entranceExams": [
+        "JEE Mains",
+        "JEE Advanced",
+        "State CETs"
+      ]
+    },
+    "careerOptions": [
+      {
+        "jobTitle": "Electronics Engineer",
+        "description": "Designs and develops electronic circuits, devices, and systems for industries like telecom and consumer electronics.",
+        "averageSalary": {
+          "min": 400000,
+          "max": 1000000,
+          "currency": "INR"
+        },
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Communication Engineer",
+        "description": "Works on the design and optimization of telecommunication systems such as mobile networks, satellites, and fiber optics.",
+        "averageSalary": {
+          "min": 450000,
+          "max": 1200000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "VLSI Design Engineer",
+        "description": "Specializes in Very-Large-Scale Integration (VLSI) design for chips, processors, and integrated circuits.",
+        "averageSalary": {
+          "min": 600000,
+          "max": 1800000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Embedded Systems Engineer",
+        "description": "Develops embedded hardware and software for applications like automotive electronics, IoT devices, and robotics.",
+        "averageSalary": {
+          "min": 500000,
+          "max": 1500000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Network Engineer",
+        "description": "Manages, designs, and maintains network infrastructure including routers, switches, and communication protocols.",
+        "averageSalary": {
+          "min": 400000,
+          "max": 1100000,
+          "currency": "INR"
+        },
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "RF Engineer",
+        "description": "Works on radio frequency systems such as antennas, radars, and wireless communication devices.",
+        "averageSalary": {
+          "min": 450000,
+          "max": 1300000,
+          "currency": "INR"
+        },
+        "growthProspects": "good",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Control Systems Engineer",
+        "description": "Designs and develops automated systems for manufacturing, robotics, and industrial applications.",
+        "averageSalary": {
+          "min": 400000,
+          "max": 1000000,
+          "currency": "INR"
+        },
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Signal Processing Engineer",
+        "description": "Works with audio, video, and data signals for applications in telecom, medical imaging, and defense systems.",
+        "averageSalary": {
+          "min": 500000,
+          "max": 1400000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "IoT Engineer",
+        "description": "Develops Internet of Things solutions by integrating sensors, communication modules, and cloud platforms.",
+        "averageSalary": {
+          "min": 600000,
+          "max": 1600000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Defense Research Engineer",
+        "description": "Contributes to DRDO, ISRO, and defense organizations by developing radar, satellite communication, and weapon systems.",
+        "averageSalary": {
+          "min": 500000,
+          "max": 1500000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "government"
+      }
+    ],
+    "higherStudyOptions": [
+      {
+        "courseName": "M.Tech in Electronics and Communication",
+        "description": "Postgraduate program focused on specialized fields like VLSI, Embedded Systems, or Communication Engineering.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "MBA in Technology Management",
+        "description": "Management-oriented postgraduate program suitable for leadership roles in technology-driven industries.",
+        "duration": "2 years"
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Indian Institute of Technology Madras",
+        "type": "government",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 1
+      },
+      {
+        "name": "Indian Institute of Technology Delhi",
+        "type": "government",
+        "location": "New Delhi",
+        "ranking": 2
+      },
+      {
+        "name": "Indian Institute of Technology Bombay",
+        "type": "government",
+        "location": "Mumbai, Maharashtra",
+        "ranking": 3
+      },
+      {
+        "name": "Indian Institute of Technology Kanpur",
+        "type": "government",
+        "location": "Kanpur, Uttar Pradesh",
+        "ranking": 4
+      },
+      {
+        "name": "Indian Institute of Technology Kharagpur",
+        "type": "government",
+        "location": "Kharagpur, West Bengal",
+        "ranking": 5
+      },
+      {
+        "name": "Indian Institute of Technology Roorkee",
+        "type": "government",
+        "location": "Roorkee, Uttarakhand",
+        "ranking": 6
+      },
+      {
+        "name": "Indian Institute of Technology Hyderabad",
+        "type": "government",
+        "location": "Hyderabad, Telangana",
+        "ranking": 7
+      },
+      {
+        "name": "Indian Institute of Technology Guwahati",
+        "type": "government",
+        "location": "Guwahati, Assam",
+        "ranking": 8
+      },
+      {
+        "name": "National Institute of Technology Tiruchirappalli (NIT Trichy)",
+        "type": "government",
+        "location": "Tiruchirappalli, Tamil Nadu",
+        "ranking": 10
+      },
+      {
+        "name": "Vellore Institute of Technology (VIT)",
+        "type": "private",
+        "location": "Vellore, Tamil Nadu",
+        "ranking": 11
+      },
+      {
+        "name": "Amrita Vishwa Vidyapeetham",
+        "type": "private",
+        "location": "Coimbatore, Tamil Nadu",
+        "ranking": 17
+      },
+      {
+        "name": "SRM Institute of Science and Technology",
+        "type": "private",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 22
+      },
+      {
+        "name": "Birla Institute of Technology and Science (BITS Pilani)",
+        "type": "private",
+        "location": "Pilani, Rajasthan",
+        "ranking": 16
+      },
+      {
+        "name": "Delhi Technological University (DTU)",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 30
+      },
+      {
+        "name": "Manipal Institute of Technology (MIT)",
+        "type": "private",
+        "location": "Manipal, Karnataka",
+        "ranking": 14
+      }
+    ],
+    "skills": {
+      "technical": [
+        "Circuit Design",
+        "Signal Processing",
+        "Embedded Systems",
+        "Networking",
+        "VLSI Design",
+        "Programming"
+      ],
+      "soft": [
+        "Analytical Thinking",
+        "Problem Solving",
+        "Teamwork",
+        "Communication"
+      ]
+    },
+    "isActive": true,
+    "popularity": 90
+  },
+    {
+    "name": "Bachelor of Technology in Information Technology",
+    "shortName": "BTECH-IT",
+    "stream": "engineering",
+    "level": "undergraduate",
+    "duration": {
+      "years": 4,
+      "months": 0
+    },
+    "description": "A 4-year undergraduate engineering program that focuses on computer systems, software development, networks, databases, and IT infrastructure management.",
+    "eligibility": {
+      "minimumClass": "12",
+      "requiredSubjects": [
+        "Mathematics",
+        "Physics",
+        "Chemistry"
+      ],
+      "minimumPercentage": 60,
+      "entranceExams": [
+        "JEE Mains",
+        "State CETs",
+        "Private University Entrance Exams"
+      ]
+    },
+    "careerOptions": [
+      {
+        "jobTitle": "Software Engineer",
+        "description": "Designs, develops, and maintains software applications for various domains.",
+        "averageSalary": {
+          "min": 400000,
+          "max": 1200000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "System Analyst",
+        "description": "Analyzes IT systems and designs efficient solutions to meet business needs.",
+        "averageSalary": {
+          "min": 450000,
+          "max": 1000000,
+          "currency": "INR"
+        },
+        "growthProspects": "good",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Database Administrator",
+        "description": "Manages, optimizes, and secures organizational databases.",
+        "averageSalary": {
+          "min": 500000,
+          "max": 1100000,
+          "currency": "INR"
+        },
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Network Administrator",
+        "description": "Maintains and secures computer networks including LAN, WAN, and cloud setups.",
+        "averageSalary": {
+          "min": 400000,
+          "max": 1000000,
+          "currency": "INR"
+        },
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Cybersecurity Specialist",
+        "description": "Protects IT systems, networks, and data from cyber threats.",
+        "averageSalary": {
+          "min": 600000,
+          "max": 1500000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Cloud Solutions Architect",
+        "description": "Designs and manages scalable cloud-based IT infrastructure.",
+        "averageSalary": {
+          "min": 800000,
+          "max": 2000000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "IT Project Manager",
+        "description": "Leads IT projects by managing teams, budgets, and timelines.",
+        "averageSalary": {
+          "min": 900000,
+          "max": 2500000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Data Scientist",
+        "description": "Analyzes and interprets complex datasets to help organizations make decisions.",
+        "averageSalary": {
+          "min": 700000,
+          "max": 2000000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "private"
+      }
+    ],
+    "higherStudyOptions": [
+      {
+        "courseName": "M.Tech in Information Technology",
+        "description": "Postgraduate program focusing on advanced IT concepts, networking, and data systems.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "MBA in Information Systems",
+        "description": "Management program that combines business strategies with IT applications.",
+        "duration": "2 years"
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Vellore Institute of Technology (VIT)",
+        "type": "private",
+        "location": "Vellore, Tamil Nadu",
+        "ranking": 8
+      },
+      {
+        "name": "SRM Institute of Science and Technology",
+        "type": "deemed",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 32
+      },
+      {
+        "name": "Manipal Institute of Technology (MIT Manipal)",
+        "type": "deemed",
+        "location": "Manipal, Karnataka",
+        "ranking": 16
+      },
+      {
+        "name": "PSG College of Technology",
+        "type": "government",
+        "location": "Coimbatore, Tamil Nadu",
+        "ranking": 63
+      },
+      {
+        "name": "Amity University",
+        "type": "private",
+        "location": "Noida, Uttar Pradesh",
+        "ranking": 35
+      },
+      {
+        "name": "Christ University",
+        "type": "private",
+        "location": "Bengaluru, Karnataka",
+        "ranking": 67
+      },
+      {
+        "name": "Sathyabama Institute of Science and Technology",
+        "type": "deemed",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 54
+      },
+      {
+        "name": "Hindustan Institute of Technology and Science",
+        "type": "deemed",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 101
+      },
+      {
+        "name": "Lovely Professional University (LPU)",
+        "type": "private",
+        "location": "Phagwara, Punjab",
+        "ranking": 46
+      },
+      {
+        "name": "Bharath Institute of Higher Education and Research",
+        "type": "deemed",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 101
+      },
+      {
+        "name": "Kalinga Institute of Industrial Technology (KIIT)",
+        "type": "deemed",
+        "location": "Bhubaneswar, Odisha",
+        "ranking": 29
+      },
+      {
+        "name": "SASTRA University",
+        "type": "deemed",
+        "location": "Thanjavur, Tamil Nadu",
+        "ranking": 34
+      },
+      {
+        "name": "BMS College of Engineering",
+        "type": "private",
+        "location": "Bengaluru, Karnataka",
+        "ranking": 101
+      },
+      {
+        "name": "SRM Valliammai Engineering College",
+        "type": "private",
+        "location": "Kanchipuram, Tamil Nadu",
+        "ranking": 151
+      },
+      {
+        "name": "Saveetha Engineering College",
+        "type": "private",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 152
+      }
+    ],
+    "skills": {
+      "technical": [
+        "Programming",
+        "Database Management",
+        "Networking",
+        "Cybersecurity",
+        "Cloud Computing",
+        "Data Analytics"
+      ],
+      "soft": [
+        "Problem Solving",
+        "Critical Thinking",
+        "Teamwork",
+        "Leadership",
+        "Communication"
+      ]
+    },
+    "isActive": true,
+    "popularity": 85
+  },
+  {
+    "name": "Bachelor of Technology in Mechanical Engineering",
+    "shortName": "BTECH-ME",
+    "stream": "engineering",
+    "level": "undergraduate",
+    "duration": {
+      "years": 4,
+      "months": 0
+    },
+    "description": "A 4-year undergraduate engineering program focusing on design, analysis, manufacturing, and maintenance of mechanical systems, including thermodynamics, mechanics, and materials science.",
+    "eligibility": {
+      "minimumClass": "12",
+      "requiredSubjects": [
+        "Mathematics",
+        "Physics",
+        "Chemistry"
+      ],
+      "minimumPercentage": 60,
+      "entranceExams": [
+        "JEE Mains",
+        "JEE Advanced",
+        "State CETs",
+        "Private University Entrance Exams"
+      ]
+    },
+    "careerOptions": [
+      {
+        "jobTitle": "Mechanical Engineer",
+        "description": "Designs, develops, and tests mechanical systems, machines, and tools.",
+        "averageSalary": {
+          "min": 400000,
+          "max": 1200000,
+          "currency": "INR"
+        },
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Automotive Engineer",
+        "description": "Works on vehicle design, production, and performance optimization.",
+        "averageSalary": {
+          "min": 450000,
+          "max": 1300000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Manufacturing Engineer",
+        "description": "Oversees manufacturing processes, ensures efficiency and quality in production lines.",
+        "averageSalary": {
+          "min": 400000,
+          "max": 1100000,
+          "currency": "INR"
+        },
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Design Engineer",
+        "description": "Creates detailed designs and CAD models for mechanical components and systems.",
+        "averageSalary": {
+          "min": 450000,
+          "max": 1200000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Thermal Engineer",
+        "description": "Specializes in heat transfer, energy systems, and HVAC design.",
+        "averageSalary": {
+          "min": 500000,
+          "max": 1400000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Maintenance Engineer",
+        "description": "Ensures machinery and equipment operate efficiently and safely.",
+        "averageSalary": {
+          "min": 400000,
+          "max": 1000000,
+          "currency": "INR"
+        },
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Project Engineer",
+        "description": "Leads mechanical engineering projects, managing teams and resources.",
+        "averageSalary": {
+          "min": 600000,
+          "max": 1800000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Research Scientist (Mechanical)",
+        "description": "Conducts research in areas like robotics, energy, and materials in labs or academia.",
+        "averageSalary": {
+          "min": 500000,
+          "max": 1500000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "government"
+      }
+    ],
+    "higherStudyOptions": [
+      {
+        "courseName": "M.Tech in Mechanical Engineering",
+        "description": "Postgraduate program focusing on advanced areas such as robotics, thermal systems, design, and manufacturing.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "MBA in Operations or Technology Management",
+        "description": "Management-oriented program combining business strategies with technical knowledge for leadership roles in manufacturing or technology-driven industries.",
+        "duration": "2 years"
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Indian Institute of Technology Bombay (IIT Bombay)",
+        "type": "government",
+        "location": "Mumbai, Maharashtra",
+        "ranking": 3
+      },
+      {
+        "name": "Indian Institute of Technology Delhi (IIT Delhi)",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 2
+      },
+      {
+        "name": "Indian Institute of Technology Madras (IIT Madras)",
+        "type": "government",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 1
+      },
+      {
+        "name": "Indian Institute of Technology Kanpur (IIT Kanpur)",
+        "type": "government",
+        "location": "Kanpur, Uttar Pradesh",
+        "ranking": 4
+      },
+      {
+        "name": "Indian Institute of Technology Kharagpur (IIT Kharagpur)",
+        "type": "government",
+        "location": "Kharagpur, West Bengal",
+        "ranking": 5
+      },
+      {
+        "name": "Birla Institute of Technology and Science (BITS Pilani)",
+        "type": "private",
+        "location": "Pilani, Rajasthan",
+        "ranking": 16
+      },
+      {
+        "name": "Vellore Institute of Technology (VIT)",
+        "type": "private",
+        "location": "Vellore, Tamil Nadu",
+        "ranking": 11
+      },
+      {
+        "name": "National Institute of Technology Trichy (NIT Trichy)",
+        "type": "government",
+        "location": "Tiruchirappalli, Tamil Nadu",
+        "ranking": 30
+      },
+      {
+        "name": "Delhi Technological University (DTU)",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 30
+      },
+      {
+        "name": "Amrita Vishwa Vidyapeetham",
+        "type": "deemed",
+        "location": "Coimbatore, Tamil Nadu",
+        "ranking": 17
+      },
+      {
+        "name": "PSG College of Technology",
+        "type": "government",
+        "location": "Coimbatore, Tamil Nadu",
+        "ranking": 35
+      },
+      {
+        "name": "SRM Institute of Science and Technology",
+        "type": "deemed",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 40
+      },
+      {
+        "name": "Manipal Institute of Technology (MIT Manipal)",
+        "type": "deemed",
+        "location": "Manipal, Karnataka",
+        "ranking": 25
+      },
+      {
+        "name": "Lovely Professional University (LPU)",
+        "type": "private",
+        "location": "Phagwara, Punjab",
+        "ranking": 45
+      },
+      {
+        "name": "BMS College of Engineering",
+        "type": "private",
+        "location": "Bengaluru, Karnataka",
+        "ranking": 50
+      }
+    ],
+    "skills": {
+      "technical": [
+        "Thermodynamics",
+        "CAD Design",
+        "Manufacturing Processes",
+        "Mechanics",
+        "Material Science",
+        "Robotics"
+      ],
+      "soft": [
+        "Problem Solving",
+        "Analytical Thinking",
+        "Teamwork",
+        "Leadership",
+        "Communication"
+      ]
+    },
+    "isActive": true,
+    "popularity": 80
   }
 ]
+
