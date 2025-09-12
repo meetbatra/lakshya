@@ -48,96 +48,97 @@
     ],
     "topColleges": [
       {
-        "name": "Indian Institute of Technology Bombay",
+        "name": "St. Stephen's College, University of Delhi",
         "type": "government",
-        "location": "Mumbai, Maharashtra",
+        "location": "Delhi",
         "ranking": 1
       },
       {
-        "name": "Indian Institute of Technology Delhi",
+        "name": "Hindu College, University of Delhi",
         "type": "government",
-        "location": "New Delhi, Delhi",
+        "location": "Delhi",
         "ranking": 2
       },
       {
-        "name": "Indian Institute of Science Bangalore",
+        "name": "Miranda House, University of Delhi",
         "type": "government",
-        "location": "Bengaluru, Karnataka",
+        "location": "Delhi",
         "ranking": 3
       },
       {
-        "name": "Indian Institute of Technology Madras",
-        "type": "government",
+        "name": "Loyola College",
+        "type": "private",
         "location": "Chennai, Tamil Nadu",
         "ranking": 4
       },
       {
-        "name": "Indian Institute of Technology Kanpur",
-        "type": "government",
-        "location": "Kanpur, Uttar Pradesh",
+        "name": "Christ University",
+        "type": "deemed",
+        "location": "Bengaluru, Karnataka",
         "ranking": 5
       },
       {
-        "name": "Indian Institute of Technology Kharagpur",
-        "type": "government",
-        "location": "Kharagpur, West Bengal",
+        "name": "Madras Christian College (MCC)",
+        "type": "private",
+        "location": "Chennai, Tamil Nadu",
         "ranking": 6
       },
       {
-        "name": "Indian Institute of Technology Roorkee",
+        "name": "Fergusson College, Savitribai Phule Pune University",
         "type": "government",
-        "location": "Roorkee, Uttarakhand",
+        "location": "Pune, Maharashtra",
         "ranking": 7
       },
       {
-        "name": "All India Institute of Medical Sciences New Delhi",
+        "name": "Presidency University",
         "type": "government",
-        "location": "New Delhi, Delhi",
+        "location": "Kolkata, West Bengal",
         "ranking": 8
       },
       {
-        "name": "Jawaharlal Nehru University",
+        "name": "Banaras Hindu University (BHU)",
         "type": "government",
-        "location": "New Delhi, Delhi",
+        "location": "Varanasi, Uttar Pradesh",
         "ranking": 9
       },
       {
-        "name": "University of Delhi",
-        "type": "government",
-        "location": "Delhi, Delhi",
+        "name": "St. Xavier’s College, Mumbai",
+        "type": "private",
+        "location": "Mumbai, Maharashtra",
         "ranking": 10
       },
       {
-        "name": "Birla Institute of Technology and Science Pilani",
+        "name": "St. Joseph’s College",
         "type": "private",
-        "location": "Pilani, Rajasthan",
+        "location": "Bengaluru, Karnataka",
         "ranking": 11
       },
       {
-        "name": "Indian Institute of Technology Guwahati",
+        "name": "Hansraj College, University of Delhi",
         "type": "government",
-        "location": "Guwahati, Assam",
+        "location": "Delhi",
         "ranking": 12
       },
       {
-        "name": "National Institute of Technology Trichy",
-        "type": "government",
-        "location": "Tiruchirappalli, Tamil Nadu",
+        "name": "Mount Carmel College",
+        "type": "private",
+        "location": "Bengaluru, Karnataka",
         "ranking": 13
       },
       {
-        "name": "Jadavpur University",
+        "name": "Jamia Millia Islamia (JMI)",
         "type": "government",
-        "location": "Kolkata, West Bengal",
+        "location": "New Delhi",
         "ranking": 14
       },
       {
-        "name": "Amrita Vishwa Vidyapeetham",
-        "type": "deemed",
-        "location": "Coimbatore, Tamil Nadu",
+        "name": "Stella Maris College",
+        "type": "private",
+        "location": "Chennai, Tamil Nadu",
         "ranking": 15
       }
     ],
+
     "skills": {
       "technical": ["Programming", "Database Management", "Networking"],
       "soft": ["Problem Solving", "Teamwork", "Communication"]
@@ -146,4 +147,5 @@
     "popularity": 95
   }
 ]
+
 
