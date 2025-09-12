@@ -145,7 +145,192 @@
     },
     "isActive": true,
     "popularity": 95
+  },
+
+  {
+    "name": "Bachelor of Science in Physics",
+    "shortName": "BSC-PHY",
+    "stream": "science",
+    "level": "undergraduate",
+    "duration": {
+      "years": 3,
+      "months": 0
+    },
+    "description": "A 3-year undergraduate degree program focusing on the theoretical and experimental study of the fundamental laws of nature, including classical mechanics, quantum mechanics, electromagnetism, thermodynamics, and optics. The curriculum involves lectures, laboratory work, and computational techniques, preparing graduates for careers in research, academia, science, and technology.",
+    "eligibility": {
+      "minimumClass": "12",
+      "requiredSubjects": ["Physics", "Chemistry", "Mathematics/Biology"],
+      "minimumPercentage": 50,
+      "entranceExams": ["CUET", "JEE Main", "IISER Aptitude Test", "University-specific exams"]
+    },
+    "careerOptions": [
+      {
+        "jobTitle": "Lab Technician",
+        "description": "Conducts experiments and supports research in laboratories using physics equipment and techniques.",
+        "averageSalary": {
+          "min": 250000,
+          "max": 500000,
+          "currency": "INR"
+        },
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Physicist",
+        "description": "Engages in theoretical or experimental research in areas such as quantum mechanics, astrophysics, or material science.",
+        "averageSalary": {
+          "min": 500000,
+          "max": 1200000,
+          "currency": "INR"
+        },
+        "growthProspects": "excellent",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Statistician",
+        "description": "Applies mathematical and statistical methods to analyze data and solve scientific or industrial problems.",
+        "averageSalary": {
+          "min": 400000,
+          "max": 1000000,
+          "currency": "INR"
+        },
+        "growthProspects": "good",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Research Associate",
+        "description": "Works with senior researchers on projects in physics, data analysis, or applied sciences.",
+        "averageSalary": {
+          "min": 300000,
+          "max": 800000,
+          "currency": "INR"
+        },
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Lecturer/Teacher",
+        "description": "Teaches physics at schools, colleges, or coaching institutes.",
+        "averageSalary": {
+          "min": 250000,
+          "max": 700000,
+          "currency": "INR"
+        },
+        "growthProspects": "good",
+        "sector": "government"
+      },
+      {
+        "jobTitle": "Industrial Engineer",
+        "description": "Applies physics knowledge in industries like automobile, aeronautics, or R&D centers.",
+        "averageSalary": {
+          "min": 400000,
+          "max": 900000,
+          "currency": "INR"
+        },
+        "growthProspects": "good",
+        "sector": "private"
+      }
+    ],
+    "higherStudyOptions": [
+      {
+        "courseName": "M.Sc. Physics",
+        "description": "A postgraduate program focusing on advanced theoretical and experimental physics.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "M.Tech (via GATE)",
+        "description": "Postgraduate engineering/technology specialization for physics graduates through GATE.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "Integrated M.Sc./PhD",
+        "description": "Research-oriented higher education in physics and allied sciences.",
+        "duration": "5-6 years"
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Indian Institute of Science (IISc), Bangalore",
+        "type": "government",
+        "location": "Bangalore, Karnataka",
+        "ranking": 1
+      },
+      {
+        "name": "Banaras Hindu University (BHU)",
+        "type": "government",
+        "location": "Varanasi, Uttar Pradesh",
+        "ranking": 10
+      },
+      {
+        "name": "Jamia Millia Islamia (JMI)",
+        "type": "government",
+        "location": "New Delhi",
+        "ranking": 19
+      },
+      {
+        "name": "University of Delhi",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 11
+      },
+      {
+        "name": "Panjab University",
+        "type": "government",
+        "location": "Chandigarh",
+        "ranking": 12
+      },
+      {
+        "name": "Calcutta University",
+        "type": "government",
+        "location": "Kolkata, West Bengal",
+        "ranking": 38
+      },
+      {
+        "name": "University of Madras",
+        "type": "government",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 37
+      },
+      {
+        "name": "Lovely Professional University (LPU)",
+        "type": "private",
+        "location": "Phagwara, Punjab",
+        "ranking": 30
+      },
+      {
+        "name": "VIT Vellore",
+        "type": "private",
+        "location": "Vellore, Tamil Nadu",
+        "ranking": 29
+      },
+      {
+        "name": "BITS Pilani",
+        "type": "private",
+        "location": "Pilani, Rajasthan",
+        "ranking": 25
+      },
+      {
+        "name": "National Institute of Science Education and Research (NISER), Bhubaneswar",
+        "type": "government",
+        "location": "Odisha",
+        "ranking": 16
+      },
+      {
+        "name": "Indian Institutes of Science Education and Research (IISERs)",
+        "type": "government",
+        "location": "Various Locations",
+        "ranking": 13
+      }
+    ],
+    "skills": {
+      "technical": ["Data Analysis", "Computational Modeling", "Mathematical Reasoning", "Experimental Techniques"],
+      "soft": ["Problem Solving", "Critical Thinking", "Research Skills", "Communication"]
+    },
+    "isActive": true,
+    "popularity": 90
+  
   }
+
 ]
 
 
