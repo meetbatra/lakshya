@@ -4,10 +4,10 @@ const { generateToken } = require('../utils/auth');
 const { validateSignupData, validateLoginData, validateUpdateProfileData } = require('../utils/validation');
 
 // Register new user
-const registerUser = async (userData) => {
+const registerUser = async (requestData) => {
   try {
     // Validate input data with Zod
-    const validation = validateSignupData(userData);
+    const validation = validateSignupData(requestData);
     if (!validation.success) {
       return {
         success: false,
@@ -17,7 +17,7 @@ const registerUser = async (userData) => {
     }
 
     const validatedData = validation.data;
-    const { name, email, password, class: userClass, state } = validatedData;
+    const { name, email, password, class: userClass, state, stream, field } = validatedData;
 
     // Check if user already exists
     const existingUser = await User.findOne({ email });
@@ -32,8 +32,8 @@ const registerUser = async (userData) => {
     // Hash password
     const hashedPassword = await hashPassword(password);
 
-    // Create new user with validated and transformed data
-    const newUser = new User({
+    // Create user data object
+    const userData = {
       name,
       email,
       password: hashedPassword,
@@ -44,7 +44,20 @@ const registerUser = async (userData) => {
         careerGoals: [],
         studyPreference: 'both'
       }
-    });
+    };
+
+    // Add stream if provided (for class 10 and 12)
+    if (stream && (userClass === '10' || userClass === '12')) {
+      userData.stream = stream;
+    }
+
+    // Add field if provided (for class 12 with stream)
+    if (field && userClass === '12' && stream) {
+      userData.field = field;
+    }
+
+    // Create new user with validated and transformed data
+    const newUser = new User(userData);
 
     // Save user to database
     const savedUser = await newUser.save();

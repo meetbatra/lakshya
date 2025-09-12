@@ -29,6 +29,31 @@ const userSchema = new mongoose.Schema({
     required: [true, 'State is required'],
     trim: true
   },
+  // Stream information based on class
+  stream: {
+    type: String,
+    enum: ['science_pcm', 'science_pcb', 'commerce', 'arts'],
+    required: function() {
+      return this.class === '10' || this.class === '12';
+    }
+  },
+  // Field of interest (for Class 12 students)
+  field: {
+    type: String,
+    enum: [
+      // Science PCM fields
+      'engineering', 'architecture', 'pure_sciences', 'computer_science',
+      // Science PCB fields  
+      'medicine', 'dentistry', 'pharmacy', 'biotechnology', 'nursing',
+      // Commerce fields
+      'ca', 'cs', 'bcom', 'bba', 'economics',
+      // Arts fields
+      'ba', 'journalism', 'psychology', 'sociology', 'literature'
+    ],
+    required: function() {
+      return this.class === '12' && this.stream;
+    }
+  },
   preferences: {
     interestedStreams: [String],
     careerGoals: [String],

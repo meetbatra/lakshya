@@ -32,7 +32,48 @@ const signupSchema = z.object({
     .string()
     .min(2, 'State name must be at least 2 characters long')
     .max(50, 'State name cannot exceed 50 characters')
-    .transform(str => str.trim())
+    .transform(str => str.trim()),
+
+  // Stream validation - required for class 10 and 12
+  stream: z
+    .enum(['science_pcm', 'science_pcb', 'commerce', 'arts'], {
+      errorMap: () => ({ message: 'Stream must be one of: science_pcm, science_pcb, commerce, arts' })
+    })
+    .optional(),
+
+  // Field validation - for class 12 students
+  field: z
+    .enum([
+      // Science PCM fields
+      'engineering', 'architecture', 'pure_sciences', 'computer_science',
+      // Science PCB fields  
+      'medicine', 'dentistry', 'pharmacy', 'biotechnology', 'nursing',
+      // Commerce fields
+      'ca', 'cs', 'bcom', 'bba', 'economics',
+      // Arts fields
+      'ba', 'journalism', 'psychology', 'sociology', 'literature'
+    ], {
+      errorMap: () => ({ message: 'Invalid field selection' })
+    })
+    .optional()
+}).refine((data) => {
+  // Stream is required for class 10 and 12
+  if ((data.class === '10' || data.class === '12') && !data.stream) {
+    return false;
+  }
+  return true;
+}, {
+  message: 'Stream is required for Class 10 and 12 students',
+  path: ['stream']
+}).refine((data) => {
+  // Field is required for class 12 students with a stream
+  if (data.class === '12' && data.stream && !data.field) {
+    return false;
+  }
+  return true;
+}, {
+  message: 'Field of interest is required for Class 12 students',
+  path: ['field']
 });
 
 // User login schema
@@ -69,6 +110,29 @@ const updateProfileSchema = z.object({
     .min(2, 'State name must be at least 2 characters long')
     .max(50, 'State name cannot exceed 50 characters')
     .transform(str => str.trim())
+    .optional(),
+
+  // Stream field for profile updates
+  stream: z
+    .enum(['science_pcm', 'science_pcb', 'commerce', 'arts'], {
+      errorMap: () => ({ message: 'Stream must be one of: science_pcm, science_pcb, commerce, arts' })
+    })
+    .optional(),
+
+  // Field of interest for profile updates
+  field: z
+    .enum([
+      // Science PCM fields
+      'engineering', 'architecture', 'pure_sciences', 'computer_science',
+      // Science PCB fields  
+      'medicine', 'dentistry', 'pharmacy', 'biotechnology', 'nursing',
+      // Commerce fields
+      'ca', 'cs', 'bcom', 'bba', 'economics',
+      // Arts fields
+      'ba', 'journalism', 'psychology', 'sociology', 'literature'
+    ], {
+      errorMap: () => ({ message: 'Invalid field selection' })
+    })
     .optional(),
   
   preferences: z
