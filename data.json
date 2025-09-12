@@ -1,7 +1,7 @@
 [
   {
     "name": "Bachelor of Science in Computer Science",
-    "shortName": "BSC-CS",
+    "shortName": "BSc-CS",
     "stream": "science",
     "level": "undergraduate",
     "duration": {
@@ -128,7 +128,7 @@
       {
         "name": "Jamia Millia Islamia (JMI)",
         "type": "government",
-        "location": "New Delhi",
+        "location": "Delhi",
         "ranking": 14
       },
       {
@@ -147,5 +147,6 @@
     "popularity": 95
   }
 ]
+
 
 
