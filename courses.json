@@ -56,7 +56,7 @@
       {
         "jobTitle": "IT Security Specialist",
         "description": "Ensures cybersecurity, designs and implements security protocols; protects against breaches; works on threat detection and mitigation.",
-        "growthProspects": "very good",
+        "growthProspects": "good",
         "sector": "private"
       },
       {
@@ -134,7 +134,7 @@
       },
       {
         "name": "St Stephen's College",
-        "type": "private/government-aided",
+        "type": "government",
         "location": "Delhi",
         "ranking": 14
       },
@@ -388,7 +388,7 @@
       {
         "jobTitle": "Lab Technician / Lab Assistant",
         "description": "Supports experiments, maintains and calibrates lab equipment, handles sample preparation and preliminary analysis.",
-        "growthProspects": "moderate",
+        "growthProspects": "average",
         "sector": "both"
       },
       {
@@ -464,13 +464,13 @@
       },
       {
         "name": "St Xavier’s College",
-        "type": "government-aided / private",
+        "type": "government",
         "location": "Kolkata, West Bengal",
         "ranking": 14
       },
       {
         "name": "Fergusson College",
-        "type": "government / autonomous",
+        "type": "government",
         "location": "Pune, Maharashtra",
         "ranking": 19
       },
@@ -550,13 +550,13 @@
       {
         "jobTitle": "Data Analyst",
         "description": "Analyzes and interprets data to generate insights for decision making.",
-        "growthProspects": "very good",
+        "growthProspects": "excellent",
         "sector": "both"
       },
       {
         "jobTitle": "Actuary / Risk Analyst",
         "description": "Applies probability and statistics to assess risk for insurance and finance sectors.",
-        "growthProspects": "high",
+        "growthProspects": "good",
         "sector": "private"
       },
       {
@@ -568,7 +568,7 @@
       {
         "jobTitle": "Cryptographer / Algorithm Developer",
         "description": "Designs encryption and algorithms for cybersecurity and technology companies.",
-        "growthProspects": "high",
+        "growthProspects": "good",
         "sector": "private"
       },
       {
@@ -580,7 +580,7 @@
       {
         "jobTitle": "Educator / Lecturer",
         "description": "Teaches mathematics at schools, colleges, or universities; may also engage in research.",
-        "growthProspects": "stable",
+        "growthProspects": "average",
         "sector": "government"
       }
     ],
@@ -668,7 +668,7 @@
       },
       {
         "name": "Madras Christian College (MCC)",
-        "type": "government-aided",
+        "type": "private",
         "location": "Chennai, Tamil Nadu",
         "ranking": 13
       },
@@ -680,13 +680,13 @@
       },
       {
         "name": "St. Xavier’s College",
-        "type": "autonomous",
+        "type": "private",
         "location": "Mumbai, Maharashtra",
         "ranking": 15
       },
       {
         "name": "Fergusson College",
-        "type": "autonomous",
+        "type": "private",
         "location": "Pune, Maharashtra",
         "ranking": 19
       },
@@ -862,7 +862,7 @@
       },
       {
         "name": "St. Stephen's College",
-        "type": "private/government-aided",
+        "type": "government",
         "location": "Delhi",
         "ranking": 5
       },
@@ -991,7 +991,7 @@
       {
         "jobTitle": "Entrepreneur / Startup Founder",
         "description": "Builds technology-driven businesses and products by leveraging CS engineering knowledge.",
-        "growthProspects": "varies",
+        "growthProspects": "good",
         "sector": "private"
       }
     ],
@@ -2319,7 +2319,7 @@
   },
   {
     "name": "Bachelor of Pharmacy",
-    "shortName": "B.PHARM",
+    "shortName": "B.Pharm",
     "stream": "science_pcb",
     "field": "allied_health",
     "level": "undergraduate",
@@ -2746,9 +2746,9 @@
   },
   {
     "name": "Bachelor of Commerce",
-    "shortName": "B.COM",
+    "shortName": "B.Com",
     "stream": "commerce",
-    "field": "commerce_general",
+    "field": "finance_accounting",
     "level": "undergraduate",
     "duration": {
       "years": 3,
@@ -2914,7 +2914,7 @@
   },
   {
     "name": "Bachelor in Entrepreneurship",
-    "shortName": "BBA-ENT",
+    "shortName": "BBA-Ent",
     "stream": "commerce",
     "field": "entrepreneurship",
     "level": "undergraduate",

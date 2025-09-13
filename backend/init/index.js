@@ -1,14 +1,20 @@
 const { initializeClass10Quiz } = require('./class10-quiz');
+const { initializeCourses } = require('./courses');
 
 /**
- * Main initialization script for all quizzes
- * Run this script to populate the database with initial quiz data
+ * Main initialization script for all data
+ * Run this script to populate the database with initial data
  */
-async function initializeAllQuizzes() {
-  console.log('🎯 Lakshya Quiz Database Initialization');
+async function initializeAll() {
+  console.log('🎯 Lakshya Database Initialization');
   console.log('=====================================\n');
 
   try {
+    // Initialize Courses
+    console.log('📚 Initializing Courses...');
+    await initializeCourses();
+    console.log('\n-------------------------------------\n');
+
     // Initialize Class 10 Quiz
     console.log('📚 Initializing Class 10 Stream Selection Quiz...');
     await initializeClass10Quiz();
@@ -19,8 +25,8 @@ async function initializeAllQuizzes() {
     // await initializeClass12CommerceQuiz();
     // await initializeClass12ArtsQuiz();
     
-    console.log('\n🎉 All quizzes initialized successfully!');
-    console.log('💡 You can now use these quizzes in your application.');
+    console.log('\n🎉 All data initialized successfully!');
+    console.log('💡 You can now use this data in your application.');
     
   } catch (error) {
     console.error('❌ Initialization failed:', error.message);
@@ -41,6 +47,7 @@ function showUsage() {
   console.log('- MONGODB_URI: MongoDB connection string (default: mongodb://localhost:27017/lakshya)');
   console.log('');
   console.log('What this script does:');
+  console.log('- Populates the database with courses from courses.json');
   console.log('- Creates Class 10 Stream Selection Quiz (12 questions)');
   console.log('- Sets up proper schema validation');
   console.log('- Handles duplicate entries (updates if exists)');
@@ -54,11 +61,11 @@ if (require.main === module) {
   if (args.includes('--help') || args.includes('-h')) {
     showUsage();
   } else {
-    initializeAllQuizzes();
+    initializeAll();
   }
 }
 
 module.exports = {
-  initializeAllQuizzes,
+  initializeAll,
   showUsage
 };
