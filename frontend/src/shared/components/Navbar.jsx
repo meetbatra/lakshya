@@ -168,13 +168,13 @@ const Navbar = () => {
                 <Button 
                   variant="ghost"
                   onClick={handleLoginClick}
-                  className="w-full justify-start font-medium text-gray-700"
+                  className="w-full justify-start font-medium text-gray-700 cursor-pointer"
                 >
                   Sign In
                 </Button>
                 <Button 
                   onClick={handleSignUpClick}
-                  className="w-full justify-start font-medium bg-blue-600 hover:bg-blue-700"
+                  className="w-full justify-start font-medium bg-blue-600 hover:bg-blue-700 cursor-pointer"
                 >
                   Get Started
                 </Button>

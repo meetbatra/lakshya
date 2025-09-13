@@ -119,6 +119,13 @@ const SignUp = () => {
     try {
       // Remove confirmPassword from data before sending to backend
       const { confirmPassword, ...submitData } = data;
+      
+      // Clean up empty field values - don't send empty strings
+      if (submitData.field === '') {
+        delete submitData.field;
+      }
+      
+      console.log('Submitting data:', submitData);
       const response = await authAPI.register(submitData);
       login(response); // Now expects { user, token }
       navigate('/'); // Redirect to home page after successful registration

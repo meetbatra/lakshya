@@ -1,12 +1,6 @@
 const { GoogleGenAI } = require('@google/genai');
 require('dotenv').config();
 
-/**
- * Gemini AI Service for Educational Stream Recommendations
- * Uses Gemini 2.5 Flash model for intelligent analysis of student quiz responses
- */
-
-// Initialize Gemini AI client
 const initializeGeminiClient = () => {
   const apiKey = process.env.GEMINI_API_KEY;
   
@@ -17,13 +11,6 @@ const initializeGeminiClient = () => {
   return new GoogleGenAI({ apiKey });
 };
 
-/**
- * Generate AI-powered stream recommendation based on quiz responses
- * @param {Array} questions - Quiz questions array
- * @param {Array} answers - Student's answers array  
- * @param {Object} studentContext - Additional context about the student (optional)
- * @returns {Promise<Object>} AI-generated stream recommendation with explanation
- */
 const generateStreamRecommendation = async (questions, answers, studentContext = {}) => {
   try {
     const ai = initializeGeminiClient();

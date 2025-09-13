@@ -1,5 +1,5 @@
-const QuizService = require('../services/quizService');
-const { testGeminiConnection } = require('../utils/geminiService');
+const quizService = require('../services/quizService');
+const { testGeminiConnection } = require('../utils/services/geminiService');
 
 /**
  * Quiz Controller - Handles HTTP requests for quiz operations

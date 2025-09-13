@@ -1,18 +1,12 @@
 const Quiz = require('../models/Quiz');
-const { generateStreamRecommendation } = require('../utils/geminiService');
+const { generateStreamRecommendation } = require('../utils/services/geminiService');
 
-/**
-        ];
-        
-      } else {Class 10 Stream Selection Quiz
- * @returns {Promise<Object>} Quiz object without correct answers
- */
 const getClass10Quiz = async () => {
   try {
     const quiz = await Quiz.findOne({
       targetClass: '10',
       purpose: 'stream-selection'
-    }).select('-questions.correctAnswer -__v');
+    });
 
     if (!quiz) {
       return {
@@ -31,14 +25,12 @@ const getClass10Quiz = async () => {
         description: quiz.description,
         targetClass: quiz.targetClass,
         purpose: quiz.purpose,
-        estimatedTime: quiz.estimatedTime,
         totalQuestions: quiz.questions.length,
         questions: quiz.questions.map((q, index) => ({
           id: q._id,
           questionNumber: index + 1,
           question: q.question,
           options: q.options,
-          category: q.category
         }))
       }
     };

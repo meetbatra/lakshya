@@ -37,15 +37,34 @@ export const signupSchema = z.object({
     .min(2, 'State name must be at least 2 characters long')
     .max(50, 'State name cannot exceed 50 characters'),
   
-  // Optional fields for stream and field
+  // Stream validation - required for class 10 and 12
   stream: z
     .string()
     .optional(),
-  
+
+  // Field validation - for class 12 students
   field: z
     .string()
     .optional()
 }).refine((data) => data.password === data.confirmPassword, {
   message: "Passwords don't match",
   path: ["confirmPassword"],
+}).refine((data) => {
+  // Stream is required for class 10 and 12
+  if ((data.class === '10' || data.class === '12') && !data.stream) {
+    return false;
+  }
+  return true;
+}, {
+  message: 'Stream is required for Class 10 and 12 students',
+  path: ['stream']
+}).refine((data) => {
+  // Field is required for class 12 students with a stream
+  if (data.class === '12' && data.stream && !data.field) {
+    return false;
+  }
+  return true;
+}, {
+  message: 'Field of interest is required for Class 12 students',
+  path: ['field']
 });
