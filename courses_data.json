@@ -1781,7 +1781,7 @@
     ],
     "topColleges": [
       {
-        "name": "National Law School of India University (NLSIU), Bangalore",
+        "name": "National Law School of India University (NLSIU)",
         "type": "government",
         "location": "Bangalore, Karnataka",
         "ranking": 1
@@ -1793,19 +1793,19 @@
         "ranking": 12
       },
       {
-        "name": "BHU Faculty of Law, Varanasi",
+        "name": "BHU Faculty of Law",
         "type": "government",
         "location": "Varanasi, Uttar Pradesh",
         "ranking": 15
       },
       {
-        "name": "ILS Law College, Pune",
+        "name": "ILS Law College",
         "type": "private",
         "location": "Pune, Maharashtra",
         "ranking": 20
       },
       {
-        "name": "Government Law College, Mumbai",
+        "name": "Government Law College",
         "type": "government",
         "location": "Mumbai, Maharashtra",
         "ranking": 22
@@ -1908,31 +1908,31 @@
     ],
     "topColleges": [
       {
-        "name": "National Law School of India University (NLSIU), Bangalore",
+        "name": "National Law School of India University (NLSIU)",
         "type": "government",
         "location": "Bangalore, Karnataka",
         "ranking": 1
       },
       {
-        "name": "National Law University (NLU), New Delhi",
+        "name": "National Law University (NLU)",
         "type": "government",
         "location": "Delhi",
         "ranking": 2
       },
       {
-        "name": "NALSAR University of Law, Hyderabad",
+        "name": "NALSAR University of Law",
         "type": "government",
         "location": "Hyderabad, Telangana",
         "ranking": 3
       },
       {
-        "name": "WBNUJS, Kolkata",
+        "name": "WBNUJS",
         "type": "government",
         "location": "Kolkata, West Bengal",
         "ranking": 4
       },
       {
-        "name": "Gujarat National Law University (GNLU), Gandhinagar",
+        "name": "Gujarat National Law University (GNLU)",
         "type": "government",
         "location": "Gandhinagar, Gujarat",
         "ranking": 5
@@ -2050,25 +2050,25 @@
     ],
     "topColleges": [
       {
-        "name": "All India Institute of Medical Sciences (AIIMS), Delhi",
+        "name": "All India Institute of Medical Sciences (AIIMS)",
         "type": "government",
         "location": "New Delhi, Delhi",
         "ranking": 1
       },
       {
-        "name": "Post Graduate Institute of Medical Education and Research (PGIMER), Chandigarh",
+        "name": "Post Graduate Institute of Medical Education and Research (PGIMER)",
         "type": "government",
         "location": "Chandigarh",
         "ranking": 2
       },
       {
-        "name": "Christian Medical College (CMC), Vellore",
+        "name": "Christian Medical College (CMC)",
         "type": "private",
         "location": "Vellore, Tamil Nadu",
         "ranking": 3
       },
       {
-        "name": "National Institute of Mental Health and Neuro Sciences (NIMHANS), Bangalore",
+        "name": "National Institute of Mental Health and Neuro Sciences (NIMHANS)",
         "type": "government",
         "location": "Bengaluru, Karnataka",
         "ranking": 4
@@ -2098,13 +2098,13 @@
         "ranking": 8
       },
       {
-        "name": "Kasturba Medical College (KMC), Manipal",
+        "name": "Kasturba Medical College (KMC)",
         "type": "private",
         "location": "Manipal, Karnataka",
         "ranking": 9
       },
       {
-        "name": "Madras Medical College, Chennai",
+        "name": "Madras Medical College",
         "type": "government",
         "location": "Chennai, Tamil Nadu",
         "ranking": 10
@@ -2236,61 +2236,61 @@
     ],
     "topColleges": [
       {
-        "name": "Saveetha Institute of Medical and Technical Sciences (SIMTS), Chennai",
+        "name": "Saveetha Institute of Medical and Technical Sciences (SIMTS)",
         "type": "private",
         "location": "Chennai, Tamil Nadu",
         "ranking": 1
       },
       {
-        "name": "Manipal College of Dental Sciences (MCODS), Manipal",
+        "name": "Manipal College of Dental Sciences (MCODS)",
         "type": "private",
         "location": "Manipal, Karnataka",
         "ranking": 2
       },
       {
-        "name": "Maulana Azad Institute of Dental Sciences (MAIDS), New Delhi",
+        "name": "Maulana Azad Institute of Dental Sciences (MAIDS) ",
         "type": "government",
         "location": "New Delhi, Delhi",
         "ranking": 3
       },
       {
-        "name": "King George's Medical University (KGMU), Lucknow",
+        "name": "King George's Medical University (KGMU) ",
         "type": "government",
         "location": "Lucknow, Uttar Pradesh",
         "ranking": 4
       },
       {
-        "name": "Government Dental College and Hospital, Mumbai",
+        "name": "Government Dental College and Hospital",
         "type": "government",
         "location": "Mumbai, Maharashtra",
         "ranking": 5
       },
       {
-        "name": "Nair Hospital Dental College, Mumbai",
+        "name": "Nair Hospital Dental College",
         "type": "government",
         "location": "Mumbai, Maharashtra",
         "ranking": 6
       },
       {
-        "name": "SRM Dental College, Chennai",
+        "name": "SRM Dental College",
         "type": "private",
         "location": "Chennai, Tamil Nadu",
         "ranking": 7
       },
       {
-        "name": "A.B. Shetty Memorial Institute of Dental Sciences, Mangalore",
+        "name": "A.B. Shetty Memorial Institute of Dental Sciences",
         "type": "private",
         "location": "Mangalore, Karnataka",
         "ranking": 8
       },
       {
-        "name": "Government Dental College, Bangalore",
+        "name": "Government Dental College",
         "type": "government",
         "location": "Bengaluru, Karnataka",
         "ranking": 9
       },
       {
-        "name": "Dr. D. Y. Patil Dental College and Hospital, Pune",
+        "name": "Dr. D. Y. Patil Dental College and Hospital",
         "type": "private",
         "location": "Pune, Maharashtra",
         "ranking": 10
@@ -2439,19 +2439,19 @@
     ],
     "topColleges": [
       {
-        "name": "Jamia Hamdard, New Delhi",
+        "name": "Jamia Hamdard",
         "type": "government",
         "location": "New Delhi",
         "ranking": 1
       },
       {
-        "name": "Panjab University, Chandigarh",
+        "name": "Panjab University",
         "type": "government",
         "location": "Chandigarh",
         "ranking": 2
       },
       {
-        "name": "Institute of Chemical Technology (ICT), Mumbai",
+        "name": "Institute of Chemical Technology (ICT)",
         "type": "government",
         "location": "Mumbai",
         "ranking": 3
@@ -2463,7 +2463,7 @@
         "ranking": 4
       },
       {
-        "name": "National Institute of Pharmaceutical Education and Research (NIPER), Mohali",
+        "name": "National Institute of Pharmaceutical Education and Research (NIPER)",
         "type": "government",
         "location": "Mohali",
         "ranking": 5
@@ -2475,25 +2475,25 @@
         "ranking": 6
       },
       {
-        "name": "JSS College of Pharmacy, Mysore",
+        "name": "JSS College of Pharmacy",
         "type": "private",
         "location": "Mysore",
         "ranking": 7
       },
       {
-        "name": "JSS College of Pharmacy, Ooty",
+        "name": "JSS College of Pharmacy",
         "type": "private",
         "location": "Ooty",
         "ranking": 8
       },
       {
-        "name": "Annamalai University, Tamil Nadu",
+        "name": "Annamalai University",
         "type": "government",
         "location": "Chidambaram",
         "ranking": 9
       },
       {
-        "name": "Maharaja Sayajirao University of Baroda (MSU), Vadodara",
+        "name": "Maharaja Sayajirao University of Baroda (MSU)",
         "type": "government",
         "location": "Vadodara",
         "ranking": 10
