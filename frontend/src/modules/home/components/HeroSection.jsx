@@ -1,8 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../../components/ui/button';
+import { Card, CardContent } from '../../../components/ui/card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPuzzlePiece, faBullseye, faSchool, faRocket } from '@fortawesome/free-solid-svg-icons';
+import { faBullseye, faBrain, faUniversity, faStar, faArrowRight, faUsers, faAward, faChartLine, faRocket } from '@fortawesome/free-solid-svg-icons';
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -15,68 +16,124 @@ const HeroSection = () => {
     navigate('/courses');
   };
 
-  return (
-    <section className="bg-gradient-to-br from-slate-50 to-white py-20 lg:py-32 min-h-[80vh] flex items-center">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* Left Content */}
-          <div className="max-w-2xl">
-            <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-slate-900">
-              Your <span className="text-blue-600">Career Journey</span> Starts Here
-            </h1>
-            <p className="text-xl text-slate-600 mb-10 leading-relaxed">
-              Discover your perfect stream, explore career paths, and find the right colleges 
-              with AI-powered recommendations tailored just for you.
-            </p>
-            
-            {/* Features */}
-            <div className="flex flex-wrap gap-8 mb-12">
-              <div className="flex items-center gap-3 font-semibold text-slate-800">
-                <FontAwesomeIcon icon={faPuzzlePiece} className="text-2xl text-blue-600" />
-                <span>Smart Assessments</span>
-              </div>
-              <div className="flex items-center gap-3 font-semibold text-slate-800">
-                <FontAwesomeIcon icon={faBullseye} className="text-2xl text-blue-600" />
-                <span>Personalized Guidance</span>
-              </div>
-              <div className="flex items-center gap-3 font-semibold text-slate-800">
-                <FontAwesomeIcon icon={faSchool} className="text-2xl text-blue-600" />
-                <span>College Recommendations</span>
-              </div>
-            </div>
-            
-            {/* CTA Buttons using shadcn Button */}
-            <div className="flex flex-wrap gap-4">
-              <Button 
-                size="lg"
-                onClick={handleStartJourney}
-                className="px-8 py-4 text-lg font-semibold cursor-pointer"
-              >
-                Start Your Journey
-              </Button>
-              <Button 
-                variant="outline"
-                size="lg"
-                onClick={handleLearnMore}
-                className="px-8 py-4 text-lg font-semibold cursor-pointer"
-              >
-                Learn More
-              </Button>
-            </div>
-          </div>
+  const features = [
+    { icon: faBrain, title: 'Smart Assessments', description: 'AI-powered career analysis' },
+    { icon: faBullseye, title: 'Personalized Guidance', description: 'Tailored recommendations' },
+    { icon: faUniversity, title: 'College Recommendations', description: 'Find the perfect fit' }
+  ];
 
-          {/* Right Visual */}
-          <div className="hidden lg:flex justify-center lg:justify-end">
-            <div className="w-96 h-96 flex items-center justify-center">
-              <div className="bg-gradient-to-br from-blue-600 to-blue-700 w-80 h-80 rounded-3xl flex flex-col items-center justify-center text-white shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300">
-                <FontAwesomeIcon icon={faRocket} className="text-8xl mb-4" />
-                <p className="text-2xl font-semibold">Your Future Awaits</p>
+  const stats = [
+    { icon: faUsers, value: '10,000+', label: 'Students Guided' },
+    { icon: faAward, value: '500+', label: 'Top Colleges' },
+    { icon: faChartLine, value: '95%', label: 'Success Rate' }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      {/* Hero Section */}
+      <section className="py-20 lg:py-32 min-h-[90vh] flex items-center">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            {/* Left Content */}
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                <FontAwesomeIcon icon={faStar} className="h-4 w-4" />
+                AI-Powered Career Discovery
+              </div>
+              
+              <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-gray-900">
+                Your <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Career Journey</span> Starts Here
+              </h1>
+              
+              <p className="text-xl text-gray-600 mb-10 leading-relaxed">
+                Discover your perfect stream, explore career paths, and find the right colleges 
+                with AI-powered recommendations tailored just for you.
+              </p>
+              
+              {/* Features */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                {features.map((feature, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <FontAwesomeIcon icon={feature.icon} className="h-5 w-5 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-1">{feature.title}</h3>
+                      <p className="text-sm text-gray-600">{feature.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  size="lg"
+                  onClick={handleStartJourney}
+                  className="px-8 py-6 text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 group"
+                >
+                  Start Your Journey
+                  <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+                <Button 
+                  variant="outline"
+                  size="lg"
+                  onClick={handleLearnMore}
+                  className="px-8 py-6 text-lg font-semibold border-gray-300 hover:bg-gray-50"
+                >
+                  Learn More
+                </Button>
+              </div>
+            </div>
+
+            {/* Right Visual */}
+            <div className="hidden lg:flex justify-center lg:justify-end">
+              <div className="relative">
+                <div className="w-80 h-80 bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl flex flex-col items-center justify-center text-white shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-500">
+                  <FontAwesomeIcon icon={faRocket} className="h-20 w-20 mb-4" />
+                  <p className="text-2xl font-bold">Your Future Awaits</p>
+                </div>
+                {/* Floating elements */}
+                <div className="absolute -top-4 -left-4 w-16 h-16 bg-yellow-400 rounded-2xl flex items-center justify-center animate-bounce">
+                  <FontAwesomeIcon icon={faStar} className="h-8 w-8 text-white" />
+                </div>
+                <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-green-500 rounded-2xl flex items-center justify-center animate-pulse">
+                  <FontAwesomeIcon icon={faAward} className="h-10 w-10 text-white" />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-white/50 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Trusted by Students Nationwide
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Join thousands of students who have found their perfect career path with Lakshya
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {stats.map((stat, index) => (
+              <Card key={index} className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
+                <CardContent className="p-8">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mx-auto mb-4 flex items-center justify-center">
+                    <FontAwesomeIcon icon={stat.icon} className="h-8 w-8 text-white" />
+                  </div>
+                  <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                  <div className="text-gray-600">{stat.label}</div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 
