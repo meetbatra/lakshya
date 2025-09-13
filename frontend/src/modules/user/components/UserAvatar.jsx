@@ -42,12 +42,12 @@ const UserAvatar = () => {
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
-          className="relative h-10 w-10 rounded-full overflow-hidden p-0 hover:opacity-80 cursor-pointer"
+          className="relative h-10 w-10 rounded-full overflow-hidden p-0 transition-all duration-200 hover:scale-105 hover:shadow-md cursor-pointer"
         >
           <img 
             src={avatarUrl} 
             alt={getUserDisplayName()}
-            className="h-full w-full object-cover rounded-full"
+            className="h-full w-full object-cover rounded-full transition-all duration-200"
           />
         </Button>
       </DropdownMenuTrigger>

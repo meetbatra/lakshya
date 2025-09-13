@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Button } from '../../components/ui/button';
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
 } from '../../components/ui/navigation-menu';
 import { UserAvatar, useAuth } from '../../modules/user';
 import { Menu, X, GraduationCap, Target, Users, BookOpen } from 'lucide-react';
