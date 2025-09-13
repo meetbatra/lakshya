@@ -99,13 +99,13 @@
       {
         "name": "Jawaharlal Nehru University (JNU)",
         "type": "government",
-        "location": "New Delhi",
+        "location": "Delhi",
         "ranking": 2
       },
       {
         "name": "University of Delhi (DU)",
         "type": "government",
-        "location": "New Delhi",
+        "location": "Delhi",
         "ranking": 6
       },
       {
@@ -135,37 +135,37 @@
       {
         "name": "St Stephen's College",
         "type": "private/government-aided",
-        "location": "New Delhi, Delhi",
+        "location": "Delhi",
         "ranking": 14
       },
       {
         "name": "Hindu College",
         "type": "government",
-        "location": "New Delhi, Delhi",
+        "location": "Delhi",
         "ranking": 1
       },
       {
         "name": "Miranda House",
         "type": "government",
-        "location": "New Delhi, Delhi",
+        "location": "Delhi",
         "ranking": 2
       },
       {
         "name": "Hansraj College",
         "type": "government",
-        "location": "New Delhi, Delhi",
+        "location": "Delhi",
         "ranking": 3
       },
       {
         "name": "LSR (Lady Shri Ram)",
         "type": "government",
-        "location": "New Delhi, Delhi",
+        "location": "Delhi",
         "ranking": 7
       },
       {
         "name": "Acharya Narendra Dev College",
         "type": "government",
-        "location": "New Delhi, Delhi",
+        "location": "Delhi",
         "ranking": 18
       }
     ],
@@ -280,7 +280,7 @@
       {
         "name": "Jamia Millia Islamia (JMI)",
         "type": "government",
-        "location": "New Delhi",
+        "location": "Delhi",
         "ranking": 19
       },
       {
@@ -633,7 +633,7 @@
       {
         "name": "Jamia Millia Islamia (JMI)",
         "type": "government",
-        "location": "New Delhi",
+        "location": "Delhi",
         "ranking": 3
       },
       {
@@ -845,7 +845,7 @@
       {
         "name": "Jawaharlal Nehru University (JNU)",
         "type": "government",
-        "location": "New Delhi, Delhi",
+        "location": "Delhi",
         "ranking": 2
       },
       {
@@ -857,13 +857,13 @@
       {
         "name": "University of Delhi (DU)",
         "type": "government",
-        "location": "New Delhi, Delhi",
+        "location": "Delhi",
         "ranking": 4
       },
       {
         "name": "St. Stephen's College",
         "type": "private/government-aided",
-        "location": "New Delhi, Delhi",
+        "location": "Delhi",
         "ranking": 5
       },
       {
@@ -881,7 +881,7 @@
       {
         "name": "Miranda House",
         "type": "government",
-        "location": "New Delhi, Delhi",
+        "location": "Delhi",
         "ranking": 8
       },
       {
@@ -1216,7 +1216,7 @@
       {
         "name": "Indian Institute of Technology Delhi",
         "type": "government",
-        "location": "New Delhi",
+        "location": "Delhi",
         "ranking": 2
       },
       {
@@ -2052,7 +2052,7 @@
       {
         "name": "All India Institute of Medical Sciences (AIIMS)",
         "type": "government",
-        "location": "New Delhi, Delhi",
+        "location": "Delhi",
         "ranking": 1
       },
       {
@@ -2250,7 +2250,7 @@
       {
         "name": "Maulana Azad Institute of Dental Sciences (MAIDS) ",
         "type": "government",
-        "location": "New Delhi, Delhi",
+        "location": "Delhi",
         "ranking": 3
       },
       {
@@ -2441,7 +2441,7 @@
       {
         "name": "Jamia Hamdard",
         "type": "government",
-        "location": "New Delhi",
+        "location": "Delhi",
         "ranking": 1
       },
       {
@@ -2668,7 +2668,7 @@
       {
         "name": "Jamia Millia Islamia",
         "type": "government",
-        "location": "New Delhi, Delhi",
+        "location": "Delhi",
         "ranking": 28
       },
       {
@@ -2710,7 +2710,7 @@
       {
         "name": "IIFT Delhi",
         "type": "government",
-        "location": "New Delhi, Delhi",
+        "location": "Delhi",
         "ranking": null
       },
       {
