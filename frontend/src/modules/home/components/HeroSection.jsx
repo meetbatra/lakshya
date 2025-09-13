@@ -9,7 +9,7 @@ const HeroSection = () => {
   const navigate = useNavigate();
 
   const handleStartJourney = () => {
-    navigate('/quiz');
+    navigate('/quiz/start');
   };
 
   const handleLearnMore = () => {
@@ -31,7 +31,7 @@ const HeroSection = () => {
   return (
     <div className="bg-gradient-to-br from-blue-50 via-white to-purple-50">
       {/* Hero Section */}
-      <section className="py-15 min-h-[80vh] flex items-center">
+      <section className="py-15 md:py-0 min-h-[80vh] flex items-center">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             {/* Left Content */}

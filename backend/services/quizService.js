@@ -1,47 +1,57 @@
 const Quiz = require('../models/Quiz');
 const { generateStreamRecommendation } = require('../utils/services/geminiService');
 
+/**
+ * Fisher-Yates shuffle algorithm to randomize array elements
+ * @param {Array} array - Array to shuffle
+ * @returns {Array} - Shuffled array (creates a new array, doesn't mutate original)
+ */
+const shuffleArray = (array) => {
+  const shuffled = [...array]; // Create a copy to avoid mutating original
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
+/**
+ * Get Class 10 Stream Selection Quiz
+ * @returns {Promise<Object>} Quiz object with shuffled options
+ */
 const getClass10Quiz = async () => {
-  try {
-    const quiz = await Quiz.findOne({
-      targetClass: '10',
-      purpose: 'stream-selection'
-    });
+  const quiz = await Quiz.findOne({
+    targetClass: '10',
+    purpose: 'stream-selection'
+  });
 
-    if (!quiz) {
-      return {
-        success: false,
-        message: 'Class 10 quiz not found. Please run the initialization script.',
-        data: null
-      };
-    }
-
-    return {
-      success: true,
-      message: 'Class 10 quiz fetched successfully',
-      data: {
-        id: quiz._id,
-        title: quiz.title,
-        description: quiz.description,
-        targetClass: quiz.targetClass,
-        purpose: quiz.purpose,
-        totalQuestions: quiz.questions.length,
-        questions: quiz.questions.map((q, index) => ({
-          id: q._id,
-          questionNumber: index + 1,
-          question: q.question,
-          options: q.options,
-        }))
-      }
-    };
-  } catch (error) {
-    console.error('Error fetching Class 10 quiz:', error);
+  if (!quiz) {
     return {
       success: false,
-      message: `Failed to fetch Class 10 quiz: ${error.message}`,
+      message: 'Class 10 quiz not found. Please run the initialization script.',
       data: null
     };
   }
+
+  return {
+    success: true,
+    message: 'Class 10 quiz fetched successfully',
+    data: {
+      id: quiz._id,
+      title: quiz.title,
+      description: quiz.description,
+      targetClass: quiz.targetClass,
+      purpose: quiz.purpose,
+      totalQuestions: quiz.questions.length,
+      questions: quiz.questions.map((q, index) => ({
+        id: q._id,
+        questionNumber: index + 1,
+        question: q.question,
+        options: shuffleArray(q.options), // Shuffle options for each question
+        category: q.category
+      }))
+    }
+  };
 };
 
 /**
@@ -53,11 +63,10 @@ const getClass10Quiz = async () => {
  * @returns {Promise<Object>} Quiz results and stream recommendations
  */
 const submitClass10Quiz = async (submission) => {
-  try {
-    const { quizId, answers, userId } = submission;
+  const { quizId, answers, userId } = submission;
 
-    // Validate submission
-    if (!quizId || !answers || !Array.isArray(answers)) {
+  // Validate submission
+  if (!quizId || !answers || !Array.isArray(answers)) {
       return {
         success: false,
         message: 'Invalid submission format',
@@ -158,15 +167,6 @@ const submitClass10Quiz = async (submission) => {
         submittedAt: new Date()
       }
     };
-
-  } catch (error) {
-    console.error('Error submitting quiz:', error);
-    return {
-      success: false,
-      message: `Failed to submit quiz: ${error.message}`,
-      data: null
-    };
-  }
 };
 
 /**
@@ -175,38 +175,29 @@ const submitClass10Quiz = async (submission) => {
  * @returns {Promise<Object>} List of available quizzes
  */
 const getAvailableQuizzes = async (targetClass) => {
-  try {
-    const quizzes = await Quiz.find({ targetClass })
-      .select('title description purpose estimatedTime questions')
-      .lean();
+  const quizzes = await Quiz.find({ targetClass })
+    .select('title description purpose estimatedTime questions')
+    .lean();
 
-    const quizList = quizzes.map(quiz => ({
-      id: quiz._id,
-      title: quiz.title,
-      description: quiz.description,
-      purpose: quiz.purpose,
-      estimatedTime: quiz.estimatedTime,
-      totalQuestions: quiz.questions.length,
-      targetClass: quiz.targetClass
-    }));
+  const quizList = quizzes.map(quiz => ({
+    id: quiz._id,
+    title: quiz.title,
+    description: quiz.description,
+    purpose: quiz.purpose,
+    estimatedTime: quiz.estimatedTime,
+    totalQuestions: quiz.questions.length,
+    targetClass: quiz.targetClass
+  }));
 
-    return {
-      success: true,
-      message: `Available quizzes for class ${targetClass} fetched successfully`,
-      data: {
-        targetClass,
-        quizzes: quizList,
-        total: quizList.length
-      }
-    };
-  } catch (error) {
-    console.error('Error fetching quizzes:', error);
-    return {
-      success: false,
-      message: `Failed to fetch quizzes: ${error.message}`,
-      data: null
-    };
-  }
+  return {
+    success: true,
+    message: `Available quizzes for class ${targetClass} fetched successfully`,
+    data: {
+      targetClass,
+      quizzes: quizList,
+      total: quizList.length
+    }
+  };
 };
 
 module.exports = {

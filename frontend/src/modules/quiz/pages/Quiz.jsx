@@ -44,7 +44,7 @@ const Quiz = () => {
   ];
 
   const IntroSection = () => (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <Navbar />
       
       <div className="max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
