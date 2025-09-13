@@ -2519,5 +2519,587 @@
     },
     "isActive": true,
     "popularity": 0
+  },
+  {
+    "name": "Bachelor of Business Administration",
+    "shortName": "BBA",
+    "stream": "commerce",
+    "field": "business_management",
+    "level": "undergraduate",
+    "duration": {
+      "years": 3,
+      "months": 0
+    },
+    "description": "BBA is a 3-year undergraduate program focusing on business principles, management practices, finance, marketing, and leadership skills required for corporate and entrepreneurial roles.",
+    "eligibility": {
+      "minimumClass": "12",
+      "requiredSubjects": ["Any Stream"],
+      "minimumPercentage": 50,
+      "entranceExams": [
+        "CUET",
+        "IPMAT",
+        "SET",
+        "Christ University Entrance Test"
+      ]
+    },
+    "careerOptions": [
+      {
+        "jobTitle": "Business Analyst",
+        "description": "Analyzes business operations and suggests improvements for efficiency and profitability.",
+        "growthProspects": "excellent",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Marketing Manager",
+        "description": "Leads marketing campaigns, brand strategies, and customer engagement initiatives.",
+        "growthProspects": "good",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Human Resource Manager",
+        "description": "Manages recruitment, employee relations, training, and organizational development.",
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Entrepreneur",
+        "description": "Starts and manages own business ventures in various industries.",
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Operations Manager",
+        "description": "Oversees daily business operations, improves efficiency, and manages resources.",
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Supply Chain Analyst",
+        "description": "Optimizes supply chain processes, logistics, and vendor management.",
+        "growthProspects": "good",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Entrepreneur / Startup Founder",
+        "description": "Starts and manages own business ventures in diverse sectors.",
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Management Consultant",
+        "description": "Advises organizations on solving complex business problems and improving strategies.",
+        "growthProspects": "excellent",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "International Business Manager",
+        "description": "Manages cross-border business operations, global markets, and international trade policies.",
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Digital Marketing Strategist",
+        "description": "Plans and executes online marketing strategies including SEO, SEM, and social media.",
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Corporate Trainer",
+        "description": "Conducts employee training sessions to enhance skills, productivity, and leadership.",
+        "growthProspects": "average",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Investment Banker",
+        "description": "Works on mergers, acquisitions, and capital raising for corporations and governments.",
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Retail Manager",
+        "description": "Oversees retail store operations, sales performance, and customer experience.",
+        "growthProspects": "good",
+        "sector": "private"
+      }
+    ],
+    "higherStudyOptions": [
+      {
+        "courseName": "Master of Business Administration (MBA)",
+        "description": "Postgraduate degree offering specialization in Finance, Marketing, HR, Operations, or Strategy.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "Post Graduate Diploma in Management (PGDM)",
+        "description": "Industry-oriented management program recognized by AICTE, equivalent to MBA.",
+        "duration": "2 years"
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Indian Institute of Management Bangalore (IIM Bangalore)",
+        "type": "government",
+        "location": "Bengaluru, Karnataka",
+        "ranking": 2
+      },
+      {
+        "name": "Indian Institute of Management Indore (IIM Indore)",
+        "type": "government",
+        "location": "Indore, Madhya Pradesh",
+        "ranking": 8
+      },
+      {
+        "name": "Amrita Vishwa Vidyapeetham",
+        "type": "deemed",
+        "location": "Coimbatore, Tamil Nadu",
+        "ranking": 26
+      },
+      {
+        "name": "Amity University",
+        "type": "private",
+        "location": "Noida, Uttar Pradesh",
+        "ranking": 29
+      },
+      {
+        "name": "IIT Kanpur",
+        "type": "government",
+        "location": "Kanpur, Uttar Pradesh",
+        "ranking": 27
+      },
+      {
+        "name": "Jamia Millia Islamia",
+        "type": "government",
+        "location": "New Delhi, Delhi",
+        "ranking": 28
+      },
+      {
+        "name": "Institute of Management Technology, Ghaziabad (IMT Ghaziabad)",
+        "type": "private",
+        "location": "Ghaziabad, Uttar Pradesh",
+        "ranking": 30
+      },
+      {
+        "name": "Christ University, Bengaluru",
+        "type": "private",
+        "location": "Bengaluru, Karnataka",
+        "ranking": 57
+      },
+      {
+        "name": "Lovely Professional University (LPU)",
+        "type": "private",
+        "location": "Phagwara, Punjab",
+        "ranking": 44
+      },
+      {
+        "name": "Kalinga Institute of Industrial Technology (KIIT)",
+        "type": "deemed",
+        "location": "Bhubaneswar, Odisha",
+        "ranking": 29
+      },
+      {
+        "name": "S.P. Jain Institute of Management and Research (SPJIMR)",
+        "type": "private",
+        "location": "Mumbai, Maharashtra",
+        "ranking": null
+      },
+      {
+        "name": "NMIMS Mumbai",
+        "type": "private",
+        "location": "Mumbai, Maharashtra",
+        "ranking": null
+      },
+      {
+        "name": "IIFT Delhi",
+        "type": "government",
+        "location": "New Delhi, Delhi",
+        "ranking": null
+      },
+      {
+        "name": "IIM Ranchi",
+        "type": "government",
+        "location": "Ranchi, Jharkhand",
+        "ranking": 18
+      },
+      {
+        "name": "IIM Rohtak",
+        "type": "government",
+        "location": "Rohtak, Haryana",
+        "ranking": 19
+      }
+    ],
+    "skills": {
+      "technical": [
+        "Business Analytics",
+        "Financial Management",
+        "Marketing Research",
+        "Data Interpretation"
+      ],
+      "soft": [
+        "Leadership",
+        "Communication",
+        "Decision Making",
+        "Teamwork",
+        "Problem Solving"
+      ]
+    },
+    "isActive": true,
+    "popularity": 90
+  },
+  {
+    "name": "Bachelor of Commerce",
+    "shortName": "B.COM",
+    "stream": "commerce",
+    "field": "commerce_general",
+    "level": "undergraduate",
+    "duration": {
+      "years": 3,
+      "months": 0
+    },
+    "description": "A 3-year undergraduate program that provides foundational knowledge in accounting, finance, economics, taxation, business law, and management.",
+    "eligibility": {
+      "minimumClass": "12",
+      "requiredSubjects": ["Commerce", "Mathematics / Economics (preferred)"],
+      "minimumPercentage": 50,
+      "entranceExams": [
+        "CUET",
+        "College-specific Entrance Tests",
+        "Merit-based Admissions"
+      ]
+    },
+    "careerOptions": [
+      {
+        "jobTitle": "Accountant",
+        "description": "Maintains financial records, prepares balance sheets, and ensures compliance with accounting standards.",
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Auditor",
+        "description": "Reviews financial statements for accuracy and ensures legal compliance.",
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Banking Officer",
+        "description": "Handles financial transactions, manages accounts, and provides customer support in banking operations.",
+        "growthProspects": "excellent",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Business Analyst",
+        "description": "Analyzes business performance, identifies opportunities, and supports strategic decision-making.",
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Tax Consultant",
+        "description": "Advises individuals and businesses on tax planning, filing, and compliance.",
+        "growthProspects": "good",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Corporate Executive",
+        "description": "Manages administrative, financial, and operational functions in corporations.",
+        "growthProspects": "excellent",
+        "sector": "private"
+      }
+    ],
+    "higherStudyOptions": [
+      {
+        "courseName": "Master of Commerce (M.Com)",
+        "description": "Postgraduate program in advanced commerce, accounting, finance, and business management.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "MBA in Finance / Marketing / HR",
+        "description": "Postgraduate degree that provides management and leadership skills with domain specialization.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "Chartered Accountancy (CA)",
+        "description": "Professional certification for expertise in accounting, taxation, and auditing.",
+        "duration": "3-5 years"
+      },
+      {
+        "courseName": "Company Secretary (CS)",
+        "description": "Professional course focusing on corporate governance, legal compliance, and company law.",
+        "duration": "3 years"
+      },
+      {
+        "courseName": "Cost and Management Accounting (CMA)",
+        "description": "Specialization in cost management, corporate finance, and decision-making accounting.",
+        "duration": "3 years"
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Shri Ram College of Commerce (SRCC)",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 11
+      },
+      {
+        "name": "Hindu College",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 2
+      },
+      {
+        "name": "Hansraj College",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 4
+      },
+      {
+        "name": "St. Xavier’s College, Kolkata",
+        "type": "private",
+        "location": "Kolkata, West Bengal",
+        "ranking": 8
+      },
+      {
+        "name": "Lady Shri Ram College for Women (LSR)",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 5
+      },
+      {
+        "name": "Madras Christian College (MCC)",
+        "type": "private",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 13
+      },
+      {
+        "name": "Narsee Monjee College of Commerce & Economics",
+        "type": "private",
+        "location": "Mumbai, Maharashtra",
+        "ranking": null
+      },
+      {
+        "name": "HR College of Commerce & Economics",
+        "type": "private",
+        "location": "Mumbai, Maharashtra",
+        "ranking": null
+      },
+      {
+        "name": "Christ University",
+        "type": "private",
+        "location": "Bangalore, Karnataka",
+        "ranking": 71
+      },
+      {
+        "name": "Loyola College",
+        "type": "private",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 7
+      }
+    ],
+    "skills": {
+      "technical": [
+        "Accounting",
+        "Business Law",
+        "Taxation",
+        "Economics",
+        "Financial Management",
+        "Auditing"
+      ],
+      "soft": [
+        "Communication",
+        "Analytical Skills",
+        "Problem Solving",
+        "Teamwork",
+        "Leadership"
+      ]
+    },
+    "isActive": true,
+    "popularity": 85
+  },
+  {
+    "name": "Bachelor in Entrepreneurship",
+    "shortName": "BBA-ENT",
+    "stream": "commerce",
+    "field": "entrepreneurship",
+    "level": "undergraduate",
+    "duration": {
+      "years": 3,
+      "months": 0
+    },
+    "description": "A 3-year undergraduate program designed to equip students with entrepreneurial skills, innovation strategies, and business management knowledge to start and scale ventures.",
+    "eligibility": {
+      "minimumClass": "12",
+      "requiredSubjects": ["Commerce", "Mathematics / Economics (preferred)"],
+      "minimumPercentage": 50,
+      "entranceExams": ["CUET", "NPAT", "SET", "Christ Entrance Test"]
+    },
+    "careerOptions": [
+      {
+        "jobTitle": "Startup Founder",
+        "description": "Builds and scales new business ventures across industries.",
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Business Consultant",
+        "description": "Advises companies on strategy, growth, and operational efficiency.",
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Venture Capital Analyst",
+        "description": "Analyzes startups, markets, and assists in funding decisions for venture capital firms.",
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Innovation Manager",
+        "description": "Leads product development and business innovation projects in corporates.",
+        "growthProspects": "good",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Social Entrepreneur",
+        "description": "Builds ventures focused on solving social, environmental, or community issues.",
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Corporate Strategist",
+        "description": "Works on long-term business planning, expansion, and mergers & acquisitions.",
+        "growthProspects": "excellent",
+        "sector": "private"
+      }
+    ],
+    "higherStudyOptions": [
+      {
+        "courseName": "MBA in Entrepreneurship",
+        "description": "Focuses on advanced entrepreneurial skills, venture creation, and innovation strategies.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "M.Sc in Innovation and Entrepreneurship",
+        "description": "International postgraduate program emphasizing innovation management and startup incubation.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "Post Graduate Diploma in Management (PGDM)",
+        "description": "Management diploma focusing on entrepreneurship and leadership.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "Executive MBA",
+        "description": "Specialized MBA for professionals aiming to build entrepreneurial ventures while working.",
+        "duration": "1 year"
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Indian Institute of Management Bangalore (IIM-B)",
+        "type": "government",
+        "location": "Bangalore, Karnataka",
+        "ranking": 2
+      },
+      {
+        "name": "Indian Institute of Management Ahmedabad (IIM-A)",
+        "type": "government",
+        "location": "Ahmedabad, Gujarat",
+        "ranking": 1
+      },
+      {
+        "name": "Indian Institute of Management Calcutta (IIM-C)",
+        "type": "government",
+        "location": "Kolkata, West Bengal",
+        "ranking": 4
+      },
+      {
+        "name": "XLRI – Xavier School of Management",
+        "type": "private",
+        "location": "Jamshedpur, Jharkhand",
+        "ranking": 9
+      },
+      {
+        "name": "SP Jain Institute of Management and Research (SPJIMR)",
+        "type": "private",
+        "location": "Mumbai, Maharashtra",
+        "ranking": 20
+      },
+      {
+        "name": "Narsee Monjee Institute of Management Studies (NMIMS)",
+        "type": "private",
+        "location": "Mumbai, Maharashtra",
+        "ranking": 83
+      },
+      {
+        "name": "Christ University",
+        "type": "private",
+        "location": "Bangalore, Karnataka",
+        "ranking": 71
+      },
+      {
+        "name": "Indian Institute of Management Lucknow (IIM-L)",
+        "type": "government",
+        "location": "Lucknow, Uttar Pradesh",
+        "ranking": 6
+      },
+      {
+        "name": "Jamnalal Bajaj Institute of Management Studies (JBIMS)",
+        "type": "government",
+        "location": "Mumbai, Maharashtra",
+        "ranking": null
+      },
+      {
+        "name": "Birla Institute of Management Technology (BIMTECH)",
+        "type": "private",
+        "location": "Greater Noida, Uttar Pradesh",
+        "ranking": null
+      },
+      {
+        "name": "Symbiosis Institute of Business Management (SIBM)",
+        "type": "private",
+        "location": "Pune, Maharashtra",
+        "ranking": 17
+      },
+      {
+        "name": "Institute of Management Technology (IMT)",
+        "type": "private",
+        "location": "Ghaziabad, Uttar Pradesh",
+        "ranking": null
+      },
+      {
+        "name": "Xavier Institute of Management (XIMB)",
+        "type": "private",
+        "location": "Bhubaneswar, Odisha",
+        "ranking": null
+      },
+      {
+        "name": "Indian School of Business (ISB) - Hyderabad",
+        "type": "private",
+        "location": "Hyderabad, Telangana",
+        "ranking": null
+      },
+      {
+        "name": "Amity Business School",
+        "type": "private",
+        "location": "Noida, Uttar Pradesh",
+        "ranking": null
+      }
+    ],
+    "skills": {
+      "technical": [
+        "Business Planning",
+        "Financial Management",
+        "Market Research",
+        "Digital Marketing",
+        "Startup Funding",
+        "Strategic Management"
+      ],
+      "soft": [
+        "Leadership",
+        "Networking",
+        "Problem Solving",
+        "Innovation",
+        "Risk-taking",
+        "Negotiation"
+      ]
+    },
+    "isActive": true,
+    "popularity": 90
   }
 ]
