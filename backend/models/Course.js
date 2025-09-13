@@ -15,8 +15,22 @@ const courseSchema = new mongoose.Schema({
   },
   stream: {
     type: String,
-    enum: ['science', 'commerce', 'arts', 'engineering', 'medical', 'management', 'law', 'other'],
+    enum: ['science_pcm', 'science_pcb', 'commerce', 'arts'],
     required: [true, 'Stream is required']
+  },
+  field: {
+    type: String,
+    enum: [
+      // Science PCM fields
+      'engineering_technology', 'architecture_design', 'defence_military', 'computer_it', 'pure_sciences_research',
+      // Science PCB fields  
+      'medicine', 'allied_health', 'biotechnology', 'veterinary_science', 'agriculture_environment',
+      // Commerce fields
+      'business_management', 'finance_accounting', 'economics_analytics', 'law_commerce', 'entrepreneurship',
+      // Arts fields
+      'social_sciences', 'psychology', 'journalism_media', 'fine_arts_design', 'law_arts', 'civil_services'
+    ],
+    required: [true, 'Field is required']
   },
   level: {
     type: String,
@@ -65,14 +79,6 @@ const courseSchema = new mongoose.Schema({
     description: {
       type: String,
       trim: true
-    },
-    averageSalary: {
-      min: Number,
-      max: Number,
-      currency: {
-        type: String,
-        default: 'INR'
-      }
     },
     growthProspects: {
       type: String,

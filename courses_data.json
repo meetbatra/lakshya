@@ -1,8 +1,9 @@
 [
   {
     "name": "Bachelor of Science in Computer Science",
-    "shortName": "BSC-CS",
-    "stream": "science",
+    "shortName": "B.Sc-CS",
+    "stream": "science_pcm",
+    "field": "computer_it",
     "level": "undergraduate",
     "duration": {
       "years": 3,
@@ -11,118 +12,77 @@
     "description": "A 3-year undergraduate degree program providing in-depth knowledge of computer science, including coding, algorithms, databases, operating systems, networking, and software development. It teaches both theoretical principles and practical skills, preparing students for careers in software development, IT, cybersecurity, data analytics, and other technology-related fields. The program requires a science stream background, often with a strong foundation in Physics, Chemistry, and Mathematics (PCM), and is available in full-time, online, and distance education modes.",
     "eligibility": {
       "minimumClass": "12",
-      "requiredSubjects": ["Physics", "Chemistry", "Mathematics"],
+      "requiredSubjects": [
+        "Physics",
+        "Chemistry",
+        "Mathematics"
+      ],
       "minimumPercentage": 50,
-      "entranceExams": ["CUET", "BHU UET", "LPU NEST", "JMI Entrance Exam"]
+      "entranceExams": [
+        "CUET",
+        "BHU UET",
+        "LPU NEST",
+        "JMI Entrance Exam"
+      ]
     },
     "careerOptions": [
       {
         "jobTitle": "Software Engineer",
         "description": "Develops algorithms, applications and processes; works on project documentation, fixing bugs and software performance, maintaining operational standards.",
-        "averageSalary": {
-          "min": 700000,
-          "max": 1500000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "both"
       },
       {
         "jobTitle": "Data Scientist",
         "description": "Collects, processes and analyses large volumes of data; builds predictive models; uses statistical and machine learning techniques to help business decisions.",
-        "averageSalary": {
-          "min": 800000,
-          "max": 2000000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "private"
       },
       {
         "jobTitle": "Information Systems Manager",
         "description": "Oversees IT systems, ensures tech infrastructure is up-to-date and efficient; supervises technical & non-technical staff and handles system maintenance.",
-        "averageSalary": {
-          "min": 600000,
-          "max": 1400000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "both"
       },
       {
         "jobTitle": "Mobile App Developer",
         "description": "Designs and builds mobile applications for different platforms; tests, debugs and improves app functions and performance.",
-        "averageSalary": {
-          "min": 500000,
-          "max": 1200000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "private"
       },
       {
         "jobTitle": "Front-End Developer",
         "description": "Creates user interfaces for web/mobile, uses HTML/CSS/JavaScript, ensures responsive design and user-friendly UI/UX.",
-        "averageSalary": {
-          "min": 500000,
-          "max": 1200000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "private"
       },
       {
         "jobTitle": "Enterprise Architect",
         "description": "Designs the overall structure of an IT system; aligns technology assets with business strategy; ensures scaling, reliability and inter-system coherence.",
-        "averageSalary": {
-          "min": 1500000,
-          "max": 3000000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "both"
       },
       {
         "jobTitle": "IT Security Specialist",
         "description": "Ensures cybersecurity, designs and implements security protocols; protects against breaches; works on threat detection and mitigation.",
-        "averageSalary": {
-          "min": 700000,
-          "max": 2000000,
-          "currency": "INR"
-        },
         "growthProspects": "very good",
         "sector": "private"
       },
       {
         "jobTitle": "Data Analyst",
         "description": "Processes, examines and interprets data; generates insights; creates reports and visualizations; works with statistical tools and databases.",
-        "averageSalary": {
-          "min": 400000,
-          "max": 1000000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "both"
       },
       {
         "jobTitle": "Full-Stack Developer",
         "description": "Works both on front-end and back-end; handles all layers of web application stack; ensures application works across systems.",
-        "averageSalary": {
-          "min": 800000,
-          "max": 2000000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "private"
       },
       {
         "jobTitle": "Machine Learning Engineer",
         "description": "Builds algorithms and systems for AI/ML; works on modeling, training, deploying machine learning systems.",
-        "averageSalary": {
-          "min": 900000,
-          "max": 2500000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "private"
       }
@@ -238,8 +198,9 @@
   },
   {
     "name": "Bachelor of Science in Physics",
-    "shortName": "BSC-PHY",
-    "stream": "science",
+    "shortName": "B.Sc-Physics",
+    "stream": "science_pcm",
+    "field": "pure_sciences_research",
     "level": "undergraduate",
     "duration": {
       "years": 3,
@@ -248,7 +209,11 @@
     "description": "A 3-year undergraduate degree program focusing on the theoretical and experimental study of the fundamental laws of nature, including classical mechanics, quantum mechanics, electromagnetism, thermodynamics, and optics. The curriculum involves lectures, laboratory work, and computational techniques, preparing graduates for careers in research, academia, science, and technology.",
     "eligibility": {
       "minimumClass": "12",
-      "requiredSubjects": ["Physics", "Chemistry", "Mathematics/Biology"],
+      "requiredSubjects": [
+        "Physics",
+        "Chemistry",
+        "Mathematics/Biology"
+      ],
       "minimumPercentage": 50,
       "entranceExams": [
         "CUET",
@@ -261,66 +226,36 @@
       {
         "jobTitle": "Lab Technician",
         "description": "Conducts experiments and supports research in laboratories using physics equipment and techniques.",
-        "averageSalary": {
-          "min": 250000,
-          "max": 500000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "both"
       },
       {
         "jobTitle": "Physicist",
         "description": "Engages in theoretical or experimental research in areas such as quantum mechanics, astrophysics, or material science.",
-        "averageSalary": {
-          "min": 500000,
-          "max": 1200000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "both"
       },
       {
         "jobTitle": "Statistician",
         "description": "Applies mathematical and statistical methods to analyze data and solve scientific or industrial problems.",
-        "averageSalary": {
-          "min": 400000,
-          "max": 1000000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "private"
       },
       {
         "jobTitle": "Research Associate",
         "description": "Works with senior researchers on projects in physics, data analysis, or applied sciences.",
-        "averageSalary": {
-          "min": 300000,
-          "max": 800000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "both"
       },
       {
         "jobTitle": "Lecturer/Teacher",
         "description": "Teaches physics at schools, colleges, or coaching institutes.",
-        "averageSalary": {
-          "min": 250000,
-          "max": 700000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "government"
       },
       {
         "jobTitle": "Industrial Engineer",
         "description": "Applies physics knowledge in industries like automobile, aeronautics, or R&D centers.",
-        "averageSalary": {
-          "min": 400000,
-          "max": 900000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "private"
       }
@@ -435,8 +370,9 @@
   },
   {
     "name": "Bachelor of Science in Chemistry",
-    "shortName": "BSC-CHEM",
-    "stream": "science",
+    "shortName": "B.Sc-Chemistry",
+    "stream": "science_pcm",
+    "field": "pure_sciences_research",
     "level": "undergraduate",
     "duration": {
       "years": 3,
@@ -445,63 +381,45 @@
     "description": "A 3-year undergraduate degree program that provides students with both theoretical and practical knowledge of chemical sciences. The curriculum covers core areas such as organic, inorganic, and physical chemistry, along with electives.",
     "eligibility": {
       "minimumClass": "12",
-      "requiredSubjects": ["Physics", "Chemistry", "Mathematics or Biology"],
+      "requiredSubjects": [
+        "Physics",
+        "Chemistry",
+        "Mathematics or Biology"
+      ],
       "minimumPercentage": 50,
-      "entranceExams": ["CUET", "University-specific exams"]
+      "entranceExams": [
+        "CUET",
+        "University-specific exams"
+      ]
     },
     "careerOptions": [
       {
         "jobTitle": "Chemist / Research Associate",
         "description": "Analyzes compounds or assists with research in labs; works in industry or academic research settings.",
-        "averageSalary": {
-          "min": 150000,
-          "max": 450000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "both"
       },
       {
         "jobTitle": "Quality Control Analyst",
         "description": "Tests and ensures products meet required chemical, physical, and safety specifications in industries such as pharmaceuticals, manufacturing, food & beverage.",
-        "averageSalary": {
-          "min": 160000,
-          "max": 700000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "private"
       },
       {
         "jobTitle": "Lab Technician / Lab Assistant",
         "description": "Supports experiments, maintains and calibrates lab equipment, handles sample preparation and preliminary analysis.",
-        "averageSalary": {
-          "min": 120000,
-          "max": 300000,
-          "currency": "INR"
-        },
         "growthProspects": "moderate",
         "sector": "both"
       },
       {
         "jobTitle": "Environmental Scientist",
         "description": "Uses chemical knowledge to analyze environmental samples, assess pollution, work on sustainability and green chemistry projects.",
-        "averageSalary": {
-          "min": 200000,
-          "max": 600000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "both"
       },
       {
         "jobTitle": "Teacher / Lecturer / Professor",
         "description": "Teaches chemistry at school or college level; may also perform academic research.",
-        "averageSalary": {
-          "min": 250000,
-          "max": 800000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "government"
       }
@@ -627,8 +545,9 @@
   },
   {
     "name": "Bachelor of Science in Mathematics",
-    "shortName": "BSC-MATH",
-    "stream": "science",
+    "shortName": "B.Sc-Mathematics",
+    "stream": "science_pcm",
+    "field": "pure_sciences_research",
     "level": "undergraduate",
     "duration": {
       "years": 3,
@@ -637,7 +556,11 @@
     "description": "A 3-year undergraduate degree focused on numbers, structure, space, and quantity, developing analytical, logical, and problem-solving skills. The curriculum covers calculus, algebra, geometry, probability, and advanced topics like mathematical modelling and number theory. Graduates gain versatile career opportunities in data science, finance, technology, and education.",
     "eligibility": {
       "minimumClass": "12",
-      "requiredSubjects": ["Physics", "Chemistry", "Mathematics"],
+      "requiredSubjects": [
+        "Physics",
+        "Chemistry",
+        "Mathematics"
+      ],
       "minimumPercentage": 50,
       "entranceExams": [
         "CUET",
@@ -651,66 +574,36 @@
       {
         "jobTitle": "Data Analyst",
         "description": "Analyzes and interprets data to generate insights for decision making.",
-        "averageSalary": {
-          "min": 400000,
-          "max": 800000,
-          "currency": "INR"
-        },
         "growthProspects": "very good",
         "sector": "both"
       },
       {
         "jobTitle": "Actuary / Risk Analyst",
         "description": "Applies probability and statistics to assess risk for insurance and finance sectors.",
-        "averageSalary": {
-          "min": 600000,
-          "max": 1200000,
-          "currency": "INR"
-        },
         "growthProspects": "high",
         "sector": "private"
       },
       {
         "jobTitle": "Statistician / Research Analyst",
         "description": "Applies mathematical and statistical models for research, surveys, and government analysis.",
-        "averageSalary": {
-          "min": 450000,
-          "max": 900000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "both"
       },
       {
         "jobTitle": "Cryptographer / Algorithm Developer",
         "description": "Designs encryption and algorithms for cybersecurity and technology companies.",
-        "averageSalary": {
-          "min": 600000,
-          "max": 1500000,
-          "currency": "INR"
-        },
         "growthProspects": "high",
         "sector": "private"
       },
       {
         "jobTitle": "Software Developer",
         "description": "Builds applications and systems software leveraging mathematical logic.",
-        "averageSalary": {
-          "min": 500000,
-          "max": 1000000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "private"
       },
       {
         "jobTitle": "Educator / Lecturer",
         "description": "Teaches mathematics at schools, colleges, or universities; may also engage in research.",
-        "averageSalary": {
-          "min": 400000,
-          "max": 1000000,
-          "currency": "INR"
-        },
         "growthProspects": "stable",
         "sector": "government"
       }
@@ -861,8 +754,9 @@
   },
   {
     "name": "Bachelor of Science in Biology",
-    "shortName": "BSC-BIO",
-    "stream": "science",
+    "shortName": "B.Sc-Biology",
+    "stream": "science_pcb",
+    "field": "biotechnology",
     "level": "undergraduate",
     "duration": {
       "years": 3,
@@ -871,107 +765,74 @@
     "description": "A 3-year undergraduate degree program focused on the study of living organisms, their structure, function, growth, evolution, and interactions with the environment. It covers core topics such as Biochemistry, Cell Biology, Molecular Biology, Genetics, Microbiology, Physiology, Botany, Zoology, Ecology, and Biotechnology. The program prepares students for careers in research, healthcare, environmental conservation, agriculture, and education, and requires a science stream background with PCM/B.",
     "eligibility": {
       "minimumClass": "12",
-      "requiredSubjects": ["Physics", "Chemistry", "Mathematics", "Biology"],
+      "requiredSubjects": [
+        "Physics",
+        "Chemistry",
+        "Mathematics",
+        "Biology"
+      ],
       "minimumPercentage": 50,
-      "entranceExams": ["CUET", "IISER Aptitude Test", "BITSAT", "SRMJEEE", "VITEEE", "JNU Entrance Exam"]
+      "entranceExams": [
+        "CUET",
+        "IISER Aptitude Test",
+        "BITSAT",
+        "SRMJEEE",
+        "VITEEE",
+        "JNU Entrance Exam"
+      ]
     },
     "careerOptions": [
       {
         "jobTitle": "Biology Technician",
         "description": "Works in laboratories conducting experiments, maintaining equipment, analyzing data, and examining specimens.",
-        "averageSalary": {
-          "min": 500000,
-          "max": 500000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "both"
       },
       {
         "jobTitle": "Molecular Biologist",
         "description": "Researches cellular and molecular processes, studies genes, and contributes to medical and biotech research.",
-        "averageSalary": {
-          "min": 395000,
-          "max": 395000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "both"
       },
       {
         "jobTitle": "Ecologist",
         "description": "Studies human impact on ecosystems, conducts environmental tests, and advises on conservation practices.",
-        "averageSalary": {
-          "min": 827000,
-          "max": 827000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "both"
       },
       {
         "jobTitle": "Botanist",
         "description": "Studies plant species, conducts research in botany, and applies horticulture and conservation techniques.",
-        "averageSalary": {
-          "min": 500000,
-          "max": 500000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "both"
       },
       {
         "jobTitle": "Agricultural Consultant",
         "description": "Provides advice on farming technology, land evaluation, and agricultural productivity improvements.",
-        "averageSalary": {
-          "min": 820000,
-          "max": 820000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "both"
       },
       {
         "jobTitle": "Geneticist",
         "description": "Studies genes, their mutations, and inheritance patterns; works in research labs and healthcare.",
-        "averageSalary": {
-          "min": 400000,
-          "max": 400000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "both"
       },
       {
         "jobTitle": "Wildlife Conservationist",
         "description": "Manages and protects ecosystems, studies biodiversity, and works with conservation agencies.",
-        "averageSalary": {
-          "min": 696000,
-          "max": 696000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "both"
       },
       {
         "jobTitle": "Biology Content Developer",
         "description": "Creates educational content for platforms, edits materials, and curates research-based resources.",
-        "averageSalary": {
-          "min": 460000,
-          "max": 460000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "private"
       },
       {
         "jobTitle": "Biology Professor",
         "description": "Teaches biology, supervises experiments, prepares lesson plans, and mentors students in colleges or universities.",
-        "averageSalary": {
-          "min": 710000,
-          "max": 710000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "both"
       }
@@ -1086,8 +947,9 @@
   },
   {
     "name": "Bachelor of Technology in Computer Science and Engineering",
-    "shortName": "BTECH-CSE",
-    "stream": "engineering",
+    "shortName": "B.Tech-CSE",
+    "stream": "science_pcm",
+    "field": "engineering_technology",
     "level": "undergraduate",
     "duration": {
       "years": 4,
@@ -1113,110 +975,60 @@
       {
         "jobTitle": "Software Engineer",
         "description": "Develops, tests, and maintains software systems and applications.",
-        "averageSalary": {
-          "min": 400000,
-          "max": 1200000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "both"
       },
       {
         "jobTitle": "AI/ML Engineer",
         "description": "Designs and implements artificial intelligence and machine learning models for solving real-world problems.",
-        "averageSalary": {
-          "min": 600000,
-          "max": 1800000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "private"
       },
       {
         "jobTitle": "Cybersecurity Analyst",
         "description": "Protects systems and networks from cyber threats by identifying and addressing vulnerabilities.",
-        "averageSalary": {
-          "min": 500000,
-          "max": 1500000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "both"
       },
       {
         "jobTitle": "Cloud Solutions Architect",
         "description": "Designs and manages cloud infrastructure and services for scalable applications.",
-        "averageSalary": {
-          "min": 700000,
-          "max": 2000000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "private"
       },
       {
         "jobTitle": "Blockchain Developer",
         "description": "Develops decentralized applications (dApps) and blockchain solutions for industries like finance, supply chain, and healthcare.",
-        "averageSalary": {
-          "min": 600000,
-          "max": 1600000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "private"
       },
       {
         "jobTitle": "DevOps Engineer",
         "description": "Bridges the gap between development and operations teams, ensuring continuous integration and deployment.",
-        "averageSalary": {
-          "min": 500000,
-          "max": 1400000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "private"
       },
       {
         "jobTitle": "Systems Engineer",
         "description": "Manages and maintains IT infrastructure, including servers, networks, and enterprise systems.",
-        "averageSalary": {
-          "min": 400000,
-          "max": 1000000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "both"
       },
       {
         "jobTitle": "UI/UX Designer",
         "description": "Designs user-friendly interfaces and enhances user experience in software and web applications.",
-        "averageSalary": {
-          "min": 350000,
-          "max": 900000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "private"
       },
       {
         "jobTitle": "Research Scientist (CS)",
         "description": "Conducts advanced research in areas like algorithms, AI, or quantum computing in academia or R&D labs.",
-        "averageSalary": {
-          "min": 500000,
-          "max": 1500000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "government"
       },
       {
         "jobTitle": "Entrepreneur / Startup Founder",
         "description": "Builds technology-driven businesses and products by leveraging CS engineering knowledge.",
-        "averageSalary": {
-          "min": 0,
-          "max": 10000000,
-          "currency": "INR"
-        },
         "growthProspects": "varies",
         "sector": "private"
       }
@@ -1348,8 +1160,9 @@
   },
   {
     "name": "Bachelor of Technology in Electronics and Communication Engineering",
-    "shortName": "BTECH-ECE",
-    "stream": "engineering",
+    "shortName": "B.Tech-ECE",
+    "stream": "science_pcm",
+    "field": "engineering_technology",
     "level": "undergraduate",
     "duration": {
       "years": 4,
@@ -1374,110 +1187,60 @@
       {
         "jobTitle": "Electronics Engineer",
         "description": "Designs and develops electronic circuits, devices, and systems for industries like telecom and consumer electronics.",
-        "averageSalary": {
-          "min": 400000,
-          "max": 1000000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "both"
       },
       {
         "jobTitle": "Communication Engineer",
         "description": "Works on the design and optimization of telecommunication systems such as mobile networks, satellites, and fiber optics.",
-        "averageSalary": {
-          "min": 450000,
-          "max": 1200000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "private"
       },
       {
         "jobTitle": "VLSI Design Engineer",
         "description": "Specializes in Very-Large-Scale Integration (VLSI) design for chips, processors, and integrated circuits.",
-        "averageSalary": {
-          "min": 600000,
-          "max": 1800000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "private"
       },
       {
         "jobTitle": "Embedded Systems Engineer",
         "description": "Develops embedded hardware and software for applications like automotive electronics, IoT devices, and robotics.",
-        "averageSalary": {
-          "min": 500000,
-          "max": 1500000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "both"
       },
       {
         "jobTitle": "Network Engineer",
         "description": "Manages, designs, and maintains network infrastructure including routers, switches, and communication protocols.",
-        "averageSalary": {
-          "min": 400000,
-          "max": 1100000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "both"
       },
       {
         "jobTitle": "RF Engineer",
         "description": "Works on radio frequency systems such as antennas, radars, and wireless communication devices.",
-        "averageSalary": {
-          "min": 450000,
-          "max": 1300000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "private"
       },
       {
         "jobTitle": "Control Systems Engineer",
         "description": "Designs and develops automated systems for manufacturing, robotics, and industrial applications.",
-        "averageSalary": {
-          "min": 400000,
-          "max": 1000000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "both"
       },
       {
         "jobTitle": "Signal Processing Engineer",
         "description": "Works with audio, video, and data signals for applications in telecom, medical imaging, and defense systems.",
-        "averageSalary": {
-          "min": 500000,
-          "max": 1400000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "private"
       },
       {
         "jobTitle": "IoT Engineer",
         "description": "Develops Internet of Things solutions by integrating sensors, communication modules, and cloud platforms.",
-        "averageSalary": {
-          "min": 600000,
-          "max": 1600000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "private"
       },
       {
         "jobTitle": "Defense Research Engineer",
         "description": "Contributes to DRDO, ISRO, and defense organizations by developing radar, satellite communication, and weapon systems.",
-        "averageSalary": {
-          "min": 500000,
-          "max": 1500000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "government"
       }
@@ -1605,10 +1368,11 @@
     "isActive": true,
     "popularity": 90
   },
-    {
+  {
     "name": "Bachelor of Technology in Information Technology",
-    "shortName": "BTECH-IT",
-    "stream": "engineering",
+    "shortName": "B.Tech-IT",
+    "stream": "science_pcm",
+    "field": "engineering_technology",
     "level": "undergraduate",
     "duration": {
       "years": 4,
@@ -1633,88 +1397,48 @@
       {
         "jobTitle": "Software Engineer",
         "description": "Designs, develops, and maintains software applications for various domains.",
-        "averageSalary": {
-          "min": 400000,
-          "max": 1200000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "both"
       },
       {
         "jobTitle": "System Analyst",
         "description": "Analyzes IT systems and designs efficient solutions to meet business needs.",
-        "averageSalary": {
-          "min": 450000,
-          "max": 1000000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "private"
       },
       {
         "jobTitle": "Database Administrator",
         "description": "Manages, optimizes, and secures organizational databases.",
-        "averageSalary": {
-          "min": 500000,
-          "max": 1100000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "both"
       },
       {
         "jobTitle": "Network Administrator",
         "description": "Maintains and secures computer networks including LAN, WAN, and cloud setups.",
-        "averageSalary": {
-          "min": 400000,
-          "max": 1000000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "both"
       },
       {
         "jobTitle": "Cybersecurity Specialist",
         "description": "Protects IT systems, networks, and data from cyber threats.",
-        "averageSalary": {
-          "min": 600000,
-          "max": 1500000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "both"
       },
       {
         "jobTitle": "Cloud Solutions Architect",
         "description": "Designs and manages scalable cloud-based IT infrastructure.",
-        "averageSalary": {
-          "min": 800000,
-          "max": 2000000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "private"
       },
       {
         "jobTitle": "IT Project Manager",
         "description": "Leads IT projects by managing teams, budgets, and timelines.",
-        "averageSalary": {
-          "min": 900000,
-          "max": 2500000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "private"
       },
       {
         "jobTitle": "Data Scientist",
         "description": "Analyzes and interprets complex datasets to help organizations make decisions.",
-        "averageSalary": {
-          "min": 700000,
-          "max": 2000000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "private"
       }
@@ -1845,8 +1569,9 @@
   },
   {
     "name": "Bachelor of Technology in Mechanical Engineering",
-    "shortName": "BTECH-ME",
-    "stream": "engineering",
+    "shortName": "B.Tech-ME",
+    "stream": "science_pcm",
+    "field": "engineering_technology",
     "level": "undergraduate",
     "duration": {
       "years": 4,
@@ -1872,88 +1597,48 @@
       {
         "jobTitle": "Mechanical Engineer",
         "description": "Designs, develops, and tests mechanical systems, machines, and tools.",
-        "averageSalary": {
-          "min": 400000,
-          "max": 1200000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "both"
       },
       {
         "jobTitle": "Automotive Engineer",
         "description": "Works on vehicle design, production, and performance optimization.",
-        "averageSalary": {
-          "min": 450000,
-          "max": 1300000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "private"
       },
       {
         "jobTitle": "Manufacturing Engineer",
         "description": "Oversees manufacturing processes, ensures efficiency and quality in production lines.",
-        "averageSalary": {
-          "min": 400000,
-          "max": 1100000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "both"
       },
       {
         "jobTitle": "Design Engineer",
         "description": "Creates detailed designs and CAD models for mechanical components and systems.",
-        "averageSalary": {
-          "min": 450000,
-          "max": 1200000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "private"
       },
       {
         "jobTitle": "Thermal Engineer",
         "description": "Specializes in heat transfer, energy systems, and HVAC design.",
-        "averageSalary": {
-          "min": 500000,
-          "max": 1400000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "both"
       },
       {
         "jobTitle": "Maintenance Engineer",
         "description": "Ensures machinery and equipment operate efficiently and safely.",
-        "averageSalary": {
-          "min": 400000,
-          "max": 1000000,
-          "currency": "INR"
-        },
         "growthProspects": "good",
         "sector": "both"
       },
       {
         "jobTitle": "Project Engineer",
         "description": "Leads mechanical engineering projects, managing teams and resources.",
-        "averageSalary": {
-          "min": 600000,
-          "max": 1800000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "private"
       },
       {
         "jobTitle": "Research Scientist (Mechanical)",
         "description": "Conducts research in areas like robotics, energy, and materials in labs or academia.",
-        "averageSalary": {
-          "min": 500000,
-          "max": 1500000,
-          "currency": "INR"
-        },
         "growthProspects": "excellent",
         "sector": "government"
       }
@@ -2083,4 +1768,3 @@
     "popularity": 80
   }
 ]
-
