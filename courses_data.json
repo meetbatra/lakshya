@@ -97,25 +97,25 @@
     ],
     "topColleges": [
       {
-        "name": "Jawaharlal Nehru University (JNU), New Delhi",
+        "name": "Jawaharlal Nehru University (JNU)",
         "type": "government",
         "location": "New Delhi",
         "ranking": 2
       },
       {
-        "name": "University of Delhi (DU), Delhi",
+        "name": "University of Delhi (DU)",
         "type": "government",
         "location": "New Delhi",
         "ranking": 6
       },
       {
-        "name": "Banaras Hindu University (BHU), Varanasi",
+        "name": "Banaras Hindu University (BHU)",
         "type": "government",
         "location": "Varanasi, Uttar Pradesh",
         "ranking": 5
       },
       {
-        "name": "Aligarh Muslim University (AMU), Aligarh",
+        "name": "Aligarh Muslim University (AMU)",
         "type": "government",
         "location": "Aligarh, Uttar Pradesh",
         "ranking": 8
@@ -133,37 +133,37 @@
         "ranking": 12
       },
       {
-        "name": "St Stephen's College, Delhi",
+        "name": "St Stephen's College",
         "type": "private/government-aided",
         "location": "New Delhi, Delhi",
         "ranking": 14
       },
       {
-        "name": "Hindu College, Delhi",
+        "name": "Hindu College",
         "type": "government",
         "location": "New Delhi, Delhi",
         "ranking": 1
       },
       {
-        "name": "Miranda House, Delhi",
+        "name": "Miranda House",
         "type": "government",
         "location": "New Delhi, Delhi",
         "ranking": 2
       },
       {
-        "name": "Hansraj College, Delhi",
+        "name": "Hansraj College",
         "type": "government",
         "location": "New Delhi, Delhi",
         "ranking": 3
       },
       {
-        "name": "LSR (Lady Shri Ram), Delhi",
+        "name": "LSR (Lady Shri Ram)",
         "type": "government",
         "location": "New Delhi, Delhi",
         "ranking": 7
       },
       {
-        "name": "Acharya Narendra Dev College, New Delhi",
+        "name": "Acharya Narendra Dev College",
         "type": "government",
         "location": "New Delhi, Delhi",
         "ranking": 18
@@ -266,7 +266,7 @@
     ],
     "topColleges": [
       {
-        "name": "Indian Institute of Science (IISc), Bangalore",
+        "name": "Indian Institute of Science (IISc)",
         "type": "government",
         "location": "Bangalore, Karnataka",
         "ranking": 1
@@ -326,7 +326,7 @@
         "ranking": 25
       },
       {
-        "name": "National Institute of Science Education and Research (NISER), Bhubaneswar",
+        "name": "National Institute of Science Education and Research (NISER)",
         "type": "government",
         "location": "Odisha",
         "ranking": 16
@@ -433,73 +433,73 @@
     ],
     "topColleges": [
       {
-        "name": "Hindu College, New Delhi",
+        "name": "Hindu College",
         "type": "government",
         "location": "Delhi",
         "ranking": 1
       },
       {
-        "name": "Miranda House, New Delhi",
+        "name": "Miranda House",
         "type": "government",
         "location": "Delhi",
         "ranking": 2
       },
       {
-        "name": "Hansraj College, New Delhi",
+        "name": "Hansraj College",
         "type": "government",
         "location": "Delhi",
         "ranking": 3
       },
       {
-        "name": "St. Stephen's College, New Delhi",
+        "name": "St. Stephen's College",
         "type": "government",
         "location": "Delhi",
         "ranking": 5
       },
       {
-        "name": "Lady Shri Ram College for Women (LSR), New Delhi",
+        "name": "Lady Shri Ram College for Women (LSR)",
         "type": "government",
         "location": "Delhi",
         "ranking": 7
       },
       {
-        "name": "St Xavier’s College, Kolkata",
+        "name": "St Xavier’s College",
         "type": "government-aided / private",
         "location": "Kolkata, West Bengal",
         "ranking": 14
       },
       {
-        "name": "Fergusson College, Pune",
+        "name": "Fergusson College",
         "type": "government / autonomous",
         "location": "Pune, Maharashtra",
         "ranking": 19
       },
       {
-        "name": "Presidency College, Chennai",
+        "name": "Presidency College",
         "type": "government",
         "location": "Chennai, Tamil Nadu",
         "ranking": 12
       },
       {
-        "name": "Mount Carmel College (MCC), Chennai",
+        "name": "Mount Carmel College (MCC)",
         "type": "private",
         "location": "Chennai, Tamil Nadu",
         "ranking": 13
       },
       {
-        "name": "University of Delhi, New Delhi",
+        "name": "University of Delhi",
         "type": "government",
         "location": "Delhi",
         "ranking": 6
       },
       {
-        "name": "Banaras Hindu University (BHU), Varanasi",
+        "name": "Banaras Hindu University (BHU)",
         "type": "government",
         "location": "Varanasi, Uttar Pradesh",
         "ranking": 6
       },
       {
-        "name": "Aligarh Muslim University (AMU), Aligarh",
+        "name": "Aligarh Muslim University (AMU)",
         "type": "government",
         "location": "Aligarh, Uttar Pradesh",
         "ranking": 8
@@ -613,7 +613,7 @@
     ],
     "topColleges": [
       {
-        "name": "Indian Statistical Institute (ISI), Bangalore/Kolkata",
+        "name": "Indian Statistical Institute (ISI)",
         "type": "government",
         "location": "Bengaluru/Kolkata",
         "ranking": 1
@@ -661,7 +661,7 @@
         "ranking": 8
       },
       {
-        "name": "Presidency College, Chennai",
+        "name": "Presidency College",
         "type": "government",
         "location": "Chennai, Tamil Nadu",
         "ranking": 12
@@ -673,37 +673,37 @@
         "ranking": 13
       },
       {
-        "name": "Loyola College, Chennai",
+        "name": "Loyola College",
         "type": "private",
         "location": "Chennai, Tamil Nadu",
         "ranking": 14
       },
       {
-        "name": "St. Xavier’s College, Mumbai",
+        "name": "St. Xavier’s College",
         "type": "autonomous",
         "location": "Mumbai, Maharashtra",
         "ranking": 15
       },
       {
-        "name": "Fergusson College, Pune",
+        "name": "Fergusson College",
         "type": "autonomous",
         "location": "Pune, Maharashtra",
         "ranking": 19
       },
       {
-        "name": "Christ University, Bangalore",
+        "name": "Christ University",
         "type": "private",
         "location": "Bangalore, Karnataka",
         "ranking": 20
       },
       {
-        "name": "Mount Carmel College, Bangalore",
+        "name": "Mount Carmel College",
         "type": "private",
         "location": "Bangalore, Karnataka",
         "ranking": 21
       },
       {
-        "name": "Stella Maris College, Chennai",
+        "name": "Stella Maris College",
         "type": "private",
         "location": "Chennai, Tamil Nadu",
         "ranking": 22
@@ -837,61 +837,61 @@
     ],
     "topColleges": [
       {
-        "name": "Indian Institute of Science (IISc), Bangalore",
+        "name": "Indian Institute of Science (IISc)",
         "type": "government",
         "location": "Bangalore, Karnataka",
         "ranking": 1
       },
       {
-        "name": "Jawaharlal Nehru University (JNU), New Delhi",
+        "name": "Jawaharlal Nehru University (JNU)",
         "type": "government",
         "location": "New Delhi, Delhi",
         "ranking": 2
       },
       {
-        "name": "Banaras Hindu University (BHU), Varanasi",
+        "name": "Banaras Hindu University (BHU)",
         "type": "government",
         "location": "Varanasi, Uttar Pradesh",
         "ranking": 3
       },
       {
-        "name": "University of Delhi (DU), Delhi",
+        "name": "University of Delhi (DU)",
         "type": "government",
         "location": "New Delhi, Delhi",
         "ranking": 4
       },
       {
-        "name": "St. Stephen's College, Delhi",
+        "name": "St. Stephen's College",
         "type": "private/government-aided",
         "location": "New Delhi, Delhi",
         "ranking": 5
       },
       {
-        "name": "Loyola College, Chennai",
+        "name": "Loyola College",
         "type": "private",
         "location": "Chennai, Tamil Nadu",
         "ranking": 6
       },
       {
-        "name": "St. Xavier's College, Mumbai",
+        "name": "St. Xavier's College",
         "type": "private",
         "location": "Mumbai, Maharashtra",
         "ranking": 7
       },
       {
-        "name": "Miranda House, Delhi",
+        "name": "Miranda House",
         "type": "government",
         "location": "New Delhi, Delhi",
         "ranking": 8
       },
       {
-        "name": "Christ College, Bangalore",
+        "name": "Christ College",
         "type": "private",
         "location": "Bangalore, Karnataka",
         "ranking": 9
       },
       {
-        "name": "National Institute of Science Education and Research (NISER), Bhubaneswar",
+        "name": "National Institute of Science Education and Research (NISER)",
         "type": "government",
         "location": "Bhubaneswar, Odisha",
         "ranking": 10
