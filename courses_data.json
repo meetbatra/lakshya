@@ -1954,5 +1954,570 @@
     },
     "isActive": true,
     "popularity": 0
+  },
+  {
+    "name": "Bachelor of Medicine and Bachelor of Surgery",
+    "shortName": "MBBS",
+    "stream": "science_pcb",
+    "field": "medicine",
+    "level": "undergraduate",
+    "duration": {
+      "years": 5,
+      "months": 6
+    },
+    "description": "MBBS (Bachelor of Medicine, Bachelor of Surgery) is the primary undergraduate medical degree in India, spanning 5.5 years including 4.5 years of academic study and a 1-year mandatory internship. The curriculum covers preclinical, paraclinical, and clinical subjects, and emphasizes practical training in hospitals. Graduates are eligible to register as doctors with the Medical Council of India and can pursue careers in clinical practice, higher medical education, or allied healthcare fields.",
+    "eligibility": {
+      "minimumClass": "12",
+      "requiredSubjects": ["Physics", "Chemistry", "Biology"],
+      "minimumPercentage": 50,
+      "entranceExams": ["NEET-UG"]
+    },
+    "careerOptions": [
+      {
+        "jobTitle": "Junior Doctor",
+        "description": "Assist senior doctors and gain hands-on clinical experience.",
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "General Physician",
+        "description": "Diagnose and treat common illnesses as a practicing doctor.",
+        "growthProspects": "excellent",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Surgeon",
+        "description": "Perform surgical treatments after completing MS or specialization.",
+        "growthProspects": "excellent",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Medical Professor",
+        "description": "Teach medical students and conduct academic research.",
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Medical Researcher",
+        "description": "Work with institutes, hospitals, or pharmaceutical companies in research.",
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Public Health Specialist",
+        "description": "Work in government/NGO roles focusing on community and preventive healthcare.",
+        "growthProspects": "good",
+        "sector": "government"
+      },
+      {
+        "jobTitle": "Medical Writer",
+        "description": "Prepare content for journals, research, and healthcare media.",
+        "growthProspects": "average",
+        "sector": "private"
+      }
+    ],
+    "higherStudyOptions": [
+      {
+        "courseName": "MD (Doctor of Medicine)",
+        "description": "Specialization in non-surgical fields like Pediatrics, Medicine, Dermatology.",
+        "duration": "3 years"
+      },
+      {
+        "courseName": "MS (Master of Surgery)",
+        "description": "Specialization in surgical fields such as General Surgery, Orthopedics, Ophthalmology.",
+        "duration": "3 years"
+      },
+      {
+        "courseName": "DNB (Diplomate of National Board)",
+        "description": "Equivalent to MD/MS, awarded by NBE.",
+        "duration": "3 years"
+      },
+      {
+        "courseName": "Postgraduate Diploma in Medicine",
+        "description": "1–2 year diploma programs in fields like Pediatrics, Radiotherapy, Obstetrics & Gynecology.",
+        "duration": "1–2 years"
+      },
+      {
+        "courseName": "MBA in Healthcare Management",
+        "description": "Business-oriented management roles in healthcare.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "USMLE / PLAB Preparation",
+        "description": "International licensing exams to practice medicine abroad.",
+        "duration": "Varies"
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "All India Institute of Medical Sciences (AIIMS), Delhi",
+        "type": "government",
+        "location": "New Delhi, Delhi",
+        "ranking": 1
+      },
+      {
+        "name": "Post Graduate Institute of Medical Education and Research (PGIMER), Chandigarh",
+        "type": "government",
+        "location": "Chandigarh",
+        "ranking": 2
+      },
+      {
+        "name": "Christian Medical College (CMC), Vellore",
+        "type": "private",
+        "location": "Vellore, Tamil Nadu",
+        "ranking": 3
+      },
+      {
+        "name": "National Institute of Mental Health and Neuro Sciences (NIMHANS), Bangalore",
+        "type": "government",
+        "location": "Bengaluru, Karnataka",
+        "ranking": 4
+      },
+      {
+        "name": "Jawaharlal Institute of Postgraduate Medical Education and Research (JIPMER)",
+        "type": "government",
+        "location": "Puducherry",
+        "ranking": 5
+      },
+      {
+        "name": "Sanjay Gandhi Postgraduate Institute of Medical Sciences (SGPGIMS)",
+        "type": "government",
+        "location": "Lucknow, Uttar Pradesh",
+        "ranking": 6
+      },
+      {
+        "name": "Institute of Medical Sciences, Banaras Hindu University (BHU)",
+        "type": "government",
+        "location": "Varanasi, Uttar Pradesh",
+        "ranking": 7
+      },
+      {
+        "name": "Amrita Vishwa Vidyapeetham",
+        "type": "deemed",
+        "location": "Coimbatore, Tamil Nadu",
+        "ranking": 8
+      },
+      {
+        "name": "Kasturba Medical College (KMC), Manipal",
+        "type": "private",
+        "location": "Manipal, Karnataka",
+        "ranking": 9
+      },
+      {
+        "name": "Madras Medical College, Chennai",
+        "type": "government",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 10
+      }
+    ],
+    "skills": {
+      "technical": [
+        "Clinical diagnosis",
+        "Surgical skills",
+        "Patient care",
+        "Medical research",
+        "Emergency handling"
+      ],
+      "soft": [
+        "Empathy",
+        "Communication",
+        "Decision-making",
+        "Stress management",
+        "Teamwork"
+      ]
+    },
+    "isActive": true,
+    "popularity": 0
+  },
+  {
+    "name": "Bachelor of Dental Surgery",
+    "shortName": "BDS",
+    "stream": "science_pcb",
+    "field": "medicine",
+    "level": "undergraduate",
+    "duration": {
+      "years": 5,
+      "months": 0
+    },
+    "description": "BDS (Bachelor of Dental Surgery) is a 5-year undergraduate program including a mandatory one-year internship. It trains students to diagnose, treat, and manage oral and dental health issues, focusing on human anatomy, physiology, pathology, dental materials, and clinical dentistry. Graduates are authorized to practice dentistry in India and considered doctors upon completion.",
+    "eligibility": {
+      "minimumClass": "12",
+      "requiredSubjects": ["Physics", "Chemistry", "Biology"],
+      "minimumPercentage": 50,
+      "entranceExams": ["NEET-UG", "KEAM"]
+    },
+    "careerOptions": [
+      {
+        "jobTitle": "General Dentist",
+        "description": "Provide preventive, diagnostic, and restorative dental care in clinics or hospitals.",
+        "growthProspects": "excellent",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Dental Surgeon",
+        "description": "Perform surgical treatments related to oral and maxillofacial conditions.",
+        "growthProspects": "excellent",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Orthodontist",
+        "description": "Specialize in correcting misaligned teeth and jaws after MDS.",
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Periodontist",
+        "description": "Specialize in gum disease prevention and treatment.",
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Dental Lecturer",
+        "description": "Teach dentistry in colleges and contribute to academic research.",
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Public Health Dentist",
+        "description": "Promote community-level oral health and preventive dentistry.",
+        "growthProspects": "good",
+        "sector": "government"
+      },
+      {
+        "jobTitle": "Dental Researcher",
+        "description": "Work on innovations in dental materials, techniques, and public health studies.",
+        "growthProspects": "average",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Dental Officer (Army/Defense)",
+        "description": "Serve as a commissioned dental officer in armed forces healthcare.",
+        "growthProspects": "good",
+        "sector": "government"
+      },
+      {
+        "jobTitle": "Dental Entrepreneur",
+        "description": "Start and manage private dental clinics or dental product ventures.",
+        "growthProspects": "excellent",
+        "sector": "private"
+      }
+    ],
+    "higherStudyOptions": [
+      {
+        "courseName": "MDS (Master of Dental Surgery)",
+        "description": "Postgraduate specialization in fields like Orthodontics, Oral Surgery, Periodontics, Prosthodontics, Pediatric Dentistry, Oral Pathology, etc.",
+        "duration": "3 years"
+      },
+      {
+        "courseName": "Fellowship in Implantology",
+        "description": "Short-term advanced certification in dental implant procedures.",
+        "duration": "6–12 months"
+      },
+      {
+        "courseName": "Master of Public Health (MPH)",
+        "description": "Focus on public health dentistry, policy-making, and preventive healthcare.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "MBA in Healthcare Management",
+        "description": "Management-oriented program for running hospitals or dental chains.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "MS in Oral Biology",
+        "description": "Advanced research-focused postgraduate degree in oral sciences.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "PhD in Dental Sciences",
+        "description": "Doctoral-level research program in advanced dental fields.",
+        "duration": "3–5 years"
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Saveetha Institute of Medical and Technical Sciences (SIMTS), Chennai",
+        "type": "private",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 1
+      },
+      {
+        "name": "Manipal College of Dental Sciences (MCODS), Manipal",
+        "type": "private",
+        "location": "Manipal, Karnataka",
+        "ranking": 2
+      },
+      {
+        "name": "Maulana Azad Institute of Dental Sciences (MAIDS), New Delhi",
+        "type": "government",
+        "location": "New Delhi, Delhi",
+        "ranking": 3
+      },
+      {
+        "name": "King George's Medical University (KGMU), Lucknow",
+        "type": "government",
+        "location": "Lucknow, Uttar Pradesh",
+        "ranking": 4
+      },
+      {
+        "name": "Government Dental College and Hospital, Mumbai",
+        "type": "government",
+        "location": "Mumbai, Maharashtra",
+        "ranking": 5
+      },
+      {
+        "name": "Nair Hospital Dental College, Mumbai",
+        "type": "government",
+        "location": "Mumbai, Maharashtra",
+        "ranking": 6
+      },
+      {
+        "name": "SRM Dental College, Chennai",
+        "type": "private",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 7
+      },
+      {
+        "name": "A.B. Shetty Memorial Institute of Dental Sciences, Mangalore",
+        "type": "private",
+        "location": "Mangalore, Karnataka",
+        "ranking": 8
+      },
+      {
+        "name": "Government Dental College, Bangalore",
+        "type": "government",
+        "location": "Bengaluru, Karnataka",
+        "ranking": 9
+      },
+      {
+        "name": "Dr. D. Y. Patil Dental College and Hospital, Pune",
+        "type": "private",
+        "location": "Pune, Maharashtra",
+        "ranking": 10
+      }
+    ],
+    "skills": {
+      "technical": [
+        "Dental diagnosis",
+        "Oral surgery",
+        "Orthodontic treatment",
+        "Periodontal treatment",
+        "Dental radiology",
+        "Prosthodontics"
+      ],
+      "soft": [
+        "Precision",
+        "Empathy",
+        "Patient communication",
+        "Critical thinking",
+        "Teamwork",
+        "Clinical decision-making"
+      ]
+    },
+    "isActive": true,
+    "popularity": 0
+  },
+  {
+    "name": "Bachelor of Pharmacy",
+    "shortName": "B.PHARM",
+    "stream": "science_pcb",
+    "field": "allied_health",
+    "level": "undergraduate",
+    "duration": {
+      "years": 4,
+      "months": 0
+    },
+    "description": "The Bachelor of Pharmacy (B.Pharm) is a 4-year undergraduate program regulated by the Pharmacy Council of India (PCI). It focuses on pharmaceutical sciences including drug formulation, manufacturing, dispensing, pharmacology, and patient care. The course prepares students for careers in pharmacy practice, research, regulatory affairs, and pharmaceutical business.",
+    "eligibility": {
+      "minimumClass": "12",
+      "requiredSubjects": ["Physics", "Chemistry", "Biology/Mathematics"],
+      "minimumPercentage": 50,
+      "entranceExams": [
+        "NEET",
+        "MHT CET",
+        "CUET",
+        "AP EAMCET",
+        "TS EAMCET",
+        "KCET",
+        "JEE Main",
+        "BITSAT"
+      ]
+    },
+    "careerOptions": [
+      {
+        "jobTitle": "Drug Inspector",
+        "description": "Ensures quality, safety, and efficacy of drugs by monitoring manufacturing and distribution processes.",
+        "growthProspects": "excellent",
+        "sector": "government"
+      },
+      {
+        "jobTitle": "Pharmacist",
+        "description": "Dispenses medications in hospitals, clinics, and community pharmacies while advising patients on drug use and side effects.",
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Pharmaceutical Marketing Executive",
+        "description": "Works as a medical representative promoting and selling pharmaceutical products to doctors and healthcare providers.",
+        "growthProspects": "good",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Pathological Lab Scientist",
+        "description": "Conducts lab tests on tissues, fluids, and cells for diagnosis and medical research.",
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Health Inspector",
+        "description": "Monitors public health and hygiene standards in hospitals, restaurants, and industries.",
+        "growthProspects": "average",
+        "sector": "government"
+      },
+      {
+        "jobTitle": "Chemical/Drug Technician",
+        "description": "Assists in experiments, testing, and production processes in pharmaceutical labs and industries.",
+        "growthProspects": "good",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Quality Control Executive",
+        "description": "Ensures medicines and medical devices meet quality and regulatory standards.",
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Medical Underwriter",
+        "description": "Prepares medical documents, handles insurance records, and ensures compliance with medical and legal standards.",
+        "growthProspects": "average",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "R&D Executive",
+        "description": "Involved in drug discovery, development, and innovation within pharmaceutical companies.",
+        "growthProspects": "excellent",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Entrepreneur (Pharmaceutical Company)",
+        "description": "Starts own pharmaceutical company for drug manufacturing, supply, or retail.",
+        "growthProspects": "excellent",
+        "sector": "private"
+      }
+    ],
+    "higherStudyOptions": [
+      {
+        "courseName": "Master of Pharmacy (M.Pharm)",
+        "description": "2-year postgraduate specialization in pharmaceutics, pharmacology, quality assurance, or pharmaceutical chemistry.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "MBA in Pharmaceutical Management",
+        "description": "2-year management program for careers in pharma business, sales, and healthcare leadership.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "Pharm.D (Post Baccalaureate)",
+        "description": "3-year advanced program focusing on clinical pharmacy and patient care.",
+        "duration": "3 years"
+      },
+      {
+        "courseName": "Ph.D. in Pharmaceutical Sciences",
+        "description": "Doctoral program in advanced drug research, regulatory affairs, and academic careers.",
+        "duration": "3-5 years"
+      },
+      {
+        "courseName": "M.Sc. in Clinical Research",
+        "description": "Specialized postgraduate course in clinical trials and regulatory science.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "Master of Public Health (MPH)",
+        "description": "Focuses on healthcare administration, epidemiology, and community health policies.",
+        "duration": "2 years"
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Jamia Hamdard, New Delhi",
+        "type": "government",
+        "location": "New Delhi",
+        "ranking": 1
+      },
+      {
+        "name": "Panjab University, Chandigarh",
+        "type": "government",
+        "location": "Chandigarh",
+        "ranking": 2
+      },
+      {
+        "name": "Institute of Chemical Technology (ICT), Mumbai",
+        "type": "government",
+        "location": "Mumbai",
+        "ranking": 3
+      },
+      {
+        "name": "BITS Pilani",
+        "type": "deemed",
+        "location": "Pilani",
+        "ranking": 4
+      },
+      {
+        "name": "National Institute of Pharmaceutical Education and Research (NIPER), Mohali",
+        "type": "government",
+        "location": "Mohali",
+        "ranking": 5
+      },
+      {
+        "name": "Manipal College of Pharmaceutical Sciences (MCOPS)",
+        "type": "private",
+        "location": "Manipal",
+        "ranking": 6
+      },
+      {
+        "name": "JSS College of Pharmacy, Mysore",
+        "type": "private",
+        "location": "Mysore",
+        "ranking": 7
+      },
+      {
+        "name": "JSS College of Pharmacy, Ooty",
+        "type": "private",
+        "location": "Ooty",
+        "ranking": 8
+      },
+      {
+        "name": "Annamalai University, Tamil Nadu",
+        "type": "government",
+        "location": "Chidambaram",
+        "ranking": 9
+      },
+      {
+        "name": "Maharaja Sayajirao University of Baroda (MSU), Vadodara",
+        "type": "government",
+        "location": "Vadodara",
+        "ranking": 10
+      }
+    ],
+    "skills": {
+      "technical": [
+        "Pharmaceutical formulation",
+        "Drug analysis",
+        "Clinical research",
+        "Quality assurance",
+        "Pharmacology",
+        "Pharmacognosy",
+        "Regulatory affairs"
+      ],
+      "soft": [
+        "Communication",
+        "Attention to detail",
+        "Teamwork",
+        "Analytical thinking",
+        "Problem-solving"
+      ]
+    },
+    "isActive": true,
+    "popularity": 0
   }
 ]
