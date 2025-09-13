@@ -1,1 +1,554 @@
-[ { "name": "Bachelor of Science in Computer Science", "shortName": "B.Sc-CS", "stream": "science_pcm", "field": "computer_it", "level": "undergraduate", "duration": { "years": 3, "months": 0 }, "description": "A 3-year undergraduate degree program providing in-depth knowledge of computer science, including coding, algorithms, databases, operating systems, networking, and software develop[...]", "eligibility": { "minimumClass": "12", "requiredSubjects": ["Physics", "Chemistry", "Mathematics"], "minimumPercentage": 50, "entranceExams": ["CUET", "BHU UET", "LPU NEST", "JMI Entrance Exam"] }, "careerOptions": [ { "jobTitle": "Software Engineer", "description": "Develops algorithms, applications and processes; works on project documentation, fixing bugs and software performance, maintaining operational standards.", "growthProspects": "excellent", "sector": "both" }, { "jobTitle": "Data Scientist", "description": "Collects, processes and analyses large volumes of data; builds predictive models; uses statistical and machine learning techniques to help business decisions.", "growthProspects": "excellent", "sector": "private" }, { "jobTitle": "Information Systems Manager", "description": "Oversees IT systems, ensures tech infrastructure is up-to-date and efficient; supervises technical & non-technical staff and handles system maintenance.", "growthProspects": "good", "sector": "both" }, { "jobTitle": "Mobile App Developer", "description": "Designs and builds mobile applications for different platforms; tests, debugs and improves app functions and performance.", "growthProspects": "good", "sector": "private" }, { "jobTitle": "Front-End Developer", "description": "Creates user interfaces for web/mobile, uses HTML/CSS/JavaScript, ensures responsive design and user-friendly UI/UX.", "growthProspects": "good", "sector": "private" }, { "jobTitle": "Enterprise Architect", "description": "Designs the overall structure of an IT system; aligns technology assets with business strategy; ensures scaling, reliability and inter-system coherence.", "growthProspects": "excellent", "sector": "both" }, { "jobTitle": "IT Security Specialist", "description": "Ensures cybersecurity, designs and implements security protocols; protects against breaches; works on threat detection and mitigation.", "growthProspects": "very good", "sector": "private" }, { "jobTitle": "Data Analyst", "description": "Processes, examines and interprets data; generates insights; creates reports and visualizations; works with statistical tools and databases.", "growthProspects": "good", "sector": "both" }, { "jobTitle": "Full-Stack Developer", "description": "Works both on front-end and back-end; handles all layers of web application stack; ensures application works across systems.", "growthProspects": "excellent", "sector": "private" }, { "jobTitle": "Machine Learning Engineer", "description": "Builds algorithms and systems for AI/ML; works on modeling, training, deploying machine learning systems.", "growthProspects": "excellent", "sector": "private" } ], "higherStudyOptions": [ { "courseName": "M.Sc. Computer Science", "description": "Postgraduate program focused on advanced topics in computer science, research or specialization.", "duration": "2 years" }, { "courseName": "MCA (Master of Computer Applications)", "description": "Specialized course targeting applications of computation – software engineering, development, etc.", "duration": "2-3 years" }, { "courseName": "M.Tech / MS / Specializations (AI, ML, Cybersecurity, Data Science)", "description": "Advanced specialization or research-oriented master’s programs using rigorous algorithmic / systems focus.", "duration": "2 years" } ], "topColleges": [ { "name": "Jawaharlal Nehru University (JNU)", "type": "government", "location": "Delhi", "ranking": 2 }, { "name": "University of Delhi (DU)", "type": "government", "location": "Delhi", "ranking": 6 }, { "name": "Banaras Hindu University (BHU)", "type": "government", "location": "Varanasi, Uttar Pradesh", "ranking": 5 }, { "name": "Aligarh Muslim University (AMU)", "type": "government", "location": "Aligarh, Uttar Pradesh", "ranking": 8 }, { "name": "VIT Vellore", "type": "private", "location": "Vellore, Tamil Nadu", "ranking": 11 }, { "name": "University of Calcutta", "type": "government", "location": "Kolkata, West Bengal", "ranking": 12 }, { "name": "St Stephen's College", "type": "private/government-aided", "location": "Delhi", "ranking": 14 }, { "name": "Hindu College", "type": "government", "location": "Delhi", "ranking": 1 }, { "name": "Miranda House", "type": "government", "location": "Delhi", "ranking": 1 }, { "name": "Hansraj College", "type": "government", "location": "Delhi", "ranking": 3 }, { "name": "LSR (Lady Shri Ram)", "type": "government", "location": "Delhi", "ranking": 7 }, { "name": "Acharya Narendra Dev College", "type": "government", "location": "Delhi", "ranking": 18 } ], "skills": { "technical": [ "Programming (Python, Java, C++)", "Database Management", "Algorithms & Data Structures", "Networking & Security", "Cloud Computing" ], "soft": [ "Problem Solving", "Critical Thinking", "Communication", "Teamwork" ] }, "isActive": true, "popularity": 98 }, { "name": "Bachelor of Science in Chemistry", "shortName": "B.Sc-Chemistry", "stream": "science_pcm", "field": "pure_sciences_research", "level": "undergraduate", "duration": { "years": 3, "months": 0 }, "description": "A 3-year undergraduate degree program that provides students with both theoretical and practical knowledge of chemical sciences. The curriculum covers core areas such as organic, i[...]", "eligibility": { "minimumClass": "12", "requiredSubjects": ["Physics", "Chemistry", "Mathematics or Biology"], "minimumPercentage": 50, "entranceExams": ["CUET", "University-specific exams"] }, "careerOptions": [ { "jobTitle": "Chemist / Research Associate", "description": "Analyzes compounds or assists with research in labs; works in industry or academic research settings.", "growthProspects": "good", "sector": "both" }, { "jobTitle": "Quality Control Analyst", "description": "Tests and ensures products meet required chemical, physical, and safety specifications in industries such as pharmaceuticals, manufacturing, food & beverage.", "growthProspects": "good", "sector": "private" }, { "jobTitle": "Lab Technician / Lab Assistant", "description": "Supports experiments, maintains and calibrates lab equipment, handles sample preparation and preliminary analysis.", "growthProspects": "moderate", "sector": "both" }, { "jobTitle": "Environmental Scientist", "description": "Uses chemical knowledge to analyze environmental samples, assess pollution, work on sustainability and green chemistry projects.", "growthProspects": "good", "sector": "both" }, { "jobTitle": "Teacher / Lecturer / Professor", "description": "Teaches chemistry at school or college level; may also perform academic research.", "growthProspects": "good", "sector": "government" } ], "higherStudyOptions": [ { "courseName": "M.Sc Chemistry", "description": "Specialization in organic, inorganic, analytical or physical chemistry.", "duration": "2 years" }, { "courseName": "M.Sc Biochemistry", "description": "Focuses on chemical processes in biological systems.", "duration": "2 years" }, { "courseName": "M.Sc Analytical Chemistry / Pharmaceutical Chemistry", "description": "Advanced course emphasizing chemical analysis methods and drug & pharmaceutical applications.", "duration": "2 years" }, { "courseName": "Ph.D in Chemistry", "description": "Research oriented doctoral degree in chemical science disciplines.", "duration": "3-5 years" }, { "courseName": "M.Tech in Chemical Engineering (for those wanting industrial process applications)", "description": "Bridges chemistry & engineering; useful for process design, industrial chemistry etc.", "duration": "2 years" } ], "topColleges": [ { "name": "Hindu College", "type": "government", "location": "Delhi", "ranking": 2 }, { "name": "Miranda House", "type": "government", "location": "Delhi", "ranking": 1 }, { "name": "Hansraj College", "type": "government", "location": "Delhi", "ranking": 6 }, { "name": "St. Stephen's College", "type": "government", "location": "Delhi", "ranking": 4 }, { "name": "Lady Shri Ram College for Women (LSR)", "type": "government", "location": "Delhi", "ranking": 5 }, { "name": "St Xavier’s College", "type": "government-aided / private", "location": "Kolkata, West Bengal", "ranking": 14 }, { "name": "Fergusson College", "type": "government / autonomous", "location": "Pune, Maharashtra", "ranking": 19 }, { "name": "Presidency College", "type": "government", "location": "Chennai, Tamil Nadu", "ranking": 12 }, { "name": "Mount Carmel College (MCC)", "type": "private", "location": "Chennai, Tamil Nadu", "ranking": 13 }, { "name": "University of Delhi", "type": "government", "location": "Delhi", "ranking": 6 }, { "name": "Banaras Hindu University (BHU)", "type": "government", "location": "Varanasi, Uttar Pradesh", "ranking": 5 }, { "name": "Aligarh Muslim University (AMU)", "type": "government", "location": "Aligarh, Uttar Pradesh", "ranking": 8 } ], "skills": { "technical": [ "Analytical Techniques", "Laboratory Skills", "Instrumentation Methods", "Organic Synthesis", "Data Interpretation" ], "soft": [ "Attention to Details", "Problem Solving", "Communication", "Teamwork" ] }, "isActive": true, "popularity": 90 }, { "name": "Bachelor of Science in Mathematics", "shortName": "B.Sc-Mathematics", "stream": "science_pcm", "field": "pure_sciences_research", "level": "undergraduate", "duration": { "years": 3, "months": 0 }, "description": "A 3-year undergraduate degree focused on numbers, structure, space, and quantity, developing analytical, logical, and problem-solving skills. The curriculum covers calculus, algebr[...]", "eligibility": { "minimumClass": "12", "requiredSubjects": ["Physics", "Chemistry", "Mathematics"], "minimumPercentage": 50, "entranceExams": [ "CUET", "IISER Entrance Exam", "LPU NEST", "JEE Main", "University-specific exams" ] }, "careerOptions": [ { "jobTitle": "Data Analyst", "description": "Analyzes and interprets data to generate insights for decision making.", "growthProspects": "very good", "sector": "both" }, { "jobTitle": "Actuary / Risk Analyst", "description": "Applies probability and statistics to assess risk for insurance and finance sectors.", "growthProspects": "high", "sector": "private" }, { "jobTitle": "Statistician / Research Analyst", "description": "Applies mathematical and statistical models for research, surveys, and government analysis.", "growthProspects": "good", "sector": "both" }, { "jobTitle": "Cryptographer / Algorithm Developer", "description": "Designs encryption and algorithms for cybersecurity and technology companies.", "growthProspects": "high", "sector": "private" }, { "jobTitle": "Software Developer", "description": "Builds applications and systems software leveraging mathematical logic.", "growthProspects": "good", "sector": "private" }, { "jobTitle": "Educator / Lecturer", "description": "Teaches mathematics at schools, colleges, or universities; may also engage in research.", "growthProspects": "stable", "sector": "government" } ], "higherStudyOptions": [ { "courseName": "M.Sc Mathematics", "description": "Core specialization in pure and applied mathematics.", "duration": "2 years" }, { "courseName": "M.Sc Statistics / Actuarial Science", "description": "For careers in finance, insurance, and analytics.", "duration": "2 years" }, { "courseName": "M.Sc Data Science / Computer Science", "description": "Blending mathematics with technology for advanced computing roles.", "duration": "2 years" }, { "courseName": "Ph.D in Mathematics", "description": "Doctoral research program in pure, applied, or interdisciplinary mathematics.", "duration": "3-5 years" }, { "courseName": "Integrated MSc-PhD", "description": "Offered at TIFR, IMSc, HRI, IISER, NISER etc.", "duration": "5-6 years" } ], "topColleges": [ { "name": "Indian Statistical Institute (ISI)", "type": "government", "location": "Bengaluru/Kolkata", "ranking": 5 }, { "name": "Chennai Mathematical Institute (CMI)", "type": "private", "location": "Chennai, Tamil Nadu", "ranking": 2 }, { "name": "Banaras Hindu University (BHU)", "type": "government", "location": "Varanasi, Uttar Pradesh", "ranking": 5 }, { "name": "Jamia Millia Islamia (JMI)", "type": "government", "location": "Delhi", "ranking": 3 }, { "name": "Delhi University Colleges (Hindu, St. Stephen’s, Miranda House, Hansraj, LSR)", "type": "government", "location": "Delhi", "ranking": 1 }, { "name": "Jadavpur University", "type": "government", "location": "Kolkata, West Bengal", "ranking": 4 }, { "name": "BITS Pilani", "type": "private", "location": "Pilani, Rajasthan", "ranking": 7 }, { "name": "VIT Vellore", "type": "private", "location": "Vellore, Tamil Nadu", "ranking": 8 }, { "name": "Presidency College", "type": "government", "location": "Chennai, Tamil Nadu", "ranking": 12 }, { "name": "Madras Christian College (MCC)", "type": "government-aided", "location": "Chennai, Tamil Nadu", "ranking": 13 }, { "name": "Loyola College", "type": "private", "location": "Chennai, Tamil Nadu", "ranking": 14 }, { "name": "St. Xavier’s College", "type": "autonomous", "location": "Mumbai, Maharashtra", "ranking": 15 }, { "name": "Fergusson College", "type": "autonomous", "location": "Pune, Maharashtra", "ranking": 19 }, { "name": "Christ University", "type": "private", "location": "Bangalore, Karnataka", "ranking": 20 }, { "name": "Mount Carmel College", "type": "private", "location": "Bangalore, Karnataka", "ranking": 21 }, { "name": "Stella Maris College", "type": "private", "location": "Chennai, Tamil Nadu", "ranking": 22 } ], "skills": { "technical": [ "Mathematical Modelling", "Statistical Analysis", "Programming (C++, Python, R)", "Cryptography", "Data Interpretation" ], "soft": [ "Logical Reasoning", "Problem-Solving", "Analytical Thinking", "Attention to Detail", "Research Aptitude" ] }, "isActive": true, "popularity": 95 } ]
+[
+  {
+    "name": "Bachelor of Science in Computer Science",
+    "shortName": "B.Sc-CS",
+    "stream": "science_pcm",
+    "field": "computer_it",
+    "level": "undergraduate",
+    "duration": { "years": 3, "months": 0 },
+    "description": "A 3-year undergraduate degree program providing in-depth knowledge of computer science, including coding, algorithms, databases, operating systems, networking, and software develop[...]",
+    "eligibility": {
+      "minimumClass": "12",
+      "requiredSubjects": ["Physics", "Chemistry", "Mathematics"],
+      "minimumPercentage": 50,
+      "entranceExams": ["CUET", "BHU UET", "LPU NEST", "JMI Entrance Exam"]
+    },
+    "careerOptions": [
+      {
+        "jobTitle": "Software Engineer",
+        "description": "Develops algorithms, applications and processes; works on project documentation, fixing bugs and software performance, maintaining operational standards.",
+        "growthProspects": "excellent",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Data Scientist",
+        "description": "Collects, processes and analyses large volumes of data; builds predictive models; uses statistical and machine learning techniques to help business decisions.",
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Information Systems Manager",
+        "description": "Oversees IT systems, ensures tech infrastructure is up-to-date and efficient; supervises technical & non-technical staff and handles system maintenance.",
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Mobile App Developer",
+        "description": "Designs and builds mobile applications for different platforms; tests, debugs and improves app functions and performance.",
+        "growthProspects": "good",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Front-End Developer",
+        "description": "Creates user interfaces for web/mobile, uses HTML/CSS/JavaScript, ensures responsive design and user-friendly UI/UX.",
+        "growthProspects": "good",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Enterprise Architect",
+        "description": "Designs the overall structure of an IT system; aligns technology assets with business strategy; ensures scaling, reliability and inter-system coherence.",
+        "growthProspects": "excellent",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "IT Security Specialist",
+        "description": "Ensures cybersecurity, designs and implements security protocols; protects against breaches; works on threat detection and mitigation.",
+        "growthProspects": "very good",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Data Analyst",
+        "description": "Processes, examines and interprets data; generates insights; creates reports and visualizations; works with statistical tools and databases.",
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Full-Stack Developer",
+        "description": "Works both on front-end and back-end; handles all layers of web application stack; ensures application works across systems.",
+        "growthProspects": "excellent",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Machine Learning Engineer",
+        "description": "Builds algorithms and systems for AI/ML; works on modeling, training, deploying machine learning systems.",
+        "growthProspects": "excellent",
+        "sector": "private"
+      }
+    ],
+    "higherStudyOptions": [
+      {
+        "courseName": "M.Sc. Computer Science",
+        "description": "Postgraduate program focused on advanced topics in computer science, research or specialization.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "MCA (Master of Computer Applications)",
+        "description": "Specialized course targeting applications of computation – software engineering, development, etc.",
+        "duration": "2-3 years"
+      },
+      {
+        "courseName": "M.Tech / MS / Specializations (AI, ML, Cybersecurity, Data Science)",
+        "description": "Advanced specialization or research-oriented master’s programs using rigorous algorithmic / systems focus.",
+        "duration": "2 years"
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Jawaharlal Nehru University (JNU)",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 2
+      },
+      {
+        "name": "University of Delhi (DU)",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 6
+      },
+      {
+        "name": "Banaras Hindu University (BHU)",
+        "type": "government",
+        "location": "Varanasi, Uttar Pradesh",
+        "ranking": 5
+      },
+      {
+        "name": "Aligarh Muslim University (AMU)",
+        "type": "government",
+        "location": "Aligarh, Uttar Pradesh",
+        "ranking": 8
+      },
+      {
+        "name": "VIT Vellore",
+        "type": "private",
+        "location": "Vellore, Tamil Nadu",
+        "ranking": 11
+      },
+      {
+        "name": "University of Calcutta",
+        "type": "government",
+        "location": "Kolkata, West Bengal",
+        "ranking": 12
+      },
+      {
+        "name": "St Stephen's College",
+        "type": "private/government-aided",
+        "location": "Delhi",
+        "ranking": 14
+      },
+      {
+        "name": "Hindu College",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 1
+      },
+      {
+        "name": "Miranda House",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 1
+      },
+      {
+        "name": "Hansraj College",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 3
+      },
+      {
+        "name": "LSR (Lady Shri Ram)",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 7
+      },
+      {
+        "name": "Acharya Narendra Dev College",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 18
+      }
+    ],
+    "skills": {
+      "technical": [
+        "Programming (Python, Java, C++)",
+        "Database Management",
+        "Algorithms & Data Structures",
+        "Networking & Security",
+        "Cloud Computing"
+      ],
+      "soft": [
+        "Problem Solving",
+        "Critical Thinking",
+        "Communication",
+        "Teamwork"
+      ]
+    },
+    "isActive": true,
+    "popularity": 98
+  },
+  {
+    "name": "Bachelor of Science in Chemistry",
+    "shortName": "B.Sc-Chemistry",
+    "stream": "science_pcm",
+    "field": "pure_sciences_research",
+    "level": "undergraduate",
+    "duration": { "years": 3, "months": 0 },
+    "description": "A 3-year undergraduate degree program that provides students with both theoretical and practical knowledge of chemical sciences. The curriculum covers core areas such as organic, i[...]",
+    "eligibility": {
+      "minimumClass": "12",
+      "requiredSubjects": ["Physics", "Chemistry", "Mathematics or Biology"],
+      "minimumPercentage": 50,
+      "entranceExams": ["CUET", "University-specific exams"]
+    },
+    "careerOptions": [
+      {
+        "jobTitle": "Chemist / Research Associate",
+        "description": "Analyzes compounds or assists with research in labs; works in industry or academic research settings.",
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Quality Control Analyst",
+        "description": "Tests and ensures products meet required chemical, physical, and safety specifications in industries such as pharmaceuticals, manufacturing, food & beverage.",
+        "growthProspects": "good",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Lab Technician / Lab Assistant",
+        "description": "Supports experiments, maintains and calibrates lab equipment, handles sample preparation and preliminary analysis.",
+        "growthProspects": "moderate",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Environmental Scientist",
+        "description": "Uses chemical knowledge to analyze environmental samples, assess pollution, work on sustainability and green chemistry projects.",
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Teacher / Lecturer / Professor",
+        "description": "Teaches chemistry at school or college level; may also perform academic research.",
+        "growthProspects": "good",
+        "sector": "government"
+      }
+    ],
+    "higherStudyOptions": [
+      {
+        "courseName": "M.Sc Chemistry",
+        "description": "Specialization in organic, inorganic, analytical or physical chemistry.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "M.Sc Biochemistry",
+        "description": "Focuses on chemical processes in biological systems.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "M.Sc Analytical Chemistry / Pharmaceutical Chemistry",
+        "description": "Advanced course emphasizing chemical analysis methods and drug & pharmaceutical applications.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "Ph.D in Chemistry",
+        "description": "Research oriented doctoral degree in chemical science disciplines.",
+        "duration": "3-5 years"
+      },
+      {
+        "courseName": "M.Tech in Chemical Engineering (for those wanting industrial process applications)",
+        "description": "Bridges chemistry & engineering; useful for process design, industrial chemistry etc.",
+        "duration": "2 years"
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Hindu College",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 2
+      },
+      {
+        "name": "Miranda House",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 1
+      },
+      {
+        "name": "Hansraj College",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 6
+      },
+      {
+        "name": "St. Stephen's College",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 4
+      },
+      {
+        "name": "Lady Shri Ram College for Women (LSR)",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 5
+      },
+      {
+        "name": "St Xavier’s College",
+        "type": "government-aided / private",
+        "location": "Kolkata, West Bengal",
+        "ranking": 14
+      },
+      {
+        "name": "Fergusson College",
+        "type": "government / autonomous",
+        "location": "Pune, Maharashtra",
+        "ranking": 19
+      },
+      {
+        "name": "Presidency College",
+        "type": "government",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 12
+      },
+      {
+        "name": "Mount Carmel College (MCC)",
+        "type": "private",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 13
+      },
+      {
+        "name": "University of Delhi",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 6
+      },
+      {
+        "name": "Banaras Hindu University (BHU)",
+        "type": "government",
+        "location": "Varanasi, Uttar Pradesh",
+        "ranking": 5
+      },
+      {
+        "name": "Aligarh Muslim University (AMU)",
+        "type": "government",
+        "location": "Aligarh, Uttar Pradesh",
+        "ranking": 8
+      }
+    ],
+    "skills": {
+      "technical": [
+        "Analytical Techniques",
+        "Laboratory Skills",
+        "Instrumentation Methods",
+        "Organic Synthesis",
+        "Data Interpretation"
+      ],
+      "soft": [
+        "Attention to Details",
+        "Problem Solving",
+        "Communication",
+        "Teamwork"
+      ]
+    },
+    "isActive": true,
+    "popularity": 90
+  },
+  {
+    "name": "Bachelor of Science in Mathematics",
+    "shortName": "B.Sc-Mathematics",
+    "stream": "science_pcm",
+    "field": "pure_sciences_research",
+    "level": "undergraduate",
+    "duration": { "years": 3, "months": 0 },
+    "description": "A 3-year undergraduate degree focused on numbers, structure, space, and quantity, developing analytical, logical, and problem-solving skills. The curriculum covers calculus, algebr[...]",
+    "eligibility": {
+      "minimumClass": "12",
+      "requiredSubjects": ["Physics", "Chemistry", "Mathematics"],
+      "minimumPercentage": 50,
+      "entranceExams": [
+        "CUET",
+        "IISER Entrance Exam",
+        "LPU NEST",
+        "JEE Main",
+        "University-specific exams"
+      ]
+    },
+    "careerOptions": [
+      {
+        "jobTitle": "Data Analyst",
+        "description": "Analyzes and interprets data to generate insights for decision making.",
+        "growthProspects": "very good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Actuary / Risk Analyst",
+        "description": "Applies probability and statistics to assess risk for insurance and finance sectors.",
+        "growthProspects": "high",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Statistician / Research Analyst",
+        "description": "Applies mathematical and statistical models for research, surveys, and government analysis.",
+        "growthProspects": "good",
+        "sector": "both"
+      },
+      {
+        "jobTitle": "Cryptographer / Algorithm Developer",
+        "description": "Designs encryption and algorithms for cybersecurity and technology companies.",
+        "growthProspects": "high",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Software Developer",
+        "description": "Builds applications and systems software leveraging mathematical logic.",
+        "growthProspects": "good",
+        "sector": "private"
+      },
+      {
+        "jobTitle": "Educator / Lecturer",
+        "description": "Teaches mathematics at schools, colleges, or universities; may also engage in research.",
+        "growthProspects": "stable",
+        "sector": "government"
+      }
+    ],
+    "higherStudyOptions": [
+      {
+        "courseName": "M.Sc Mathematics",
+        "description": "Core specialization in pure and applied mathematics.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "M.Sc Statistics / Actuarial Science",
+        "description": "For careers in finance, insurance, and analytics.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "M.Sc Data Science / Computer Science",
+        "description": "Blending mathematics with technology for advanced computing roles.",
+        "duration": "2 years"
+      },
+      {
+        "courseName": "Ph.D in Mathematics",
+        "description": "Doctoral research program in pure, applied, or interdisciplinary mathematics.",
+        "duration": "3-5 years"
+      },
+      {
+        "courseName": "Integrated MSc-PhD",
+        "description": "Offered at TIFR, IMSc, HRI, IISER, NISER etc.",
+        "duration": "5-6 years"
+      }
+    ],
+    "topColleges": [
+      {
+        "name": "Indian Statistical Institute (ISI)",
+        "type": "government",
+        "location": "Bengaluru/Kolkata",
+        "ranking": 5
+      },
+      {
+        "name": "Chennai Mathematical Institute (CMI)",
+        "type": "private",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 2
+      },
+      {
+        "name": "Banaras Hindu University (BHU)",
+        "type": "government",
+        "location": "Varanasi, Uttar Pradesh",
+        "ranking": 5
+      },
+      {
+        "name": "Jamia Millia Islamia (JMI)",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 3
+      },
+      {
+        "name": "Delhi University Colleges (Hindu, St. Stephen’s, Miranda House, Hansraj, LSR)",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 1
+      },
+      {
+        "name": "Jadavpur University",
+        "type": "government",
+        "location": "Kolkata, West Bengal",
+        "ranking": 4
+      },
+      {
+        "name": "BITS Pilani",
+        "type": "private",
+        "location": "Pilani, Rajasthan",
+        "ranking": 7
+      },
+      {
+        "name": "VIT Vellore",
+        "type": "private",
+        "location": "Vellore, Tamil Nadu",
+        "ranking": 8
+      },
+      {
+        "name": "Presidency College",
+        "type": "government",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 12
+      },
+      {
+        "name": "Madras Christian College (MCC)",
+        "type": "government-aided",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 13
+      },
+      {
+        "name": "Loyola College",
+        "type": "private",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 14
+      },
+      {
+        "name": "St. Xavier’s College",
+        "type": "autonomous",
+        "location": "Mumbai, Maharashtra",
+        "ranking": 15
+      },
+      {
+        "name": "Fergusson College",
+        "type": "autonomous",
+        "location": "Pune, Maharashtra",
+        "ranking": 19
+      },
+      {
+        "name": "Christ University",
+        "type": "private",
+        "location": "Bangalore, Karnataka",
+        "ranking": 20
+      },
+      {
+        "name": "Mount Carmel College",
+        "type": "private",
+        "location": "Bangalore, Karnataka",
+        "ranking": 21
+      },
+      {
+        "name": "Stella Maris College",
+        "type": "private",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 22
+      }
+    ],
+    "skills": {
+      "technical": [
+        "Mathematical Modelling",
+        "Statistical Analysis",
+        "Programming (C++, Python, R)",
+        "Cryptography",
+        "Data Interpretation"
+      ],
+      "soft": [
+        "Logical Reasoning",
+        "Problem-Solving",
+        "Analytical Thinking",
+        "Attention to Detail",
+        "Research Aptitude"
+      ]
+    },
+    "isActive": true,
+    "popularity": 95
+  }
+]
