@@ -1,1 +1,28 @@
-//college data
+[
+  {
+    "name": "Indian Institute of Management Bangalore",
+    "shortName": "IIMB",
+    "type": "government",
+    "location": {
+      "address": "Bannerghatta Road, Bengaluru, India - 560076",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "pincode": "560076"
+    },
+    "contact": {
+      "phone": ["+91-80-26993000", "+91-80-26582450"],
+      "email": [],
+      "website": "https://www.iimb.ac.in/"
+    },
+    "courses": [
+      {
+        "courseId": { "$oid": "68c5c4af3a8c04bd4ba358d8" },
+        "courseName": "Bachelor of Business Administration"
+      }
+    ],
+    "images": [
+      "https://images.shiksha.com/mediadata/images/articles/1581057771php0X8D44.jpeg"
+    ],
+    "isActive": true
+  }
+]
