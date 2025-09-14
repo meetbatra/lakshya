@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useQuizStore } from '../store/quizStore';
 import { Button } from '../../../components/ui/button';
@@ -26,6 +26,10 @@ const QuizResults = () => {
     resetQuiz,
     clearError
   } = useQuizStore();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!isQuizCompleted || !quizResults) {
     return (

@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 import { Home } from '../../modules/home';
 import { Login, SignUp, Profile } from '../../modules/user';
 import { QuizStart, QuizQuestion, QuizReview, QuizResults } from '../../modules/quiz';
-import { Courses } from '../../modules/courses';
+import { Courses, CourseDetails } from '../../modules/courses';
 import { Colleges } from '../../modules/colleges';
 import Layout from '../layouts/Layout';
 import NotFound from '../pages/NotFound';
@@ -58,7 +58,16 @@ const router = createBrowserRouter([
       },
       {
         path: 'courses',
-        element: <Courses />
+        children: [
+          {
+            index: true,
+            element: <Courses />
+          },
+          {
+            path: ':courseId',
+            element: <CourseDetails />
+          }
+        ]
       },
       {
         path: 'colleges',

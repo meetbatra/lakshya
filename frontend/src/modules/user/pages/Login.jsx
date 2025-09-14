@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -13,6 +13,10 @@ import { loginSchema } from '../validation/loginValidation';
 const Login = () => {
   const navigate = useNavigate();
   const { login, setLoading, setError, clearError, isLoading, error } = useAuth();
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(loginSchema),

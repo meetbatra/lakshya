@@ -28,7 +28,7 @@ const getCoursesByStream = async (stream) => {
     }
 
     const courses = await Course.find({ stream })
-      .select('name shortName stream field level duration description eligibility careerOptions')
+      .select('name shortName stream field level duration description eligibility careerOptions skills topColleges higherStudyOptions')
       .sort({ name: 1 });
 
     return {
@@ -50,7 +50,10 @@ const getCoursesByStream = async (stream) => {
           },
           description: course.description,
           eligibility: course.eligibility,
-          careerOptions: course.careerOptions
+          careerOptions: course.careerOptions,
+          skills: course.skills,
+          topColleges: course.topColleges,
+          higherStudyOptions: course.higherStudyOptions
         }))
       }
     };
@@ -196,7 +199,7 @@ const getAllCourses = async (filters = {}) => {
     if (level) query.level = level;
 
     const courses = await Course.find(query)
-      .select('name shortName stream field level duration description eligibility')
+      .select('name shortName stream field level duration description eligibility careerOptions skills topColleges higherStudyOptions')
       .sort({ name: 1 });
 
     return {
@@ -217,7 +220,11 @@ const getAllCourses = async (filters = {}) => {
             months: course.duration.months
           },
           description: course.description,
-          eligibility: course.eligibility
+          eligibility: course.eligibility,
+          careerOptions: course.careerOptions,
+          skills: course.skills,
+          topColleges: course.topColleges,
+          higherStudyOptions: course.higherStudyOptions
         }))
       }
     };
@@ -257,23 +264,28 @@ const getCourseById = async (courseId) => {
       success: true,
       message: 'Course retrieved successfully',
       data: {
-        id: course._id,
-        name: course.name,
-        shortName: course.shortName,
-        stream: course.stream,
-        field: course.field,
-        level: course.level,
-        duration: {
-          years: course.duration.years,
-          months: course.duration.months
-        },
-        description: course.description,
-        eligibility: course.eligibility,
-        careerOptions: course.careerOptions,
-        colleges: course.colleges,
-        fees: course.fees,
-        createdAt: course.createdAt,
-        updatedAt: course.updatedAt
+        course: {
+          _id: course._id,
+          name: course.name,
+          shortName: course.shortName,
+          stream: course.stream,
+          field: course.field,
+          level: course.level,
+          duration: {
+            years: course.duration.years,
+            months: course.duration.months
+          },
+          description: course.description,
+          eligibility: course.eligibility,
+          careerOptions: course.careerOptions,
+          higherStudyOptions: course.higherStudyOptions,
+          topColleges: course.topColleges,
+          skills: course.skills,
+          popularity: course.popularity,
+          isActive: course.isActive,
+          createdAt: course.createdAt,
+          updatedAt: course.updatedAt
+        }
       }
     };
   } catch (error) {

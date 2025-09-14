@@ -5,6 +5,8 @@ import { useQuizStore } from '../store/quizStore';
 import { Button } from '../../../components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../../components/ui/card';
 import { Alert, AlertDescription } from '../../../components/ui/alert';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { Clock, Users, BookOpen, Target } from 'lucide-react';
 
 const QuizStart = () => {
@@ -38,6 +40,9 @@ const QuizStart = () => {
   };
 
   useEffect(() => {
+    // Scroll to top of page
+    window.scrollTo(0, 0);
+    
     // Reset quiz state when component mounts
     resetQuiz();
     
@@ -100,10 +105,13 @@ const QuizStart = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading your personalized quiz...</p>
+      <div className="min-h-screen bg-gray-50">
+        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+          {/* Loading State */}
+          <div className="flex justify-center items-center py-20">
+            <FontAwesomeIcon icon={faSpinner} className="h-6 w-6 text-blue-600 animate-spin mr-3" />
+            <span className="text-base text-gray-600">Loading your personalized quiz...</span>
+          </div>
         </div>
       </div>
     );

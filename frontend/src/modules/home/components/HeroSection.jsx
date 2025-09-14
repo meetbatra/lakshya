@@ -84,9 +84,13 @@ const HeroSection = () => {
             {/* Right Visual */}
             <div className="hidden lg:flex justify-center lg:justify-end">
               <div className="relative">
-                <div className="w-80 h-80 bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl flex flex-col items-center justify-center text-white shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-500">
-                  <FontAwesomeIcon icon={faRocket} className="h-20 w-20 mb-4" />
-                  <p className="text-2xl font-bold">Your Future Awaits</p>
+                <div className="w-96 h-96 bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl flex flex-col items-center justify-center text-white shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-500">
+                  <FontAwesomeIcon 
+                    icon={faRocket} 
+                    className="mb-6" 
+                    style={{ fontSize: '120px', width: '120px', height: '120px' }}
+                  />
+                  <p className="text-3xl font-bold">Your Future Awaits</p>
                 </div>
                 {/* Floating elements */}
                 <div className="absolute -top-4 -left-4 w-16 h-16 bg-yellow-400 rounded-2xl flex items-center justify-center animate-bounce">

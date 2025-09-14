@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../user/store/userStore';
 import { useQuizStore } from '../store/quizStore';
@@ -22,6 +22,10 @@ const QuizReview = () => {
     goToQuestion,
     clearError
   } = useQuizStore();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const answeredCount = getAnsweredCount();
   const totalQuestions = currentQuiz?.totalQuestions || 0;

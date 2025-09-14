@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from '../../../components/ui/button';
 import { Input } from '../../../components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../../../components/ui/card';
@@ -10,6 +10,10 @@ import { faSearch, faMapMarkerAlt, faStar, faUsers, faExternalLinkAlt, faBook, f
 const Colleges = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedType, setSelectedType] = useState('all');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Dummy college data
   const collegesData = [

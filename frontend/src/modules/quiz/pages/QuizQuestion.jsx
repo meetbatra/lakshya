@@ -23,13 +23,13 @@ const QuizQuestion = () => {
     answerQuestion,
     nextQuestion,
     previousQuestion,
-    goToQuestion,
     canSubmitQuiz,
     clearError
   } = useQuizStore();
 
   // Redirect if quiz not started
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (!isQuizStarted || !currentQuiz) {
       navigate('/quiz/start');
     }
@@ -185,28 +185,6 @@ const QuizQuestion = () => {
                 <CheckCircle className="w-4 h-4" />
               </Button>
             )}
-          </div>
-        </div>
-
-        {/* Question Navigation */}
-        <div className="mt-8 p-4 bg-white rounded-lg border">
-          <h3 className="text-sm font-medium text-gray-700 mb-3">Question Navigation</h3>
-          <div className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-12 gap-2">
-            {Array.from({ length: currentQuiz.totalQuestions }, (_, index) => (
-              <button
-                key={index}
-                onClick={() => goToQuestion(index)}
-                className={`w-8 h-8 rounded text-xs font-medium transition-colors ${
-                  index === currentQuestionIndex
-                    ? 'bg-blue-600 text-white'
-                    : answers[index]
-                    ? 'bg-green-100 text-green-700 border border-green-300'
-                    : 'bg-gray-100 text-gray-500 border border-gray-300'
-                }`}
-              >
-                {index + 1}
-              </button>
-            ))}
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../../../components/ui/card';
@@ -9,6 +9,10 @@ import { authAPI } from '../api/authAPI';
 const Profile = () => {
   const navigate = useNavigate();
   const { user, logout, getUserInitials, getUserAvatar } = useAuth();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Redirect to login if not authenticated
   if (!user) {
