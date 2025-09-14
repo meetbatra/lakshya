@@ -4,19 +4,19 @@
     "shortName": "IIMB",
     "type": "government",
     "location": {
-      "address": "Bannerghatta Road, Bengaluru, India - 560076",
+      "address": "Bannerghatta Road, Bengaluru, India",
       "city": "Bengaluru",
       "state": "Karnataka",
       "pincode": "560076"
     },
     "contact": {
       "phone": ["+91-80-26993000", "+91-80-26582450"],
-      "email": [],
+      "email": ["info@iimb.ac.in"],
       "website": "https://www.iimb.ac.in/"
     },
     "courses": [
       {
-        "courseId": { "$oid": "68c5c4af3a8c04bd4ba358d8" },
+        "courseId": "68c5c4af3a8c04bd4ba358d8",
         "courseName": "Bachelor of Business Administration"
       }
     ],
@@ -24,5 +24,110 @@
       "https://images.shiksha.com/mediadata/images/articles/1581057771php0X8D44.jpeg"
     ],
     "isActive": true
-  }
+  },
+  {
+    "name": "Indian Institute of Management Ahmedabad",
+    "shortName": "IIMA",
+    "type": "government",
+    "location": {
+      "address": "Vastrapur",
+      "city": "Ahmedabad",
+      "state": "Gujarat",
+      "pincode": "380015"
+    },
+    "contact": {
+      "phone": ["+91-79-7152 4848", "+91-79-71524845"],
+      "email": ["director@iima.ac.in"],
+      "website": "https://www.iima.ac.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358d8",
+        "courseName": "Bachelor of Business Administration"
+      }
+    ],
+    "images": [
+      "https://www.iima.ac.in/sites/default/files/2022-10/Restoration.jpg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Indian Institute of Management Calcutta",
+    "shortName": "IIMC",
+    "type": "government",
+    "location": {
+      "address": "Diamond Harbor Road, Joka",
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "pincode": "700104"
+    },
+    "contact": {
+      "phone": ["022-61306212"],
+      "email": ["pgdba2021helpdesk@gmail.com"],
+      "website": "https://www.iimcal.ac.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358d8",
+        "courseName": "Bachelor of Business Administration"
+      }
+    ],
+    "images": [
+      "https://www.iimcal.ac.in/sites/default/files/mba-page-first-image.png"
+    ],
+    "isActive": true
+  },
+  {
+  "name": "Indian Institute of Management Lucknow",
+  "shortName": "IIML",
+  "type": "government",
+  "location": {
+    "address": "Prabandh Nagar, IIM Road",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "pincode": "226013"
+  },
+  "contact": {
+    "phone": ["+91-522-2734101", "2734111-20", "6696001", "+91-522-2734025", "2734005"],
+    "email": ["deanfaculty@iiml.ac.in"],
+    "website": "https://www.iiml.ac.in/"
+  },
+  "courses": [
+    {
+      "courseId": "68c5c4af3a8c04bd4ba358d8",
+      "courseName": "Bachelor of Business Administration"
+    }
+  ],
+  "images": [
+    "https://www.iiml.ac.in/sites/default/files/MBAEI/mba/admission_mba_ei.JPG"
+  ],
+  "isActive": true
+},
+{
+  "name": "Indian Institute of Management Indore",
+  "shortName": "IIMI",
+  "type": "government",
+  "location": {
+    "address": "Prabandh Shikhar, Rau-Pithampur Road",
+    "city": "Indore",
+    "state": "Madhya Pradesh",
+    "pincode": "453556"
+  },
+  "contact": {
+    "phone": ["+91-731-2439666", "+91-731-2439800"],
+    "email": ["info@iimidr.ac.in"],
+    "website": "https://www.iimidr.ac.in/"
+  },
+  "courses": [
+    {
+      "courseId": "68c5c4af3a8c04bd4ba358d8",
+      "courseName": "Bachelor of Business Administration"
+    }
+  ],
+  "images": [
+    "https://iimidr.ac.in/wp-content/uploads/2021/01/main-building-m.jpg"
+  ],
+  "isActive": true
+}
+
 ]
