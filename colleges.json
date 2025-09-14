@@ -562,5 +562,735 @@
     "isActive": true,
     "createdAt": "2025-09-14T10:20:30.000Z",
     "updatedAt": "2025-09-14T10:20:30.000Z"
-  }
+  },
+  {
+    "name": "Lady Shri Ram College for Women",
+    "shortName": "LSR",
+    "type": "government",
+    "location": {
+      "address": "Lajpat Nagar-IV",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "pincode": "110024"
+    },
+    "contact": {
+      "phone": ["91-11-26434459", "91-11-45494949"],
+      "email": ["lsrc@lsr.edu.in"],
+      "website": "https://lsr.edu.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba35765",
+        "courseName": "Bachelor of Science in Computer Science"
+      },
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba3579c",
+        "courseName": "Bachelor of Science in Chemistry"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357b7",
+        "courseName": "Bachelor of Science in Mathematics"
+      },
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358f9",
+        "courseName": "Bachelor of Commerce"
+      }
+    ],
+    "images": [
+      "https://lsr.edu.in/wp-content/uploads/2019/09/lsr-front-building-.jpg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "St. Stephen's College",
+    "shortName": "SSC",
+    "type": "government",
+    "location": {
+      "address": "Sudhir Bose Marg, University Enclave",
+      "city": "Delhi",
+      "state": "Delhi",
+      "pincode": "110007"
+    },
+    "contact": {
+      "phone": ["+91-11-27662152"],
+      "email": ["ssc@ststephens.edu"],
+      "website": "https://www.ststephens.edu/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba35765",
+        "courseName": "Bachelor of Science in Computer Science"
+      },
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba3579c",
+        "courseName": "Bachelor of Science in Chemistry"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357b7",
+        "courseName": "Bachelor of Science in Mathematics"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357d5",
+        "courseName": "Bachelor of Science in Biology"
+      }
+    ],
+    "images": [
+      "https://latest.sundayguardianlive.com/wp-content/uploads/2018/12/p2-42.jpg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "St. Xavier's College",
+    "shortName": "ST XAVIERS",
+    "type": "private",
+    "location": {
+      "address": "5, Mahapalika Marg, Mumbai - 400001",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "pincode": "400001"
+    },
+    "contact": {
+      "phone": ["+91-22-22620661"],
+      "email": ["webadmin@xaviers.edu"],
+      "website": "https://xaviers.edu/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357b7",
+        "courseName": "Bachelor of Science in Mathematics"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357d5",
+        "courseName": "Bachelor of Science in Biology"
+      }
+    ],
+    "images": [
+      "https://images.hindustantimes.com/rf/image_size_640x362/HT/p2/2016/02/04/Pictures/_77dffba8-cb42-11e5-9175-b0581234e99b.jpg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "St. Xavier's College, Kolkata",
+    "shortName": "ST XAVIERS KOLKATA",
+    "type": "private",
+    "location": {
+      "address": "30, Park St, Mullick Bazar, Park Street area",
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "pincode": "700016"
+    },
+    "contact": {
+      "phone": ["033-2255-1101"],
+      "email": ["contact@sxccal.edu"],
+      "website": "https://www.sxccal.edu/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358f9",
+        "courseName": "Bachelor of Commerce"
+      },
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba3579c",
+        "courseName": "Bachelor of Science in Chemistry"
+      }
+    ],
+    "images": ["https://sxccal.edu/upload/1-banner.png"],
+    "isActive": true
+  },
+  {
+    "name": "Loyola College",
+    "shortName": "LOYOLA COLLEGE",
+    "type": "private",
+    "location": {
+      "address": "24, 9, Nelson Manickam Rd, Nungambakkam",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "pincode": "600034"
+    },
+    "contact": {
+      "phone": ["044-28178200"],
+      "email": ["loyolalibrarychennai@gmail.com"],
+      "website": "http://www.loyolacollege.edu"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358f9",
+        "courseName": "Bachelor of Commerce"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357be",
+        "courseName": "Bachelor of Science in Mathematics"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357d5",
+        "courseName": "Bachelor of Science in Biology"
+      }
+    ],
+    "images": [
+      "https://www.madrasmusings.com/wp-content/uploads/2024/06/Main-Building-of-Loyola-College.jpg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Christ University",
+    "shortName": "CHRIST UNIVERSITY",
+    "type": "deemed",
+    "location": {
+      "address": "Dharmaram College Post, Hosur Road",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "pincode": "560029"
+    },
+    "contact": {
+      "phone": ["+91-8040129100", "+91-8040129600"],
+      "email": ["mail@christuniversity.in"],
+      "website": "https://www.christuniversity.in"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357be",
+        "courseName": "Bachelor of Science in Mathematics"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357de",
+        "courseName": "Bachelor of Science in Biology"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba35833",
+        "courseName": "Bachelor of Technology in Information Technology"
+      },
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358f4",
+        "courseName": "Bachelor of Business Administration"
+      },
+      {
+        "courseId": "68c5c4af3a8c04bd4ba35911",
+        "courseName": "Bachelor in Entrepreneurship"
+      },
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358f9",
+        "courseName": "Bachelor of Commerce"
+      }
+    ],
+    "images": [
+      "https://www.guidanceforever.org/wp-content/uploads/2023/11/christ-university-bengaluru-featured.jpg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Jamia Millia Islamia",
+    "shortName": "JMI",
+    "type": "government",
+    "location": {
+      "address": "Jamia Nagar",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "pincode": "110025"
+    },
+    "contact": {
+      "phone": [
+        "+91-11-26981717",
+        "+91-11-26984617",
+        "+91-11-26984658",
+        "+91-11-26988044",
+        "+91-11-26987183",
+        "+91-11-26980229"
+      ],
+      "email": ["internationalrelation@jmi.ac.in"],
+      "website": "https://jmi.ac.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba3578a",
+        "courseName": "Bachelor of Science in Physics"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357be",
+        "courseName": "Bachelor of Science in Mathematics"
+      },
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358f4",
+        "courseName": "Bachelor of Business Administration"
+      }
+    ],
+    "images": [
+      "https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2025/03/jmi-1742432923.webp"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Jamia Hamdard",
+    "shortName": "JAMIA HAMDARD",
+    "type": "deemed",
+    "location": {
+      "address": "Mehrauli - Badarpur Rd, near Batra Hospital, Block D, Hamdard Nagar",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "pincode": "110062"
+    },
+    "contact": {
+      "phone": ["011-26059688"],
+      "email": ["director_sodl@jamiahamdard.ac.in"],
+      "website": "http://jamiahamdard.edu/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358c8",
+        "courseName": "Bachelor of Pharmacy"
+      }
+    ],
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIUqGJlsGNV6A7mpHsEIJ4xMlSybqL0GVr6A&s"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Panjab University",
+    "shortName": "PU",
+    "type": "government",
+    "location": {
+      "address": "Sector 14",
+      "city": "Chandigarh",
+      "state": "Chandigarh",
+      "pincode": "160014"
+    },
+    "contact": {
+      "phone": ["0172-2537876", "0172-2534818", "0172-2534866"],
+      "email": ["admnsupport@pu.ac.in"],
+      "website": "https://puchd.ac.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358c8",
+        "courseName": "Bachelor of Pharmacy"
+      },
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba3578a",
+        "courseName": "Bachelor of Science in Physics"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba35864",
+        "courseName": "Bachelor of Laws (LLB)"
+      }
+    ],
+    "images": [
+      "https://static.toiimg.com/thumb/msid-64501605,width-1280,height-720,resizemode-72/64501605.jpg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "University of Calcutta",
+    "shortName": "CU",
+    "type": "government",
+    "location": {
+      "address": "87/1, College St, Calcutta University, College Square",
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "pincode": "700073"
+    },
+    "contact": {
+      "phone": ["033-22410074"],
+      "email": ["registrar@caluniv.ac.in"],
+      "website": "https://www.caluniv.ac.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba3578a",
+        "courseName": "Bachelor of Science in Physics"
+      },
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba35765",
+        "courseName": "Bachelor of Science in Computer Science"
+      }
+    ],
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5kQAi2l8LmzV-g_jpe4xaO5_vYaKjIxG_ow&s"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Jadavpur University",
+    "shortName": "JU",
+    "type": "government",
+    "location": {
+      "address": "188, Raja Subodh Chandra Mallick Rd, Jadavpur",
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "pincode": "700032"
+    },
+    "contact": {
+      "phone": ["033-24146666"],
+      "email": ["vc@jadavpuruniversity.in"],
+      "website": "https://jadavpuruniversity.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357b7",
+        "courseName": "Bachelor of Science in Mathematics"
+      }
+    ],
+    "images": [
+      "https://jadavpuruniversity.in/storage/2021/03/JadavpurVarsity-gigapixel-standard-scale-2_00x.jpg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Aligarh Muslim University",
+    "shortName": "AMU",
+    "type": "government",
+    "location": {
+      "address": "Aligarh Muslim University",
+      "city": "Aligarh",
+      "state": "Uttar Pradesh",
+      "pincode": "202002"
+    },
+    "contact": {
+      "phone": ["+91-571-2700920"],
+      "email": ["amupro@amu.ac.in"],
+      "website": "https://www.amu.ac.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba35765",
+        "courseName": "Bachelor of Science in Computer Science"
+      },
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba3579c",
+        "courseName": "Bachelor of Science in Chemistry"
+      }
+    ],
+    "images": [
+      "https://store.learningroutes.in/images/colleges/Centre-for-Distance-and-Online-Education-Aligarh-Muslim-University/hero-image/banner.webp"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Indian Statistical Institute",
+    "shortName": "ISI",
+    "type": "government",
+    "location": {
+      "address": "Plot No, 203, Barrackpore Trunk Rd, Dunlop, Bonhooghly Government Colony, Baranagar",
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "pincode": "700108"
+    },
+    "contact": {
+      "phone": ["91-33-2575 2105"],
+      "email": ["ksatpathy@isical.ac.in"],
+      "website": "https://www.isical.ac.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357b7",
+        "courseName": "Bachelor of Science in Mathematics"
+      }
+    ],
+    "images": ["https://ctag.in/wp-content/uploads/2025/02/isi-cal-1.jpg"],
+    "isActive": true
+  },
+  {
+    "name": "Chennai Mathematical Institute",
+    "shortName": "CMI",
+    "type": "private",
+    "location": {
+      "address": "H1, SIPCOT IT Park, Siruseri",
+      "city": "Kelambakkam",
+      "state": "Tamil Nadu",
+      "pincode": "603103"
+    },
+    "contact": {
+      "phone": ["+91-44-71961000", "+91-44-27470226", "+91-44-27470229"],
+      "email": ["enquiry@cmi.ac.in"],
+      "website": "https://www.cmi.ac.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357b7",
+        "courseName": "Bachelor of Science in Mathematics"
+      }
+    ],
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/8/85/CMI_main_building_from_outside.jpg"
+    ],
+    "isActive": true
+  },
+  {
+  "name": "National Institute of Science Education and Research",
+  "shortName": "NISER",
+  "type": "deemed",
+  "location": {
+    "address": "Jatni, Padanpur",
+    "city": "Jatni",
+    "state": "Odisha",
+    "pincode": "752050"
+  },
+  "contact": {
+    "phone": ["0674 249 4050"],
+    "email": ["registrar@niser.ac.in"],
+    "website": "https://www.niser.ac.in/"
+  },
+  "courses": [
+    {
+        "courseId": "68c5c4ad3a8c04bd4ba35783",
+        "courseName": "Bachelor of Science in Physics"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357d5",
+        "courseName": "Bachelor of Science in Biology"
+      }
+  ],
+  "images": ["https://www.niser.ac.in/events/ispp2024/assets/img/NISER.jpg"],
+  "isActive": true
+},
+{
+  "name": "Indian Institute of Technology Bombay",
+  "shortName": "IIT BOMBAY",
+  "type": "government",
+  "location": {
+    "address": "Powai",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "pincode": "400076"
+  },
+  "contact": {
+    "phone": ["+91-22-2576-7351"],
+    "email": ["jeeadv@iitb.ac.in"],
+    "website": "https://www.iitb.ac.in/"
+  },
+  "courses": [
+    {
+        "courseId": "68c5c4ae3a8c04bd4ba357f0",
+        "courseName": "Bachelor of Technology in Computer Science and Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3580e",
+        "courseName": "Bachelor of Technology in Electronics and Communication Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3582c",
+        "courseName": "Bachelor of Technology in Information Technology"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba35848",
+        "courseName": "Bachelor of Technology in Mechanical Engineering"
+      }
+  ],
+  "images": ["https://www.ieor.iitb.ac.in/sites/default/files/files/banner-1%20iitb_0.jpg"],
+  "isActive": true
+},
+{
+  "name": "Indian Institute of Technology Delhi",
+  "shortName": "IIT DELHI",
+  "type": "government",
+  "location": {
+    "address": "IIT Campus, Hauz Khas",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "pincode": "110016"
+  },
+  "contact": {
+    "phone": ["011-2659-7135"],
+    "email": ["director@admin.iitd.ac.in"],
+    "website": "https://home.iitd.ac.in/"
+  },
+  "courses": [
+    {
+        "courseId": "68c5c4ae3a8c04bd4ba357f0",
+        "courseName": "Bachelor of Technology in Computer Science and Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3580e",
+        "courseName": "Bachelor of Technology in Electronics and Communication Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3582c",
+        "courseName": "Bachelor of Technology in Information Technology"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba35848",
+        "courseName": "Bachelor of Technology in Mechanical Engineering"
+      }
+  ],
+  "images": ["https://web.iitd.ac.in/~vkumar/assets/scrolling_images/iit-delhi-photo.jpeg"],
+  "isActive": true
+},{
+  "name": "Indian Institute of Technology Madras",
+  "shortName": "IIT MADRAS",
+  "type": "government",
+  "location": {
+    "address": "IIT P.O.",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "pincode": "600036"
+  },
+  "contact": {
+    "phone": ["044-2257-8100"],
+    "email": ["school-connect@study.iitm.ac.in"],
+    "website": "https://www.iitm.ac.in/"
+  },
+  "courses": [
+    {
+        "courseId": "68c5c4ae3a8c04bd4ba357f0",
+        "courseName": "Bachelor of Technology in Computer Science and Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3580e",
+        "courseName": "Bachelor of Technology in Electronics and Communication Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3582c",
+        "courseName": "Bachelor of Technology in Information Technology"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba35848",
+        "courseName": "Bachelor of Technology in Mechanical Engineering"
+      }
+  ],
+  "images": ["https://generic.wordpress.soton.ac.uk/webscience/wp-content/uploads/sites/117/2019/04/madras.jpg"],
+  "isActive": true
+},
+{
+  "name": "Indian Institute of Technology Kanpur",
+  "shortName": "IIT KANPUR",
+  "type": "government",
+  "location": {
+    "address": "Kalyanpur",
+    "city": "Kanpur",
+    "state": "Uttar Pradesh",
+    "pincode": "208016"
+  },
+  "contact": {
+    "phone": ["0512-259-0151"],
+    "email": ["jee@iitk.ac.in"],
+    "website": "https://www.iitk.ac.in/"
+  },
+  "courses": [
+    {
+        "courseId": "68c5c4ae3a8c04bd4ba357f0",
+        "courseName": "Bachelor of Technology in Computer Science and Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3580e",
+        "courseName": "Bachelor of Technology in Electronics and Communication Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3582c",
+        "courseName": "Bachelor of Technology in Information Technology"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba35848",
+        "courseName": "Bachelor of Technology in Mechanical Engineering"
+      }
+  ],
+  "images": ["https://iitk.ac.in/futurestudents/static/images/backgrounds/BG-new-1.jpg"],
+  "isActive": true
+},
+{
+  "name": "Indian Institute of Technology Kharagpur",
+  "shortName": "IIT KHARAGPUR",
+  "type": "government",
+  "location": {
+    "address": "Kharagpur",
+    "city": "Kharagpur",
+    "state": "West Bengal",
+    "pincode": "721302"
+  },
+  "contact": {
+    "phone": ["+91-3222-255221"],
+    "email": ["help_ug@adm.iitkgp.ac.in"],
+    "website": "https://www.iitkgp.ac.in/"
+  },
+  "courses": [
+    {
+        "courseId": "68c5c4ae3a8c04bd4ba357f0",
+        "courseName": "Bachelor of Technology in Computer Science and Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3580e",
+        "courseName": "Bachelor of Technology in Electronics and Communication Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3582c",
+        "courseName": "Bachelor of Technology in Information Technology"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba35848",
+        "courseName": "Bachelor of Technology in Mechanical Engineering"
+      }
+  ],
+  "images": [],
+  "isActive": true
+},
+{
+  "name": "Indian Institute of Technology Roorkee",
+  "shortName": "IIT ROORKEE",
+  "type": "government",
+  "location": {
+    "address": "Roorkee - Haridwar Highway",
+    "city": "Roorkee",
+    "state": "Uttarakhand",
+    "pincode": "247667"
+  },
+  "contact": {
+    "phone": ["01332-284289", "01332-285200"],
+    "email": ["academics@iitr.ac.in"],
+    "website": "https://www.iitr.ac.in/"
+  },
+  "courses": [
+    {
+        "courseId": "68c5c4ae3a8c04bd4ba357f0",
+        "courseName": "Bachelor of Technology in Computer Science and Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3580e",
+        "courseName": "Bachelor of Technology in Electronics and Communication Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3582c",
+        "courseName": "Bachelor of Technology in Information Technology"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba35848",
+        "courseName": "Bachelor of Technology in Mechanical Engineering"
+      }
+  ],
+  "images": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoVy2EWxfQxMLhtgU_KNkWjdPEyt-zQYbR5A&s"],
+  "isActive": true
+},
+{
+  "name": "Indian Institute of Technology Guwahati",
+  "shortName": "IIT GUWAHATI",
+  "type": "government",
+  "location": {
+    "address": "5MRW+W2H, IIT Guwahati",
+    "city": "Guwahati",
+    "state": "Assam",
+    "pincode": "781039"
+  },
+  "contact": {
+    "phone": ["+91-361-2583000"],
+    "email": ["peeroff@iitg.ac.in"],
+    "website": "https://www.iitg.ac.in/"
+  },
+  "courses": [
+    {
+        "courseId": "68c5c4ae3a8c04bd4ba357f0",
+        "courseName": "Bachelor of Technology in Computer Science and Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3580e",
+        "courseName": "Bachelor of Technology in Electronics and Communication Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3582c",
+        "courseName": "Bachelor of Technology in Information Technology"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba35848",
+        "courseName": "Bachelor of Technology in Mechanical Engineering"
+      }
+  ],
+  "images": ["https://www.iitg.ac.in/clst/assets/images/slider_image/original/1.jpg"],
+  "isActive": true
+}
 ]
