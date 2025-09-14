@@ -10,8 +10,13 @@
       "pincode": "560076"
     },
     "contact": {
-      "phone": ["+91-80-26993000", "+91-80-26582450"],
-      "email": ["info@iimb.ac.in"],
+      "phone": [
+        "+91-80-26993000",
+        "+91-80-26582450"
+      ],
+      "email": [
+        "info@iimb.ac.in"
+      ],
       "website": "https://www.iimb.ac.in/"
     },
     "courses": [
@@ -36,8 +41,13 @@
       "pincode": "380015"
     },
     "contact": {
-      "phone": ["+91-79-7152 4848", "+91-79-71524845"],
-      "email": ["director@iima.ac.in"],
+      "phone": [
+        "+91-79-7152 4848",
+        "+91-79-71524845"
+      ],
+      "email": [
+        "director@iima.ac.in"
+      ],
       "website": "https://www.iima.ac.in/"
     },
     "courses": [
@@ -62,8 +72,12 @@
       "pincode": "700104"
     },
     "contact": {
-      "phone": ["022-61306212"],
-      "email": ["pgdba2021helpdesk@gmail.com"],
+      "phone": [
+        "022-61306212"
+      ],
+      "email": [
+        "pgdba2021helpdesk@gmail.com"
+      ],
       "website": "https://www.iimcal.ac.in/"
     },
     "courses": [
@@ -95,7 +109,9 @@
         "+91-522-2734025",
         "2734005"
       ],
-      "email": ["deanfaculty@iiml.ac.in"],
+      "email": [
+        "deanfaculty@iiml.ac.in"
+      ],
       "website": "https://www.iiml.ac.in/"
     },
     "courses": [
@@ -120,8 +136,13 @@
       "pincode": "453556"
     },
     "contact": {
-      "phone": ["+91-731-2439666", "+91-731-2439800"],
-      "email": ["info@iimidr.ac.in"],
+      "phone": [
+        "+91-731-2439666",
+        "+91-731-2439800"
+      ],
+      "email": [
+        "info@iimidr.ac.in"
+      ],
       "website": "https://www.iimidr.ac.in/"
     },
     "courses": [
@@ -146,8 +167,13 @@
       "pincode": "831001"
     },
     "contact": {
-      "phone": ["+91-657-665 3333"],
-      "email": ["info@xlri.ac.in", "admissions@xlri.ac.in"],
+      "phone": [
+        "+91-657-665 3333"
+      ],
+      "email": [
+        "info@xlri.ac.in",
+        "admissions@xlri.ac.in"
+      ],
       "website": "https://www.xlri.ac.in"
     },
     "courses": [
@@ -174,8 +200,14 @@
       "pincode": "400058"
     },
     "contact": {
-      "phone": ["02261454200", "02261460200", "02262134420"],
-      "email": ["info@spjimr.org"],
+      "phone": [
+        "02261454200",
+        "02261460200",
+        "02262134420"
+      ],
+      "email": [
+        "info@spjimr.org"
+      ],
       "website": "https://www.spjimr.org"
     },
     "courses": [
@@ -206,8 +238,13 @@
       "pincode": "400056"
     },
     "contact": {
-      "phone": ["02242355555", "02242355621"],
-      "email": ["enquiry@nmims.edu"],
+      "phone": [
+        "02242355555",
+        "02242355621"
+      ],
+      "email": [
+        "enquiry@nmims.edu"
+      ],
       "website": "https://nmims.edu"
     },
     "courses": [
@@ -220,7 +257,9 @@
         "courseName": "Bachelor of Commerce"
       }
     ],
-    "images": ["https://www.nmims.edu/images/home-slide/m-school-6.jpg"],
+    "images": [
+      "https://www.nmims.edu/images/home-slide/m-school-6.jpg"
+    ],
     "isActive": true,
     "createdAt": "2025-09-14T10:20:30.000Z",
     "updatedAt": "2025-09-14T10:20:30.000Z"
@@ -236,8 +275,13 @@
       "pincode": "400020"
     },
     "contact": {
-      "phone": ["02222024133", "02222025153"],
-      "email": ["web@jbims.edu"],
+      "phone": [
+        "02222024133",
+        "02222025153"
+      ],
+      "email": [
+        "web@jbims.edu"
+      ],
       "website": "https://jbims.edu"
     },
     "courses": [
@@ -246,7 +290,9 @@
         "courseName": "Bachelor in Entrepreneurship"
       }
     ],
-    "images": ["https://www.jbims.edu/uploads/homebanner/jbims_img-1.jpg"],
+    "images": [
+      "https://www.jbims.edu/uploads/homebanner/jbims_img-1.jpg"
+    ],
     "isActive": true,
     "createdAt": "2025-09-14T10:20:30.000Z",
     "updatedAt": "2025-09-14T10:20:30.000Z"
@@ -262,8 +308,14 @@
       "pincode": "201306"
     },
     "contact": {
-      "phone": ["0120-6843000-10", "9355024501-10"],
-      "email": ["info@bimtech.ac.in", "admission@bimtech.ac.in"],
+      "phone": [
+        "0120-6843000-10",
+        "9355024501-10"
+      ],
+      "email": [
+        "info@bimtech.ac.in",
+        "admission@bimtech.ac.in"
+      ],
       "website": "https://www.bimtech.ac.in"
     },
     "courses": [
@@ -290,8 +342,15 @@
       "pincode": "201001"
     },
     "contact": {
-      "phone": ["01204083200", "01204083306", "9810214551"],
-      "email": ["admissions@imt.edu", "director@imt.edu"],
+      "phone": [
+        "01204083200",
+        "01204083306",
+        "9810214551"
+      ],
+      "email": [
+        "admissions@imt.edu",
+        "director@imt.edu"
+      ],
       "website": "https://www.imt.edu"
     },
     "courses": [
@@ -318,8 +377,13 @@
       "pincode": "560012"
     },
     "contact": {
-      "phone": ["+91-80-23600757", "+91-80-22932444"],
-      "email": ["registrar@iisc.ac.in"],
+      "phone": [
+        "+91-80-23600757",
+        "+91-80-22932444"
+      ],
+      "email": [
+        "registrar@iisc.ac.in"
+      ],
       "website": "https://www.iisc.ac.in"
     },
     "courses": [
@@ -350,8 +414,12 @@
       "pincode": "110067"
     },
     "contact": {
-      "phone": ["011-26704090"],
-      "email": ["registrar@mail.jnu.ac.in"],
+      "phone": [
+        "011-26704090"
+      ],
+      "email": [
+        "registrar@mail.jnu.ac.in"
+      ],
       "website": "https://www.jnu.ac.in"
     },
     "courses": [
@@ -382,8 +450,15 @@
       "pincode": "221005"
     },
     "contact": {
-      "phone": ["0542-2307631", "0542-2369018", "0542-6703253"],
-      "email": ["int.admission@bhu.ac.in", "admission.help@bhu.ac.in"],
+      "phone": [
+        "0542-2307631",
+        "0542-2369018",
+        "0542-6703253"
+      ],
+      "email": [
+        "int.admission@bhu.ac.in",
+        "admission.help@bhu.ac.in"
+      ],
       "website": "https://www.bhu.ac.in"
     },
     "courses": [
@@ -430,8 +505,14 @@
       "pincode": "110007"
     },
     "contact": {
-      "phone": ["011-27006900", "011-27667011"],
-      "email": ["registrar@du.ac.in", "ug@admission.du.ac.in"],
+      "phone": [
+        "011-27006900",
+        "011-27667011"
+      ],
+      "email": [
+        "registrar@du.ac.in",
+        "ug@admission.du.ac.in"
+      ],
       "website": "https://www.du.ac.in"
     },
     "courses": [
@@ -470,8 +551,14 @@
       "pincode": "110007"
     },
     "contact": {
-      "phone": ["011-27666983", "011-27667367", "011-27667437"],
-      "email": ["principal@mirandahouse.ac.in"],
+      "phone": [
+        "011-27666983",
+        "011-27667367",
+        "011-27667437"
+      ],
+      "email": [
+        "principal@mirandahouse.ac.in"
+      ],
       "website": "https://www.mirandahouse.ac.in"
     },
     "courses": [
@@ -510,8 +597,12 @@
       "pincode": "110007"
     },
     "contact": {
-      "phone": ["011-27667184"],
-      "email": ["principal@hinducollege.org"],
+      "phone": [
+        "011-27667184"
+      ],
+      "email": [
+        "principal@hinducollege.org"
+      ],
       "website": "https://hinducollege.ac.in"
     },
     "courses": [
@@ -546,8 +637,13 @@
       "pincode": "110007"
     },
     "contact": {
-      "phone": ["011-27667747", "011-27667458"],
-      "email": ["principal_hrc@yahoo.com"],
+      "phone": [
+        "011-27667747",
+        "011-27667458"
+      ],
+      "email": [
+        "principal_hrc@yahoo.com"
+      ],
       "website": "http://www.hansrajcollege.co.in"
     },
     "courses": [
@@ -586,8 +682,13 @@
       "pincode": "110024"
     },
     "contact": {
-      "phone": ["91-11-26434459", "91-11-45494949"],
-      "email": ["lsrc@lsr.edu.in"],
+      "phone": [
+        "91-11-26434459",
+        "91-11-45494949"
+      ],
+      "email": [
+        "lsrc@lsr.edu.in"
+      ],
       "website": "https://lsr.edu.in/"
     },
     "courses": [
@@ -624,8 +725,12 @@
       "pincode": "110007"
     },
     "contact": {
-      "phone": ["+91-11-27662152"],
-      "email": ["ssc@ststephens.edu"],
+      "phone": [
+        "+91-11-27662152"
+      ],
+      "email": [
+        "ssc@ststephens.edu"
+      ],
       "website": "https://www.ststephens.edu/"
     },
     "courses": [
@@ -662,8 +767,12 @@
       "pincode": "400001"
     },
     "contact": {
-      "phone": ["+91-22-22620661"],
-      "email": ["webadmin@xaviers.edu"],
+      "phone": [
+        "+91-22-22620661"
+      ],
+      "email": [
+        "webadmin@xaviers.edu"
+      ],
       "website": "https://xaviers.edu/"
     },
     "courses": [
@@ -692,8 +801,12 @@
       "pincode": "700016"
     },
     "contact": {
-      "phone": ["033-2255-1101"],
-      "email": ["contact@sxccal.edu"],
+      "phone": [
+        "033-2255-1101"
+      ],
+      "email": [
+        "contact@sxccal.edu"
+      ],
       "website": "https://www.sxccal.edu/"
     },
     "courses": [
@@ -706,7 +819,9 @@
         "courseName": "Bachelor of Science in Chemistry"
       }
     ],
-    "images": ["https://sxccal.edu/upload/1-banner.png"],
+    "images": [
+      "https://sxccal.edu/upload/1-banner.png"
+    ],
     "isActive": true
   },
   {
@@ -720,8 +835,12 @@
       "pincode": "600034"
     },
     "contact": {
-      "phone": ["044-28178200"],
-      "email": ["loyolalibrarychennai@gmail.com"],
+      "phone": [
+        "044-28178200"
+      ],
+      "email": [
+        "loyolalibrarychennai@gmail.com"
+      ],
       "website": "http://www.loyolacollege.edu"
     },
     "courses": [
@@ -754,8 +873,13 @@
       "pincode": "560029"
     },
     "contact": {
-      "phone": ["+91-8040129100", "+91-8040129600"],
-      "email": ["mail@christuniversity.in"],
+      "phone": [
+        "+91-8040129100",
+        "+91-8040129600"
+      ],
+      "email": [
+        "mail@christuniversity.in"
+      ],
       "website": "https://www.christuniversity.in"
     },
     "courses": [
@@ -808,7 +932,9 @@
         "+91-11-26987183",
         "+91-11-26980229"
       ],
-      "email": ["internationalrelation@jmi.ac.in"],
+      "email": [
+        "internationalrelation@jmi.ac.in"
+      ],
       "website": "https://jmi.ac.in/"
     },
     "courses": [
@@ -841,8 +967,12 @@
       "pincode": "110062"
     },
     "contact": {
-      "phone": ["011-26059688"],
-      "email": ["director_sodl@jamiahamdard.ac.in"],
+      "phone": [
+        "011-26059688"
+      ],
+      "email": [
+        "director_sodl@jamiahamdard.ac.in"
+      ],
       "website": "http://jamiahamdard.edu/"
     },
     "courses": [
@@ -867,8 +997,14 @@
       "pincode": "160014"
     },
     "contact": {
-      "phone": ["0172-2537876", "0172-2534818", "0172-2534866"],
-      "email": ["admnsupport@pu.ac.in"],
+      "phone": [
+        "0172-2537876",
+        "0172-2534818",
+        "0172-2534866"
+      ],
+      "email": [
+        "admnsupport@pu.ac.in"
+      ],
       "website": "https://puchd.ac.in/"
     },
     "courses": [
@@ -897,8 +1033,12 @@
       "pincode": "700073"
     },
     "contact": {
-      "phone": ["033-22410074"],
-      "email": ["registrar@caluniv.ac.in"],
+      "phone": [
+        "033-22410074"
+      ],
+      "email": [
+        "registrar@caluniv.ac.in"
+      ],
       "website": "https://www.caluniv.ac.in/"
     },
     "courses": [
@@ -927,8 +1067,12 @@
       "pincode": "700032"
     },
     "contact": {
-      "phone": ["033-24146666"],
-      "email": ["vc@jadavpuruniversity.in"],
+      "phone": [
+        "033-24146666"
+      ],
+      "email": [
+        "vc@jadavpuruniversity.in"
+      ],
       "website": "https://jadavpuruniversity.in/"
     },
     "courses": [
@@ -953,8 +1097,12 @@
       "pincode": "202002"
     },
     "contact": {
-      "phone": ["+91-571-2700920"],
-      "email": ["amupro@amu.ac.in"],
+      "phone": [
+        "+91-571-2700920"
+      ],
+      "email": [
+        "amupro@amu.ac.in"
+      ],
       "website": "https://www.amu.ac.in/"
     },
     "courses": [
@@ -983,8 +1131,12 @@
       "pincode": "700108"
     },
     "contact": {
-      "phone": ["91-33-2575 2105"],
-      "email": ["ksatpathy@isical.ac.in"],
+      "phone": [
+        "91-33-2575 2105"
+      ],
+      "email": [
+        "ksatpathy@isical.ac.in"
+      ],
       "website": "https://www.isical.ac.in/"
     },
     "courses": [
@@ -993,7 +1145,9 @@
         "courseName": "Bachelor of Science in Mathematics"
       }
     ],
-    "images": ["https://ctag.in/wp-content/uploads/2025/02/isi-cal-1.jpg"],
+    "images": [
+      "https://ctag.in/wp-content/uploads/2025/02/isi-cal-1.jpg"
+    ],
     "isActive": true
   },
   {
@@ -1007,8 +1161,14 @@
       "pincode": "603103"
     },
     "contact": {
-      "phone": ["+91-44-71961000", "+91-44-27470226", "+91-44-27470229"],
-      "email": ["enquiry@cmi.ac.in"],
+      "phone": [
+        "+91-44-71961000",
+        "+91-44-27470226",
+        "+91-44-27470229"
+      ],
+      "email": [
+        "enquiry@cmi.ac.in"
+      ],
       "website": "https://www.cmi.ac.in/"
     },
     "courses": [
@@ -1033,8 +1193,12 @@
       "pincode": "752050"
     },
     "contact": {
-      "phone": ["0674 249 4050"],
-      "email": ["registrar@niser.ac.in"],
+      "phone": [
+        "0674 249 4050"
+      ],
+      "email": [
+        "registrar@niser.ac.in"
+      ],
       "website": "https://www.niser.ac.in/"
     },
     "courses": [
@@ -1047,7 +1211,9 @@
         "courseName": "Bachelor of Science in Biology"
       }
     ],
-    "images": ["https://www.niser.ac.in/events/ispp2024/assets/img/NISER.jpg"],
+    "images": [
+      "https://www.niser.ac.in/events/ispp2024/assets/img/NISER.jpg"
+    ],
     "isActive": true
   },
   {
@@ -1061,8 +1227,12 @@
       "pincode": "400076"
     },
     "contact": {
-      "phone": ["+91-22-2576-7351"],
-      "email": ["jeeadv@iitb.ac.in"],
+      "phone": [
+        "+91-22-2576-7351"
+      ],
+      "email": [
+        "jeeadv@iitb.ac.in"
+      ],
       "website": "https://www.iitb.ac.in/"
     },
     "courses": [
@@ -1099,8 +1269,12 @@
       "pincode": "110016"
     },
     "contact": {
-      "phone": ["011-2659-7135"],
-      "email": ["director@admin.iitd.ac.in"],
+      "phone": [
+        "011-2659-7135"
+      ],
+      "email": [
+        "director@admin.iitd.ac.in"
+      ],
       "website": "https://home.iitd.ac.in/"
     },
     "courses": [
@@ -1137,8 +1311,12 @@
       "pincode": "600036"
     },
     "contact": {
-      "phone": ["044-2257-8100"],
-      "email": ["school-connect@study.iitm.ac.in"],
+      "phone": [
+        "044-2257-8100"
+      ],
+      "email": [
+        "school-connect@study.iitm.ac.in"
+      ],
       "website": "https://www.iitm.ac.in/"
     },
     "courses": [
@@ -1175,8 +1353,12 @@
       "pincode": "208016"
     },
     "contact": {
-      "phone": ["0512-259-0151"],
-      "email": ["jee@iitk.ac.in"],
+      "phone": [
+        "0512-259-0151"
+      ],
+      "email": [
+        "jee@iitk.ac.in"
+      ],
       "website": "https://www.iitk.ac.in/"
     },
     "courses": [
@@ -1213,8 +1395,12 @@
       "pincode": "721302"
     },
     "contact": {
-      "phone": ["+91-3222-255221"],
-      "email": ["help_ug@adm.iitkgp.ac.in"],
+      "phone": [
+        "+91-3222-255221"
+      ],
+      "email": [
+        "help_ug@adm.iitkgp.ac.in"
+      ],
       "website": "https://www.iitkgp.ac.in/"
     },
     "courses": [
@@ -1249,8 +1435,13 @@
       "pincode": "247667"
     },
     "contact": {
-      "phone": ["01332-284289", "01332-285200"],
-      "email": ["academics@iitr.ac.in"],
+      "phone": [
+        "01332-284289",
+        "01332-285200"
+      ],
+      "email": [
+        "academics@iitr.ac.in"
+      ],
       "website": "https://www.iitr.ac.in/"
     },
     "courses": [
@@ -1287,8 +1478,12 @@
       "pincode": "781039"
     },
     "contact": {
-      "phone": ["+91-361-2583000"],
-      "email": ["peeroff@iitg.ac.in"],
+      "phone": [
+        "+91-361-2583000"
+      ],
+      "email": [
+        "peeroff@iitg.ac.in"
+      ],
       "website": "https://www.iitg.ac.in/"
     },
     "courses": [
@@ -1317,7 +1512,7 @@
   {
     "name": "Institute of Chemical Technology",
     "shortName": "ICT",
-    "type": "Government",
+    "type": "government",
     "location": {
       "address": "Nathalal Parekh Marg, Near Khalsa College, Matunga",
       "city": "Mumbai",
@@ -1325,8 +1520,12 @@
       "pincode": "400019"
     },
     "contact": {
-      "phone": ["022-33612222"],
-      "email": ["info@ictmumbai.edu.in"],
+      "phone": [
+        "022-33612222"
+      ],
+      "email": [
+        "info@ictmumbai.edu.in"
+      ],
       "website": "https://www.ictmumbai.edu.in/"
     },
     "courses": [
@@ -1343,7 +1542,7 @@
   {
     "name": "Birla Institute of Technology and Science, Pilani",
     "shortName": "BITS Pilani",
-    "type": "Private",
+    "type": "private",
     "location": {
       "address": "Vidya Vihar",
       "city": "Pilani",
@@ -1351,8 +1550,12 @@
       "pincode": "333031"
     },
     "contact": {
-      "phone": ["+91-9513166170"],
-      "email": ["admission@pilani.bits-pilani.ac.in"],
+      "phone": [
+        "+91-9513166170"
+      ],
+      "email": [
+        "admission@pilani.bits-pilani.ac.in"
+      ],
       "website": "https://www.bits-pilani.ac.in/"
     },
     "courses": [
@@ -1389,7 +1592,7 @@
   {
     "name": "National Institute of Pharmaceutical Education and Research",
     "shortName": "NIPER",
-    "type": "Government",
+    "type": "government",
     "location": {
       "address": "Sector 67, S.A.S. Nagar",
       "city": "Mohali",
@@ -1397,8 +1600,13 @@
       "pincode": "160062"
     },
     "contact": {
-      "phone": ["0172-2214682", "0172-2214687"],
-      "email": ["registrar@niper.ac.in"],
+      "phone": [
+        "0172-2214682",
+        "0172-2214687"
+      ],
+      "email": [
+        "registrar@niper.ac.in"
+      ],
       "website": "https://niper.gov.in/"
     },
     "courses": [
@@ -1415,7 +1623,7 @@
   {
     "name": "Manipal College of Pharmaceutical Sciences",
     "shortName": "MCOPS",
-    "type": "Private",
+    "type": "private",
     "location": {
       "address": "Madhav Nagar",
       "city": "Manipal",
@@ -1423,8 +1631,13 @@
       "pincode": "576104"
     },
     "contact": {
-      "phone": ["0820-2922482", "0820-2922433"],
-      "email": ["office.mcops@manipal.edu"],
+      "phone": [
+        "0820-2922482",
+        "0820-2922433"
+      ],
+      "email": [
+        "office.mcops@manipal.edu"
+      ],
       "website": "https://manipal.edu/mcops-manipal.html"
     },
     "courses": [
@@ -1441,7 +1654,7 @@
   {
     "name": "JSS College of Pharmacy",
     "shortName": "JSSCP",
-    "type": "Private",
+    "type": "private",
     "location": {
       "address": "Sri Shivarathreeshwara Nagara",
       "city": "Mysore",
@@ -1449,8 +1662,12 @@
       "pincode": "570015"
     },
     "contact": {
-      "phone": ["0821-2548353"],
-      "email": ["jsscp@jssuni.edu.in"],
+      "phone": [
+        "0821-2548353"
+      ],
+      "email": [
+        "jsscp@jssuni.edu.in"
+      ],
       "website": "https://www.jsscp.edu.in/"
     },
     "courses": [
@@ -1467,7 +1684,7 @@
   {
     "name": "JSS College of Pharmacy, Ooty",
     "shortName": "JSSCP Ooty",
-    "type": "Private",
+    "type": "private",
     "location": {
       "address": "Rocklands, Post Box No. 20, Udhagamandalam",
       "city": "Ooty",
@@ -1475,8 +1692,13 @@
       "pincode": "643001"
     },
     "contact": {
-      "phone": ["0423-2443393", "0423-2443647"],
-      "email": ["jsscpooty@jssuni.edu.in"],
+      "phone": [
+        "0423-2443393",
+        "0423-2443647"
+      ],
+      "email": [
+        "jsscpooty@jssuni.edu.in"
+      ],
       "website": "https://www.jsscp.edu.in/"
     },
     "courses": [
@@ -1493,7 +1715,7 @@
   {
     "name": "Saveetha Institute of Medical and Technical Sciences",
     "shortName": "SIMTS",
-    "type": "Private",
+    "type": "private",
     "location": {
       "address": "162, Poonamallee High Road, Velappanchavadi",
       "city": "Chennai",
@@ -1501,8 +1723,12 @@
       "pincode": "600077"
     },
     "contact": {
-      "phone": ["044-26801580"],
-      "email": ["admission@saveetha.com"],
+      "phone": [
+        "044-26801580"
+      ],
+      "email": [
+        "admission@saveetha.com"
+      ],
       "website": "https://www.saveetha.com/"
     },
     "courses": [
@@ -1519,7 +1745,7 @@
   {
     "name": "Manipal College of Dental Sciences",
     "shortName": "MCODS",
-    "type": "Private",
+    "type": "private",
     "location": {
       "address": "Madhav Nagar, Manipal",
       "city": "Udupi",
@@ -1527,8 +1753,12 @@
       "pincode": "576104"
     },
     "contact": {
-      "phone": ["+91-820-2922313"],
-      "email": ["office.cods@manipal.edu"],
+      "phone": [
+        "+91-820-2922313"
+      ],
+      "email": [
+        "office.cods@manipal.edu"
+      ],
       "website": "https://manipal.edu/cods-manipal.html"
     },
     "courses": [
@@ -1545,7 +1775,7 @@
   {
     "name": "Maulana Azad Institute of Dental Sciences",
     "shortName": "MAIDS",
-    "type": "Government",
+    "type": "government",
     "location": {
       "address": "Bahadur Shah Zafar Marg",
       "city": "New Delhi",
@@ -1553,8 +1783,12 @@
       "pincode": "110002"
     },
     "contact": {
-      "phone": ["+91-11-23233884"],
-      "email": ["director-maids@delhi.gov.in"],
+      "phone": [
+        "+91-11-23233884"
+      ],
+      "email": [
+        "director-maids@delhi.gov.in"
+      ],
       "website": "https://www.maids.ac.in/"
     },
     "courses": [
@@ -1571,7 +1805,7 @@
   {
     "name": "Madras Medical College",
     "shortName": "MMC",
-    "type": "Government",
+    "type": "government",
     "location": {
       "address": "Station Rd, Park Town",
       "city": "Chennai",
@@ -1579,8 +1813,12 @@
       "pincode": "600003"
     },
     "contact": {
-      "phone": ["+91-44-25305000"],
-      "email": ["deanmmc@tn.gov.in"],
+      "phone": [
+        "+91-44-25305000"
+      ],
+      "email": [
+        "deanmmc@tn.gov.in"
+      ],
       "website": "https://www.mmc.ac.in/"
     },
     "courses": [
@@ -1595,22 +1833,26 @@
     "isActive": true
   },
   {
-  "name": "National Institute of Technology Tiruchirappalli",
-  "shortName": "NIT TRICHY",
-  "type": "government",
-  "location": {
-    "address": "Tiruchirappalli",
-    "city": "Tiruchirappalli",
-    "state": "Tamil Nadu",
-    "pincode": "620015"
-  },
-  "contact": {
-    "phone": ["+91-431-2503001"],
-    "email": ["deanap@nitt.edu"],
-    "website": "https://www.nitt.edu/"
-  },
-  "courses": [
-    {
+    "name": "National Institute of Technology Tiruchirappalli",
+    "shortName": "NIT TRICHY",
+    "type": "government",
+    "location": {
+      "address": "Tiruchirappalli",
+      "city": "Tiruchirappalli",
+      "state": "Tamil Nadu",
+      "pincode": "620015"
+    },
+    "contact": {
+      "phone": [
+        "+91-431-2503001"
+      ],
+      "email": [
+        "deanap@nitt.edu"
+      ],
+      "website": "https://www.nitt.edu/"
+    },
+    "courses": [
+      {
         "courseId": "68c5c4ae3a8c04bd4ba357f0",
         "courseName": "Bachelor of Technology in Computer Science and Engineering"
       },
@@ -1626,119 +1868,137 @@
         "courseId": "68c5c4ae3a8c04bd4ba35848",
         "courseName": "Bachelor of Technology in Mechanical Engineering"
       }
-  ],
-  "images": ["https://www.nitt.edu/home/Library-2019.JPG"],
-  "isActive": true
-},
-{
-  "name": "All India Institute of Medical Sciences (AIIMS)",
-  "shortName": "AIIMS",
-  "type": "government",
-  "location": {
-    "address": "Ansari Nagar, New Delhi, India",
-    "city": "New Delhi",
-    "state": "Delhi",
-    "pincode": "110029"
+    ],
+    "images": [
+      "https://www.nitt.edu/home/Library-2019.JPG"
+    ],
+    "isActive": true
   },
-  "contact": {
-    "phone": ["011-26588500"],
-    "email": ["info@aiims.ac.in"],
-    "website": "https://www.aiims.edu/"
-  },
-  "courses": [
-    {
-      "courseId": "68c5c4af3a8c04bd4ba35885",
-      "courseName": "Bachelor of Medicine and Bachelor of Surgery"
+  {
+    "name": "All India Institute of Medical Sciences (AIIMS)",
+    "shortName": "AIIMS",
+    "type": "government",
+    "location": {
+      "address": "Ansari Nagar, New Delhi, India",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "pincode": "110029"
     },
-    {
-      "courseId": "68c5c4af3a8c04bd4ba3589f",
-      "courseName": "Bachelor of Dental Surgery"
-    }
-  ],
-  "images": [
-    "https://content.jdmagicbox.com/v2/comp/delhi/g4/011pxx11.xx11.200703202243.u5g4/catalogue/aiims-delhi-college-of-nursing-new-delhi-delhi-nursing-institutes-8udoMNeJhI.jpg"
-  ],
-  "isActive": true
-},
-{
-  "name": "Christian Medical College (CMC) Vellore",
-  "shortName": "CMC",
-  "type": "private",
-  "location": {
-    "address": "Ida Scudder Road, Vellore, Tamil Nadu, India",
-    "city": "Vellore",
-    "state": "Tamil Nadu",
-    "pincode": "632004"
+    "contact": {
+      "phone": [
+        "011-26588500"
+      ],
+      "email": [
+        "info@aiims.ac.in"
+      ],
+      "website": "https://www.aiims.edu/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba35885",
+        "courseName": "Bachelor of Medicine and Bachelor of Surgery"
+      },
+      {
+        "courseId": "68c5c4af3a8c04bd4ba3589f",
+        "courseName": "Bachelor of Dental Surgery"
+      }
+    ],
+    "images": [
+      "https://content.jdmagicbox.com/v2/comp/delhi/g4/011pxx11.xx11.200703202243.u5g4/catalogue/aiims-delhi-college-of-nursing-new-delhi-delhi-nursing-institutes-8udoMNeJhI.jpg"
+    ],
+    "isActive": true
   },
-  "contact": {
-    "phone": ["0416-2281000"],
-    "email": ["deancon@cmcvellore.ac.in"],
-    "website": "https://www.cmch-vellore.edu/"
+  {
+    "name": "Christian Medical College (CMC) Vellore",
+    "shortName": "CMC",
+    "type": "private",
+    "location": {
+      "address": "Ida Scudder Road, Vellore, Tamil Nadu, India",
+      "city": "Vellore",
+      "state": "Tamil Nadu",
+      "pincode": "632004"
+    },
+    "contact": {
+      "phone": [
+        "0416-2281000"
+      ],
+      "email": [
+        "deancon@cmcvellore.ac.in"
+      ],
+      "website": "https://www.cmch-vellore.edu/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba35885",
+        "courseName": "Bachelor of Medicine and Bachelor of Surgery"
+      }
+    ],
+    "images": [
+      "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGlsG1mFqZ1BrTkPrc0Y8TzSJtn_REfhCux8KaKL6NPmyZaJDmzD3VbBM8F2ee6LWbvF1BEAVVCwEuoujt9J6P6GnCiS1QYvvQKHfabd1ooCLwHPo2v7ZQw3-kTH0ESAJuUrxuSRApOcE/s1600/Christian+Medical+College+Vellore.jpg"
+    ],
+    "isActive": true
   },
-  "courses": [
-    {
-      "courseId": "68c5c4af3a8c04bd4ba35885",
-      "courseName": "Bachelor of Medicine and Bachelor of Surgery"
-    }
-  ],
-  "images": [
-    "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGlsG1mFqZ1BrTkPrc0Y8TzSJtn_REfhCux8KaKL6NPmyZaJDmzD3VbBM8F2ee6LWbvF1BEAVVCwEuoujt9J6P6GnCiS1QYvvQKHfabd1ooCLwHPo2v7ZQw3-kTH0ESAJuUrxuSRApOcE/s1600/Christian+Medical+College+Vellore.jpg"
-  ],
-  "isActive": true
-},
-{
-  "name": "Jawaharlal Institute of Postgraduate Medical Education and Research (JIPMER)",
-  "shortName": "JIPMER",
-  "type": "government",
-  "location": {
-    "address": "Gorimedu, Puducherry, India",
-    "city": "Puducherry",
-    "state": "Puducherry",
-    "pincode": "605006"
+  {
+    "name": "Jawaharlal Institute of Postgraduate Medical Education and Research (JIPMER)",
+    "shortName": "JIPMER",
+    "type": "government",
+    "location": {
+      "address": "Gorimedu, Puducherry, India",
+      "city": "Puducherry",
+      "state": "Puducherry",
+      "pincode": "605006"
+    },
+    "contact": {
+      "phone": [
+        "0413-2296518"
+      ],
+      "email": [
+        "director@jimper.ac.in"
+      ],
+      "website": "https://jipmer.edu.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba35885",
+        "courseName": "Bachelor of Medicine and Bachelor of Surgery"
+      }
+    ],
+    "images": [
+      "https://images.shiksha.com/mediadata/images/1563197356phpaRuvsq.jpeg"
+    ],
+    "isActive": true
   },
-  "contact": {
-    "phone": ["0413-2296518"],
-    "email": ["director@jimper.ac.in"],
-    "website": "https://jipmer.edu.in/"
+  {
+    "name": "Kasturba Medical College (KMC) Mangalore",
+    "shortName": "KMC-Mangalore",
+    "type": "private",
+    "location": {
+      "address": "Light House Hill Road, Mangalore, Karnataka, India",
+      "city": "Mangalore",
+      "state": "Karnataka",
+      "pincode": "575001"
+    },
+    "contact": {
+      "phone": [
+        "+91 99644 80222"
+      ],
+      "email": [
+        "est.kmcmlr@manipal.edu"
+      ],
+      "website": "https://manipal.edu/kmc-mangalore.html"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba35885",
+        "courseName": "Bachelor of Medicine and Bachelor of Surgery"
+      }
+    ],
+    "images": [
+      "https://mdmsenquiry.com/wp-content/uploads/2024/08/kasturba-medical-college-kmc-mangalore.webp"
+    ],
+    "isActive": true
   },
-  "courses": [
-    {
-      "courseId": "68c5c4af3a8c04bd4ba35885",
-      "courseName": "Bachelor of Medicine and Bachelor of Surgery"
-    }
-  ],
-  "images": [
-    "https://images.shiksha.com/mediadata/images/1563197356phpaRuvsq.jpeg"
-  ],
-  "isActive": true
-},
-{
-  "name": "Kasturba Medical College (KMC) Mangalore",
-  "shortName": "KMC-Mangalore",
-  "type": "private",
-  "location": {
-    "address": "Light House Hill Road, Mangalore, Karnataka, India",
-    "city": "Mangalore",
-    "state": "Karnataka",
-    "pincode": "575001"
-  },
-  "contact": {
-    "phone": ["+91 99644 80222"],
-    "email": ["est.kmcmlr@manipal.edu"],
-    "website": "https://manipal.edu/kmc-mangalore.html"
-  },
-  "courses": [
-    {
-      "courseId": "68c5c4af3a8c04bd4ba35885",
-      "courseName": "Bachelor of Medicine and Bachelor of Surgery"
-    }
-  ],
-  "images": [
-    "https://mdmsenquiry.com/wp-content/uploads/2024/08/kasturba-medical-college-kmc-mangalore.webp"
-  ],
-  "isActive": true
-},
-{
+  {
     "name": "Government Dental College",
     "shortName": "GDC",
     "type": "government",
@@ -2074,5 +2334,4 @@
     ],
     "isActive": true
   }
-
 ]
