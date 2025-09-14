@@ -2154,8 +2154,10 @@
     "shortName": "Amrita Vishwa",
     "type": "private",
     "location": {
+      "address":"Amritanagar, Ettimadai, Tamil Nadu ",
       "city": "Coimbatore",
-      "state": "Tamil Nadu"
+      "state": "Tamil Nadu",
+      "pincode":"641112"
     },
     "contact": {
       "website": "https://www.amrita.edu/"
@@ -2192,8 +2194,10 @@
     "shortName": "Amity Noida",
     "type": "private",
     "location": {
+      "address":"Amity Rd, Sector 125, Noida, Uttar Pradesh 201301",
       "city": "Noida",
-      "state": "Uttar Pradesh"
+      "state": "Uttar Pradesh",
+      "pincode":"201301"
     },
     "contact": {
       "website": "https://www.amity.edu/"
@@ -2218,8 +2222,10 @@
     "shortName": "LPU",
     "type": "private",
     "location": {
+      "address":"Jalandhar-Delhi G.T. Road, Phagwara, Punjab",
       "city": "Phagwara",
-      "state": "Punjab"
+      "state": "Punjab",
+      "pincode":"144411"
     },
     "contact": {
       "website": "https://www.lpu.in/"
