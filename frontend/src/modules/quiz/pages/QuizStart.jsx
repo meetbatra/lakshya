@@ -192,94 +192,158 @@ const QuizStart = () => {
   }
 
   return (
-    <div className="h-[90vh] bg-gray-50 py-8 px-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            {getQuizTitle()}
-          </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            {getQuizDescription()}
-          </p>
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section */}
+      <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent mb-4">
+              {getQuizTitle()}
+            </h1>
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+              {getQuizDescription()}
+            </p>
+          </div>
         </div>
+      </div>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Quiz Information */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <BookOpen className="h-5 w-5 text-blue-600" />
+          <Card className="shadow-lg border-0 bg-white">
+            <CardHeader className="pb-4">
+              <CardTitle className="flex items-center gap-3 text-xl">
+                <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <BookOpen className="h-5 w-5 text-blue-600" />
+                </div>
                 Quiz Information
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="flex items-center gap-3">
-                <Clock className="h-5 w-5 text-gray-400" />
+            <CardContent className="space-y-6">
+              <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Clock className="h-5 w-5 text-blue-600" />
+                </div>
                 <div>
-                  <p className="font-medium">Estimated Time</p>
-                  <p className="text-sm text-gray-600">{currentQuiz.estimatedTime || '10-15 minutes'}</p>
+                  <p className="font-semibold text-gray-900">Estimated Time</p>
+                  <p className="text-gray-600">{currentQuiz.estimatedTime || '10-15 minutes'}</p>
                 </div>
               </div>
               
-              <div className="flex items-center gap-3">
-                <Users className="h-5 w-5 text-gray-400" />
+              <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Users className="h-5 w-5 text-green-600" />
+                </div>
                 <div>
-                  <p className="font-medium">Total Questions</p>
-                  <p className="text-sm text-gray-600">{currentQuiz.totalQuestions} questions</p>
+                  <p className="font-semibold text-gray-900">Total Questions</p>
+                  <p className="text-gray-600">{currentQuiz.totalQuestions} questions</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
-                <Target className="h-5 w-5 text-gray-400" />
+              <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+                <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Target className="h-5 w-5 text-purple-600" />
+                </div>
                 <div>
-                  <p className="font-medium">Quiz Type</p>
-                  <p className="text-sm text-gray-600">Preference-based assessment</p>
+                  <p className="font-semibold text-gray-900">Quiz Type</p>
+                  <p className="text-gray-600">Preference-based assessment</p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
           {/* Instructions */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Instructions</CardTitle>
+          <Card className="shadow-lg border-0 bg-white">
+            <CardHeader className="pb-4">
+              <CardTitle className="flex items-center gap-3 text-xl">
+                <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+                  <BookOpen className="h-5 w-5 text-orange-600" />
+                </div>
+                Instructions
+              </CardTitle>
             </CardHeader>
             <CardContent>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-start gap-2">
-                  <span className="font-bold text-blue-600 mt-0.5">1.</span>
-                  Answer each question honestly based on your genuine interests and preferences.
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="font-bold text-blue-600 mt-0.5">2.</span>
-                  There are no right or wrong answers - this is about discovering what suits you best.
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="font-bold text-blue-600 mt-0.5">3.</span>
-                  You can navigate between questions and change your answers before submitting.
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="font-bold text-blue-600 mt-0.5">4.</span>
-                  Our AI will analyze your responses to provide personalized recommendations.
-                </li>
-              </ul>
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                    1
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">
+                    Answer each question honestly based on your genuine interests and preferences.
+                  </p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                    2
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">
+                    There are no right or wrong answers - this is about discovering what suits you best.
+                  </p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                    3
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">
+                    You can navigate between questions and change your answers before submitting.
+                  </p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                    4
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">
+                    Our AI will analyze your responses to provide personalized recommendations.
+                  </p>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>
 
-        {/* Start Quiz Button */}
-        <div className="text-center">
+        {/* Call to Action */}
+        <div className="text-center bg-white rounded-2xl shadow-lg p-8 border-0">
+          <div className="mb-6">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">Ready to Begin?</h3>
+            <p className="text-gray-600">
+              Take your time and answer thoughtfully for the best recommendations.
+            </p>
+          </div>
+          
           <Button 
             onClick={handleStartQuiz}
             size="lg"
-            className="px-8 py-3 text-lg"
+            className="px-12 py-4 text-lg font-semibold bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105"
             disabled={hasStarted}
           >
-            {hasStarted ? 'Starting Quiz...' : 'Start Quiz'}
+            {hasStarted ? (
+              <>
+                <FontAwesomeIcon icon={faSpinner} className="animate-spin mr-2" />
+                Starting Quiz...
+              </>
+            ) : (
+              <>
+                <Target className="mr-2 h-5 w-5" />
+                Start Quiz
+              </>
+            )}
           </Button>
-          <p className="text-sm text-gray-500 mt-2">
-            Take your time and answer thoughtfully for the best recommendations.
-          </p>
+          
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 text-sm text-gray-500">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <span>Secure & Private</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              <span>AI-Powered</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+              <span>Personalized</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

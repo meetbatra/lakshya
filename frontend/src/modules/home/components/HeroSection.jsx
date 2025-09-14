@@ -29,7 +29,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100">
       {/* Hero Section */}
       <section className="py-15 md:py-0 min-h-[90vh] flex items-center">
         <div className="max-w-7xl mx-auto px-6">
@@ -37,7 +37,7 @@ const HeroSection = () => {
             {/* Left Content */}
             <div className="max-w-2xl">
               <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-gray-900">
-                Your <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Career Journey</span> Starts Here
+                Your <span className="text-blue-600">Career Journey</span> Starts Here
               </h1>
               
               <p className="text-xl text-gray-600 mb-10 leading-relaxed">
@@ -49,8 +49,8 @@ const HeroSection = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                 {features.map((feature, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <FontAwesomeIcon icon={feature.icon} className="h-5 w-5 text-white" />
+                    <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <FontAwesomeIcon icon={feature.icon} className="h-5 w-5 text-blue-600" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">{feature.title}</h3>
@@ -65,7 +65,7 @@ const HeroSection = () => {
                 <Button 
                   size="lg"
                   onClick={handleStartJourney}
-                  className="px-8 py-6 text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 group"
+                  className="px-8 py-6 text-lg font-semibold bg-blue-600 hover:bg-blue-700 group"
                 >
                   Start Your Journey
                   <FontAwesomeIcon icon={faArrowRight} className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -84,7 +84,7 @@ const HeroSection = () => {
             {/* Right Visual */}
             <div className="hidden lg:flex justify-center lg:justify-end">
               <div className="relative">
-                <div className="w-96 h-96 bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl flex flex-col items-center justify-center text-white shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-500">
+                <div className="w-96 h-96 bg-blue-600 rounded-3xl flex flex-col items-center justify-center text-white shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-500">
                   <FontAwesomeIcon 
                     icon={faRocket} 
                     className="mb-6" 

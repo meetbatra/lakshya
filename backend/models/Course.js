@@ -59,7 +59,7 @@ const courseSchema = new mongoose.Schema({
   eligibility: {
     minimumClass: {
       type: String,
-      enum: ['10', '12', 'graduate'],
+      enum: ['10', '12'],
       required: [true, 'Minimum class requirement is required']
     },
     requiredSubjects: [String],
