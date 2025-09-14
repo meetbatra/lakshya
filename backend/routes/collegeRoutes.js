@@ -5,9 +5,16 @@ const router = express.Router();
 const collegeController = require('../controllers/collegeController');
 const { wrapAsync } = require('../utils/middleware');
 
-// Routes will be added here with wrapAsync
-// router.get('/', wrapAsync(collegeController.getColleges));
-// router.get('/:id', wrapAsync(collegeController.getCollegeById));
-// router.get('/search', wrapAsync(collegeController.searchColleges));
+// GET /api/colleges - Get all colleges with filtering and search
+router.get('/', wrapAsync(collegeController.getAllColleges));
+
+// GET /api/colleges/stats - Get college statistics
+router.get('/stats', wrapAsync(collegeController.getCollegeStats));
+
+// GET /api/colleges/filters - Get filter options
+router.get('/filters', wrapAsync(collegeController.getFilterOptions));
+
+// GET /api/colleges/:id - Get college by ID
+router.get('/:id', wrapAsync(collegeController.getCollegeById));
 
 module.exports = router;

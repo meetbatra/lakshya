@@ -4,7 +4,7 @@ import { Home } from '../../modules/home';
 import { Login, SignUp, Profile } from '../../modules/user';
 import { QuizStart, QuizQuestion, QuizReview, QuizResults } from '../../modules/quiz';
 import { Courses, CourseDetails } from '../../modules/courses';
-import { Colleges } from '../../modules/colleges';
+import { Colleges, CollegeDetails } from '../../modules/colleges';
 import Layout from '../layouts/Layout';
 import NotFound from '../pages/NotFound';
 
@@ -71,7 +71,16 @@ const router = createBrowserRouter([
       },
       {
         path: 'colleges',
-        element: <Colleges />
+        children: [
+          {
+            index: true,
+            element: <Colleges />
+          },
+          {
+            path: ':id',
+            element: <CollegeDetails />
+          }
+        ]
       },
       {
         path: 'profile',
