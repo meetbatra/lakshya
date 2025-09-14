@@ -1015,22 +1015,22 @@
     "isActive": true
   },
   {
-  "name": "National Institute of Science Education and Research",
-  "shortName": "NISER",
-  "type": "deemed",
-  "location": {
-    "address": "Jatni, Padanpur",
-    "city": "Jatni",
-    "state": "Odisha",
-    "pincode": "752050"
-  },
-  "contact": {
-    "phone": ["0674 249 4050"],
-    "email": ["registrar@niser.ac.in"],
-    "website": "https://www.niser.ac.in/"
-  },
-  "courses": [
-    {
+    "name": "National Institute of Science Education and Research",
+    "shortName": "NISER",
+    "type": "deemed",
+    "location": {
+      "address": "Jatni, Padanpur",
+      "city": "Jatni",
+      "state": "Odisha",
+      "pincode": "752050"
+    },
+    "contact": {
+      "phone": ["0674 249 4050"],
+      "email": ["registrar@niser.ac.in"],
+      "website": "https://www.niser.ac.in/"
+    },
+    "courses": [
+      {
         "courseId": "68c5c4ad3a8c04bd4ba35783",
         "courseName": "Bachelor of Science in Physics"
       },
@@ -1038,27 +1038,27 @@
         "courseId": "68c5c4ae3a8c04bd4ba357d5",
         "courseName": "Bachelor of Science in Biology"
       }
-  ],
-  "images": ["https://www.niser.ac.in/events/ispp2024/assets/img/NISER.jpg"],
-  "isActive": true
-},
-{
-  "name": "Indian Institute of Technology Bombay",
-  "shortName": "IIT BOMBAY",
-  "type": "government",
-  "location": {
-    "address": "Powai",
-    "city": "Mumbai",
-    "state": "Maharashtra",
-    "pincode": "400076"
+    ],
+    "images": ["https://www.niser.ac.in/events/ispp2024/assets/img/NISER.jpg"],
+    "isActive": true
   },
-  "contact": {
-    "phone": ["+91-22-2576-7351"],
-    "email": ["jeeadv@iitb.ac.in"],
-    "website": "https://www.iitb.ac.in/"
-  },
-  "courses": [
-    {
+  {
+    "name": "Indian Institute of Technology Bombay",
+    "shortName": "IIT BOMBAY",
+    "type": "government",
+    "location": {
+      "address": "Powai",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "pincode": "400076"
+    },
+    "contact": {
+      "phone": ["+91-22-2576-7351"],
+      "email": ["jeeadv@iitb.ac.in"],
+      "website": "https://www.iitb.ac.in/"
+    },
+    "courses": [
+      {
         "courseId": "68c5c4ae3a8c04bd4ba357f0",
         "courseName": "Bachelor of Technology in Computer Science and Engineering"
       },
@@ -1074,27 +1074,29 @@
         "courseId": "68c5c4ae3a8c04bd4ba35848",
         "courseName": "Bachelor of Technology in Mechanical Engineering"
       }
-  ],
-  "images": ["https://www.ieor.iitb.ac.in/sites/default/files/files/banner-1%20iitb_0.jpg"],
-  "isActive": true
-},
-{
-  "name": "Indian Institute of Technology Delhi",
-  "shortName": "IIT DELHI",
-  "type": "government",
-  "location": {
-    "address": "IIT Campus, Hauz Khas",
-    "city": "New Delhi",
-    "state": "Delhi",
-    "pincode": "110016"
+    ],
+    "images": [
+      "https://www.ieor.iitb.ac.in/sites/default/files/files/banner-1%20iitb_0.jpg"
+    ],
+    "isActive": true
   },
-  "contact": {
-    "phone": ["011-2659-7135"],
-    "email": ["director@admin.iitd.ac.in"],
-    "website": "https://home.iitd.ac.in/"
-  },
-  "courses": [
-    {
+  {
+    "name": "Indian Institute of Technology Delhi",
+    "shortName": "IIT DELHI",
+    "type": "government",
+    "location": {
+      "address": "IIT Campus, Hauz Khas",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "pincode": "110016"
+    },
+    "contact": {
+      "phone": ["011-2659-7135"],
+      "email": ["director@admin.iitd.ac.in"],
+      "website": "https://home.iitd.ac.in/"
+    },
+    "courses": [
+      {
         "courseId": "68c5c4ae3a8c04bd4ba357f0",
         "courseName": "Bachelor of Technology in Computer Science and Engineering"
       },
@@ -1110,26 +1112,29 @@
         "courseId": "68c5c4ae3a8c04bd4ba35848",
         "courseName": "Bachelor of Technology in Mechanical Engineering"
       }
-  ],
-  "images": ["https://web.iitd.ac.in/~vkumar/assets/scrolling_images/iit-delhi-photo.jpeg"],
-  "isActive": true
-},{
-  "name": "Indian Institute of Technology Madras",
-  "shortName": "IIT MADRAS",
-  "type": "government",
-  "location": {
-    "address": "IIT P.O.",
-    "city": "Chennai",
-    "state": "Tamil Nadu",
-    "pincode": "600036"
+    ],
+    "images": [
+      "https://web.iitd.ac.in/~vkumar/assets/scrolling_images/iit-delhi-photo.jpeg"
+    ],
+    "isActive": true
   },
-  "contact": {
-    "phone": ["044-2257-8100"],
-    "email": ["school-connect@study.iitm.ac.in"],
-    "website": "https://www.iitm.ac.in/"
-  },
-  "courses": [
-    {
+  {
+    "name": "Indian Institute of Technology Madras",
+    "shortName": "IIT MADRAS",
+    "type": "government",
+    "location": {
+      "address": "IIT P.O.",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "pincode": "600036"
+    },
+    "contact": {
+      "phone": ["044-2257-8100"],
+      "email": ["school-connect@study.iitm.ac.in"],
+      "website": "https://www.iitm.ac.in/"
+    },
+    "courses": [
+      {
         "courseId": "68c5c4ae3a8c04bd4ba357f0",
         "courseName": "Bachelor of Technology in Computer Science and Engineering"
       },
@@ -1145,27 +1150,29 @@
         "courseId": "68c5c4ae3a8c04bd4ba35848",
         "courseName": "Bachelor of Technology in Mechanical Engineering"
       }
-  ],
-  "images": ["https://generic.wordpress.soton.ac.uk/webscience/wp-content/uploads/sites/117/2019/04/madras.jpg"],
-  "isActive": true
-},
-{
-  "name": "Indian Institute of Technology Kanpur",
-  "shortName": "IIT KANPUR",
-  "type": "government",
-  "location": {
-    "address": "Kalyanpur",
-    "city": "Kanpur",
-    "state": "Uttar Pradesh",
-    "pincode": "208016"
+    ],
+    "images": [
+      "https://generic.wordpress.soton.ac.uk/webscience/wp-content/uploads/sites/117/2019/04/madras.jpg"
+    ],
+    "isActive": true
   },
-  "contact": {
-    "phone": ["0512-259-0151"],
-    "email": ["jee@iitk.ac.in"],
-    "website": "https://www.iitk.ac.in/"
-  },
-  "courses": [
-    {
+  {
+    "name": "Indian Institute of Technology Kanpur",
+    "shortName": "IIT KANPUR",
+    "type": "government",
+    "location": {
+      "address": "Kalyanpur",
+      "city": "Kanpur",
+      "state": "Uttar Pradesh",
+      "pincode": "208016"
+    },
+    "contact": {
+      "phone": ["0512-259-0151"],
+      "email": ["jee@iitk.ac.in"],
+      "website": "https://www.iitk.ac.in/"
+    },
+    "courses": [
+      {
         "courseId": "68c5c4ae3a8c04bd4ba357f0",
         "courseName": "Bachelor of Technology in Computer Science and Engineering"
       },
@@ -1181,27 +1188,29 @@
         "courseId": "68c5c4ae3a8c04bd4ba35848",
         "courseName": "Bachelor of Technology in Mechanical Engineering"
       }
-  ],
-  "images": ["https://iitk.ac.in/futurestudents/static/images/backgrounds/BG-new-1.jpg"],
-  "isActive": true
-},
-{
-  "name": "Indian Institute of Technology Kharagpur",
-  "shortName": "IIT KHARAGPUR",
-  "type": "government",
-  "location": {
-    "address": "Kharagpur",
-    "city": "Kharagpur",
-    "state": "West Bengal",
-    "pincode": "721302"
+    ],
+    "images": [
+      "https://iitk.ac.in/futurestudents/static/images/backgrounds/BG-new-1.jpg"
+    ],
+    "isActive": true
   },
-  "contact": {
-    "phone": ["+91-3222-255221"],
-    "email": ["help_ug@adm.iitkgp.ac.in"],
-    "website": "https://www.iitkgp.ac.in/"
-  },
-  "courses": [
-    {
+  {
+    "name": "Indian Institute of Technology Kharagpur",
+    "shortName": "IIT KHARAGPUR",
+    "type": "government",
+    "location": {
+      "address": "Kharagpur",
+      "city": "Kharagpur",
+      "state": "West Bengal",
+      "pincode": "721302"
+    },
+    "contact": {
+      "phone": ["+91-3222-255221"],
+      "email": ["help_ug@adm.iitkgp.ac.in"],
+      "website": "https://www.iitkgp.ac.in/"
+    },
+    "courses": [
+      {
         "courseId": "68c5c4ae3a8c04bd4ba357f0",
         "courseName": "Bachelor of Technology in Computer Science and Engineering"
       },
@@ -1217,27 +1226,27 @@
         "courseId": "68c5c4ae3a8c04bd4ba35848",
         "courseName": "Bachelor of Technology in Mechanical Engineering"
       }
-  ],
-  "images": [],
-  "isActive": true
-},
-{
-  "name": "Indian Institute of Technology Roorkee",
-  "shortName": "IIT ROORKEE",
-  "type": "government",
-  "location": {
-    "address": "Roorkee - Haridwar Highway",
-    "city": "Roorkee",
-    "state": "Uttarakhand",
-    "pincode": "247667"
+    ],
+    "images": [],
+    "isActive": true
   },
-  "contact": {
-    "phone": ["01332-284289", "01332-285200"],
-    "email": ["academics@iitr.ac.in"],
-    "website": "https://www.iitr.ac.in/"
-  },
-  "courses": [
-    {
+  {
+    "name": "Indian Institute of Technology Roorkee",
+    "shortName": "IIT ROORKEE",
+    "type": "government",
+    "location": {
+      "address": "Roorkee - Haridwar Highway",
+      "city": "Roorkee",
+      "state": "Uttarakhand",
+      "pincode": "247667"
+    },
+    "contact": {
+      "phone": ["01332-284289", "01332-285200"],
+      "email": ["academics@iitr.ac.in"],
+      "website": "https://www.iitr.ac.in/"
+    },
+    "courses": [
+      {
         "courseId": "68c5c4ae3a8c04bd4ba357f0",
         "courseName": "Bachelor of Technology in Computer Science and Engineering"
       },
@@ -1253,27 +1262,29 @@
         "courseId": "68c5c4ae3a8c04bd4ba35848",
         "courseName": "Bachelor of Technology in Mechanical Engineering"
       }
-  ],
-  "images": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoVy2EWxfQxMLhtgU_KNkWjdPEyt-zQYbR5A&s"],
-  "isActive": true
-},
-{
-  "name": "Indian Institute of Technology Guwahati",
-  "shortName": "IIT GUWAHATI",
-  "type": "government",
-  "location": {
-    "address": "5MRW+W2H, IIT Guwahati",
-    "city": "Guwahati",
-    "state": "Assam",
-    "pincode": "781039"
+    ],
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoVy2EWxfQxMLhtgU_KNkWjdPEyt-zQYbR5A&s"
+    ],
+    "isActive": true
   },
-  "contact": {
-    "phone": ["+91-361-2583000"],
-    "email": ["peeroff@iitg.ac.in"],
-    "website": "https://www.iitg.ac.in/"
-  },
-  "courses": [
-    {
+  {
+    "name": "Indian Institute of Technology Guwahati",
+    "shortName": "IIT GUWAHATI",
+    "type": "government",
+    "location": {
+      "address": "5MRW+W2H, IIT Guwahati",
+      "city": "Guwahati",
+      "state": "Assam",
+      "pincode": "781039"
+    },
+    "contact": {
+      "phone": ["+91-361-2583000"],
+      "email": ["peeroff@iitg.ac.in"],
+      "website": "https://www.iitg.ac.in/"
+    },
+    "courses": [
+      {
         "courseId": "68c5c4ae3a8c04bd4ba357f0",
         "courseName": "Bachelor of Technology in Computer Science and Engineering"
       },
@@ -1289,8 +1300,273 @@
         "courseId": "68c5c4ae3a8c04bd4ba35848",
         "courseName": "Bachelor of Technology in Mechanical Engineering"
       }
-  ],
-  "images": ["https://www.iitg.ac.in/clst/assets/images/slider_image/original/1.jpg"],
-  "isActive": true
-}
+    ],
+    "images": [
+      "https://www.iitg.ac.in/clst/assets/images/slider_image/original/1.jpg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Institute of Chemical Technology",
+    "shortName": "ICT",
+    "type": "Government",
+    "location": {
+      "address": "Nathalal Parekh Marg, Near Khalsa College, Matunga",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "pincode": "400019"
+    },
+    "contact": {
+      "phone": ["022-33612222"],
+      "email": ["info@ictmumbai.edu.in"],
+      "website": "https://www.ictmumbai.edu.in/"
+    },
+    "courses": [],
+    "images": [
+      "https://leavestranscript.com/wp-content/uploads/2020/08/institute-of-chemical-technology.jpg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Birla Institute of Technology and Science, Pilani",
+    "shortName": "BITS Pilani",
+    "type": "Private",
+    "location": {
+      "address": "Vidya Vihar",
+      "city": "Pilani",
+      "state": "Rajasthan",
+      "pincode": "333031"
+    },
+    "contact": {
+      "phone": ["+91-9513166170"],
+      "email": ["admission@pilani.bits-pilani.ac.in"],
+      "website": "https://www.bits-pilani.ac.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba35848",
+        "courseName": "Bachelor of Technology in Mechanical Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357f0",
+        "courseName": "Bachelor of Technology in Computer Science and Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3580e",
+        "courseName": "Bachelor of Technology in Electronics and Communication Engineering"
+      }
+    ],
+    "images": [
+      "https://www.bits-pilani.ac.in/wp-content/uploads/BITS-Pilani-campus-31.jpg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "National Institute of Pharmaceutical Education and Research",
+    "shortName": "NIPER",
+    "type": "Government",
+    "location": {
+      "address": "Sector 67, S.A.S. Nagar",
+      "city": "Mohali",
+      "state": "Punjab",
+      "pincode": "160062"
+    },
+    "contact": {
+      "phone": ["0172-2214682", "0172-2214687"],
+      "email": ["registrar@niper.ac.in"],
+      "website": "https://niper.gov.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358bb",
+        "courseName": "Bachelor of Pharmacy"
+      }
+    ],
+    "images": [
+      "https://images.shiksha.com/mediadata/images/1558700623phpUL7c8C.jpeg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Manipal College of Pharmaceutical Sciences",
+    "shortName": "MCOPS",
+    "type": "Private",
+    "location": {
+      "address": "Madhav Nagar",
+      "city": "Manipal",
+      "state": "Karnataka",
+      "pincode": "576104"
+    },
+    "contact": {
+      "phone": ["0820-2922482", "0820-2922433"],
+      "email": ["office.mcops@manipal.edu"],
+      "website": "https://manipal.edu/mcops-manipal.html"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358bb",
+        "courseName": "Bachelor of Pharmacy"
+      }
+    ],
+    "images": [
+      "https://content.jdmagicbox.com/v2/comp/manipal/09/0820p820std4000109/catalogue/manipal-college-of-pharmaceutical-sciences-manipal-manipal-colleges-kk9SDLPS5y.jpg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "JSS College of Pharmacy",
+    "shortName": "JSSCP",
+    "type": "Private",
+    "location": {
+      "address": "Sri Shivarathreeshwara Nagara",
+      "city": "Mysore",
+      "state": "Karnataka",
+      "pincode": "570015"
+    },
+    "contact": {
+      "phone": ["0821-2548353"],
+      "email": ["jsscp@jssuni.edu.in"],
+      "website": "https://www.jsscp.edu.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358bb",
+        "courseName": "Bachelor of Pharmacy"
+      }
+    ],
+    "images": [
+      "https://jssuni.edu.in/jssaher/assets/img/faculty-of-pharmacy/cpm.jpg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "JSS College of Pharmacy, Ooty",
+    "shortName": "JSSCP Ooty",
+    "type": "Private",
+    "location": {
+      "address": "Rocklands, Post Box No. 20, Udhagamandalam",
+      "city": "Ooty",
+      "state": "Tamil Nadu",
+      "pincode": "643001"
+    },
+    "contact": {
+      "phone": ["0423-2443393", "0423-2443647"],
+      "email": ["jsscpooty@jssuni.edu.in"],
+      "website": "https://www.jsscp.edu.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358bb",
+        "courseName": "Bachelor of Pharmacy"
+      }
+    ],
+    "images": [
+      "https://jssaherdatalake.blob.core.windows.net/web-jssaher/banner-05.jpg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Saveetha Institute of Medical and Technical Sciences",
+    "shortName": "SIMTS",
+    "type": "Private",
+    "location": {
+      "address": "162, Poonamallee High Road, Velappanchavadi",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "pincode": "600077"
+    },
+    "contact": {
+      "phone": ["044-26801580"],
+      "email": ["admission@saveetha.com"],
+      "website": "https://www.saveetha.com/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba3589f",
+        "courseName": "Bachelor of Dental Surgery"
+      }
+    ],
+    "images": [
+      "https://qs-igauge.blr1.cdn.digitaloceanspaces.com/Saveetha_Campus_Facebook.png"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Manipal College of Dental Sciences",
+    "shortName": "MCODS",
+    "type": "Private",
+    "location": {
+      "address": "Madhav Nagar, Manipal",
+      "city": "Udupi",
+      "state": "Karnataka",
+      "pincode": "576104"
+    },
+    "contact": {
+      "phone": ["+91-820-2922313"],
+      "email": ["office.cods@manipal.edu"],
+      "website": "https://manipal.edu/cods-manipal.html"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba3589f",
+        "courseName": "Bachelor of Dental Surgery"
+      }
+    ],
+    "images": [
+      "https://manage.collnod.com/Upload/Content/web_img_0_11_4_2023_22_11_44.jpg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Maulana Azad Institute of Dental Sciences",
+    "shortName": "MAIDS",
+    "type": "Government",
+    "location": {
+      "address": "Bahadur Shah Zafar Marg",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "pincode": "110002"
+    },
+    "contact": {
+      "phone": ["+91-11-23233884"],
+      "email": ["director-maids@delhi.gov.in"],
+      "website": "https://www.maids.ac.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba3589f",
+        "courseName": "Bachelor of Dental Surgery"
+      }
+    ],
+    "images": [
+      "https://careerpaathshala.com/wp-content/uploads/2024/04/6-17.jpg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Madras Medical College",
+    "shortName": "MMC",
+    "type": "Government",
+    "location": {
+      "address": "Station Rd, Park Town",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "pincode": "600003"
+    },
+    "contact": {
+      "phone": ["+91-44-25305000"],
+      "email": ["deanmmc@tn.gov.in"],
+      "website": "https://www.mmc.ac.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba35885",
+        "courseName": "Bachelor of Medicine and Bachelor of Surgery"
+      }
+    ],
+    "images": [
+      "https://mbbscouncilcdn.s3.amazonaws.com/wp-content/uploads/2018/09/Madras-Medical-college-hospital-chennai.jpg"
+    ],
+    "isActive": true
+  }
 ]
