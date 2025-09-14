@@ -214,6 +214,10 @@
       {
         "courseId": "68c5c4af3a8c04bd4ba35911",
         "courseName": "Bachelor in Entrepreneurship"
+      },
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358f9",
+        "courseName": "Bachelor of Commerce"
       }
     ],
     "images": ["https://www.nmims.edu/images/home-slide/m-school-6.jpg"],
@@ -431,6 +435,14 @@
       "website": "https://www.du.ac.in"
     },
     "courses": [
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba35783",
+        "courseName": "Bachelor of Science in Physics"
+      },
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba3579c",
+        "courseName": "Bachelor of Science in Chemistry"
+      },
       {
         "courseId": "68c5c4ad3a8c04bd4ba35765",
         "courseName": "Bachelor of Science in Computer Science"
@@ -1317,7 +1329,12 @@
       "email": ["info@ictmumbai.edu.in"],
       "website": "https://www.ictmumbai.edu.in/"
     },
-    "courses": [],
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358bb",
+        "courseName": "Bachelor of Pharmacy"
+      }
+    ],
     "images": [
       "https://leavestranscript.com/wp-content/uploads/2020/08/institute-of-chemical-technology.jpg"
     ],
@@ -1340,6 +1357,14 @@
     },
     "courses": [
       {
+        "courseId": "68c5c4ad3a8c04bd4ba35783",
+        "courseName": "Bachelor of Science in Physics"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357b7",
+        "courseName": "Bachelor of Science in Mathematics"
+      },
+      {
         "courseId": "68c5c4ae3a8c04bd4ba35848",
         "courseName": "Bachelor of Technology in Mechanical Engineering"
       },
@@ -1350,6 +1375,10 @@
       {
         "courseId": "68c5c4ae3a8c04bd4ba3580e",
         "courseName": "Bachelor of Technology in Electronics and Communication Engineering"
+      },
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358bb",
+        "courseName": "Bachelor of Pharmacy"
       }
     ],
     "images": [
@@ -1600,5 +1629,450 @@
   ],
   "images": ["https://www.nitt.edu/home/Library-2019.JPG"],
   "isActive": true
-}
+},
+{
+  "name": "All India Institute of Medical Sciences (AIIMS)",
+  "shortName": "AIIMS",
+  "type": "government",
+  "location": {
+    "address": "Ansari Nagar, New Delhi, India",
+    "city": "New Delhi",
+    "state": "Delhi",
+    "pincode": "110029"
+  },
+  "contact": {
+    "phone": ["011-26588500"],
+    "email": ["info@aiims.ac.in"],
+    "website": "https://www.aiims.edu/"
+  },
+  "courses": [
+    {
+      "courseId": "68c5c4af3a8c04bd4ba35885",
+      "courseName": "Bachelor of Medicine and Bachelor of Surgery"
+    },
+    {
+      "courseId": "68c5c4af3a8c04bd4ba3589f",
+      "courseName": "Bachelor of Dental Surgery"
+    }
+  ],
+  "images": [
+    "https://content.jdmagicbox.com/v2/comp/delhi/g4/011pxx11.xx11.200703202243.u5g4/catalogue/aiims-delhi-college-of-nursing-new-delhi-delhi-nursing-institutes-8udoMNeJhI.jpg"
+  ],
+  "isActive": true
+},
+{
+  "name": "Christian Medical College (CMC) Vellore",
+  "shortName": "CMC",
+  "type": "private",
+  "location": {
+    "address": "Ida Scudder Road, Vellore, Tamil Nadu, India",
+    "city": "Vellore",
+    "state": "Tamil Nadu",
+    "pincode": "632004"
+  },
+  "contact": {
+    "phone": ["0416-2281000"],
+    "email": ["deancon@cmcvellore.ac.in"],
+    "website": "https://www.cmch-vellore.edu/"
+  },
+  "courses": [
+    {
+      "courseId": "68c5c4af3a8c04bd4ba35885",
+      "courseName": "Bachelor of Medicine and Bachelor of Surgery"
+    }
+  ],
+  "images": [
+    "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGlsG1mFqZ1BrTkPrc0Y8TzSJtn_REfhCux8KaKL6NPmyZaJDmzD3VbBM8F2ee6LWbvF1BEAVVCwEuoujt9J6P6GnCiS1QYvvQKHfabd1ooCLwHPo2v7ZQw3-kTH0ESAJuUrxuSRApOcE/s1600/Christian+Medical+College+Vellore.jpg"
+  ],
+  "isActive": true
+},
+{
+  "name": "Jawaharlal Institute of Postgraduate Medical Education and Research (JIPMER)",
+  "shortName": "JIPMER",
+  "type": "government",
+  "location": {
+    "address": "Gorimedu, Puducherry, India",
+    "city": "Puducherry",
+    "state": "Puducherry",
+    "pincode": "605006"
+  },
+  "contact": {
+    "phone": ["0413-2296518"],
+    "email": ["director@jimper.ac.in"],
+    "website": "https://jipmer.edu.in/"
+  },
+  "courses": [
+    {
+      "courseId": "68c5c4af3a8c04bd4ba35885",
+      "courseName": "Bachelor of Medicine and Bachelor of Surgery"
+    }
+  ],
+  "images": [
+    "https://images.shiksha.com/mediadata/images/1563197356phpaRuvsq.jpeg"
+  ],
+  "isActive": true
+},
+{
+  "name": "Kasturba Medical College (KMC) Mangalore",
+  "shortName": "KMC-Mangalore",
+  "type": "private",
+  "location": {
+    "address": "Light House Hill Road, Mangalore, Karnataka, India",
+    "city": "Mangalore",
+    "state": "Karnataka",
+    "pincode": "575001"
+  },
+  "contact": {
+    "phone": ["+91 99644 80222"],
+    "email": ["est.kmcmlr@manipal.edu"],
+    "website": "https://manipal.edu/kmc-mangalore.html"
+  },
+  "courses": [
+    {
+      "courseId": "68c5c4af3a8c04bd4ba35885",
+      "courseName": "Bachelor of Medicine and Bachelor of Surgery"
+    }
+  ],
+  "images": [
+    "https://mdmsenquiry.com/wp-content/uploads/2024/08/kasturba-medical-college-kmc-mangalore.webp"
+  ],
+  "isActive": true
+},
+{
+    "name": "Government Dental College",
+    "shortName": "GDC",
+    "type": "government",
+    "location": {
+      "address": "Fort, Mumbai, within the St. George's Hospital Compound",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "pincode": "400001"
+    },
+    "contact": {
+      "phone": [
+        "022-22620668"
+      ],
+      "email": [
+        "deangdch_mumbai@yahoo.com"
+      ],
+      "website": "https://gdcmumbai.edu.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba3589f",
+        "courseName": "Bachelor of Dental Surgery"
+      }
+    ],
+    "images": [
+      "https://gdcmumbai.edu.in/wp-content/uploads/2024/03/slider-1-1-1024x512.jpg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Nair Hospital Dental College",
+    "shortName": "NHDC",
+    "type": "government",
+    "location": {
+      "address": "Dr. A. L. Nair Road, Mumbai Central",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "pincode": "400008"
+    },
+    "contact": {
+      "phone": [
+        "022-23061471",
+        "022-23061472"
+      ],
+      "email": [
+        "nhdcmumbai@gmail.com"
+      ],
+      "website": "https://www.nhdc.edu.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba3589f",
+        "courseName": "Bachelor of Dental Surgery"
+      }
+    ],
+    "images": [
+      "https://manage.collnod.com/Upload/Content/web_img_0_13_4_2023_12_47_44.jpg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "SRM Dental College",
+    "shortName": "SRMDC",
+    "type": "private",
+    "location": {
+      "address": "SRM Nagar, Potheri, Kattankulathur",
+      "city": "Chengalpattu",
+      "state": "Tamil Nadu",
+      "pincode": "603203"
+    },
+    "contact": {
+      "phone": [
+        "044-27456000"
+      ],
+      "email": [
+        "dental@srmist.edu.in"
+      ],
+      "website": "https://www.srmist.edu.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba3589f",
+        "courseName": "Bachelor of Dental Surgery"
+      }
+    ],
+    "images": [
+      "https://cdn-615d4a61c1ac18c62469ad9b.closte.com/wp-content/uploads/srm-dental-college-chennai.webp"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "A.B. Shetty Memorial Institute of Dental Sciences",
+    "shortName": "ABSMIDS",
+    "type": "private",
+    "location": {
+      "address": "Nitte, Mangalore",
+      "city": "Mangalore",
+      "state": "Karnataka",
+      "pincode": "575018"
+    },
+    "contact": {
+      "phone": [
+        "0824-2204701"
+      ],
+      "email": [
+        "principal@nimdsm.edu.in"
+      ],
+      "website": "https://www.nitte.edu.in/ims/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba3589f",
+        "courseName": "Bachelor of Dental Surgery"
+      }
+    ],
+    "images": [
+      "https://mycareersview.com/afile/mcv16497_1525240053phpgbszez.jpeg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Dr. D. Y. Patil Dental College and Hospital",
+    "shortName": "DYPDCH",
+    "type": "private",
+    "location": {
+      "address": "D.Y. Patil Vidyanagar, Pimpri",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "pincode": "411018"
+    },
+    "contact": {
+      "phone": [
+        "020-27472200"
+      ],
+      "email": [
+        "principaldypdch@dypatil.edu"
+      ],
+      "website": "https://www.dypdch.edu.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba3589f",
+        "courseName": "Bachelor of Dental Surgery"
+      }
+    ],
+    "images": [
+      "https://images.shiksha.com/mediadata/images/1493279030phperK8Nm.png"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Amrita Vishwa Vidyapeetham",
+    "shortName": "Amrita Vishwa",
+    "type": "private",
+    "location": {
+      "city": "Coimbatore",
+      "state": "Tamil Nadu"
+    },
+    "contact": {
+      "website": "https://www.amrita.edu/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357f0",
+        "courseName": "Bachelor of Technology in Computer Science and Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3580e",
+        "courseName": "Bachelor of Technology in Electronics and Communication Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba35848",
+        "courseName": "Bachelor of Technology in Mechanical Engineering"
+      },
+      {
+        "courseId": "68c5c4af3a8c04bd4ba35885",
+        "courseName": "Bachelor of Medicine and Bachelor of Surgery"
+      },
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358d8",
+        "courseName": "Bachelor of Business Administration"
+      }
+    ],
+    "images": [
+      "https://webfiles.amrita.edu/2020/05/IlZJZE8c-amrita-vishwa-vidyapeetham-coimbatore-campus-dron-image-01-2.jpg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Amity University",
+    "shortName": "Amity Noida",
+    "type": "private",
+    "location": {
+      "city": "Noida",
+      "state": "Uttar Pradesh"
+    },
+    "contact": {
+      "website": "https://www.amity.edu/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3582c",
+        "courseName": "Bachelor of Technology in Information Technology"
+      },
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358d8",
+        "courseName": "Bachelor of Business Administration"
+      }
+    ],
+    "images": [
+      "https://amity.edu/noida/images/leadership-banner.jpg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Lovely Professional University",
+    "shortName": "LPU",
+    "type": "private",
+    "location": {
+      "city": "Phagwara",
+      "state": "Punjab"
+    },
+    "contact": {
+      "website": "https://www.lpu.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba35783",
+        "courseName": "Bachelor of Science in Physics"
+      },
+      {
+        "courseId": "btech-it",
+        "courseName": "Bachelor of Technology in Information Technology"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3582c",
+        "courseName": "Bachelor of Technology in Mechanical Engineering"
+      },
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358d8",
+        "courseName": "Bachelor of Business Administration"
+      }
+    ],
+    "images": [
+      "https://happenings.lpu.in/wp-content/uploads/2024/06/Lovely-Professional-University-campus-LPU-1-scaled.jpg"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Vellore Institute of Technology",
+    "shortName": "VIT Vellore",
+    "type": "private",
+    "location": {
+      "address": "VIT, Vellore - 632 014, Tamil Nadu, India",
+      "city": "Vellore",
+      "state": "Tamil Nadu",
+      "pincode": "632014"
+    },
+    "contact": {
+      "phone": [
+        "+91-416-2243091",
+        "+91-416-2249079"
+      ],
+      "email": [
+        "info@vit.ac.in"
+      ],
+      "website": "https://www.vit.ac.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba35765",
+        "courseName": "Bachelor of Science in Computer Science"
+      },
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba35783",
+        "courseName": "Bachelor of Science in Physics"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357b7",
+        "courseName": "Bachelor of Science in Mathematics"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357f0",
+        "courseName": "Bachelor of Technology in Computer Science and Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3580e",
+        "courseName": "Bachelor of Technology in Electronics and Communication Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3582c",
+        "courseName": "Bachelor of Technology in Information Technology"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3582c",
+        "courseName": "Bachelor of Technology in Mechanical Engineering"
+      }
+    ],
+    "images": [
+      "https://vit.ac.in/wp-content/uploads/2023/08/infra_image1.webp"
+    ],
+    "isActive": true
+  },
+  {
+    "name": "Shri Ram College of Commerce",
+    "shortName": "SRCC",
+    "type": "private",
+    "location": {
+      "address": "Maurice Nagar, Near University of Delhi, Delhi - 110007",
+      "city": "Delhi",
+      "state": "Delhi",
+      "pincode": "110007"
+    },
+    "contact": {
+      "phone": [
+        "+91-11-27662319",
+        "+91-11-27666519",
+        "+91-9899108037"
+      ],
+      "email": [
+        "info@srccgbo.edu.in"
+      ],
+      "website": "https://www.srcc.edu/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358f9",
+        "courseName": "Bachelor of Commerce"
+      }
+    ],
+    "images": [
+      "https://www.thestatesman.com/wp-content/uploads/2025/04/Shri-Ram-Economics-Summit-2025-jpg.webp"
+    ],
+    "isActive": true
+  }
+
 ]

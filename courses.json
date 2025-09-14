@@ -1526,12 +1526,6 @@
         "type": "private",
         "location": "Kanchipuram, Tamil Nadu",
         "ranking": 151
-      },
-      {
-        "name": "Saveetha Engineering College",
-        "type": "private",
-        "location": "Chennai, Tamil Nadu",
-        "ranking": 152
       }
     ],
     "skills": {
@@ -2164,12 +2158,6 @@
         "ranking": 3
       },
       {
-        "name": "King George's Medical University (KGMU) ",
-        "type": "government",
-        "location": "Lucknow, Uttar Pradesh",
-        "ranking": 4
-      },
-      {
         "name": "Government Dental College and Hospital",
         "type": "government",
         "location": "Mumbai, Maharashtra",
@@ -2395,18 +2383,6 @@
         "type": "private",
         "location": "Ooty",
         "ranking": 8
-      },
-      {
-        "name": "Annamalai University",
-        "type": "government",
-        "location": "Chidambaram",
-        "ranking": 9
-      },
-      {
-        "name": "Maharaja Sayajirao University of Baroda (MSU)",
-        "type": "government",
-        "location": "Vadodara",
-        "ranking": 10
       }
     ],
     "skills": {
