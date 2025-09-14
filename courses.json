@@ -1709,132 +1709,6 @@
     "popularity": 80
   },
   {
-    "name": "Bachelor of Laws (LLB)",
-    "shortName": "LLB",
-    "stream": "arts",
-    "field": "law_arts",
-    "level": "undergraduate",
-    "duration": {
-      "years": 3,
-      "months": 0
-    },
-    "description": "The three-year LLB is a professional law degree pursued after completing an undergraduate degree in any discipline. The course covers Constitutional Law, Contract Law, Criminal Law, Civil Law, Corporate Law, and Family Law. It emphasizes practical training through moot courts, internships, and case studies. Graduates must qualify the All India Bar Examination (AIBE) to practice law in India.",
-    "eligibility": {
-      "minimumClass": "graduate",
-      "requiredSubjects": ["Any discipline"],
-      "minimumPercentage": 50,
-      "entranceExams": [
-        "DU LLB Entrance",
-        "MH CET Law (3-year)",
-        "BHU UET Law",
-        "PU LLB Entrance"
-      ]
-    },
-    "careerOptions": [
-      {
-        "jobTitle": "Advocate",
-        "description": "Practice law after AIBE and Bar Council registration.",
-        "growthProspects": "excellent",
-        "sector": "both"
-      },
-      {
-        "jobTitle": "Corporate Lawyer",
-        "description": "Specialize in corporate and commercial legal matters.",
-        "growthProspects": "excellent",
-        "sector": "private"
-      },
-      {
-        "jobTitle": "Judicial Officer",
-        "description": "Enter judiciary after judicial service exams.",
-        "growthProspects": "good",
-        "sector": "government"
-      },
-      {
-        "jobTitle": "Legal Advisor",
-        "description": "Consultancy for corporates, NGOs, and government bodies.",
-        "growthProspects": "good",
-        "sector": "both"
-      },
-      {
-        "jobTitle": "Legal Analyst",
-        "description": "Research and drafting legal documents.",
-        "growthProspects": "good",
-        "sector": "private"
-      }
-    ],
-    "higherStudyOptions": [
-      {
-        "courseName": "LLM (Master of Laws)",
-        "description": "Advanced specialization in law.",
-        "duration": "2 years"
-      },
-      {
-        "courseName": "Diplomas & Certifications",
-        "description": "Specializations in Cyber Law, IPR, Arbitration, etc.",
-        "duration": "6–12 months"
-      },
-      {
-        "courseName": "PhD in Law",
-        "description": "Doctoral research for academia or judiciary.",
-        "duration": "3–5 years"
-      }
-    ],
-    "topColleges": [
-      {
-        "name": "National Law School of India University (NLSIU)",
-        "type": "government",
-        "location": "Bangalore, Karnataka",
-        "ranking": 1
-      },
-      {
-        "name": "Faculty of Law, University of Delhi",
-        "type": "government",
-        "location": "Delhi",
-        "ranking": 12
-      },
-      {
-        "name": "BHU Faculty of Law",
-        "type": "government",
-        "location": "Varanasi, Uttar Pradesh",
-        "ranking": 15
-      },
-      {
-        "name": "ILS Law College",
-        "type": "private",
-        "location": "Pune, Maharashtra",
-        "ranking": 20
-      },
-      {
-        "name": "Government Law College",
-        "type": "government",
-        "location": "Mumbai, Maharashtra",
-        "ranking": 22
-      },
-      {
-        "name": "Faculty of Law, Panjab University",
-        "type": "government",
-        "location": "Chandigarh",
-        "ranking": 25
-      }
-    ],
-    "skills": {
-      "technical": [
-        "Legal drafting",
-        "Case analysis",
-        "Contract review",
-        "Research methodology"
-      ],
-      "soft": [
-        "Critical thinking",
-        "Communication",
-        "Persuasion",
-        "Negotiation"
-      ]
-    },
-    "isActive": true,
-    "popularity": 0
-  },
-  {
     "name": "Integrated Bachelor of Laws (BA LLB / BBA LLB / B.Com LLB)",
     "shortName": "Integrated LLB",
     "stream": "arts",
@@ -2056,12 +1930,6 @@
         "ranking": 1
       },
       {
-        "name": "Post Graduate Institute of Medical Education and Research (PGIMER)",
-        "type": "government",
-        "location": "Chandigarh",
-        "ranking": 2
-      },
-      {
         "name": "Christian Medical College (CMC)",
         "type": "private",
         "location": "Vellore, Tamil Nadu",
@@ -2072,12 +1940,6 @@
         "type": "government",
         "location": "Puducherry",
         "ranking": 5
-      },
-      {
-        "name": "Sanjay Gandhi Postgraduate Institute of Medical Sciences (SGPGIMS)",
-        "type": "government",
-        "location": "Lucknow, Uttar Pradesh",
-        "ranking": 6
       },
       {
         "name": "Institute of Medical Sciences, Banaras Hindu University (BHU)",
