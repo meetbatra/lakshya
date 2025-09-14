@@ -36,7 +36,7 @@ const quizSchema = new mongoose.Schema({
   },
   stream: {
     type: String,
-    enum: ['science-pcm', 'science-pcb', 'commerce', 'arts'],
+    enum: ['science_pcm', 'science_pcb', 'commerce', 'arts'],
     required: function() {
       return this.targetClass === '12';
     },
@@ -57,16 +57,16 @@ const quizSchema = new mongoose.Schema({
   },
   purpose: {
     type: String,
-    enum: ['stream-selection', 'field-recommendation'],
+    enum: ['stream_selection', 'field_recommendation'],
     required: [true, 'Quiz purpose is required'],
     validate: {
       validator: function(purpose) {
         // Class 10 should be for stream selection
-        if (this.targetClass === '10' && purpose !== 'stream-selection') {
+        if (this.targetClass === '10' && purpose !== 'stream_selection') {
           return false;
         }
         // Class 12 should be for field recommendation
-        if (this.targetClass === '12' && purpose !== 'field-recommendation') {
+        if (this.targetClass === '12' && purpose !== 'field_recommendation') {
           return false;
         }
         return true;
@@ -89,7 +89,7 @@ quizSchema.index({ tags: 1 });
 quizSchema.pre('save', function(next) {
   // Auto-set purpose based on class if not provided
   if (!this.purpose) {
-    this.purpose = this.targetClass === '10' ? 'stream-selection' : 'field-recommendation';
+    this.purpose = this.targetClass === '10' ? 'stream_selection' : 'field_recommendation';
   }
   
   next();

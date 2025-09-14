@@ -9,6 +9,7 @@ import {
 } from '../../components/ui/navigation-menu';
 import { UserAvatar, useAuth } from '../../modules/user';
 import { Menu, X, GraduationCap, Target, Users, BookOpen } from 'lucide-react';
+import lakshyaLogo from '../../assets/lakshya-logo.png';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -63,10 +64,13 @@ const Navbar = () => {
               to="/" 
               className="flex items-center space-x-2 text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors"
             >
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <Target className="h-5 w-5 text-white" />
+              <div className="rounded-lg flex items-center justify-center">
+                <img 
+                  src={lakshyaLogo} 
+                  alt="Lakshya Logo" 
+                  className="h-12 w-auto object-contain"
+                />
               </div>
-              <span>Lakshya</span>
             </Link>
           </div>
 

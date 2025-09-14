@@ -58,6 +58,114 @@ export const useQuizStore = create((set, get) => ({
   },
 
   /**
+   * Fetch Class 12 PCM quiz
+   */
+  fetchClass12PCMQuiz: async () => {
+    set({ isLoading: true, error: null });
+    try {
+      const response = await quizAPI.getClass12PCMQuiz();
+      if (response.success) {
+        set({
+          currentQuiz: response.data,
+          isLoading: false,
+          error: null
+        });
+        return response.data;
+      } else {
+        throw new Error(response.message);
+      }
+    } catch (error) {
+      set({
+        isLoading: false,
+        error: error.message,
+        currentQuiz: null
+      });
+      throw error;
+    }
+  },
+
+  /**
+   * Fetch Class 12 PCB quiz
+   */
+  fetchClass12PCBQuiz: async () => {
+    set({ isLoading: true, error: null });
+    try {
+      const response = await quizAPI.getClass12PCBQuiz();
+      if (response.success) {
+        set({
+          currentQuiz: response.data,
+          isLoading: false,
+          error: null
+        });
+        return response.data;
+      } else {
+        throw new Error(response.message);
+      }
+    } catch (error) {
+      set({
+        isLoading: false,
+        error: error.message,
+        currentQuiz: null
+      });
+      throw error;
+    }
+  },
+
+  /**
+   * Fetch Class 12 Commerce quiz
+   */
+  fetchClass12CommerceQuiz: async () => {
+    set({ isLoading: true, error: null });
+    try {
+      const response = await quizAPI.getClass12CommerceQuiz();
+      if (response.success) {
+        set({
+          currentQuiz: response.data,
+          isLoading: false,
+          error: null
+        });
+        return response.data;
+      } else {
+        throw new Error(response.message);
+      }
+    } catch (error) {
+      set({
+        isLoading: false,
+        error: error.message,
+        currentQuiz: null
+      });
+      throw error;
+    }
+  },
+
+  /**
+   * Fetch Class 12 Arts quiz
+   */
+  fetchClass12ArtsQuiz: async () => {
+    set({ isLoading: true, error: null });
+    try {
+      const response = await quizAPI.getClass12ArtsQuiz();
+      if (response.success) {
+        set({
+          currentQuiz: response.data,
+          isLoading: false,
+          error: null
+        });
+        return response.data;
+      } else {
+        throw new Error(response.message);
+      }
+    } catch (error) {
+      set({
+        isLoading: false,
+        error: error.message,
+        currentQuiz: null
+      });
+      throw error;
+    }
+  },
+
+  /**
    * Answer current question and move to next
    * @param {string} answer - Selected answer
    */
@@ -133,7 +241,21 @@ export const useQuizStore = create((set, get) => ({
         ...(userId && { userId })
       };
 
-      const response = await quizAPI.submitClass10Quiz(submission);
+      // Determine which API to call based on quiz type
+      let response;
+      if (state.currentQuiz.targetClass === '10') {
+        response = await quizAPI.submitClass10Quiz(submission);
+      } else if (state.currentQuiz.targetClass === '12' && state.currentQuiz.stream === 'science_pcm') {
+        response = await quizAPI.submitClass12PCMQuiz(submission);
+      } else if (state.currentQuiz.targetClass === '12' && state.currentQuiz.stream === 'science_pcb') {
+        response = await quizAPI.submitClass12PCBQuiz(submission);
+      } else if (state.currentQuiz.targetClass === '12' && state.currentQuiz.stream === 'commerce') {
+        response = await quizAPI.submitClass12CommerceQuiz(submission);
+      } else if (state.currentQuiz.targetClass === '12' && state.currentQuiz.stream === 'arts') {
+        response = await quizAPI.submitClass12ArtsQuiz(submission);
+      } else {
+        throw new Error('Unsupported quiz type');
+      }
       
       if (response.success) {
         set({

@@ -5,9 +5,24 @@ const router = express.Router();
 const courseController = require('../controllers/courseController');
 const { wrapAsync } = require('../utils/middleware');
 
-// Routes will be added here with wrapAsync
-// router.get('/', wrapAsync(courseController.getCourses));
-// router.get('/:id', wrapAsync(courseController.getCourseById));
-// router.get('/:id/careers', wrapAsync(courseController.getCourseCareerOptions));
+/**
+ * Course Routes for Lakshya Application
+ * Base path: /api/courses
+ */
+
+// Get all courses with optional filtering
+router.get('/', wrapAsync(courseController.getAllCourses));
+
+// Get courses by stream (for Class 10 quiz results)
+router.get('/stream/:stream', wrapAsync(courseController.getCoursesByStream));
+
+// Get courses by field (for Class 12 quiz results)  
+router.get('/field/:field', wrapAsync(courseController.getCoursesByField));
+
+// Get AI-recommended courses by field (enhanced version)
+router.get('/ai-recommended/field/:field', wrapAsync(courseController.getAIRecommendedCoursesByField));
+
+// Get course by ID (must be last to avoid conflicts)
+router.get('/:id', wrapAsync(courseController.getCourseById));
 
 module.exports = router;

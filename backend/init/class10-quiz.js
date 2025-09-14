@@ -8,7 +8,7 @@ const class10Quiz = {
   description: "Discover your ideal stream based on your interests, strengths, and career aspirations. This comprehensive assessment will help you choose between Science (PCM/PCB), Commerce, or Arts streams.",
   targetClass: "10",
   // No stream field for class 10 (it's for stream selection, not field recommendation)
-  purpose: "stream-selection",
+  purpose: "stream_selection",
   questions: [
     {
       question: "Which subject do you enjoy the most in school?",

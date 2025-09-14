@@ -146,9 +146,131 @@ const healthCheck = async (req, res) => {
   });
 };
 
+/**
+ * GET /api/quiz/class12/pcm
+ * Fetch Class 12 PCM Field Recommendation Quiz
+ */
+const getClass12PCMQuiz = async (req, res) => {
+  const result = await quizService.getClass12PCMQuiz();
+  if (!result.success) {
+    return res.status(404).json(result);
+  }
+  res.status(200).json({ success: true, message: result.message, data: result.data });
+};
+
+/**
+ * POST /api/quiz/class12/pcm/submit
+ * Submit Class 12 PCM Field Recommendation Quiz
+ */
+const submitClass12PCMQuiz = async (req, res) => {
+  const { quizId, answers, userId } = req.body;
+  if (!quizId || !answers || !Array.isArray(answers)) {
+    return res.status(400).json({ success: false, message: 'Invalid request body: quizId + answers[] required', data: null });
+  }
+  const result = await quizService.submitClass12PCMQuiz({ quizId, answers, userId });
+  if (!result.success) {
+    if (result.message.includes('not found')) return res.status(404).json(result);
+    if (result.message.includes('Invalid') || result.message.includes('Expected')) return res.status(400).json(result);
+    return res.status(500).json(result);
+  }
+  res.status(200).json({ success: true, message: result.message, data: result.data });
+};
+
+/**
+ * GET /api/quiz/class12/pcb
+ * Fetch Class 12 PCB Field Recommendation Quiz
+ */
+const getClass12PCBQuiz = async (req, res) => {
+  const result = await quizService.getClass12PCBQuiz();
+  if (!result.success) return res.status(404).json(result);
+  res.status(200).json({ success: true, message: result.message, data: result.data });
+};
+
+/**
+ * POST /api/quiz/class12/pcb/submit
+ * Submit Class 12 PCB Field Recommendation Quiz
+ */
+const submitClass12PCBQuiz = async (req, res) => {
+  const { quizId, answers, userId } = req.body;
+  if (!quizId || !answers || !Array.isArray(answers)) {
+    return res.status(400).json({ success: false, message: 'Invalid request body: quizId + answers[] required', data: null });
+  }
+  const result = await quizService.submitClass12PCBQuiz({ quizId, answers, userId });
+  if (!result.success) {
+    if (result.message.includes('not found')) return res.status(404).json(result);
+    if (result.message.includes('Invalid') || result.message.includes('Expected')) return res.status(400).json(result);
+    return res.status(500).json(result);
+  }
+  res.status(200).json({ success: true, message: result.message, data: result.data });
+};
+
+/**
+ * GET /api/quiz/class12/commerce
+ * Fetch Class 12 Commerce Field Recommendation Quiz
+ */
+const getClass12CommerceQuiz = async (req, res) => {
+  const result = await quizService.getClass12CommerceQuiz();
+  if (!result.success) return res.status(404).json(result);
+  res.status(200).json({ success: true, message: result.message, data: result.data });
+};
+
+/**
+ * POST /api/quiz/class12/commerce/submit
+ * Submit Class 12 Commerce Field Recommendation Quiz
+ */
+const submitClass12CommerceQuiz = async (req, res) => {
+  const { quizId, answers, userId } = req.body;
+  if (!quizId || !answers || !Array.isArray(answers)) {
+    return res.status(400).json({ success: false, message: 'Invalid request body: quizId + answers[] required', data: null });
+  }
+  const result = await quizService.submitClass12CommerceQuiz(quizId, answers, userId);
+  if (!result.success) {
+    if (result.message.includes('not found')) return res.status(404).json(result);
+    if (result.message.includes('Invalid') || result.message.includes('Expected')) return res.status(400).json(result);
+    return res.status(500).json(result);
+  }
+  res.status(200).json({ success: true, message: result.message, data: result.data });
+};
+
+/**
+ * GET /api/quiz/class12/arts
+ * Fetch Class 12 Arts Field Recommendation Quiz
+ */
+const getClass12ArtsQuiz = async (req, res) => {
+  const result = await quizService.getClass12ArtsQuiz();
+  if (!result.success) return res.status(404).json(result);
+  res.status(200).json({ success: true, message: result.message, data: result.data });
+};
+
+/**
+ * POST /api/quiz/class12/arts/submit
+ * Submit Class 12 Arts Field Recommendation Quiz
+ */
+const submitClass12ArtsQuiz = async (req, res) => {
+  const { quizId, answers, userId } = req.body;
+  if (!quizId || !answers || !Array.isArray(answers)) {
+    return res.status(400).json({ success: false, message: 'Invalid request body: quizId + answers[] required', data: null });
+  }
+  const result = await quizService.submitClass12ArtsQuiz(quizId, answers, userId);
+  if (!result.success) {
+    if (result.message.includes('not found')) return res.status(404).json(result);
+    if (result.message.includes('Invalid') || result.message.includes('Expected')) return res.status(400).json(result);
+    return res.status(500).json(result);
+  }
+  res.status(200).json({ success: true, message: result.message, data: result.data });
+};
+
 module.exports = {
   getClass10Quiz,
   submitClass10Quiz,
   getAvailableQuizzes,
-  healthCheck
+  healthCheck,
+  getClass12PCMQuiz,
+  submitClass12PCMQuiz,
+  getClass12PCBQuiz,
+  submitClass12PCBQuiz,
+  getClass12CommerceQuiz,
+  submitClass12CommerceQuiz,
+  getClass12ArtsQuiz,
+  submitClass12ArtsQuiz
 };
