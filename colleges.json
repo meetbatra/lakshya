@@ -1564,5 +1564,41 @@
       "https://mbbscouncilcdn.s3.amazonaws.com/wp-content/uploads/2018/09/Madras-Medical-college-hospital-chennai.jpg"
     ],
     "isActive": true
-  }
+  },
+  {
+  "name": "National Institute of Technology Tiruchirappalli",
+  "shortName": "NIT TRICHY",
+  "type": "government",
+  "location": {
+    "address": "Tiruchirappalli",
+    "city": "Tiruchirappalli",
+    "state": "Tamil Nadu",
+    "pincode": "620015"
+  },
+  "contact": {
+    "phone": ["+91-431-2503001"],
+    "email": ["deanap@nitt.edu"],
+    "website": "https://www.nitt.edu/"
+  },
+  "courses": [
+    {
+        "courseId": "68c5c4ae3a8c04bd4ba357f0",
+        "courseName": "Bachelor of Technology in Computer Science and Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3580e",
+        "courseName": "Bachelor of Technology in Electronics and Communication Engineering"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba3582c",
+        "courseName": "Bachelor of Technology in Information Technology"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba35848",
+        "courseName": "Bachelor of Technology in Mechanical Engineering"
+      }
+  ],
+  "images": ["https://www.nitt.edu/home/Library-2019.JPG"],
+  "isActive": true
+}
 ]

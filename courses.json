@@ -1402,6 +1402,48 @@
     ],
     "topColleges": [
       {
+        "name": "Indian Institute of Technology Bombay (IIT Bombay)",
+        "type": "government",
+        "location": "Mumbai, Maharashtra",
+        "ranking": 3
+      },
+      {
+        "name": "Indian Institute of Technology Delhi (IIT Delhi)",
+        "type": "government",
+        "location": "Delhi",
+        "ranking": 2
+      },
+      {
+        "name": "Indian Institute of Technology Madras (IIT Madras)",
+        "type": "government",
+        "location": "Chennai, Tamil Nadu",
+        "ranking": 1
+      },
+      {
+        "name": "Indian Institute of Technology Kanpur (IIT Kanpur)",
+        "type": "government",
+        "location": "Kanpur, Uttar Pradesh",
+        "ranking": 4
+      },
+      {
+        "name": "Indian Institute of Technology Kharagpur (IIT Kharagpur)",
+        "type": "government",
+        "location": "Kharagpur, West Bengal",
+        "ranking": 5
+      },
+      {
+        "name": "Indian Institute of Technology Roorkee (IIT Roorkee)",
+        "type": "government",
+        "location": "Roorkee, Uttarakhand",
+        "ranking": 6
+      },
+      {
+        "name": "Indian Institute of Technology Guwahati (IIT Guwahati)",
+        "type": "government",
+        "location": "Guwahati, Assam",
+        "ranking": 8
+      },
+      {
         "name": "Vellore Institute of Technology (VIT)",
         "type": "private",
         "location": "Vellore, Tamil Nadu",
@@ -1626,6 +1668,18 @@
         "type": "government",
         "location": "Kharagpur, West Bengal",
         "ranking": 5
+      },
+      {
+        "name": "Indian Institute of Technology Roorkee (IIT Roorkee)",
+        "type": "government",
+        "location": "Roorkee, Uttarakhand",
+        "ranking": 6
+      },
+      {
+        "name": "Indian Institute of Technology Guwahati (IIT Guwahati)",
+        "type": "government",
+        "location": "Guwahati, Assam",
+        "ranking": 8
       },
       {
         "name": "Birla Institute of Technology and Science (BITS Pilani)",
