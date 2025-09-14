@@ -114,46 +114,51 @@ const CollegeDetails = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      {/* Header Section */}
+      <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <Button 
             onClick={handleBack} 
             variant="ghost" 
-            className="mb-4 flex items-center gap-2"
+            className="mb-4 hover:bg-white/50"
           >
-            <FontAwesomeIcon icon={faArrowLeft} className="h-4 w-4" />
+            <FontAwesomeIcon icon={faArrowLeft} className="mr-2" />
             Back to Colleges
           </Button>
           
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex-1">
-              <div className="flex flex-col sm:flex-row sm:items-start sm:gap-4 mb-4">
-                <div className="flex-1">
-                  <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
-                    {college.name}
-                  </h1>
-                  {college.shortName && (
-                    <p className="text-lg text-gray-600 font-medium mb-3">
-                      {college.shortName}
-                    </p>
-                  )}
-                </div>
-                <Badge className={`${getTypeColor(college.type)} border-0 text-sm`}>
-                  {college.type?.charAt(0).toUpperCase() + college.type?.slice(1)}
+          <div className="mb-6">
+            <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent mb-4">
+              {college.name}
+            </h1>
+            
+            {college.shortName && (
+              <p className="text-xl text-gray-600 font-medium mb-4">
+                {college.shortName}
+              </p>
+            )}
+            
+            <div className="flex flex-wrap items-center gap-3 mb-4">
+              <Badge variant="outline" className={`text-sm ${getTypeColor(college.type)} border-blue-200 bg-white`}>
+                {college.type?.charAt(0).toUpperCase() + college.type?.slice(1)}
+              </Badge>
+              {college.courses && college.courses.length > 0 && (
+                <Badge variant="outline" className="text-sm border-green-200 text-green-700 bg-white">
+                  {college.courses.length} Course{college.courses.length !== 1 ? 's' : ''}
                 </Badge>
-              </div>
-              
-              {college.location && (
-                <div className="flex items-center text-gray-600 mb-4">
-                  <FontAwesomeIcon icon={faMapMarkerAlt} className="h-5 w-5 mr-2" />
-                  <span className="text-lg">
+              )}
+            </div>
+
+            {college.location && (
+              <div className="flex items-center gap-6 text-gray-600">
+                <div className="flex items-center">
+                  <FontAwesomeIcon icon={faMapMarkerAlt} className="h-4 w-4 mr-2" />
+                  <span>
                     {college.location.city}
                     {college.location.state && `, ${college.location.state}`}
                   </span>
                 </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -164,7 +169,7 @@ const CollegeDetails = () => {
           <div className="lg:col-span-2 space-y-8">
             {/* College Image */}
             {college.images && college.images.length > 0 && (
-              <Card>
+              <Card className="py-0">
                 <CardContent className="p-0">
                   <img 
                     src={college.images[0]} 

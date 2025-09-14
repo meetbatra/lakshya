@@ -115,7 +115,7 @@ const Colleges = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto pt-6 pb-8 px-4 sm:px-6 lg:px-8">
         {/* Filters */}
         <div className="mb-6">
           <div className="flex flex-wrap items-center gap-4 mb-4">
@@ -238,28 +238,55 @@ const Colleges = () => {
               {(colleges || []).map((college, index) => (
                 <Card 
                   key={college?._id || index} 
-                  className="hover:shadow-lg transition-all duration-200 border border-gray-200 flex flex-col h-full cursor-pointer"
-                  onClick={() => handleCollegeClick(college)}
+                  className="hover:shadow-md transition-shadow duration-200 border border-gray-200 flex flex-col h-full overflow-hidden py-0"
                 >
+                  {/* College Image */}
+                  <div className="relative h-48 bg-gradient-to-br from-blue-50 to-indigo-100 overflow-hidden">
+                    {college?.images?.length > 0 ? (
+                      <img
+                        src={college.images[0]}
+                        alt={college.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.nextSibling.style.display = 'flex';
+                        }}
+                      />
+                    ) : null}
+                    
+                    {/* Fallback content when no image or image fails to load */}
+                    <div 
+                      className={`w-full h-full flex items-center justify-center ${college?.images?.length > 0 ? 'hidden' : 'flex'}`}
+                      style={{ display: college?.images?.length > 0 ? 'none' : 'flex' }}
+                    >
+                      <div className="text-center">
+                        <FontAwesomeIcon icon={faUniversity} className="h-12 w-12 text-blue-300 mb-2" />
+                        <p className="text-blue-600 font-medium text-sm">
+                          {college?.shortName || college?.name?.split(' ').map(word => word[0]).join('').slice(0, 3)}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* College Type Badge - Positioned over image */}
+                    <div className="absolute top-3 right-3">
+                      <Badge className={`${getTypeColor(college?.type)} border-0 text-xs shadow-sm`}>
+                        {college?.type?.charAt(0).toUpperCase() + college?.type?.slice(1)}
+                      </Badge>
+                    </div>
+                  </div>
+
                   <CardContent className="p-6 flex flex-col flex-1">
                     <div className="flex-1">
                       {/* Header */}
                       <div className="mb-4">
-                        <div className="flex items-start justify-between mb-3">
-                          <div className="flex-1">
-                            <h3 className="text-lg font-semibold text-gray-900 mb-1 leading-tight">
-                              {college?.name || 'Unknown College'}
-                            </h3>
-                            {college?.shortName && (
-                              <p className="text-sm text-gray-600 font-medium">
-                                {college.shortName}
-                              </p>
-                            )}
-                          </div>
-                          <Badge className={`ml-2 ${getTypeColor(college?.type)} border-0 text-xs`}>
-                            {college?.type?.charAt(0).toUpperCase() + college?.type?.slice(1)}
-                          </Badge>
-                        </div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-1 leading-tight">
+                          {college?.name || 'Unknown College'}
+                        </h3>
+                        {college?.shortName && (
+                          <p className="text-sm text-gray-600 font-medium">
+                            {college.shortName}
+                          </p>
+                        )}
                       </div>
 
                       {/* Location */}
@@ -311,19 +338,13 @@ const Colleges = () => {
                     </div>
 
                     {/* View Details Button */}
-                    <div className="mt-4 pt-4 border-t border-gray-100">
-                      <Button 
-                        variant="outline" 
-                        size="sm" 
-                        className="w-full"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleCollegeClick(college);
-                        }}
-                      >
-                        View Details
-                      </Button>
-                    </div>
+                    <Button 
+                      variant="outline" 
+                      className="w-full border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white mt-auto"
+                      onClick={() => handleCollegeClick(college)}
+                    >
+                      View Full Details
+                    </Button>
                   </CardContent>
                 </Card>
               ))}

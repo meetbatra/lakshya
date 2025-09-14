@@ -52,7 +52,7 @@ const Login = () => {
             </CardTitle>
             <CardDescription>
               Or{' '}
-              <Link to="/auth/signup" className="font-medium text-blue-600 hover:text-blue-500">
+              <Link to="/auth/signup" className="font-medium text-blue-600 hover:text-blue-500 cursor-pointer">
                 create a new account
               </Link>
             </CardDescription>

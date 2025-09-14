@@ -52,6 +52,10 @@ const Navbar = () => {
     if (path === '/courses') {
       return location.pathname.startsWith('/courses');
     }
+    // For colleges pages, check if current path starts with /colleges
+    if (path === '/colleges') {
+      return location.pathname.startsWith('/colleges');
+    }
     // For other pages, use exact match
     return location.pathname === path;
   };
@@ -87,7 +91,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link 
               to="/" 
-              className="flex items-center space-x-2 text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors"
+              className="flex items-center space-x-2 text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors cursor-pointer"
             >
               <div className="rounded-lg flex items-center justify-center">
                 <img 
@@ -108,7 +112,7 @@ const Navbar = () => {
                     <NavigationMenuLink asChild>
                       <Link 
                         to={item.path} 
-                        className={`group inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-[1rem] font-medium transition-all hover:bg-blue-50 hover:text-blue-700 focus:bg-blue-50 focus:text-blue-700 focus:outline-none ${
+                        className={`group inline-flex h-10 w-max items-center justify-center rounded-lg px-4 py-2 text-[1rem] font-medium transition-all hover:bg-blue-50 hover:text-blue-700 focus:bg-blue-50 focus:text-blue-700 focus:outline-none cursor-pointer ${
                           isActivePage(item.path) 
                             ? 'bg-blue-100 text-blue-700' 
                             : 'text-gray-700'
@@ -181,7 +185,7 @@ const Navbar = () => {
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`flex items-center space-x-4 px-4 py-4 rounded-xl transition-all duration-300 ease-out transform ${
+                  className={`flex items-center space-x-4 px-4 py-4 rounded-xl transition-all duration-300 ease-out transform cursor-pointer ${
                     isActivePage(item.path)
                       ? 'bg-blue-100/80 text-blue-700 scale-[1.02] shadow-md'
                       : 'text-gray-700 hover:bg-gray-50/80 hover:scale-[1.01] hover:shadow-sm active:scale-[0.98]'
