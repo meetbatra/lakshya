@@ -78,56 +78,489 @@
     "isActive": true
   },
   {
-  "name": "Indian Institute of Management Lucknow",
-  "shortName": "IIML",
-  "type": "government",
-  "location": {
-    "address": "Prabandh Nagar, IIM Road",
-    "city": "Lucknow",
-    "state": "Uttar Pradesh",
-    "pincode": "226013"
+    "name": "Indian Institute of Management Lucknow",
+    "shortName": "IIML",
+    "type": "government",
+    "location": {
+      "address": "Prabandh Nagar, IIM Road",
+      "city": "Lucknow",
+      "state": "Uttar Pradesh",
+      "pincode": "226013"
+    },
+    "contact": {
+      "phone": [
+        "+91-522-2734101",
+        "2734111-20",
+        "6696001",
+        "+91-522-2734025",
+        "2734005"
+      ],
+      "email": ["deanfaculty@iiml.ac.in"],
+      "website": "https://www.iiml.ac.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358d8",
+        "courseName": "Bachelor of Business Administration"
+      }
+    ],
+    "images": [
+      "https://www.iiml.ac.in/sites/default/files/MBAEI/mba/admission_mba_ei.JPG"
+    ],
+    "isActive": true
   },
-  "contact": {
-    "phone": ["+91-522-2734101", "2734111-20", "6696001", "+91-522-2734025", "2734005"],
-    "email": ["deanfaculty@iiml.ac.in"],
-    "website": "https://www.iiml.ac.in/"
+  {
+    "name": "Indian Institute of Management Indore",
+    "shortName": "IIMI",
+    "type": "government",
+    "location": {
+      "address": "Prabandh Shikhar, Rau-Pithampur Road",
+      "city": "Indore",
+      "state": "Madhya Pradesh",
+      "pincode": "453556"
+    },
+    "contact": {
+      "phone": ["+91-731-2439666", "+91-731-2439800"],
+      "email": ["info@iimidr.ac.in"],
+      "website": "https://www.iimidr.ac.in/"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358d8",
+        "courseName": "Bachelor of Business Administration"
+      }
+    ],
+    "images": [
+      "https://iimidr.ac.in/wp-content/uploads/2021/01/main-building-m.jpg"
+    ],
+    "isActive": true
   },
-  "courses": [
-    {
-      "courseId": "68c5c4af3a8c04bd4ba358d8",
-      "courseName": "Bachelor of Business Administration"
-    }
-  ],
-  "images": [
-    "https://www.iiml.ac.in/sites/default/files/MBAEI/mba/admission_mba_ei.JPG"
-  ],
-  "isActive": true
-},
-{
-  "name": "Indian Institute of Management Indore",
-  "shortName": "IIMI",
-  "type": "government",
-  "location": {
-    "address": "Prabandh Shikhar, Rau-Pithampur Road",
-    "city": "Indore",
-    "state": "Madhya Pradesh",
-    "pincode": "453556"
+  {
+    "name": "Xavier School of Management",
+    "shortName": "XLRI",
+    "type": "private",
+    "location": {
+      "address": "Circuit House Area (East), Jamshedpur",
+      "city": "Jamshedpur",
+      "state": "Jharkhand",
+      "pincode": "831001"
+    },
+    "contact": {
+      "phone": ["+91-657-665 3333"],
+      "email": ["info@xlri.ac.in", "admissions@xlri.ac.in"],
+      "website": "https://www.xlri.ac.in"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba35911",
+        "courseName": "Bachelor in Entrepreneurship"
+      }
+    ],
+    "images": [
+      "https://c.ndtvimg.com/2025-01/08a8jdkg_xavier-school-of-management_625x300_27_January_25.jpeg"
+    ],
+    "isActive": true,
+    "createdAt": "2025-09-14T10:20:30.000Z",
+    "updatedAt": "2025-09-14T10:20:30.000Z"
   },
-  "contact": {
-    "phone": ["+91-731-2439666", "+91-731-2439800"],
-    "email": ["info@iimidr.ac.in"],
-    "website": "https://www.iimidr.ac.in/"
+  {
+    "name": "S. P. Jain Institute of Management & Research",
+    "shortName": "SPJIMR",
+    "type": "private",
+    "location": {
+      "address": "Bhavan's College Campus, Munshi Nagar, Dadabhai Road, Andheri West, Mumbai",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "pincode": "400058"
+    },
+    "contact": {
+      "phone": ["02261454200", "02261460200", "02262134420"],
+      "email": ["info@spjimr.org"],
+      "website": "https://www.spjimr.org"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358d8",
+        "courseName": "Bachelor of Business Administration"
+      },
+      {
+        "courseId": "68c5c4af3a8c04bd4ba35911",
+        "courseName": "Bachelor in Entrepreneurship"
+      }
+    ],
+    "images": [
+      "https://www.crackverbal.com/wp-content/uploads/2020/11/SPJIMR.jpg"
+    ],
+    "isActive": true,
+    "createdAt": "2025-09-14T10:20:30.000Z",
+    "updatedAt": "2025-09-14T10:20:30.000Z"
   },
-  "courses": [
-    {
-      "courseId": "68c5c4af3a8c04bd4ba358d8",
-      "courseName": "Bachelor of Business Administration"
-    }
-  ],
-  "images": [
-    "https://iimidr.ac.in/wp-content/uploads/2021/01/main-building-m.jpg"
-  ],
-  "isActive": true
-}
-
+  {
+    "name": "SVKM's Narsee Monjee Institute of Management Studies",
+    "shortName": "NMIMS",
+    "type": "private",
+    "location": {
+      "address": "V. L. Mehta Road, Vile Parle (West)",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "pincode": "400056"
+    },
+    "contact": {
+      "phone": ["02242355555", "02242355621"],
+      "email": ["enquiry@nmims.edu"],
+      "website": "https://nmims.edu"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba35911",
+        "courseName": "Bachelor in Entrepreneurship"
+      }
+    ],
+    "images": ["https://www.nmims.edu/images/home-slide/m-school-6.jpg"],
+    "isActive": true,
+    "createdAt": "2025-09-14T10:20:30.000Z",
+    "updatedAt": "2025-09-14T10:20:30.000Z"
+  },
+  {
+    "name": "Jamnalal Bajaj Institute of Management Studies",
+    "shortName": "JBIMS",
+    "type": "autonomous",
+    "location": {
+      "address": "164, Backbay Reclamation, H.T. Parekh Marg, Churchgate",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "pincode": "400020"
+    },
+    "contact": {
+      "phone": ["02222024133", "02222025153"],
+      "email": ["web@jbims.edu"],
+      "website": "https://jbims.edu"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba35911",
+        "courseName": "Bachelor in Entrepreneurship"
+      }
+    ],
+    "images": ["https://www.jbims.edu/uploads/homebanner/jbims_img-1.jpg"],
+    "isActive": true,
+    "createdAt": "2025-09-14T10:20:30.000Z",
+    "updatedAt": "2025-09-14T10:20:30.000Z"
+  },
+  {
+    "name": "Birla Institute of Management Technology",
+    "shortName": "BIMTECH",
+    "type": "private",
+    "location": {
+      "address": "Plot No. 5, Knowledge Park II",
+      "city": "Greater Noida",
+      "state": "Uttar Pradesh",
+      "pincode": "201306"
+    },
+    "contact": {
+      "phone": ["0120-6843000-10", "9355024501-10"],
+      "email": ["info@bimtech.ac.in", "admission@bimtech.ac.in"],
+      "website": "https://www.bimtech.ac.in"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba35911",
+        "courseName": "Bachelor in Entrepreneurship"
+      }
+    ],
+    "images": [
+      "https://colleges18.s3.ap-south-1.amazonaws.com/Birla_Institute_of_Management_Technology_BIMTECH_Noida_1_31f94afa28.jpg"
+    ],
+    "isActive": true,
+    "createdAt": "2025-09-14T10:20:30.000Z",
+    "updatedAt": "2025-09-14T10:20:30.000Z"
+  },
+  {
+    "name": "Institute of Management Technology, Ghaziabad",
+    "shortName": "IMT Ghaziabad",
+    "type": "private",
+    "location": {
+      "address": "Raj Nagar, Post Box No. 137",
+      "city": "Ghaziabad",
+      "state": "Uttar Pradesh",
+      "pincode": "201001"
+    },
+    "contact": {
+      "phone": ["01204083200", "01204083306", "9810214551"],
+      "email": ["admissions@imt.edu", "director@imt.edu"],
+      "website": "https://www.imt.edu"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358d8",
+        "courseName": "Bachelor of Business Administration"
+      }
+    ],
+    "images": [
+      "https://www.collegesmba.in/wp-content/uploads/2016/01/INSTITUTE-OF-MANAGEMENT-TECHNOLOGY-GHAZIABAD-1.jpg"
+    ],
+    "isActive": true,
+    "createdAt": "2025-09-14T10:20:30.000Z",
+    "updatedAt": "2025-09-14T10:20:30.000Z"
+  },
+  {
+    "name": "Indian Institute of Science",
+    "shortName": "IISc",
+    "type": "autonomous",
+    "location": {
+      "address": "Indian Institute of Science, Bangalore",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "pincode": "560012"
+    },
+    "contact": {
+      "phone": ["+91-80-23600757", "+91-80-22932444"],
+      "email": ["registrar@iisc.ac.in"],
+      "website": "https://www.iisc.ac.in"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba35783",
+        "courseName": "Bachelor of Science in Physics"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357d5",
+        "courseName": "Bachelor of Science in Biology"
+      }
+    ],
+    "images": [
+      "https://medicine.iisc.ac.in/wp-content/uploads/2024/04/iisc-main-building-1.jpg"
+    ],
+    "isActive": true,
+    "createdAt": "2025-09-14T10:20:30.000Z",
+    "updatedAt": "2025-09-14T10:20:30.000Z"
+  },
+  {
+    "name": "Jawaharlal Nehru University",
+    "shortName": "JNU",
+    "type": "government",
+    "location": {
+      "address": "New Mehrauli Road",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "pincode": "110067"
+    },
+    "contact": {
+      "phone": ["011-26704090"],
+      "email": ["registrar@mail.jnu.ac.in"],
+      "website": "https://www.jnu.ac.in"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba35765",
+        "courseName": "Bachelor of Science in Computer Science"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357d5",
+        "courseName": "Bachelor of Science in Biology"
+      }
+    ],
+    "images": [
+      "https://etimg.etb2bimg.com/thumb/msid-111693032,width-1200,height-900,resizemode-4/.jpg"
+    ],
+    "isActive": true,
+    "createdAt": "2025-09-14T10:20:30.000Z",
+    "updatedAt": "2025-09-14T10:20:30.000Z"
+  },
+  {
+    "name": "Banaras Hindu University",
+    "shortName": "BHU",
+    "type": "government",
+    "location": {
+      "address": "BHU Campus, Pandit Madan Mohan Malaviya Road",
+      "city": "Varanasi",
+      "state": "Uttar Pradesh",
+      "pincode": "221005"
+    },
+    "contact": {
+      "phone": ["0542-2307631", "0542-2369018", "0542-6703253"],
+      "email": ["int.admission@bhu.ac.in", "admission.help@bhu.ac.in"],
+      "website": "https://www.bhu.ac.in"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba35765",
+        "courseName": "Bachelor of Science in Computer Science"
+      },
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba35783",
+        "courseName": "Bachelor of Science in Physics"
+      },
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba3579c",
+        "courseName": "Bachelor of Science in Chemistry"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357b7",
+        "courseName": "Bachelor of Science in Mathematics"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357d5",
+        "courseName": "Bachelor of Science in Biology"
+      },
+      {
+        "courseId": "68c5c4af3a8c04bd4ba35885",
+        "courseName": "Bachelor of Medicine and Bachelor of Surgery"
+      }
+    ],
+    "images": [
+      "https://d2bpq0k0hmyes4.cloudfront.net/images/slider/slide-banner01.jpg"
+    ],
+    "isActive": true,
+    "createdAt": "2025-09-14T10:20:30.000Z",
+    "updatedAt": "2025-09-14T10:20:30.000Z"
+  },
+  {
+    "name": "University of Delhi",
+    "shortName": "DU",
+    "type": "government",
+    "location": {
+      "address": "North Campus, University of Delhi",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "pincode": "110007"
+    },
+    "contact": {
+      "phone": ["011-27006900", "011-27667011"],
+      "email": ["registrar@du.ac.in", "ug@admission.du.ac.in"],
+      "website": "https://www.du.ac.in"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba35765",
+        "courseName": "Bachelor of Science in Computer Science"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357d5",
+        "courseName": "Bachelor of Science in Biology"
+      }
+    ],
+    "images": [
+      "https://images.shiksha.com/mediadata/images/articles/1663132366php0LFtAP.jpeg"
+    ],
+    "isActive": true,
+    "createdAt": "2025-09-14T10:20:30.000Z",
+    "updatedAt": "2025-09-14T10:20:30.000Z"
+  },
+  {
+    "name": "Miranda House",
+    "shortName": "Miranda House",
+    "type": "government",
+    "location": {
+      "address": "GC Narang Road, University Enclave",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "pincode": "110007"
+    },
+    "contact": {
+      "phone": ["011-27666983", "011-27667367", "011-27667437"],
+      "email": ["principal@mirandahouse.ac.in"],
+      "website": "https://www.mirandahouse.ac.in"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba35765",
+        "courseName": "Bachelor of Science in Computer Science"
+      },
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba3579c",
+        "courseName": "Bachelor of Science in Chemistry"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357b7",
+        "courseName": "Bachelor of Science in Mathematics"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357d5",
+        "courseName": "Bachelor of Science in Biology"
+      }
+    ],
+    "images": [
+      "https://res.cloudinary.com/purnesh/image/upload/w_1080,f_auto/miranda.jpg"
+    ],
+    "isActive": true,
+    "createdAt": "2025-09-14T10:20:30.000Z",
+    "updatedAt": "2025-09-14T10:20:30.000Z"
+  },
+  {
+    "name": "Hindu College",
+    "shortName": "Hindu College",
+    "type": "government",
+    "location": {
+      "address": "Sudhir Bose Marg, University Enclave, Delhi",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "pincode": "110007"
+    },
+    "contact": {
+      "phone": ["011-27667184"],
+      "email": ["principal@hinducollege.org"],
+      "website": "https://hinducollege.ac.in"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba35765",
+        "courseName": "Bachelor of Science in Computer Science"
+      },
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba3579c",
+        "courseName": "Bachelor of Science in Chemistry"
+      },
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358f9",
+        "courseName": "Bachelor of Commerce"
+      }
+    ],
+    "images": [
+      "https://thepatriot.in/wp-content/uploads/2023/02/Untitled-design-1-1.png"
+    ],
+    "isActive": true,
+    "createdAt": "2025-09-14T10:20:30.000Z",
+    "updatedAt": "2025-09-14T10:20:30.000Z"
+  },
+  {
+    "name": "Hansraj College",
+    "shortName": "Hansraj College",
+    "type": "government",
+    "location": {
+      "address": "Mahatma Hans Raj Marg, Malka Ganj",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "pincode": "110007"
+    },
+    "contact": {
+      "phone": ["011-27667747", "011-27667458"],
+      "email": ["principal_hrc@yahoo.com"],
+      "website": "http://www.hansrajcollege.co.in"
+    },
+    "courses": [
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba35765",
+        "courseName": "Bachelor of Science in Computer Science"
+      },
+      {
+        "courseId": "68c5c4ad3a8c04bd4ba3579c",
+        "courseName": "Bachelor of Science in Chemistry"
+      },
+      {
+        "courseId": "68c5c4af3a8c04bd4ba358f9",
+        "courseName": "Bachelor of Commerce"
+      },
+      {
+        "courseId": "68c5c4ae3a8c04bd4ba357b7",
+        "courseName": "Bachelor of Science in Mathematics"
+      }
+    ],
+    "images": [
+      "https://www.hansrajcollege.ac.in/assets/front/images/campus.jpg"
+    ],
+    "isActive": true,
+    "createdAt": "2025-09-14T10:20:30.000Z",
+    "updatedAt": "2025-09-14T10:20:30.000Z"
+  }
 ]
