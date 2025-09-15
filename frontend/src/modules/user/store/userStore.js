@@ -21,11 +21,28 @@ export const useAuth = create(
       },
 
       logout: () => {
+        // Clear user authentication state
         set({
           user: null,
           token: null,
           isAuthenticated: false,
           error: null
+        });
+        
+        // Clear course filters from courses store
+        import('../../courses/store/coursesStore').then(({ useCoursesStore }) => {
+          const coursesStore = useCoursesStore.getState();
+          coursesStore.clearAllFilters();
+        }).catch(error => {
+          console.warn('Failed to clear course filters on logout:', error);
+        });
+
+        // Clear college filters from colleges store
+        import('../../colleges/store/collegesStore').then(({ useCollegesStore }) => {
+          const collegesStore = useCollegesStore.getState();
+          collegesStore.clearAllFilters();
+        }).catch(error => {
+          console.warn('Failed to clear college filters on logout:', error);
         });
       },
 

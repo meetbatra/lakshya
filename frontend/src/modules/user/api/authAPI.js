@@ -97,6 +97,19 @@ export const authAPI = {
     } catch (error) {
       throw new Error(error.response?.data?.message || 'Token verification failed');
     }
+  },
+
+  // Update user profile
+  updateProfile: async (updateData) => {
+    try {
+      const response = await api.put('/auth/profile', updateData);
+      return {
+        user: response.data.data.user,
+        token: response.data.data.token
+      };
+    } catch (error) {
+      throw new Error(error.response?.data?.message || 'Failed to update profile');
+    }
   }
 };
 

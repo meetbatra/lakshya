@@ -75,31 +75,33 @@ const SignUp = () => {
     
     const streamFieldMap = {
       'science_pcm': [
-        { value: 'engineering', label: 'Engineering' },
-        { value: 'architecture', label: 'Architecture' },
-        { value: 'pure_sciences', label: 'Pure Sciences' },
-        { value: 'computer_science', label: 'Computer Science' }
+        { value: 'engineering_technology', label: 'Engineering' },
+        { value: 'architecture_design', label: 'Architecture' },
+        { value: 'pure_sciences_research', label: 'Pure Sciences' },
+        { value: 'computer_it', label: 'Computer Science' },
+        { value: 'defence_military', label: 'Defence & Military' }
       ],
       'science_pcb': [
         { value: 'medicine', label: 'Medicine (MBBS)' },
-        { value: 'dentistry', label: 'Dentistry (BDS)' },
-        { value: 'pharmacy', label: 'Pharmacy' },
+        { value: 'allied_health', label: 'Allied Health Sciences' },
         { value: 'biotechnology', label: 'Biotechnology' },
-        { value: 'nursing', label: 'Nursing' }
+        { value: 'veterinary_science', label: 'Veterinary Science' },
+        { value: 'agriculture_environment', label: 'Agriculture & Environment' }
       ],
       'commerce': [
-        { value: 'ca', label: 'Chartered Accountancy (CA)' },
-        { value: 'cs', label: 'Company Secretary (CS)' },
-        { value: 'bcom', label: 'Bachelor of Commerce' },
-        { value: 'bba', label: 'Bachelor of Business Administration' },
-        { value: 'economics', label: 'Economics' }
+        { value: 'business_management', label: 'Business & Management' },
+        { value: 'finance_accounting', label: 'Finance & Accounting' },
+        { value: 'economics_analytics', label: 'Economics & Analytics' },
+        { value: 'law_commerce', label: 'Law (Commerce)' },
+        { value: 'entrepreneurship', label: 'Entrepreneurship' }
       ],
       'arts': [
-        { value: 'ba', label: 'Bachelor of Arts' },
-        { value: 'journalism', label: 'Journalism' },
+        { value: 'social_sciences', label: 'Social Sciences' },
         { value: 'psychology', label: 'Psychology' },
-        { value: 'sociology', label: 'Sociology' },
-        { value: 'literature', label: 'Literature' }
+        { value: 'journalism_media', label: 'Journalism & Media' },
+        { value: 'fine_arts_design', label: 'Fine Arts & Design' },
+        { value: 'law_arts', label: 'Law (Arts)' },
+        { value: 'civil_services', label: 'Civil Services' }
       ]
     };
 

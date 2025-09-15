@@ -6,19 +6,32 @@ import { Card, CardContent } from '../../../components/ui/card';
 import { Badge } from '../../../components/ui/badge';
 import { Alert, AlertDescription } from '../../../components/ui/alert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faClock, faUsers, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faClock, faUsers, faSpinner, faFilter, faTimes, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { useCoursesStore } from '../store/coursesStore';
+import { useAuth } from '../../user/store/userStore';
 
 const Courses = () => {
   const navigate = useNavigate();
+  const { user, isAuthenticated } = useAuth();
+  const [showFilters, setShowFilters] = useState(false);
+  
   const {
     courses,
     loading,
     error,
     searchQuery,
+    selectedStream,
+    selectedField,
+    autoFiltersApplied,
     fetchAllCourses,
     setSearchQuery,
+    setSelectedStream,
+    setSelectedField,
     getFilteredCourses,
+    getAvailableStreams,
+    getAvailableFields,
+    applyAutoFilters,
+    clearAllFilters,
     clearError
   } = useCoursesStore();
 
@@ -27,7 +40,55 @@ const Courses = () => {
     fetchAllCourses();
   }, []);
 
+  // Apply auto-filters based on user preferences
+  useEffect(() => {
+    if (isAuthenticated && user && courses.length > 0) {
+      applyAutoFilters(user);
+    }
+  }, [isAuthenticated, user, courses, applyAutoFilters]);
+
   const filteredCourses = getFilteredCourses();
+  const availableStreams = getAvailableStreams();
+  const availableFields = getAvailableFields();
+
+  // Helper function to format stream name for display
+  const formatStreamName = (stream) => {
+    const streamMap = {
+      'science_pcm': 'Science (PCM)',
+      'science_pcb': 'Science (PCB)', 
+      'commerce': 'Commerce',
+      'arts': 'Arts'
+    };
+    return streamMap[stream] || stream;
+  };
+
+  // Helper function to format field name for display
+  const formatFieldName = (field) => {
+    const fieldMap = {
+      'engineering_technology': 'Engineering & Technology',
+      'architecture_design': 'Architecture & Design',
+      'defence_military': 'Defence & Military',
+      'computer_it': 'Computer & IT',
+      'pure_sciences_research': 'Pure Sciences & Research',
+      'medicine': 'Medicine',
+      'allied_health': 'Allied Health',
+      'biotechnology': 'Biotechnology',
+      'veterinary_science': 'Veterinary Science',
+      'agriculture_environment': 'Agriculture & Environment',
+      'business_management': 'Business & Management',
+      'finance_accounting': 'Finance & Accounting',
+      'economics_analytics': 'Economics & Analytics',
+      'law_commerce': 'Law & Commerce',
+      'entrepreneurship': 'Entrepreneurship',
+      'social_sciences': 'Social Sciences',
+      'psychology': 'Psychology',
+      'journalism_media': 'Journalism & Media',
+      'fine_arts_design': 'Fine Arts & Design',
+      'law_arts': 'Law & Arts',
+      'civil_services': 'Civil Services'
+    };
+    return fieldMap[field] || field;
+  };
 
   // Helper function to format duration
   const formatDuration = (duration) => {
@@ -99,6 +160,110 @@ const Courses = () => {
 
         {!loading && !error && (
           <>
+            {/* Auto-Filter Message */}
+            {autoFiltersApplied && (
+              <Alert className="mb-6 bg-blue-50 border-blue-200">
+                <FontAwesomeIcon icon={faInfoCircle} className="h-4 w-4 text-blue-600" />
+                <AlertDescription className="text-blue-800">
+                  <div className="flex items-center justify-between">
+                    <span>
+                      Filters are automatically applied based on your preferences
+                      {user?.class === '10' && ` (Class ${user.class} - ${formatStreamName(user.stream)})`}
+                      {user?.class === '12' && ` (Class ${user.class} - ${formatStreamName(user.stream)}${user.field ? `, ${formatFieldName(user.field)}` : ''})`}
+                    </span>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={clearAllFilters}
+                      className="ml-4 border-blue-300 text-blue-700 hover:bg-blue-100"
+                    >
+                      <FontAwesomeIcon icon={faTimes} className="h-3 w-3 mr-1" />
+                      Clear Filters
+                    </Button>
+                  </div>
+                </AlertDescription>
+              </Alert>
+            )}
+
+            {/* Filters */}
+            <div className="mb-6">
+              <div className="flex flex-wrap items-center gap-4 mb-4">
+                <Button
+                  variant="outline"
+                  onClick={() => setShowFilters(!showFilters)}
+                  className={`flex items-center gap-2 transition-all duration-200 hover:scale-105 hover:shadow-md ${showFilters ? 'bg-blue-50 border-blue-300 text-blue-700' : ''}`}
+                >
+                  <FontAwesomeIcon 
+                    icon={faFilter} 
+                    className={`h-4 w-4 transition-transform duration-200 ${showFilters ? 'rotate-180' : ''}`} 
+                  />
+                  Filters
+                </Button>
+                
+                {(selectedStream !== 'all' || selectedField !== 'all' || searchQuery) && !autoFiltersApplied && (
+                  <Button
+                    variant="ghost"
+                    onClick={() => {
+                      setSelectedStream('all');
+                      setSelectedField('all');
+                      setSearchQuery('');
+                    }}
+                    className="text-sm text-gray-600"
+                  >
+                    Clear manual filters
+                  </Button>
+                )}
+              </div>
+
+              {showFilters && (
+                <div className="mb-6 overflow-hidden">
+                  <Card className="transform transition-all duration-300 ease-in-out animate-in slide-in-from-top-2 fade-in-0">
+                    <CardContent className="p-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {/* Stream Filter */}
+                        <div className="transform transition-all duration-200 hover:scale-105">
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Stream
+                          </label>
+                          <select
+                            value={selectedStream}
+                            onChange={(e) => setSelectedStream(e.target.value)}
+                            className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-blue-400 focus:scale-105"
+                          >
+                            <option value="all">All Streams</option>
+                            {availableStreams.map(stream => (
+                              <option key={stream} value={stream}>
+                                {formatStreamName(stream)}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+
+                        {/* Field Filter */}
+                        <div className="transform transition-all duration-200 hover:scale-105">
+                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                            Field
+                          </label>
+                          <select
+                            value={selectedField}
+                            onChange={(e) => setSelectedField(e.target.value)}
+                            className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-blue-400 focus:scale-105"
+                          >
+                            <option value="all">All Fields</option>
+                            {availableFields.map(field => (
+                              <option key={field} value={field}>
+                                {formatFieldName(field)}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              )}
+            </div>
+
             {/* Results Header */}
             <div className="mb-6">
               <div>

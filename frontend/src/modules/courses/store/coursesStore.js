@@ -10,6 +10,7 @@ export const useCoursesStore = create((set, get) => ({
   selectedStream: 'all',
   selectedField: 'all',
   searchQuery: '',
+  autoFiltersApplied: false, // Track if auto-filters are applied
 
   // Actions
   setLoading: (loading) => set({ loading }),
@@ -19,6 +20,7 @@ export const useCoursesStore = create((set, get) => ({
   setSelectedStream: (stream) => set({ selectedStream: stream }),
   setSelectedField: (field) => set({ selectedField: field }),
   setSelectedCourse: (course) => set({ selectedCourse: course }),
+  setAutoFiltersApplied: (applied) => set({ autoFiltersApplied: applied }),
 
   // Fetch all courses
   fetchAllCourses: async () => {
@@ -80,11 +82,17 @@ export const useCoursesStore = create((set, get) => ({
     }
   },
 
-  // Get filtered courses based on search only
+  // Get filtered courses based on search, stream, and field
   getFilteredCourses: () => {
-    const { courses, searchQuery } = get();
+    const { courses, searchQuery, selectedStream, selectedField } = get();
     
     return courses.filter(course => {
+      // Stream filter
+      const matchesStream = selectedStream === 'all' || course.stream === selectedStream;
+      
+      // Field filter
+      const matchesField = selectedField === 'all' || course.field === selectedField;
+      
       // Search filter - search across multiple fields
       const matchesSearch = !searchQuery || (() => {
         const query = searchQuery.toLowerCase();
@@ -117,9 +125,39 @@ export const useCoursesStore = create((set, get) => ({
         return basicMatch || careerMatch || skillsMatch || collegeMatch;
       })();
 
-      return matchesSearch;
+      return matchesStream && matchesField && matchesSearch;
     });
-  },  // Get unique streams from courses
+  },
+
+  // Apply auto-filters based on user preferences
+  applyAutoFilters: (user) => {
+    if (!user) return;
+    
+    // For Class 10 users - apply stream filter only
+    if (user.class === '10' && user.stream) {
+      set({ 
+        selectedStream: user.stream, 
+        selectedField: 'all',
+        autoFiltersApplied: true 
+      });
+    }
+    // For Class 12 users - apply both stream and field filters
+    else if (user.class === '12' && user.stream) {
+      set({ 
+        selectedStream: user.stream, 
+        selectedField: user.field || 'all',
+        autoFiltersApplied: true 
+      });
+    }
+  },
+
+  // Clear all filters including auto-applied ones
+  clearAllFilters: () => set({
+    selectedStream: 'all',
+    selectedField: 'all',
+    searchQuery: '',
+    autoFiltersApplied: false
+  }),  // Get unique streams from courses
   getAvailableStreams: () => {
     const { courses } = get();
     const streams = [...new Set(courses.map(course => course.stream))].filter(Boolean);
@@ -137,6 +175,7 @@ export const useCoursesStore = create((set, get) => ({
   resetFilters: () => set({
     selectedStream: 'all',
     selectedField: 'all',
-    searchQuery: ''
+    searchQuery: '',
+    autoFiltersApplied: false
   })
 }));

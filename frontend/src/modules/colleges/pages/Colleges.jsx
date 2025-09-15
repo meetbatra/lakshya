@@ -17,13 +17,16 @@ import {
   faGlobe,
   faFilter,
   faChevronLeft,
-  faChevronRight
+  faChevronRight,
+  faTimes
 } from '@fortawesome/free-solid-svg-icons';
 import { useCollegesStore } from '../store/collegesStore';
+import { useAuth } from '../../user/store/userStore';
 
 const Colleges = () => {
   const navigate = useNavigate();
   const [showFilters, setShowFilters] = useState(false);
+  const { user } = useAuth();
   
   const {
     colleges,
@@ -33,21 +36,34 @@ const Colleges = () => {
     searchQuery,
     filters,
     filterOptions,
+    autoFiltersApplied,
     fetchAllColleges,
     fetchFilterOptions,
     searchColleges,
     updateFilters,
     setSearchQuery,
     clearFilters,
+    clearAllFilters,
+    applyAutoFilters,
     changePage,
     clearError
   } = useCollegesStore();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetchAllColleges();
-    fetchFilterOptions();
-  }, []);
+    
+    const initializeColleges = async () => {
+      await fetchFilterOptions();
+      await fetchAllColleges();
+      
+      // Apply auto-filters if user is logged in and has a state
+      if (user && user.state) {
+        await applyAutoFilters(user);
+      }
+    };
+    
+    initializeColleges();
+  }, [user]); // Add user as dependency to re-run when user changes
 
   const handleSearch = (e) => {
     const query = e.target.value;
@@ -116,15 +132,41 @@ const Colleges = () => {
       </div>
 
       <div className="max-w-7xl mx-auto pt-6 pb-8 px-4 sm:px-6 lg:px-8">
+        {/* Auto-Filter Message */}
+        {autoFiltersApplied && (
+          <Alert className="mb-6 bg-blue-50 border-blue-200">
+            <AlertDescription className="flex items-center justify-between">
+              <div className="flex items-center">
+                <FontAwesomeIcon icon={faMapMarkerAlt} className="h-4 w-4 mr-2 text-blue-600" />
+                <span className="text-blue-800">
+                  Colleges are automatically filtered according to your state ({filters.state})
+                </span>
+              </div>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={clearAllFilters}
+                className="text-blue-600 hover:text-blue-800 hover:bg-blue-100 ml-4"
+              >
+                <FontAwesomeIcon icon={faTimes} className="h-4 w-4 mr-1" />
+                Clear Filter
+              </Button>
+            </AlertDescription>
+          </Alert>
+        )}
+
         {/* Filters */}
         <div className="mb-6">
           <div className="flex flex-wrap items-center gap-4 mb-4">
             <Button
               variant="outline"
               onClick={() => setShowFilters(!showFilters)}
-              className="flex items-center gap-2"
+              className={`flex items-center gap-2 transition-all duration-200 hover:scale-105 hover:shadow-md ${showFilters ? 'bg-blue-50 border-blue-300 text-blue-700' : ''}`}
             >
-              <FontAwesomeIcon icon={faFilter} className="h-4 w-4" />
+              <FontAwesomeIcon 
+                icon={faFilter} 
+                className={`h-4 w-4 transition-transform duration-200 ${showFilters ? 'rotate-180' : ''}`} 
+              />
               Filters
             </Button>
             
@@ -140,63 +182,65 @@ const Colleges = () => {
           </div>
 
           {showFilters && (
-            <Card className="mb-6">
-              <CardContent className="p-4">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {/* Type Filter */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      College Type
-                    </label>
-                    <select
-                      value={filters.type}
-                      onChange={(e) => handleFilterChange('type', e.target.value)}
-                      className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                    >
-                      <option value="all">All Types</option>
-                      {filterOptions.types?.map(type => (
-                        <option key={type} value={type}>
-                          {type.charAt(0).toUpperCase() + type.slice(1)}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
+            <div className="mb-6 overflow-hidden">
+              <Card className="transform transition-all duration-300 ease-in-out animate-in slide-in-from-top-2 fade-in-0">
+                <CardContent className="p-4">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {/* Type Filter */}
+                    <div className="transform transition-all duration-200 hover:scale-105">
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        College Type
+                      </label>
+                      <select
+                        value={filters.type}
+                        onChange={(e) => handleFilterChange('type', e.target.value)}
+                        className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-blue-400 focus:scale-105"
+                      >
+                        <option value="all">All Types</option>
+                        {filterOptions.types?.map(type => (
+                          <option key={type} value={type}>
+                            {type.charAt(0).toUpperCase() + type.slice(1)}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
 
-                  {/* State Filter */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      State
-                    </label>
-                    <select
-                      value={filters.state}
-                      onChange={(e) => handleFilterChange('state', e.target.value)}
-                      className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                    >
-                      <option value="all">All States</option>
-                      {filterOptions.states?.map(state => (
-                        <option key={state} value={state}>{state}</option>
-                      ))}
-                    </select>
-                  </div>
+                    {/* State Filter */}
+                    <div className="transform transition-all duration-200 hover:scale-105">
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        State
+                      </label>
+                      <select
+                        value={filters.state}
+                        onChange={(e) => handleFilterChange('state', e.target.value)}
+                        className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-blue-400 focus:scale-105"
+                      >
+                        <option value="all">All States</option>
+                        {filterOptions.states?.map(state => (
+                          <option key={state} value={state}>{state}</option>
+                        ))}
+                      </select>
+                    </div>
 
-                  {/* Sort By */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Sort By
-                    </label>
-                    <select
-                      value={filters.sortBy}
-                      onChange={(e) => handleFilterChange('sortBy', e.target.value)}
-                      className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                    >
-                      <option value="name">Name</option>
-                      <option value="location.state">State</option>
-                      <option value="type">Type</option>
-                    </select>
+                    {/* Sort By */}
+                    <div className="transform transition-all duration-200 hover:scale-105">
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        Sort By
+                      </label>
+                      <select
+                        value={filters.sortBy}
+                        onChange={(e) => handleFilterChange('sortBy', e.target.value)}
+                        className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-blue-400 focus:scale-105"
+                      >
+                        <option value="name">Name</option>
+                        <option value="location.state">State</option>
+                        <option value="type">Type</option>
+                      </select>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
           )}
         </div>
 

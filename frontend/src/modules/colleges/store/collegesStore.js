@@ -28,6 +28,7 @@ const useCollegesStore = create(devtools((set, get) => ({
     sortBy: 'name',
     sortOrder: 'asc'
   },
+  autoFiltersApplied: false, // Track if auto-filters are applied
   
   // Filter options
   filterOptions: {
@@ -219,7 +220,79 @@ const useCollegesStore = create(devtools((set, get) => ({
         city: 'all',
         sortBy: 'name',
         sortOrder: 'asc'
+      },
+      autoFiltersApplied: false
+    });
+    
+    // Fetch colleges with cleared filters
+    get().fetchAllColleges(1);
+  },
+
+  // Apply auto-filters based on user location
+  applyAutoFilters: async (user) => {
+    if (!user || !user.state) return;
+    
+    // Check if colleges exist for user's state
+    const { filterOptions } = get();
+    const userState = user.state;
+    
+    // If user's state is available in filter options, apply the filter
+    if (filterOptions.states?.includes(userState)) {
+      const updatedFilters = { 
+        ...get().filters, 
+        state: userState 
+      };
+      
+      set({ 
+        filters: updatedFilters,
+        autoFiltersApplied: true,
+        loading: true,
+        error: null 
+      });
+      
+      try {
+        const { searchQuery } = get();
+        const params = {
+          page: 1,
+          limit: 20,
+          search: searchQuery || undefined,
+          ...updatedFilters
+        };
+        
+        const response = await collegesAPI.getAllColleges(params);
+        
+        if (response.success) {
+          set({
+            colleges: response.data.colleges,
+            pagination: response.data.pagination,
+            loading: false
+          });
+        } else {
+          throw new Error(response.message || 'Failed to filter colleges');
+        }
+      } catch (error) {
+        set({
+          error: error.message,
+          loading: false,
+          colleges: []
+        });
       }
+    }
+    // If no colleges in user's state, don't apply filter - keep it normal
+  },
+
+  // Clear all filters including auto-applied ones
+  clearAllFilters: async () => {
+    set({
+      searchQuery: '',
+      filters: {
+        type: 'all',
+        state: 'all',
+        city: 'all',
+        sortBy: 'name',
+        sortOrder: 'asc'
+      },
+      autoFiltersApplied: false
     });
     
     // Fetch colleges with cleared filters

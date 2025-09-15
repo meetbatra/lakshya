@@ -1,6 +1,8 @@
 // External services utilities index
-const aiService = require('./aiService');
+const geminiService = require('./geminiService');
+const aiCourseService = require('./aiCourseService');
 
 module.exports = {
-  ...aiService
+  ...geminiService,
+  ...aiCourseService
 };

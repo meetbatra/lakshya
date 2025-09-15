@@ -1,6 +1,20 @@
 const { z } = require('zod');
 
-// User registration schema
+// User regi  // Field of interest (for Class 12 students)
+  field: z
+    .enum([
+      // Science PCM fields
+      'engineering_technology', 'architecture_design', 'defence_military', 'computer_it', 'pure_sciences_research',
+      // Science PCB fields  
+      'medicine', 'allied_health', 'biotechnology', 'veterinary_science', 'agriculture_environment',
+      // Commerce fields
+      'business_management', 'finance_accounting', 'economics_analytics', 'law_commerce', 'entrepreneurship',
+      // Arts fields
+      'social_sciences', 'psychology', 'journalism_media', 'fine_arts_design', 'law_arts', 'civil_services'
+    ], {
+      errorMap: () => ({ message: 'Invalid field selection' })
+    })
+    .optional()
 const signupSchema = z.object({
   name: z
     .string()
@@ -123,13 +137,13 @@ const updateProfileSchema = z.object({
   field: z
     .enum([
       // Science PCM fields
-      'engineering', 'architecture', 'pure_sciences', 'computer_science',
+      'engineering_technology', 'architecture_design', 'defence_military', 'computer_it', 'pure_sciences_research',
       // Science PCB fields  
-      'medicine', 'dentistry', 'pharmacy', 'biotechnology', 'nursing',
+      'medicine', 'allied_health', 'biotechnology', 'veterinary_science', 'agriculture_environment',
       // Commerce fields
-      'ca', 'cs', 'bcom', 'bba', 'economics',
+      'business_management', 'finance_accounting', 'economics_analytics', 'law_commerce', 'entrepreneurship',
       // Arts fields
-      'ba', 'journalism', 'psychology', 'sociology', 'literature'
+      'social_sciences', 'psychology', 'journalism_media', 'fine_arts_design', 'law_arts', 'civil_services'
     ], {
       errorMap: () => ({ message: 'Invalid field selection' })
     })

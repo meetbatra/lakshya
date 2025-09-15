@@ -1,5 +1,5 @@
 const Course = require('../models/Course');
-const { getAIRecommendedCourses } = require('./aiCourseService');
+const { getAIRecommendedCourses } = require('../utils/services/aiCourseService');
 
 /**
  * Course Service - Handles all course-related business logic

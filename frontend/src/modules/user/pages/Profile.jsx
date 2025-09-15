@@ -1,14 +1,40 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../../../components/ui/card';
 import { Badge } from '../../../components/ui/badge';
+import { Alert, AlertDescription } from '../../../components/ui/alert';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../../../components/ui/select';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faUser, 
+  faGraduationCap, 
+  faMapMarkerAlt, 
+  faCalendarAlt,
+  faEdit,
+  faSave,
+  faTimes,
+  faBook,
+  faUniversity,
+  faQuestionCircle,
+  faSignOutAlt,
+  faCheckCircle,
+  faStream,
+  faBullseye
+} from '@fortawesome/free-solid-svg-icons';
 import { useAuth } from '../store/userStore';
 import { authAPI } from '../api/authAPI';
 
 const Profile = () => {
   const navigate = useNavigate();
-  const { user, logout, getUserInitials, getUserAvatar } = useAuth();
+  const { user, logout, getUserInitials, getUserAvatar, login } = useAuth();
+  const [isEditing, setIsEditing] = useState(false);
+  const [editData, setEditData] = useState({
+    stream: user?.stream || '',
+    field: user?.field || ''
+  });
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState({ type: '', text: '' });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -19,6 +45,150 @@ const Profile = () => {
     navigate('/auth/login');
     return null;
   }
+
+  // Stream options
+  const streamOptions = [
+    { value: 'science_pcm', label: 'Science (PCM)' },
+    { value: 'science_pcb', label: 'Science (PCB)' },
+    { value: 'commerce', label: 'Commerce' },
+    { value: 'arts', label: 'Arts' }
+  ];
+
+  // Field options based on stream
+  const getFieldOptions = (stream) => {
+    const streamFieldMap = {
+      'science_pcm': [
+        { value: 'engineering_technology', label: 'Engineering & Technology' },
+        { value: 'architecture_design', label: 'Architecture & Design' },
+        { value: 'pure_sciences_research', label: 'Pure Sciences & Research' },
+        { value: 'computer_it', label: 'Computer Science & IT' },
+        { value: 'defence_military', label: 'Defence & Military' }
+      ],
+      'science_pcb': [
+        { value: 'medicine', label: 'Medicine (MBBS)' },
+        { value: 'allied_health', label: 'Allied Health Sciences' },
+        { value: 'biotechnology', label: 'Biotechnology' },
+        { value: 'veterinary_science', label: 'Veterinary Science' },
+        { value: 'agriculture_environment', label: 'Agriculture & Environment' }
+      ],
+      'commerce': [
+        { value: 'business_management', label: 'Business & Management' },
+        { value: 'finance_accounting', label: 'Finance & Accounting' },
+        { value: 'economics_analytics', label: 'Economics & Analytics' },
+        { value: 'law_commerce', label: 'Law (Commerce)' },
+        { value: 'entrepreneurship', label: 'Entrepreneurship' }
+      ],
+      'arts': [
+        { value: 'social_sciences', label: 'Social Sciences' },
+        { value: 'psychology', label: 'Psychology' },
+        { value: 'journalism_media', label: 'Journalism & Media' },
+        { value: 'fine_arts_design', label: 'Fine Arts & Design' },
+        { value: 'law_arts', label: 'Law (Arts)' },
+        { value: 'civil_services', label: 'Civil Services' }
+      ]
+    };
+    return streamFieldMap[stream] || [];
+  };
+
+  const formatStreamName = (stream) => {
+    const streamMap = {
+      'science_pcm': 'Science (PCM)',
+      'science_pcb': 'Science (PCB)', 
+      'commerce': 'Commerce',
+      'arts': 'Arts'
+    };
+    return streamMap[stream] || stream;
+  };
+
+  const formatFieldName = (field) => {
+    const fieldMap = {
+      'engineering_technology': 'Engineering & Technology',
+      'architecture_design': 'Architecture & Design',
+      'pure_sciences_research': 'Pure Sciences & Research',
+      'computer_it': 'Computer Science & IT',
+      'defence_military': 'Defence & Military',
+      'medicine': 'Medicine (MBBS)',
+      'allied_health': 'Allied Health Sciences',
+      'biotechnology': 'Biotechnology',
+      'veterinary_science': 'Veterinary Science',
+      'agriculture_environment': 'Agriculture & Environment',
+      'business_management': 'Business & Management',
+      'finance_accounting': 'Finance & Accounting',
+      'economics_analytics': 'Economics & Analytics',
+      'law_commerce': 'Law (Commerce)',
+      'entrepreneurship': 'Entrepreneurship',
+      'social_sciences': 'Social Sciences',
+      'psychology': 'Psychology',
+      'journalism_media': 'Journalism & Media',
+      'fine_arts_design': 'Fine Arts & Design',
+      'law_arts': 'Law (Arts)',
+      'civil_services': 'Civil Services'
+    };
+    return fieldMap[field] || field;
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    // Update edit data when user changes
+    if (user) {
+      setEditData({
+        stream: user.stream || '',
+        field: user.field || ''
+      });
+    }
+  }, [user]);
+
+  const handleEdit = () => {
+    setIsEditing(true);
+    setMessage({ type: '', text: '' });
+  };
+
+  const handleCancel = () => {
+    setIsEditing(false);
+    setEditData({
+      stream: user.stream || '',
+      field: user.field || ''
+    });
+    setMessage({ type: '', text: '' });
+  };
+
+  const handleSave = async () => {
+    setLoading(true);
+    setMessage({ type: '', text: '' });
+
+    try {
+      // Call API to update user profile
+      const updateData = {
+        stream: editData.stream,
+        ...(user.class === '12' && editData.field && { field: editData.field })
+      };
+
+      const response = await authAPI.updateProfile(updateData);
+      
+      // Update the user in the store
+      login({ user: response.user, token: response.token || user.token });
+      
+      setIsEditing(false);
+      setMessage({ 
+        type: 'success', 
+        text: 'Profile updated successfully! Your preferences will be applied to course recommendations.' 
+      });
+    } catch (error) {
+      setMessage({ 
+        type: 'error', 
+        text: error.message || 'Failed to update profile. Please try again.' 
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleStreamChange = (value) => {
+    setEditData({
+      stream: value,
+      field: '' // Reset field when stream changes
+    });
+  };
 
   const handleLogout = async () => {
     try {
@@ -38,77 +208,293 @@ const Profile = () => {
   const avatarUrl = getUserAvatar();
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <Card>
-          <CardHeader>
-            <div className="flex items-center space-x-6">
-                            <div className="w-24 h-24 rounded-full overflow-hidden">
-                <img 
-                  src={avatarUrl} 
-                  alt={user.name}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div>
-                <CardTitle className="text-3xl">{user.name}</CardTitle>
-                <p className="text-gray-600 mt-1">{user.email}</p>
-                <Badge className="mt-2">
-                  Class {user.class}
-                </Badge>
-              </div>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      {/* Hero Section */}
+      <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+        <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-white shadow-xl">
+              <img 
+                src={avatarUrl} 
+                alt={user.name}
+                className="h-full w-full object-cover"
+              />
             </div>
-          </CardHeader>
-          
-          <CardContent>
-            <div className="border-t pt-6">
-              <dl className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <dt className="text-sm font-medium text-gray-500">State</dt>
-                  <dd className="mt-1 text-sm text-gray-900">{user.state}</dd>
+            <h1 className="text-4xl font-bold mb-2">{user.name}</h1>
+            <p className="text-blue-100 text-lg mb-4">{user.email}</p>
+            <div className="flex justify-center gap-2">
+              <Badge className="bg-blue-500 text-white">
+                <FontAwesomeIcon icon={faGraduationCap} className="h-3 w-3 mr-1" />
+                Class {user.class}
+              </Badge>
+              {user.stream && (
+                <Badge className="bg-indigo-500 text-white">
+                  <FontAwesomeIcon icon={faStream} className="h-3 w-3 mr-1" />
+                  {formatStreamName(user.stream)}
+                </Badge>
+              )}
+              {user.field && (
+                <Badge className="bg-purple-500 text-white">
+                  <FontAwesomeIcon icon={faBullseye} className="h-3 w-3 mr-1" />
+                  {formatFieldName(user.field)}
+                </Badge>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        {/* Success/Error Message */}
+        {message.text && (
+          <Alert className={`mb-6 ${message.type === 'success' ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'}`}>
+            <FontAwesomeIcon 
+              icon={message.type === 'success' ? faCheckCircle : faTimes} 
+              className={`h-4 w-4 ${message.type === 'success' ? 'text-green-600' : 'text-red-600'}`} 
+            />
+            <AlertDescription className={message.type === 'success' ? 'text-green-800' : 'text-red-800'}>
+              {message.text}
+            </AlertDescription>
+          </Alert>
+        )}
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Profile Information */}
+          <div className="lg:col-span-2">
+            <Card className="shadow-lg border-0">
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-2xl text-gray-900 flex items-center">
+                    <FontAwesomeIcon icon={faUser} className="h-5 w-5 mr-2 text-blue-600" />
+                    Profile Information
+                  </CardTitle>
+                  {!isEditing ? (
+                    <Button 
+                      onClick={handleEdit}
+                      variant="outline"
+                      size="sm"
+                      className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                    >
+                      <FontAwesomeIcon icon={faEdit} className="h-4 w-4 mr-1" />
+                      Edit Preferences
+                    </Button>
+                  ) : (
+                    <div className="flex gap-2">
+                      <Button 
+                        onClick={handleSave}
+                        size="sm"
+                        disabled={loading}
+                        className="bg-green-600 hover:bg-green-700"
+                      >
+                        <FontAwesomeIcon icon={faSave} className="h-4 w-4 mr-1" />
+                        {loading ? 'Saving...' : 'Save'}
+                      </Button>
+                      <Button 
+                        onClick={handleCancel}
+                        variant="outline"
+                        size="sm"
+                        className="border-gray-400 text-gray-600 hover:bg-gray-100"
+                      >
+                        <FontAwesomeIcon icon={faTimes} className="h-4 w-4 mr-1" />
+                        Cancel
+                      </Button>
+                    </div>
+                  )}
                 </div>
-                <div>
-                  <dt className="text-sm font-medium text-gray-500">Stream</dt>
-                  <dd className="mt-1 text-sm text-gray-900">{user.stream || 'Not specified'}</dd>
+              </CardHeader>
+              
+              <CardContent className="p-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-1">
+                    <dt className="text-sm font-medium text-gray-500 flex items-center">
+                      <FontAwesomeIcon icon={faMapMarkerAlt} className="h-4 w-4 mr-2 text-gray-400" />
+                      State
+                    </dt>
+                    <dd className="text-lg text-gray-900 font-medium">{user.state}</dd>
+                  </div>
+
+                  <div className="space-y-1">
+                    <dt className="text-sm font-medium text-gray-500 flex items-center">
+                      <FontAwesomeIcon icon={faCalendarAlt} className="h-4 w-4 mr-2 text-gray-400" />
+                      Member Since
+                    </dt>
+                    <dd className="text-lg text-gray-900 font-medium">
+                      {user.createdAt ? new Date(user.createdAt).toLocaleDateString() : 'Recently'}
+                    </dd>
+                  </div>
+
+                  {/* Stream Selection */}
+                  <div className="space-y-2">
+                    <dt className="text-sm font-medium text-gray-500 flex items-center">
+                      <FontAwesomeIcon icon={faStream} className="h-4 w-4 mr-2 text-gray-400" />
+                      Stream {user.class === '10' ? '(Planning to Choose)' : '(Currently Studying)'}
+                    </dt>
+                    {!isEditing ? (
+                      <dd className="text-lg text-gray-900 font-medium">
+                        {user.stream ? formatStreamName(user.stream) : 'Not specified'}
+                      </dd>
+                    ) : (
+                      <Select value={editData.stream} onValueChange={handleStreamChange}>
+                        <SelectTrigger className="w-full">
+                          <SelectValue placeholder="Select your stream" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {streamOptions.map((option) => (
+                            <SelectItem key={option.value} value={option.value}>
+                              {option.label}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    )}
+                  </div>
+
+                  {/* Field Selection (only for Class 12) */}
+                  {user.class === '12' && (
+                    <div className="space-y-2">
+                      <dt className="text-sm font-medium text-gray-500 flex items-center">
+                        <FontAwesomeIcon icon={faBullseye} className="h-4 w-4 mr-2 text-gray-400" />
+                        Field of Interest
+                      </dt>
+                      {!isEditing ? (
+                        <dd className="text-lg text-gray-900 font-medium">
+                          {user.field ? formatFieldName(user.field) : 'Not specified'}
+                        </dd>
+                      ) : (
+                        <Select 
+                          value={editData.field} 
+                          onValueChange={(value) => setEditData({...editData, field: value})}
+                          disabled={!editData.stream}
+                        >
+                          <SelectTrigger className="w-full">
+                            <SelectValue placeholder={editData.stream ? "Select your field of interest" : "Select stream first"} />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {getFieldOptions(editData.stream).map((option) => (
+                              <SelectItem key={option.value} value={option.value}>
+                                {option.label}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      )}
+                    </div>
+                  )}
                 </div>
-                {user.field && (
-                  <div>
-                    <dt className="text-sm font-medium text-gray-500">Field of Interest</dt>
-                    <dd className="mt-1 text-sm text-gray-900">{user.field}</dd>
+
+                {isEditing && (
+                  <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                    <p className="text-sm text-blue-800">
+                      <FontAwesomeIcon icon={faCheckCircle} className="h-4 w-4 mr-2" />
+                      Updating your preferences will automatically apply filters when you visit the courses page, 
+                      showing you the most relevant content based on your academic profile.
+                    </p>
                   </div>
                 )}
-                <div>
-                  <dt className="text-sm font-medium text-gray-500">Member Since</dt>
-                  <dd className="mt-1 text-sm text-gray-900">
-                    {user.createdAt ? new Date(user.createdAt).toLocaleDateString() : 'Recently'}
-                  </dd>
-                </div>
-              </dl>
-            </div>
+              </CardContent>
+            </Card>
+          </div>
 
-            <div className="border-t pt-6 mt-6">
-              <div className="flex space-x-4">
-                <Button className="cursor-pointer">
-                  Edit Profile
-                </Button>
+          {/* Quick Actions */}
+          <div className="space-y-6">
+            {/* Quick Actions Card */}
+            <Card className="shadow-lg border-0">
+              <CardHeader>
+                <CardTitle className="text-xl text-gray-900">Quick Actions</CardTitle>
+              </CardHeader>
+              <CardContent className="p-6 space-y-4">
                 <Button 
-                  variant="outline" 
-                  className="cursor-pointer"
+                  onClick={() => navigate('/courses')}
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                >
+                  <FontAwesomeIcon icon={faBook} className="h-4 w-4 mr-2" />
+                  Explore Courses
+                </Button>
+                
+                <Button 
+                  onClick={() => navigate('/colleges')}
+                  variant="outline"
+                  className="w-full border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                >
+                  <FontAwesomeIcon icon={faUniversity} className="h-4 w-4 mr-2" />
+                  Browse Colleges
+                </Button>
+                
+                <Button 
                   onClick={handleRetakeQuiz}
+                  variant="outline"
+                  className="w-full border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
                 >
-                  Take Quiz
+                  <FontAwesomeIcon icon={faQuestionCircle} className="h-4 w-4 mr-2" />
+                  Take Career Quiz
                 </Button>
-                <Button 
-                  variant="destructive" 
-                  className="cursor-pointer"
-                  onClick={handleLogout}
-                >
-                  Logout
-                </Button>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+                
+                <div className="pt-4 border-t">
+                  <Button 
+                    onClick={handleLogout}
+                    variant="destructive"
+                    className="w-full"
+                  >
+                    <FontAwesomeIcon icon={faSignOutAlt} className="h-4 w-4 mr-2" />
+                    Logout
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Stats Card */}
+            <Card className="shadow-lg border-0">
+              <CardHeader>
+                <CardTitle className="text-xl text-gray-900">Your Journey</CardTitle>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-600">Profile Completion</span>
+                    <span className="text-sm font-medium text-gray-900">
+                      {user.stream && (user.class === '10' || user.field) ? '100%' : user.stream ? '75%' : '50%'}
+                    </span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div 
+                      className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full transition-all duration-500"
+                      style={{ 
+                        width: user.stream && (user.class === '10' || user.field) ? '100%' : user.stream ? '75%' : '50%'
+                      }}
+                    ></div>
+                  </div>
+                  
+                  <div className="pt-4 space-y-2">
+                    <div className="flex items-center text-sm">
+                      <FontAwesomeIcon icon={faCheckCircle} className="h-4 w-4 mr-2 text-green-500" />
+                      <span className="text-gray-600">Basic profile created</span>
+                    </div>
+                    <div className="flex items-center text-sm">
+                      <FontAwesomeIcon 
+                        icon={user.stream ? faCheckCircle : faTimes} 
+                        className={`h-4 w-4 mr-2 ${user.stream ? 'text-green-500' : 'text-gray-300'}`} 
+                      />
+                      <span className={user.stream ? 'text-gray-600' : 'text-gray-400'}>
+                        Stream preference set
+                      </span>
+                    </div>
+                    {user.class === '12' && (
+                      <div className="flex items-center text-sm">
+                        <FontAwesomeIcon 
+                          icon={user.field ? faCheckCircle : faTimes} 
+                          className={`h-4 w-4 mr-2 ${user.field ? 'text-green-500' : 'text-gray-300'}`} 
+                        />
+                        <span className={user.field ? 'text-gray-600' : 'text-gray-400'}>
+                          Field of interest selected
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </div>
     </div>
   );

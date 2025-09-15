@@ -39,12 +39,25 @@ export const signupSchema = z.object({
   
   // Stream validation - required for class 10 and 12
   stream: z
-    .string()
+    .enum(['science_pcm', 'science_pcb', 'commerce', 'arts'], {
+      errorMap: () => ({ message: 'Stream must be one of: science_pcm, science_pcb, commerce, arts' })
+    })
     .optional(),
 
   // Field validation - for class 12 students
   field: z
-    .string()
+    .enum([
+      // Science PCM fields
+      'engineering_technology', 'architecture_design', 'defence_military', 'computer_it', 'pure_sciences_research',
+      // Science PCB fields  
+      'medicine', 'allied_health', 'biotechnology', 'veterinary_science', 'agriculture_environment',
+      // Commerce fields
+      'business_management', 'finance_accounting', 'economics_analytics', 'law_commerce', 'entrepreneurship',
+      // Arts fields
+      'social_sciences', 'psychology', 'journalism_media', 'fine_arts_design', 'law_arts', 'civil_services'
+    ], {
+      errorMap: () => ({ message: 'Invalid field selection' })
+    })
     .optional()
 }).refine((data) => data.password === data.confirmPassword, {
   message: "Passwords don't match",
