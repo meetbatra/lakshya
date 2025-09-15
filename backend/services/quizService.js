@@ -85,7 +85,7 @@ const submitClass10Quiz = async (submission) => {
       };
     }
 
-    if (quiz.targetClass !== '10' || quiz.purpose !== 'stream-selection') {
+    if (quiz.targetClass !== '10' || quiz.purpose !== 'stream_selection') {
       return {
         success: false,
         message: 'Invalid quiz type for Class 10 submission',
@@ -103,7 +103,7 @@ const submitClass10Quiz = async (submission) => {
     }
 
     // For Class 10 stream selection quiz, we use preference-based scoring
-    const isStreamSelectionQuiz = quiz.purpose === 'stream-selection';
+    const isStreamSelectionQuiz = quiz.purpose === 'stream_selection';
     
     let recommendations, detailedResults;
 
