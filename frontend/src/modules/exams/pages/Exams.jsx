@@ -34,12 +34,15 @@ const Exams = () => {
     error,
     filters,
     filterOptions,
+    autoFiltersApplied,
     fetchAllExams,
     fetchFilterOptions,
     setFilters,
     resetFilters,
     clearError,
-    getFilteredExams
+    getFilteredExams,
+    applyAutoFilters,
+    clearAllFilters
   } = useExamsStore();
 
   // Get filtered exams for display
@@ -47,9 +50,19 @@ const Exams = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetchAllExams();
-    fetchFilterOptions();
-  }, []);
+    
+    const initializeExams = async () => {
+      await fetchFilterOptions();
+      await fetchAllExams();
+      
+      // Apply auto-filters if user is logged in and has a stream
+      if (user && user.stream) {
+        applyAutoFilters(user);
+      }
+    };
+    
+    initializeExams();
+  }, [user]);
 
   const handleSearchChange = (e) => {
     setFilters({ search: e.target.value });
@@ -60,7 +73,7 @@ const Exams = () => {
   };
 
   const handleClearFilters = () => {
-    resetFilters();
+    clearAllFilters();
   };
 
   const handleExamClick = (examId) => {
@@ -113,8 +126,13 @@ const Exams = () => {
 
   if (loading && exams.length === 0) {
     return (
-      <div className="flex justify-center items-center h-64">
-        <FontAwesomeIcon icon={faSpinner} spin className="text-3xl text-blue-600" />
+      <div className="min-h-screen bg-gray-50">
+        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center items-center py-20">
+            <FontAwesomeIcon icon={faSpinner} className="h-6 w-6 text-blue-600 animate-spin mr-3" />
+            <span className="text-base text-gray-600">Loading exams...</span>
+          </div>
+        </div>
       </div>
     );
   }
@@ -155,6 +173,29 @@ const Exams = () => {
           </Alert>
         )}
 
+        {/* Auto-Filter Message */}
+        {!loading && !error && autoFiltersApplied && (
+          <Alert className="mb-4 bg-blue-50 border-blue-200">
+            <AlertDescription className="flex items-center justify-between">
+              <div className="flex items-center">
+                <FontAwesomeIcon icon={faInfoCircle} className="h-4 w-4 mr-2 text-blue-600" />
+                <span className="text-blue-800">
+                  Exams are automatically filtered according to your stream ({formatStreamName(filters.streams)})
+                </span>
+              </div>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={clearAllFilters}
+                className="text-blue-600 hover:text-blue-800 hover:bg-blue-100 ml-4"
+              >
+                <FontAwesomeIcon icon={faTimes} className="h-4 w-4 mr-1" />
+                Clear Filter
+              </Button>
+            </AlertDescription>
+          </Alert>
+        )}
+
         {/* Filters */}
         <div className="mb-6">
           <div className="flex flex-wrap items-center gap-4 mb-4">
@@ -170,7 +211,7 @@ const Exams = () => {
               Filters
             </Button>
             
-            {(filters.streams !== 'all' || filters.examMonth !== 'all' || filters.search) && (
+            {(filters.streams !== 'all' || filters.search || autoFiltersApplied) && (
               <Button
                 variant="ghost"
                 onClick={handleClearFilters}
@@ -185,7 +226,7 @@ const Exams = () => {
             <div className="mb-6 overflow-hidden">
               <Card className="transform transition-all duration-300 ease-in-out animate-in slide-in-from-top-2 fade-in-0">
                 <CardContent className="p-4">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {/* Stream Filter */}
                     <div className="transform transition-all duration-200 hover:scale-105">
                       <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -205,25 +246,6 @@ const Exams = () => {
                       </select>
                     </div>
 
-                    {/* Exam Month Filter */}
-                    <div className="transform transition-all duration-200 hover:scale-105">
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Exam Month
-                      </label>
-                      <select
-                        value={filters.examMonth}
-                        onChange={(e) => handleFilterChange('examMonth', e.target.value)}
-                        className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-blue-400 focus:scale-105"
-                      >
-                        <option value="all">All Months</option>
-                        {filterOptions.examMonths.map((month) => (
-                          <option key={month} value={month}>
-                            {month}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-
                     {/* Sort By */}
                     <div className="transform transition-all duration-200 hover:scale-105">
                       <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -234,7 +256,6 @@ const Exams = () => {
                         className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-blue-400 focus:scale-105"
                       >
                         <option value="name">Name</option>
-                        <option value="examMonth">Exam Month</option>
                         <option value="streams">Stream</option>
                       </select>
                     </div>
@@ -420,16 +441,6 @@ const Exams = () => {
               </div>
             )}
           </>
-        )}
-
-        {/* Loading overlay for subsequent loads */}
-        {loading && exams.length > 0 && (
-          <div className="fixed inset-0 bg-black bg-opacity-20 flex items-center justify-center z-50">
-            <div className="bg-white p-4 rounded-lg shadow-lg">
-              <FontAwesomeIcon icon={faSpinner} spin className="text-2xl text-blue-600 mr-3" />
-              <span>Loading exams...</span>
-            </div>
-          </div>
         )}
       </div>
     </div>

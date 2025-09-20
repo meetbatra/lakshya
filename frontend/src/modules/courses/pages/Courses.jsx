@@ -163,25 +163,25 @@ const Courses = () => {
           <>
             {/* Auto-Filter Message */}
             {autoFiltersApplied && (
-              <Alert className="mb-6 bg-blue-50 border-blue-200">
-                <FontAwesomeIcon icon={faInfoCircle} className="h-4 w-4 text-blue-600" />
-                <AlertDescription className="text-blue-800">
-                  <div className="flex items-center justify-between">
-                    <span>
+              <Alert className="mb-4 bg-blue-50 border-blue-200">
+                <AlertDescription className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <FontAwesomeIcon icon={faInfoCircle} className="h-4 w-4 mr-2 text-blue-600" />
+                    <span className="text-blue-800">
                       Filters are automatically applied based on your preferences
                       {user?.class === '10' && ` (Class ${user.class} - ${formatStreamName(user.stream)})`}
                       {user?.class === '12' && ` (Class ${user.class} - ${formatStreamName(user.stream)}${user.field ? `, ${formatFieldName(user.field)}` : ''})`}
                     </span>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      onClick={clearAllFilters}
-                      className="ml-4 border-blue-300 text-blue-700 hover:bg-blue-100"
-                    >
-                      <FontAwesomeIcon icon={faTimes} className="h-3 w-3 mr-1" />
-                      Clear Filters
-                    </Button>
                   </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={clearAllFilters}
+                    className="text-blue-600 hover:text-blue-800 hover:bg-blue-100 ml-4"
+                  >
+                    <FontAwesomeIcon icon={faTimes} className="h-4 w-4 mr-1" />
+                    Clear Filter
+                  </Button>
                 </AlertDescription>
               </Alert>
             )}
@@ -201,17 +201,13 @@ const Courses = () => {
                   Filters
                 </Button>
                 
-                {(selectedStream !== 'all' || selectedField !== 'all' || searchQuery) && !autoFiltersApplied && (
+                {(selectedStream !== 'all' || selectedField !== 'all' || searchQuery || autoFiltersApplied) && (
                   <Button
                     variant="ghost"
-                    onClick={() => {
-                      setSelectedStream('all');
-                      setSelectedField('all');
-                      setSearchQuery('');
-                    }}
+                    onClick={clearAllFilters}
                     className="text-sm text-gray-600"
                   >
-                    Clear manual filters
+                    Clear all filters
                   </Button>
                 )}
               </div>

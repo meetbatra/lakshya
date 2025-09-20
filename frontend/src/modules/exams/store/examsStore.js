@@ -11,8 +11,7 @@ const useExamsStore = create(devtools((set, get) => ({
   
   // Filter options
   filterOptions: {
-    streams: [],
-    examMonths: []
+    streams: []
   },
   
   // Statistics
@@ -25,9 +24,11 @@ const useExamsStore = create(devtools((set, get) => ({
   // Filters
   filters: {
     search: '',
-    streams: 'all',
-    examMonth: 'all'
+    streams: 'all'
   },
+  
+  // Auto filters tracking
+  autoFiltersApplied: false,
   
   // Actions
   
@@ -155,10 +156,47 @@ const useExamsStore = create(devtools((set, get) => ({
     set(() => ({
       filters: {
         search: '',
-        streams: 'all',
-        examMonth: 'all'
+        streams: 'all'
       }
     }));
+  },
+
+  /**
+   * Apply auto-filters based on user preferences
+   */
+  applyAutoFilters: (user) => {
+    if (!user || !user.stream) return;
+    
+    // Check if exams exist for user's stream
+    const { filterOptions } = get();
+    const userStream = user.stream;
+    
+    // If user's stream is available in filter options, apply the filter
+    if (filterOptions.streams?.includes(userStream)) {
+      const updatedFilters = { 
+        ...get().filters, 
+        streams: userStream 
+      };
+      
+      set({ 
+        filters: updatedFilters,
+        autoFiltersApplied: true
+      });
+    }
+    // If no exams in user's stream, don't apply filter - keep it normal
+  },
+
+  /**
+   * Clear all filters including auto-applied ones
+   */
+  clearAllFilters: () => {
+    set({
+      filters: {
+        search: '',
+        streams: 'all'
+      },
+      autoFiltersApplied: false
+    });
   },
   
   /**
@@ -189,14 +227,6 @@ const useExamsStore = create(devtools((set, get) => ({
         }
       }
       
-      // Exam month filter
-      if (filters.examMonth && filters.examMonth !== 'all') {
-        if (!exam.examMonth || 
-            !exam.examMonth.toLowerCase().includes(filters.examMonth.toLowerCase())) {
-          return false;
-        }
-      }
-      
       return true;
     });
   },
@@ -215,8 +245,7 @@ const useExamsStore = create(devtools((set, get) => ({
     loading: false,
     error: null,
     filterOptions: {
-      streams: [],
-      examMonths: []
+      streams: []
     },
     stats: {
       totalExams: 0,
@@ -225,9 +254,9 @@ const useExamsStore = create(devtools((set, get) => ({
     },
     filters: {
       search: '',
-      streams: 'all',
-      examMonth: 'all'
-    }
+      streams: 'all'
+    },
+    autoFiltersApplied: false
   }))
 }), {
   name: 'exams-store',

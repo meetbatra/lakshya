@@ -73,10 +73,17 @@ const addBookmark = async (req, res) => {
     user.bookmarks[type].push(itemId);
     await user.save();
 
+    // Repopulate bookmarks for response
+    const populatedUser = await User.findById(userId)
+      .populate('bookmarks.courses', 'name shortName level duration stream field')
+      .populate('bookmarks.colleges', 'name shortName location type')
+      .populate('bookmarks.exams', 'name shortName streams')
+      .lean();
+
     res.status(200).json({
       success: true,
       message: `${type.slice(0, -1)} bookmarked successfully`,
-      bookmarks: user.bookmarks
+      bookmarks: populatedUser.bookmarks
     });
 
   } catch (error) {
@@ -123,14 +130,20 @@ const removeBookmark = async (req, res) => {
     );
     await user.save();
 
+    // Repopulate bookmarks for response
+    const populatedUser = await User.findById(userId)
+      .populate('bookmarks.courses', 'name shortName level duration stream field')
+      .populate('bookmarks.colleges', 'name shortName location type')
+      .populate('bookmarks.exams', 'name shortName streams')
+      .lean();
+
     res.status(200).json({
       success: true,
       message: `${type.slice(0, -1)} removed from bookmarks`,
-      bookmarks: user.bookmarks
+      bookmarks: populatedUser.bookmarks
     });
 
   } catch (error) {
-    console.error('Remove bookmark error:', error);
     res.status(500).json({
       success: false,
       message: 'Internal server error',
@@ -145,9 +158,10 @@ const getBookmarks = async (req, res) => {
     const userId = req.user.id;
 
     const user = await User.findById(userId)
-      .populate('bookmarks.courses', 'name shortName description level duration stream')
-      .populate('bookmarks.colleges', 'name shortName location type courses')
-      .populate('bookmarks.exams', 'name shortName description examMonth streams eligibility');
+      .populate('bookmarks.courses', 'name shortName level duration stream field')
+      .populate('bookmarks.colleges', 'name shortName location type')
+      .populate('bookmarks.exams', 'name shortName streams')
+      .lean(); // Add lean() for better performance
 
     if (!user) {
       return res.status(404).json({
@@ -161,15 +175,12 @@ const getBookmarks = async (req, res) => {
       user.bookmarks = { courses: [], colleges: [], exams: [] };
     }
 
-    console.log(user.bookmarks);
-
     res.status(200).json({
       success: true,
       bookmarks: user.bookmarks
     });
 
   } catch (error) {
-    console.error('Get bookmarks error:', error);
     res.status(500).json({
       success: false,
       message: 'Internal server error',

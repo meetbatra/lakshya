@@ -58,7 +58,17 @@ const useBookmarkStore = create((set, get) => ({
 
   // Remove bookmark
   removeBookmark: async (type, itemId, token) => {
-    set({ loading: true, error: null });
+    // Optimistic update - remove from UI immediately
+    const currentState = get();
+    const optimisticBookmarks = { ...currentState.bookmarks };
+    optimisticBookmarks[type] = optimisticBookmarks[type].filter(item => item._id !== itemId);
+    
+    set({ 
+      bookmarks: optimisticBookmarks,
+      loading: true, 
+      error: null 
+    });
+
     try {
       const response = await axios.post(
         `${API_BASE_URL}/bookmarks/remove`,
@@ -78,15 +88,19 @@ const useBookmarkStore = create((set, get) => ({
         });
         return { success: true };
       } else {
+        // Revert optimistic update on failure
         set({ 
+          bookmarks: currentState.bookmarks,
           error: response.data.message || 'Failed to remove bookmark',
           loading: false 
         });
         return { success: false, message: response.data.message };
       }
     } catch (error) {
+      // Revert optimistic update on error
       const errorMessage = error.response?.data?.message || 'Failed to remove bookmark';
       set({ 
+        bookmarks: currentState.bookmarks,
         error: errorMessage,
         loading: false 
       });
@@ -96,7 +110,6 @@ const useBookmarkStore = create((set, get) => ({
 
   // Get all bookmarks
   fetchBookmarks: async (token) => {
-    console.log('fetchBookmarks called with token:', token ? 'Token present' : 'No token');
     
     if (!token) {
       set({ 

@@ -120,7 +120,7 @@ const Colleges = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto pt-6 pb-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         {/* Auto-Filter Message */}
         {autoFiltersApplied && (
           <Alert className="mb-6 bg-blue-50 border-blue-200">
