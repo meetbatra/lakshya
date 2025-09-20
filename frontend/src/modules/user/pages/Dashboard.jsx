@@ -62,12 +62,10 @@ const Dashboard = () => {
   }
 
   const formatDuration = (duration) => {
-    if (!duration) return 'N/A';
-    
+    if (duration === null || duration === undefined) return '';
     if (typeof duration === 'string') {
-      return duration;
+      return duration.trim() !== '' ? duration : '';
     }
-    
     if (typeof duration === 'number') {
       if (duration < 12) {
         return `${duration} month${duration > 1 ? 's' : ''}`;
@@ -81,12 +79,17 @@ const Dashboard = () => {
         }
       }
     }
-    
-    return 'N/A';
+    if (typeof duration === 'object') {
+      const parts = [];
+      if (duration.years) parts.push(`${duration.years} year${duration.years > 1 ? 's' : ''}`);
+      if (duration.months) parts.push(`${duration.months} month${duration.months > 1 ? 's' : ''}`);
+      return parts.join(' ').trim();
+    }
+    return '';
   };
 
   const BookmarkSection = ({ title, items, type, emptyMessage, onViewItem }) => (
-    <Card className="h-fit">
+    <Card className="h-fit w-full">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <FontAwesomeIcon 
@@ -114,11 +117,11 @@ const Dashboard = () => {
             </Button>
           </div>
         ) : (
-          <div className="space-y-4 max-h-96 overflow-y-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {items.map((item) => (
               <div 
                 key={item._id} 
-                className="border rounded-lg p-4 hover:shadow-md transition-shadow bg-white"
+                className="border rounded-lg p-4 transition-shadow bg-white"
               >
                 <div className="flex justify-between items-start mb-2">
                   <h4 className="font-semibold text-gray-900 text-sm leading-tight">
@@ -135,7 +138,6 @@ const Dashboard = () => {
                   </Button>
                 </div>
                 
-                {/* Course specific fields
                 {type === 'courses' && (
                   <div className="space-y-1">
                     {item.category && (
@@ -143,45 +145,88 @@ const Dashboard = () => {
                         {item.category}
                       </Badge>
                     )}
-                    {item.duration && (
+                    {formatDuration(item.duration) && (
                       <p className="text-xs text-gray-600 flex items-center gap-1">
                         <FontAwesomeIcon icon={faClock} className="h-3 w-3" />
                         {formatDuration(item.duration)}
                       </p>
                     )}
+                    {item.description && (
+                      <p className="text-xs text-gray-700 mt-1">
+                        {item.description}
+                      </p>
+                    )}
+                    {/* Render any other course fields if available */}
+                    {item.otherDetails && (
+                      <p className="text-xs text-gray-600 mt-1">
+                        {item.otherDetails}
+                      </p>
+                    )}
                   </div>
-                )} */}
+                )}
                 
-                {/* College specific fields */}
                 {type === 'colleges' && (
                   <div className="space-y-1">
                     {item.location && (
                       <p className="text-xs text-gray-600 flex items-center gap-1">
                         <FontAwesomeIcon icon={faMapMarkerAlt} className="h-3 w-3" />
-                        {item.location}
+                        {[item.location.address, item.location.city, item.location.state, item.location.pincode].filter(Boolean).join(', ')}
                       </p>
                     )}
                     {item.type && (
                       <Badge variant="outline" className="text-xs">
                         {item.type}
                       </Badge>
+                    )}
+                    {item.description && (
+                      <p className="text-xs text-gray-700 mt-1">
+                        {item.description}
+                      </p>
+                    )}
+                    {/* Render any other college fields if available */}
+                    {item.otherDetails && (
+                      <p className="text-xs text-gray-600 mt-1">
+                        {item.otherDetails}
+                      </p>
                     )}
                   </div>
                 )}
                 
-                {/* Exam specific fields */}
                 {type === 'exams' && (
-                  <div className="space-y-1">
-                    {item.type && (
-                      <Badge variant="outline" className="text-xs">
-                        {item.type}
-                      </Badge>
+                  <div className="space-y-1 text-xs text-gray-700">
+                    {item.shortName && (
+                      <p><strong>Short Name:</strong> {item.shortName}</p>
                     )}
-                    {item.examDate && (
-                      <p className="text-xs text-gray-600 flex items-center gap-1">
-                        <FontAwesomeIcon icon={faCalendarAlt} className="h-3 w-3" />
-                        {new Date(item.examDate).toLocaleDateString()}
+                    {item.eligibility && (
+                      <p><strong>Eligibility:</strong> {item.eligibility}</p>
+                    )}
+                    {item.examMonth && (
+                      <p><strong>Exam Month:</strong> {item.examMonth}</p>
+                    )}
+                    {item.syllabus && Array.isArray(item.syllabus) && item.syllabus.length > 0 && (
+                      <div>
+                        <strong>Syllabus:</strong>
+                        <ul className="list-disc list-inside ml-4">
+                          {item.syllabus.map((topic, idx) => (
+                            <li key={idx}>{topic}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    {item.officialLink && (
+                      <p>
+                        <strong>Official Link: </strong>
+                        <a href={item.officialLink} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+                          {item.officialLink}
+                        </a>
                       </p>
+                    )}
+                    {item.description && (
+                      <p className="mt-1">{item.description}</p>
+                    )}
+                    {/* Render any other exam fields if available */}
+                    {item.otherDetails && (
+                      <p className="mt-1">{item.otherDetails}</p>
                     )}
                   </div>
                 )}
@@ -226,7 +271,7 @@ const Dashboard = () => {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
         {error && (
           <Alert className="mb-6 border-red-200 bg-red-50">
             <FontAwesomeIcon icon={faExclamationTriangle} className="h-4 w-4 text-red-600" />
@@ -236,75 +281,30 @@ const Dashboard = () => {
           </Alert>
         )}
 
-        {/* Bookmarks Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <BookmarkSection
-            title="Bookmarked Courses"
-            items={bookmarks.courses || []}
-            type="courses"
-            emptyMessage="No bookmarked courses yet. Start exploring to find courses that interest you!"
-            onViewItem={handleViewCourse}
-          />
-          
-          <BookmarkSection
-            title="Bookmarked Colleges"
-            items={bookmarks.colleges || []}
-            type="colleges"
-            emptyMessage="No bookmarked colleges yet. Browse colleges to bookmark your favorites!"
-            onViewItem={handleViewCollege}
-          />
-          
-          <BookmarkSection
-            title="Bookmarked Exams"
-            items={bookmarks.exams || []}
-            type="exams"
-            emptyMessage="No bookmarked exams yet. Check out available exams to stay updated!"
-            onViewItem={handleViewExam}
-          />
-        </div>
-
-        {/* Quick Actions */}
-        <Card className="mt-8">
-          <CardHeader>
-            <CardTitle>Quick Actions</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <Button 
-                variant="outline" 
-                onClick={() => navigate('/quiz/start')}
-                className="h-auto py-4 flex flex-col items-center gap-2"
-              >
-                <FontAwesomeIcon icon={faTachometerAlt} className="h-5 w-5" />
-                <span>Take Quiz</span>
-              </Button>
-              <Button 
-                variant="outline" 
-                onClick={() => navigate('/courses')}
-                className="h-auto py-4 flex flex-col items-center gap-2"
-              >
-                <FontAwesomeIcon icon={faBook} className="h-5 w-5" />
-                <span>Browse Courses</span>
-              </Button>
-              <Button 
-                variant="outline" 
-                onClick={() => navigate('/colleges')}
-                className="h-auto py-4 flex flex-col items-center gap-2"
-              >
-                <FontAwesomeIcon icon={faUniversity} className="h-5 w-5" />
-                <span>Find Colleges</span>
-              </Button>
-              <Button 
-                variant="outline" 
-                onClick={() => navigate('/exams')}
-                className="h-auto py-4 flex flex-col items-center gap-2"
-              >
-                <FontAwesomeIcon icon={faGraduationCap} className="h-5 w-5" />
-                <span>View Exams</span>
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+        {/* Bookmarks Stack */}
+        <BookmarkSection
+          title="Bookmarked Courses"
+          items={bookmarks.courses || []}
+          type="courses"
+          emptyMessage="No bookmarked courses yet. Start exploring to find courses that interest you!"
+          onViewItem={handleViewCourse}
+        />
+        
+        <BookmarkSection
+          title="Bookmarked Colleges"
+          items={bookmarks.colleges || []}
+          type="colleges"
+          emptyMessage="No bookmarked colleges yet. Browse colleges to bookmark your favorites!"
+          onViewItem={handleViewCollege}
+        />
+        
+        <BookmarkSection
+          title="Bookmarked Exams"
+          items={bookmarks.exams || []}
+          type="exams"
+          emptyMessage="No bookmarked exams yet. Check out available exams to stay updated!"
+          onViewItem={handleViewExam}
+        />
       </div>
     </div>
   );
