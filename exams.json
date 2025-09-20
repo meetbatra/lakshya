@@ -119,5 +119,39 @@
       "General Knowledge"
     ],
     "officialLink": "https://bsccourses.aiimsexams.ac.in/"
-  }
+  },
+  {
+  "name": "AIIMS B.Sc Paramedical Entrance Exam",
+  "shortName": "AIIMS Paramedical",
+  "streams": ["science_pcm", "science_pcb"],
+  "eligibility": "12th with English and either PCB or PCM group, with minimum 50% aggregate (45% for reserved categories)",
+  "examMonth": "July",
+  "description": "National-level entrance exam conducted by AIIMS for admission into B.Sc Paramedical courses such as Medical Technology, Radiology, Anaesthesia Technology, and other allied health sciences programs.",
+  "syllabus": [
+    "Physics (11th & 12th)",
+    "Chemistry (11th & 12th)",
+    "Biology/Mathematics (11th & 12th)",
+    "General Knowledge",
+    "Aptitude"
+  ],
+  "officialLink": "https://bsccourses.aiimsexams.ac.in/"
+},
+{
+  "name": "All India Forensic Science Entrance Test",
+  "shortName": "AIFSET",
+  "streams": ["science_pcm", "science_pcb"],
+  "eligibility": "12th with PCB or PCM from a recognized board with minimum 50% aggregate",
+  "examMonth": "September",
+  "description": "A national-level entrance test for admission into B.Sc Forensic Science and related courses at participating universities across India.",
+  "syllabus": [
+    "Physics (11th & 12th)",
+    "Chemistry (11th & 12th)",
+    "Biology (11th & 12th)",
+    "Logical Reasoning",
+    "General Awareness"
+  ],
+  "officialLink": "https://aifset.com/"
+}
+
+
 ]
