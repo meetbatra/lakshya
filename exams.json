@@ -122,37 +122,96 @@
     "officialLink": "https://bsccourses.aiimsexams.ac.in/"
   },
   {
-  "name": "AIIMS B.Sc Paramedical Entrance Exam",
-  "shortName": "AIIMS Paramedical",
-  "streams": ["science_pcm", "science_pcb"],
-  "eligibility": "12th with English and either PCB or PCM group, with minimum 50% aggregate (45% for reserved categories)",
-  "examMonth": "July",
-  "description": "National-level entrance exam conducted by AIIMS for admission into B.Sc Paramedical courses such as Medical Technology, Radiology, Anaesthesia Technology, and other allied health sciences programs.",
-  "syllabus": [
-    "Physics (11th & 12th)",
-    "Chemistry (11th & 12th)",
-    "Biology/Mathematics (11th & 12th)",
-    "General Knowledge",
-    "Aptitude"
-  ],
-  "officialLink": "https://bsccourses.aiimsexams.ac.in/"
-},
-{
-  "name": "All India Forensic Science Entrance Test",
-  "shortName": "AIFSET",
-  "streams": ["science_pcm", "science_pcb"],
-  "eligibility": "12th with PCB or PCM from a recognized board with minimum 50% aggregate",
-  "examMonth": "September",
-  "description": "A national-level entrance test for admission into B.Sc Forensic Science and related courses at participating universities across India.",
-  "syllabus": [
-    "Physics (11th & 12th)",
-    "Chemistry (11th & 12th)",
-    "Biology (11th & 12th)",
-    "Logical Reasoning",
-    "General Awareness"
-  ],
-  "officialLink": "https://aifset.com/"
-}
-
-
+    "name": "AIIMS B.Sc Paramedical Entrance Exam",
+    "shortName": "AIIMS Paramedical",
+    "streams": ["science_pcm", "science_pcb"],
+    "eligibility": "12th with English and either PCB or PCM group, with minimum 50% aggregate (45% for reserved categories)",
+    "examMonth": "July",
+    "description": "National-level entrance exam conducted by AIIMS for admission into B.Sc Paramedical courses such as Medical Technology, Radiology, Anaesthesia Technology, and other allied health sciences programs.",
+    "syllabus": [
+      "Physics (11th & 12th)",
+      "Chemistry (11th & 12th)",
+      "Biology/Mathematics (11th & 12th)",
+      "General Knowledge",
+      "Aptitude"
+    ],
+    "officialLink": "https://bsccourses.aiimsexams.ac.in/"
+  },
+  {
+    "name": "All India Forensic Science Entrance Test",
+    "shortName": "AIFSET",
+    "streams": ["science_pcm", "science_pcb"],
+    "eligibility": "12th with PCB or PCM from a recognized board with minimum 50% aggregate",
+    "examMonth": "September",
+    "description": "A national-level entrance test for admission into B.Sc Forensic Science and related courses at participating universities across India.",
+    "syllabus": [
+      "Physics (11th & 12th)",
+      "Chemistry (11th & 12th)",
+      "Biology (11th & 12th)",
+      "Logical Reasoning",
+      "General Awareness"
+    ],
+    "officialLink": "https://aifset.com/"
+  },
+  {
+    "name": "Chartered Accountancy Foundation Examination",
+    "shortName": "CA Foundation",
+    "streams": ["commerce"],
+    "eligibility": "Candidates must have passed Class 12 examination from a recognized board or equivalent.",
+    "examMonth": "June and December",
+    "description": "The CA Foundation exam is the entry-level test conducted by the Institute of Chartered Accountants of India (ICAI) for students who wish to pursue a career in Chartered Accountancy.",
+    "syllabus": [
+      "Accounting",
+      "Business Laws",
+      "Quantitative Aptitude",
+      "Business Economics"
+    ],
+    "officialLink": "https://www.icai.org"
+  },
+  {
+    "name": "Common Proficiency Test",
+    "shortName": "CPT",
+    "streams": ["commerce"],
+    "eligibility": "Candidates must have passed or appeared in Class 12 examination from a recognized board.",
+    "examMonth": "June and December",
+    "description": "The Common Proficiency Test (CPT) was the entry-level examination conducted by the Institute of Chartered Accountants of India (ICAI) for Chartered Accountancy before it was replaced by CA Foundation in 2017.",
+    "syllabus": [
+      "Accounting",
+      "Mercantile Laws",
+      "General Economics",
+      "Quantitative Aptitude"
+    ],
+    "officialLink": "https://www.icai.org"
+  },
+  {
+    "name": "Company Secretary Executive Entrance Test",
+    "shortName": "CSEET",
+    "streams": ["commerce", "arts", "science_pcm", "science_pcb"],
+    "eligibility": "Candidates must have passed or be appearing in Class 12 examination from a recognized board.",
+    "examMonth": "January, May, July, November",
+    "description": "The Company Secretary Executive Entrance Test (CSEET) is the mandatory qualifying test conducted by the Institute of Company Secretaries of India (ICSI) for registration into the CS Executive Programme. It evaluates aptitude in business communication, legal aptitude, economic and business environment, and current affairs.",
+    "syllabus": [
+      "Business Communication",
+      "Legal Aptitude and Logical Reasoning",
+      "Economic and Business Environment",
+      "Current Affairs"
+    ],
+    "officialLink": "https://www.icsi.edu"
+  },
+  {
+    "name": "Integrated Program in Management Aptitude Test",
+    "shortName": "IPMAT",
+    "streams": ["commerce", "arts", "science_pcm", "science_pcb"],
+    "eligibility": "Candidates must have passed Class 12 or equivalent examination with a minimum of 60% (55% for SC/ST/PwD). Students appearing in Class 12 are also eligible to apply.",
+    "examMonth": "May-June",
+    "description": "The Integrated Program in Management Aptitude Test (IPMAT) is conducted by IIM Indore, IIM Rohtak, and other IIMs for admission to their 5-year Integrated Program in Management (BBA + MBA). It tests quantitative ability, verbal ability, logical reasoning, and general awareness.",
+    "syllabus": [
+      "Quantitative Ability",
+      "Verbal Ability",
+      "Logical Reasoning and General Awareness",
+      "Essay Writing (for IIM Indore)",
+      "Written Ability Test / Personal Interview (later stages)"
+    ],
+    "officialLink": "https://www.iimidr.ac.in/academic-programmes/five-year-integrated-programme-in-management-ipm/"
+  }
 ]
