@@ -1,10 +1,11 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import { Home } from '../../modules/home';
-import { Login, SignUp, Profile } from '../../modules/user';
+import { Login, SignUp, Profile, Dashboard } from '../../modules/user';
 import { QuizStart, QuizQuestion, QuizReview, QuizResults } from '../../modules/quiz';
 import { Courses, CourseDetails } from '../../modules/courses';
 import { Colleges, CollegeDetails } from '../../modules/colleges';
+import { Exams, ExamDetails } from '../../modules/exams';
 import Layout from '../layouts/Layout';
 import NotFound from '../pages/NotFound';
 
@@ -83,8 +84,25 @@ const router = createBrowserRouter([
         ]
       },
       {
+        path: 'exams',
+        children: [
+          {
+            index: true,
+            element: <Exams />
+          },
+          {
+            path: ':id',
+            element: <ExamDetails />
+          }
+        ]
+      },
+      {
         path: 'profile',
         element: <Profile />
+      },
+      {
+        path: 'dashboard',
+        element: <Dashboard />
       },
       {
         path: '*',

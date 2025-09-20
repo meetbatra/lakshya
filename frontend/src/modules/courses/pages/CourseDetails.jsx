@@ -19,6 +19,7 @@ import {
   faChartLine
 } from '@fortawesome/free-solid-svg-icons';
 import { useCoursesStore } from '../store/coursesStore';
+import BookmarkButton from '../../../shared/components/BookmarkButton';
 
 const CourseDetails = () => {
   const { courseId } = useParams();
@@ -150,9 +151,16 @@ const CourseDetails = () => {
           </Button>
           
           <div className="mb-6">
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent mb-4">
-              {course.name}
-            </h1>
+            <div className="flex items-start justify-between mb-4">
+              <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">
+                {course.name}
+              </h1>
+              <BookmarkButton 
+                type="courses" 
+                itemId={course.id}
+                className="ml-4"
+              />
+            </div>
             
             <div className="flex flex-wrap items-center gap-3 mb-4">
               <Badge variant="outline" className="text-sm border-blue-200 text-blue-700 bg-white">

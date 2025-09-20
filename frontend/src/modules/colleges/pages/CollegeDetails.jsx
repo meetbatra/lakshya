@@ -17,6 +17,7 @@ import {
   faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { useCollegesStore } from '../store/collegesStore';
+import BookmarkButton from '../../../shared/components/BookmarkButton';
 
 const CollegeDetails = () => {
   const { id } = useParams();
@@ -127,9 +128,16 @@ const CollegeDetails = () => {
           </Button>
           
           <div className="mb-6">
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent mb-4">
-              {college.name}
-            </h1>
+            <div className="flex items-start justify-between mb-4">
+              <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent">
+                {college.name}
+              </h1>
+              <BookmarkButton 
+                type="colleges" 
+                itemId={college._id}
+                className="ml-4"
+              />
+            </div>
             
             {college.shortName && (
               <p className="text-xl text-gray-600 font-medium mb-4">

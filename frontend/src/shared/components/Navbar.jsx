@@ -8,7 +8,7 @@ import {
   NavigationMenuList,
 } from '../../components/ui/navigation-menu';
 import { UserAvatar, useAuth } from '../../modules/user';
-import { Menu, X, GraduationCap, Target, Users, BookOpen } from 'lucide-react';
+import { Menu, X, GraduationCap, Target, Users, BookOpen, ClipboardList } from 'lucide-react';
 import lakshyaLogo from '../../assets/lakshya-logo.png';
 
 // Add custom styles for animations
@@ -56,6 +56,10 @@ const Navbar = () => {
     if (path === '/colleges') {
       return location.pathname.startsWith('/colleges');
     }
+    // For exams pages, check if current path starts with /exams
+    if (path === '/exams') {
+      return location.pathname.startsWith('/exams');
+    }
     // For other pages, use exact match
     return location.pathname === path;
   };
@@ -78,6 +82,12 @@ const Navbar = () => {
       path: '/colleges', 
       icon: GraduationCap,
       description: 'Find the best colleges'
+    },
+    { 
+      name: 'Exams', 
+      path: '/exams', 
+      icon: ClipboardList,
+      description: 'Competitive entrance exams'
     }
   ];
 

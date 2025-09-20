@@ -47,15 +47,14 @@ const useCollegesStore = create(devtools((set, get) => ({
   // Actions
   
   // Fetch all colleges
-  fetchAllColleges: async (page = 1) => {
+  fetchAllColleges: async () => {
     set({ loading: true, error: null });
     try {
-      const { searchQuery, filters } = get();
+      // For client-side filtering, we need to fetch ALL colleges without limit
       const params = {
-        page,
-        limit: 20,
-        search: searchQuery || undefined,
-        ...filters
+        limit: 10000, // Large number to get all colleges
+        sortBy: 'name',
+        sortOrder: 'asc'
       };
       
       const response = await collegesAPI.getAllColleges(params);
@@ -135,74 +134,59 @@ const useCollegesStore = create(devtools((set, get) => ({
 
   // Search colleges
   searchColleges: async (query) => {
-    set({ searchQuery: query, loading: true, error: null });
-    try {
-      const { filters } = get();
-      const params = {
-        page: 1,
-        limit: 20,
-        search: query || undefined,
-        ...filters
-      };
+    // For client-side filtering, we just update the search query
+    // The actual filtering happens in getFilteredColleges()
+    set({ searchQuery: query });
+  },
+
+  // Get filtered colleges based on search and filters (client-side filtering)
+  getFilteredColleges: () => {
+    const { colleges, searchQuery, filters } = get();
+    
+    return colleges.filter(college => {
+      // Type filter
+      const matchesType = filters.type === 'all' || college.type === filters.type;
       
-      const response = await collegesAPI.getAllColleges(params);
+      // State filter
+      const matchesState = filters.state === 'all' || college.location?.state === filters.state;
       
-      if (response.success) {
-        set({
-          colleges: response.data.colleges,
-          pagination: response.data.pagination,
-          loading: false
-        });
-      } else {
-        throw new Error(response.message || 'Failed to search colleges');
-      }
-    } catch (error) {
-      set({
-        error: error.message,
-        loading: false,
-        colleges: []
-      });
-    }
+      // City filter
+      const matchesCity = filters.city === 'all' || college.location?.city === filters.city;
+      
+      // Search filter - search across multiple fields
+      const matchesSearch = !searchQuery || (() => {
+        const query = searchQuery.toLowerCase();
+        
+        // Basic college info
+        const basicMatch = college.name?.toLowerCase().includes(query) ||
+                          college.shortName?.toLowerCase().includes(query) ||
+                          college.location?.city?.toLowerCase().includes(query) ||
+                          college.location?.state?.toLowerCase().includes(query) ||
+                          college.type?.toLowerCase().includes(query);
+        
+        // Course search within college
+        const courseMatch = college.courses?.some(course => 
+          course.courseId?.name?.toLowerCase().includes(query) ||
+          course.courseId?.shortName?.toLowerCase().includes(query) ||
+          course.field?.toLowerCase().includes(query)
+        );
+        
+        return basicMatch || courseMatch;
+      })();
+      
+      return matchesType && matchesState && matchesCity && matchesSearch;
+    });
   },
 
   // Update filters
-  updateFilters: async (newFilters) => {
+  updateFilters: (newFilters) => {
     const currentFilters = get().filters;
     const updatedFilters = { ...currentFilters, ...newFilters };
     
     set({ 
-      filters: updatedFilters,
-      loading: true,
-      error: null 
+      filters: updatedFilters
     });
-    
-    try {
-      const { searchQuery } = get();
-      const params = {
-        page: 1,
-        limit: 20,
-        search: searchQuery || undefined,
-        ...updatedFilters
-      };
-      
-      const response = await collegesAPI.getAllColleges(params);
-      
-      if (response.success) {
-        set({
-          colleges: response.data.colleges,
-          pagination: response.data.pagination,
-          loading: false
-        });
-      } else {
-        throw new Error(response.message || 'Failed to filter colleges');
-      }
-    } catch (error) {
-      set({
-        error: error.message,
-        loading: false,
-        colleges: []
-      });
-    }
+    // No need for API call - filtering happens client-side in getFilteredColleges()
   },
 
   // Set search query
@@ -211,7 +195,7 @@ const useCollegesStore = create(devtools((set, get) => ({
   },
 
   // Clear filters
-  clearFilters: async () => {
+  clearFilters: () => {
     set({
       searchQuery: '',
       filters: {
@@ -223,13 +207,11 @@ const useCollegesStore = create(devtools((set, get) => ({
       },
       autoFiltersApplied: false
     });
-    
-    // Fetch colleges with cleared filters
-    get().fetchAllColleges(1);
+    // No need for API call - filtering happens client-side in getFilteredColleges()
   },
 
   // Apply auto-filters based on user location
-  applyAutoFilters: async (user) => {
+  applyAutoFilters: (user) => {
     if (!user || !user.state) return;
     
     // Check if colleges exist for user's state
@@ -245,44 +227,15 @@ const useCollegesStore = create(devtools((set, get) => ({
       
       set({ 
         filters: updatedFilters,
-        autoFiltersApplied: true,
-        loading: true,
-        error: null 
+        autoFiltersApplied: true
       });
-      
-      try {
-        const { searchQuery } = get();
-        const params = {
-          page: 1,
-          limit: 20,
-          search: searchQuery || undefined,
-          ...updatedFilters
-        };
-        
-        const response = await collegesAPI.getAllColleges(params);
-        
-        if (response.success) {
-          set({
-            colleges: response.data.colleges,
-            pagination: response.data.pagination,
-            loading: false
-          });
-        } else {
-          throw new Error(response.message || 'Failed to filter colleges');
-        }
-      } catch (error) {
-        set({
-          error: error.message,
-          loading: false,
-          colleges: []
-        });
-      }
+      // No need for API call - filtering happens client-side in getFilteredColleges()
     }
     // If no colleges in user's state, don't apply filter - keep it normal
   },
 
   // Clear all filters including auto-applied ones
-  clearAllFilters: async () => {
+  clearAllFilters: () => {
     set({
       searchQuery: '',
       filters: {
@@ -294,14 +247,18 @@ const useCollegesStore = create(devtools((set, get) => ({
       },
       autoFiltersApplied: false
     });
-    
-    // Fetch colleges with cleared filters
-    get().fetchAllColleges(1);
+    // No need for API call - filtering happens client-side in getFilteredColleges()
   },
 
-  // Change page
-  changePage: async (page) => {
-    get().fetchAllColleges(page);
+  // Change page - For client-side filtering, we'll implement pagination differently
+  changePage: (page) => {
+    set({ 
+      pagination: { 
+        ...get().pagination, 
+        currentPage: page 
+      } 
+    });
+    // Client-side pagination will be handled in the component
   },
 
   // Clear error
@@ -309,21 +266,6 @@ const useCollegesStore = create(devtools((set, get) => ({
 
   // Reset selected college
   clearSelectedCollege: () => set({ selectedCollege: null }),
-
-  // Get filtered colleges (client-side utility)
-  getFilteredColleges: () => {
-    const { colleges, searchQuery } = get();
-    
-    if (!searchQuery) return colleges;
-    
-    const query = searchQuery.toLowerCase();
-    return colleges.filter(college =>
-      college.name?.toLowerCase().includes(query) ||
-      college.shortName?.toLowerCase().includes(query) ||
-      college.location?.city?.toLowerCase().includes(query) ||
-      college.location?.state?.toLowerCase().includes(query)
-    );
-  }
 }), {
   name: 'colleges-store'
 }));

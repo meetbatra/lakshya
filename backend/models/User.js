@@ -75,6 +75,20 @@ const userSchema = new mongoose.Schema({
     bio: String,
     achievements: [String]
   },
+  bookmarks: {
+    courses: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Course'
+    }],
+    colleges: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'College'
+    }],
+    exams: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Exam'
+    }]
+  },
   isActive: {
     type: Boolean,
     default: true

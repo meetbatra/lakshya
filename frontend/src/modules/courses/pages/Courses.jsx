@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faClock, faUsers, faSpinner, faFilter, faTimes, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { useCoursesStore } from '../store/coursesStore';
 import { useAuth } from '../../user/store/userStore';
+import BookmarkButton from '../../../shared/components/BookmarkButton';
 
 const Courses = () => {
   const navigate = useNavigate();
@@ -387,14 +388,20 @@ const Courses = () => {
                   )}
                 </div>
 
-                {/* Action Button - Fixed at bottom */}
-                <Button 
-                  className="w-full border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white mt-auto"
-                  variant="outline"
-                  onClick={() => navigate(`/courses/${course.id}`)}
-                >
-                  View Full Details
-                </Button>
+                {/* Action Buttons - Fixed at bottom */}
+                <div className="flex gap-2 mt-auto">
+                  <Button 
+                    className="flex-1 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                    variant="outline"
+                    onClick={() => navigate(`/courses/${course.id}`)}
+                  >
+                    View Full Details
+                  </Button>
+                  <BookmarkButton 
+                    type="courses" 
+                    itemId={course.id}
+                  />
+                </div>
               </CardContent>
             </Card>
           ))}

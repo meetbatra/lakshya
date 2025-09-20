@@ -6,12 +6,16 @@ const authRoutes = require('./authRoutes');
 const quizRoutes = require('./quizRoutes');
 const courseRoutes = require('./courseRoutes');
 const collegeRoutes = require('./collegeRoutes');
+const examRoutes = require('./examRoutes');
+const bookmarkRoutes = require('./bookmarkRoutes');
 
 // Mount routes with their base paths
 router.use('/auth', authRoutes);
 router.use('/quiz', quizRoutes);
 router.use('/courses', courseRoutes);
 router.use('/colleges', collegeRoutes);
+router.use('/exams', examRoutes);
+router.use('/bookmarks', bookmarkRoutes);
 
 // Health check route (can be moved here or kept in app.js)
 router.get('/health', (req, res) => {
