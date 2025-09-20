@@ -28,8 +28,8 @@ export const signupSchema = z.object({
   class: z
     .string()
     .min(1, 'Class is required')
-    .refine((value) => ['10', '12', 'graduate'].includes(value), {
-      message: 'Class must be one of: 10, 12, graduate'
+    .refine((value) => ['10', '12'].includes(value), {
+      message: 'Class must be one of: 10, 12'
     }),
   
   state: z

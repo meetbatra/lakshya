@@ -1,4 +1,6 @@
 import React from 'react';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import { Toaster } from './components/ui/sonner';
 import AppRouter from './shared/routes/AppRouter';
 import { useAuthInit } from './modules/user';
 
@@ -7,9 +9,12 @@ function App() {
   useAuthInit();
 
   return (
-    <div className="App">
-      <AppRouter />
-    </div>
+    <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
+      <div className="App">
+        <AppRouter />
+        <Toaster />
+      </div>
+    </GoogleOAuthProvider>
   );
 }
 

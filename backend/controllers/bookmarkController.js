@@ -1,241 +1,126 @@
-const User = require('../models/User');
-const Course = require('../models/Course');
-const College = require('../models/College');
-const Exam = require('../models/Exam');
+const { 
+  addBookmark: addBookmarkService, 
+  removeBookmark: removeBookmarkService, 
+  getBookmarks: getBookmarksService, 
+  isBookmarked: isBookmarkedService, 
+  getBookmarkCounts: getBookmarkCountsService 
+} = require('../services/bookmarkService');
+
+/**
+ * Bookmark Controller
+ * Handles HTTP requests and responses for bookmark operations
+ */
 
 // Add bookmark
 const addBookmark = async (req, res) => {
-  try {
-    const { type, itemId } = req.body;
-    const userId = req.user.id;
+  const { type, itemId } = req.body;
+  const userId = req.user.id;
 
-    // Validate type
-    if (!['courses', 'colleges', 'exams'].includes(type)) {
-      return res.status(400).json({
-        success: false,
-        message: 'Invalid bookmark type. Must be courses, colleges, or exams.'
-      });
-    }
+  const result = await addBookmarkService(userId, type, itemId);
 
-    // Validate itemId
-    if (!itemId) {
-      return res.status(400).json({
-        success: false,
-        message: 'Item ID is required'
-      });
-    }
-
-    // Verify item exists
-    let Model;
-    switch (type) {
-      case 'courses':
-        Model = Course;
-        break;
-      case 'colleges':
-        Model = College;
-        break;
-      case 'exams':
-        Model = Exam;
-        break;
-    }
-
-    const item = await Model.findById(itemId);
-    if (!item) {
-      return res.status(404).json({
-        success: false,
-        message: `${type.slice(0, -1)} not found`
-      });
-    }
-
-    // Find user and add bookmark
-    const user = await User.findById(userId);
-    if (!user) {
-      return res.status(404).json({
-        success: false,
-        message: 'User not found'
-      });
-    }
-
-    // Initialize bookmarks if not exist
-    if (!user.bookmarks) {
-      user.bookmarks = { courses: [], colleges: [], exams: [] };
-    }
-
-    // Check if already bookmarked
-    if (user.bookmarks[type].includes(itemId)) {
-      return res.status(400).json({
-        success: false,
-        message: `${type.slice(0, -1)} already bookmarked`
-      });
-    }
-
-    // Add bookmark
-    user.bookmarks[type].push(itemId);
-    await user.save();
-
-    // Repopulate bookmarks for response
-    const populatedUser = await User.findById(userId)
-      .populate('bookmarks.courses', 'name shortName level duration stream field')
-      .populate('bookmarks.colleges', 'name shortName location type')
-      .populate('bookmarks.exams', 'name shortName streams')
-      .lean();
-
-    res.status(200).json({
-      success: true,
-      message: `${type.slice(0, -1)} bookmarked successfully`,
-      bookmarks: populatedUser.bookmarks
-    });
-
-  } catch (error) {
-    console.error('Add bookmark error:', error);
-    res.status(500).json({
+  if (!result.success) {
+    return res.status(result.status).json({
       success: false,
-      message: 'Internal server error',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+      message: result.message,
+      error: result.error
     });
   }
+
+  res.status(result.status).json({
+    success: true,
+    message: result.message,
+    data: result.data
+  });
 };
 
 // Remove bookmark
 const removeBookmark = async (req, res) => {
-  try {
-    const { type, itemId } = req.body;
-    const userId = req.user.id;
+  const { type, itemId } = req.body;
+  const userId = req.user.id;
 
-    // Validate type
-    if (!['courses', 'colleges', 'exams'].includes(type)) {
-      return res.status(400).json({
-        success: false,
-        message: 'Invalid bookmark type. Must be courses, colleges, or exams.'
-      });
-    }
+  const result = await removeBookmarkService(userId, type, itemId);
 
-    // Find user and remove bookmark
-    const user = await User.findById(userId);
-    if (!user) {
-      return res.status(404).json({
-        success: false,
-        message: 'User not found'
-      });
-    }
-
-    // Initialize bookmarks if not exist
-    if (!user.bookmarks) {
-      user.bookmarks = { courses: [], colleges: [], exams: [] };
-    }
-
-    // Remove bookmark
-    user.bookmarks[type] = user.bookmarks[type].filter(
-      id => id.toString() !== itemId.toString()
-    );
-    await user.save();
-
-    // Repopulate bookmarks for response
-    const populatedUser = await User.findById(userId)
-      .populate('bookmarks.courses', 'name shortName level duration stream field')
-      .populate('bookmarks.colleges', 'name shortName location type')
-      .populate('bookmarks.exams', 'name shortName streams')
-      .lean();
-
-    res.status(200).json({
-      success: true,
-      message: `${type.slice(0, -1)} removed from bookmarks`,
-      bookmarks: populatedUser.bookmarks
-    });
-
-  } catch (error) {
-    res.status(500).json({
+  if (!result.success) {
+    return res.status(result.status).json({
       success: false,
-      message: 'Internal server error',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+      message: result.message,
+      error: result.error
     });
   }
+
+  res.status(result.status).json({
+    success: true,
+    message: result.message,
+    data: result.data
+  });
 };
 
-// Get user bookmarks
+// Get user bookmarks with optional type filtering
 const getBookmarks = async (req, res) => {
-  try {
-    const userId = req.user.id;
+  const userId = req.user.id;
+  const { type } = req.query;
 
-    const user = await User.findById(userId)
-      .populate('bookmarks.courses', 'name shortName level duration stream field')
-      .populate('bookmarks.colleges', 'name shortName location type')
-      .populate('bookmarks.exams', 'name shortName streams')
-      .lean(); // Add lean() for better performance
+  const result = await getBookmarksService(userId, type);
 
-    if (!user) {
-      return res.status(404).json({
-        success: false,
-        message: 'User not found'
-      });
-    }
-
-    // Initialize bookmarks if not exist
-    if (!user.bookmarks) {
-      user.bookmarks = { courses: [], colleges: [], exams: [] };
-    }
-
-    res.status(200).json({
-      success: true,
-      bookmarks: user.bookmarks
-    });
-
-  } catch (error) {
-    res.status(500).json({
+  if (!result.success) {
+    return res.status(result.status).json({
       success: false,
-      message: 'Internal server error',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+      message: result.message,
+      error: result.error
     });
   }
+
+  res.status(result.status).json({
+    success: true,
+    data: result.data
+  });
 };
 
 // Check if item is bookmarked
 const isBookmarked = async (req, res) => {
-  try {
-    const { type, itemId } = req.params;
-    const userId = req.user.id;
+  const { type, itemId } = req.params;
+  const userId = req.user.id;
 
-    // Validate type
-    if (!['courses', 'colleges', 'exams'].includes(type)) {
-      return res.status(400).json({
-        success: false,
-        message: 'Invalid bookmark type. Must be courses, colleges, or exams.'
-      });
-    }
+  const result = await isBookmarkedService(userId, type, itemId);
 
-    const user = await User.findById(userId);
-    if (!user) {
-      return res.status(404).json({
-        success: false,
-        message: 'User not found'
-      });
-    }
-
-    // Initialize bookmarks if not exist
-    if (!user.bookmarks) {
-      user.bookmarks = { courses: [], colleges: [], exams: [] };
-    }
-
-    const isBookmarked = user.bookmarks[type].includes(itemId);
-
-    res.status(200).json({
-      success: true,
-      isBookmarked
-    });
-
-  } catch (error) {
-    console.error('Check bookmark error:', error);
-    res.status(500).json({
+  if (!result.success) {
+    return res.status(result.status).json({
       success: false,
-      message: 'Internal server error',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+      message: result.message,
+      error: result.error
     });
   }
+
+  res.status(result.status).json({
+    success: true,
+    isBookmarked: result.data.isBookmarked
+  });
+};
+
+// Get bookmark counts
+const getBookmarkCounts = async (req, res) => {
+  const userId = req.user.id;
+
+  const result = await getBookmarkCountsService(userId);
+
+  if (!result.success) {
+    return res.status(result.status).json({
+      success: false,
+      message: result.message,
+      error: result.error
+    });
+  }
+
+  res.status(result.status).json({
+    success: true,
+    data: result.data
+  });
 };
 
 module.exports = {
   addBookmark,
   removeBookmark,
   getBookmarks,
-  isBookmarked
+  isBookmarked,
+  getBookmarkCounts
 };

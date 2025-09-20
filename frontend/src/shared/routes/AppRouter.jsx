@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import { Home } from '../../modules/home';
-import { Login, SignUp, Profile, Dashboard } from '../../modules/user';
+import { Login, SignUp, Profile, Dashboard, CompleteProfile } from '../../modules/user';
 import { QuizStart, QuizQuestion, QuizReview, QuizResults } from '../../modules/quiz';
 import { Courses, CourseDetails } from '../../modules/courses';
 import { Colleges, CollegeDetails } from '../../modules/colleges';
@@ -29,6 +29,10 @@ const router = createBrowserRouter([
           {
             path: 'signup',
             element: <SignUp />
+          },
+          {
+            path: 'complete-profile',
+            element: <CompleteProfile />
           }
         ]
       },

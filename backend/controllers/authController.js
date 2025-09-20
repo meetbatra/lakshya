@@ -92,10 +92,30 @@ const logout = async (req, res, next) => {
   });
 };
 
+// Google OAuth login/signup
+const googleAuth = async (req, res, next) => {
+  const result = await authService.handleGoogleAuth(req.body.credential);
+  
+  if (result.success) {
+    res.status(200).json({
+      status: 'success',
+      message: result.message,
+      data: result.data
+    });
+  } else {
+    if (result.message === 'Invalid Google token') {
+      throw HttpError.unauthorized(result.message, result.errors);
+    } else {
+      throw HttpError.badRequest(result.message, result.errors);
+    }
+  }
+};
+
 module.exports = {
   register,
   login,
   getProfile,
   updateProfile,
-  logout
+  logout,
+  googleAuth
 };

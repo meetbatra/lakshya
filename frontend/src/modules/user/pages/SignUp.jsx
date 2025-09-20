@@ -10,6 +10,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../..
 import { useAuth } from '../store/userStore';
 import { authAPI } from '../api/authAPI';
 import { signupSchema } from '../validation/signupValidation';
+import GoogleLoginButton from '../../../shared/components/GoogleLoginButton';
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -107,6 +108,15 @@ const SignUp = () => {
 
     return streamFieldMap[selectedStream] || [];
   };
+
+  // Indian states list
+  const states = [
+    'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 
+    'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh', 
+    'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 
+    'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttar Pradesh', 
+    'Uttarakhand', 'West Bengal', 'Delhi'
+  ];
 
   const getStreamLabel = () => {
     if (selectedClass === '10') {
@@ -241,7 +251,6 @@ const SignUp = () => {
                       <SelectContent>
                         <SelectItem value="10">Class 10</SelectItem>
                         <SelectItem value="12">Class 12</SelectItem>
-                        <SelectItem value="graduate">Graduate</SelectItem>
                       </SelectContent>
                     </Select>
                     {errors.class && (
@@ -251,13 +260,21 @@ const SignUp = () => {
 
                   <div className="space-y-2">
                     <Label htmlFor="state">State</Label>
-                    <Input
-                      id="state"
-                      type="text"
-                      placeholder="Enter your state"
-                      className={errors.state ? "border-red-500" : ""}
-                      {...register("state")}
-                    />
+                    <Select
+                      value={watch('state')}
+                      onValueChange={(value) => handleSelectChange('state', value)}
+                    >
+                      <SelectTrigger className={`w-full h-12 ${errors.state ? "border-red-500" : ""}`}>
+                        <SelectValue placeholder="Select your state" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {states.map((state) => (
+                          <SelectItem key={state} value={state}>
+                            {state}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                     {errors.state && (
                       <p className="text-sm text-red-600">{errors.state.message}</p>
                     )}
@@ -311,6 +328,20 @@ const SignUp = () => {
                 <Button type="submit" className="w-full" disabled={isLoading}>
                   {isLoading ? 'Creating account...' : 'Create Account'}
                 </Button>
+
+                <div className="mt-6">
+                  <div className="relative">
+                    <div className="absolute inset-0 flex items-center">
+                      <div className="w-full border-t border-gray-300" />
+                    </div>
+                    <div className="relative flex justify-center text-sm">
+                      <span className="px-2 bg-white text-gray-500">Or continue with</span>
+                    </div>
+                  </div>
+                  <div className="mt-6">
+                    <GoogleLoginButton />
+                  </div>
+                </div>
               </div>
             </form>
           </CardContent>

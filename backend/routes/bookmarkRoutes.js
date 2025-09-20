@@ -4,23 +4,27 @@ const {
   addBookmark,
   removeBookmark,
   getBookmarks,
-  isBookmarked
+  isBookmarked,
+  getBookmarkCounts
 } = require('../controllers/bookmarkController');
-const { authenticateToken } = require('../utils/middleware');
+const { authenticateToken, wrapAsync } = require('../utils/middleware');
 
 // Apply authentication middleware to all bookmark routes
 router.use(authenticateToken);
 
 // Add bookmark
-router.post('/add', addBookmark);
+router.post('/add', wrapAsync(addBookmark));
 
 // Remove bookmark
-router.post('/remove', removeBookmark);
+router.post('/remove', wrapAsync(removeBookmark));
 
 // Get all bookmarks for user
-router.get('/', getBookmarks);
+router.get('/', wrapAsync(getBookmarks));
 
 // Check if specific item is bookmarked
-router.get('/check/:type/:itemId', isBookmarked);
+router.get('/check/:type/:itemId', wrapAsync(isBookmarked));
+
+// Get bookmark counts
+router.get('/counts', wrapAsync(getBookmarkCounts));
 
 module.exports = router;

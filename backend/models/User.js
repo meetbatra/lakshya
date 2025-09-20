@@ -16,17 +16,31 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: [true, 'Password is required'],
+    required: function() {
+      return !this.googleId; // Password not required for Google OAuth users
+    },
     minlength: [6, 'Password must be at least 6 characters']
+  },
+  googleId: {
+    type: String,
+    unique: true,
+    sparse: true // Allow null values and make them unique
+  },
+  avatar: {
+    type: String // URL to profile picture
   },
   class: {
     type: String,
-    enum: ['10', '12', 'graduate'],
-    required: [true, 'Class information is required']
+    enum: ['10', '12'],
+    required: function() {
+      return !this.googleId; // Not required initially for Google OAuth users
+    }
   },
   state: {
     type: String,
-    required: [true, 'State is required'],
+    required: function() {
+      return !this.googleId; // Not required initially for Google OAuth users
+    },
     trim: true
   },
   // Stream information based on class

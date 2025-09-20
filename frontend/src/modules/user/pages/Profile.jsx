@@ -35,6 +35,14 @@ const Profile = () => {
   });
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState({ type: '', text: '' });
+  const [imageError, setImageError] = useState(false);
+
+  const avatarUrl = getUserAvatar();
+
+  // Reset image error when avatar URL changes
+  useEffect(() => {
+    setImageError(false);
+  }, [avatarUrl]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -127,6 +135,16 @@ const Profile = () => {
     return fieldMap[field] || field;
   };
 
+  // Check if profile is complete
+  const isProfileComplete = () => {
+    return user?.state && user?.class && user?.stream && 
+           (user?.class === '10' || (user?.class === '12' && user?.field));
+  };
+
+  const handleCompleteProfile = () => {
+    navigate('/auth/complete-profile');
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
     // Update edit data when user changes
@@ -205,7 +223,9 @@ const Profile = () => {
     navigate('/quiz');
   };
 
-  const avatarUrl = getUserAvatar();
+  const handleImageError = () => {
+    setImageError(true);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
@@ -214,11 +234,20 @@ const Profile = () => {
         <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-white shadow-xl">
-              <img 
-                src={avatarUrl} 
-                alt={user.name}
-                className="h-full w-full object-cover"
-              />
+              {!imageError && avatarUrl ? (
+                <img 
+                  src={avatarUrl} 
+                  alt={user.name}
+                  className="h-full w-full object-cover"
+                  onError={handleImageError}
+                  crossOrigin="anonymous"
+                  referrerPolicy="no-referrer"
+                />
+              ) : (
+                <div className="h-full w-full bg-blue-600 text-white flex items-center justify-center text-2xl font-bold">
+                  {getUserInitials()}
+                </div>
+              )}
             </div>
             <h1 className="text-4xl font-bold mb-2">{user.name}</h1>
             <p className="text-blue-100 text-lg mb-4">{user.email}</p>
@@ -254,6 +283,26 @@ const Profile = () => {
             />
             <AlertDescription className={message.type === 'success' ? 'text-green-800' : 'text-red-800'}>
               {message.text}
+            </AlertDescription>
+          </Alert>
+        )}
+
+        {/* Incomplete Profile Alert */}
+        {!isProfileComplete() && (
+          <Alert className="mb-6 bg-amber-50 border-amber-200">
+            <FontAwesomeIcon icon={faQuestionCircle} className="h-4 w-4 text-amber-600" />
+            <AlertDescription className="text-amber-800 flex items-center justify-between">
+              <div>
+                <span className="font-medium">Complete your profile</span> to get personalized course and college recommendations.
+              </div>
+              <Button 
+                onClick={handleCompleteProfile}
+                size="sm"
+                className="ml-4 bg-amber-600 hover:bg-amber-700 text-white"
+              >
+                <FontAwesomeIcon icon={faEdit} className="h-3 w-3 mr-1" />
+                Complete Profile
+              </Button>
             </AlertDescription>
           </Alert>
         )}

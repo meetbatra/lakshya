@@ -81,11 +81,11 @@ const BookmarkButton = ({
       title={showTooltip ? (bookmarked ? 'Remove bookmark' : 'Add bookmark') : undefined}
     >
       {isLoading ? (
-        <div className="animate-spin h-3 w-3 border-2 border-current border-t-transparent rounded-full" />
+        <div className="animate-spin h-4 w-4 border-2 border-current border-t-transparent rounded-full" />
       ) : (
         <FontAwesomeIcon 
           icon={bookmarked ? faBookmarkSolid : faBookmarkRegular}
-          className="h-3 w-3"
+          className="h-4 w-4"
         />
       )}
     </Button>

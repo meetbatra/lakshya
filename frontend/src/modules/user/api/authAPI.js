@@ -110,6 +110,16 @@ export const authAPI = {
     } catch (error) {
       throw new Error(error.response?.data?.message || 'Failed to update profile');
     }
+  },
+
+  // Google OAuth login
+  googleLogin: async (credential) => {
+    try {
+      const response = await api.post('/auth/google', { credential });
+      return response.data.data; // Return the data object containing user, token, and requiresProfileCompletion
+    } catch (error) {
+      throw error;
+    }
   }
 };
 

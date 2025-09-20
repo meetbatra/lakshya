@@ -9,6 +9,7 @@ const { wrapAsync } = require('../utils/middleware');
 // Public routes
 router.post('/register', wrapAsync(authController.register));
 router.post('/login', wrapAsync(authController.login));
+router.post('/google', wrapAsync(authController.googleAuth));
 
 // Protected routes (require authentication)
 router.get('/profile', authenticateToken, wrapAsync(authController.getProfile));

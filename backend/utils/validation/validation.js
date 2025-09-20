@@ -38,8 +38,8 @@ const signupSchema = z.object({
     .regex(/\d/, 'Password must contain at least one number'),
   
   class: z
-    .enum(['10', '12', 'graduate'], {
-      errorMap: () => ({ message: 'Class must be one of: 10, 12, graduate' })
+    .enum(['10', '12'], {
+      errorMap: () => ({ message: 'Class must be one of: 10, 12' })
     }),
   
   state: z
@@ -114,8 +114,8 @@ const updateProfileSchema = z.object({
     .optional(),
   
   class: z
-    .enum(['10', '12', 'graduate'], {
-      errorMap: () => ({ message: 'Class must be one of: 10, 12, graduate' })
+    .enum(['10', '12'], {
+      errorMap: () => ({ message: 'Class must be one of: 10, 12' })
     })
     .optional(),
   

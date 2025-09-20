@@ -87,12 +87,17 @@ export const useAuth = create(
         const { user } = get();
         if (!user) return null;
         
-        // Check if user has a custom avatar
+        // Check if user has any avatar (Google or custom)
+        if (user.avatar) {
+          return user.avatar;
+        }
+        
+        // Check if user has a custom avatar in profile
         if (user.profile?.avatar) {
           return user.profile.avatar;
         }
         
-        // Generate avatar using ui-avatars.com API
+        // Fallback to generated avatar using ui-avatars.com API
         const name = user.name || 'User';
         const encodedName = encodeURIComponent(name);
         return `https://ui-avatars.com/api/?name=${encodedName}&size=128&background=2563eb&color=ffffff&bold=true`;

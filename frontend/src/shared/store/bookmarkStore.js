@@ -1,7 +1,28 @@
 import { create } from 'zustand';
 import axios from 'axios';
+import { useAuth } from '../../modules/user/store/userStore';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080/api';
+const API_BASE_URL = 'http://localhost:8080/api';
+
+// Helper function to get auth token
+const getAuthToken = () => {
+  try {
+    // First try to get from localStorage directly
+    const authStore = JSON.parse(localStorage.getItem('auth-store') || '{}');
+    let token = authStore.state?.token;
+    
+    // If no token found, try to get from useAuth store
+    if (!token) {
+      const authState = useAuth.getState();
+      token = authState.token;
+    }
+    
+    return token;
+  } catch (error) {
+    console.error('Error getting auth token:', error);
+    return null;
+  }
+};
 
 const useBookmarkStore = create((set, get) => ({
   // State
@@ -19,15 +40,25 @@ const useBookmarkStore = create((set, get) => ({
   clearError: () => set({ error: null }),
 
   // Add bookmark
-  addBookmark: async (type, itemId, token) => {
+  addBookmark: async (type, itemId, token = null) => {
     set({ loading: true, error: null });
     try {
+      const authToken = token || getAuthToken();
+      
+      if (!authToken) {
+        set({ 
+          error: 'Authentication required',
+          loading: false 
+        });
+        return { success: false, message: 'Authentication required' };
+      }
+
       const response = await axios.post(
         `${API_BASE_URL}/bookmarks/add`,
         { type, itemId },
         {
           headers: {
-            'Authorization': `Bearer ${token}`,
+            'Authorization': `Bearer ${authToken}`,
             'Content-Type': 'application/json'
           }
         }
@@ -35,7 +66,7 @@ const useBookmarkStore = create((set, get) => ({
 
       if (response.data.success) {
         set({ 
-          bookmarks: response.data.bookmarks,
+          bookmarks: response.data.data.bookmarks,
           loading: false 
         });
         return { success: true };
@@ -57,7 +88,7 @@ const useBookmarkStore = create((set, get) => ({
   },
 
   // Remove bookmark
-  removeBookmark: async (type, itemId, token) => {
+  removeBookmark: async (type, itemId, token = null) => {
     // Optimistic update - remove from UI immediately
     const currentState = get();
     const optimisticBookmarks = { ...currentState.bookmarks };
@@ -70,12 +101,24 @@ const useBookmarkStore = create((set, get) => ({
     });
 
     try {
+      const authToken = token || getAuthToken();
+      
+      if (!authToken) {
+        // Revert optimistic update on auth failure
+        set({ 
+          bookmarks: currentState.bookmarks,
+          error: 'Authentication required',
+          loading: false 
+        });
+        return { success: false, message: 'Authentication required' };
+      }
+
       const response = await axios.post(
         `${API_BASE_URL}/bookmarks/remove`,
         { type, itemId },
         {
           headers: {
-            'Authorization': `Bearer ${token}`,
+            'Authorization': `Bearer ${authToken}`,
             'Content-Type': 'application/json'
           }
         }
@@ -83,7 +126,7 @@ const useBookmarkStore = create((set, get) => ({
 
       if (response.data.success) {
         set({ 
-          bookmarks: response.data.bookmarks,
+          bookmarks: response.data.data.bookmarks,
           loading: false 
         });
         return { success: true };
@@ -109,9 +152,10 @@ const useBookmarkStore = create((set, get) => ({
   },
 
   // Get all bookmarks
-  fetchBookmarks: async (token) => {
+  fetchBookmarks: async (token = null) => {
+    const authToken = token || getAuthToken();
     
-    if (!token) {
+    if (!authToken) {
       set({ 
         error: 'No authentication token provided',
         loading: false 
@@ -125,14 +169,14 @@ const useBookmarkStore = create((set, get) => ({
         `${API_BASE_URL}/bookmarks`,
         {
           headers: {
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${authToken}`
           }
         }
       );
 
       if (response.data.success) {
         set({ 
-          bookmarks: response.data.bookmarks,
+          bookmarks: response.data.data.bookmarks,
           loading: false 
         });
         return { success: true };

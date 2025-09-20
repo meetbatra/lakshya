@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faSignOutAlt, faTachometerAlt } from '@fortawesome/free-solid-svg-icons';
@@ -17,6 +17,14 @@ import { authAPI } from '../api/authAPI';
 const UserAvatar = () => {
   const navigate = useNavigate();
   const { user, logout, getUserInitials, getUserDisplayName, getUserAvatar } = useAuth();
+  const [imageError, setImageError] = useState(false);
+
+  const avatarUrl = getUserAvatar();
+
+  // Reset image error when avatar URL changes
+  useEffect(() => {
+    setImageError(false);
+  }, [avatarUrl]);
 
   const handleLogout = async () => {
     try {
@@ -37,9 +45,11 @@ const UserAvatar = () => {
     navigate('/profile');
   };
 
-  if (!user) return null;
+  const handleImageError = () => {
+    setImageError(true);
+  };
 
-  const avatarUrl = getUserAvatar();
+  if (!user) return null;
 
   return (
     <DropdownMenu>
@@ -48,11 +58,20 @@ const UserAvatar = () => {
           variant="ghost"
           className="relative h-10 w-10 rounded-full overflow-hidden p-0 transition-all duration-200 hover:scale-105 hover:shadow-md cursor-pointer"
         >
-          <img 
-            src={avatarUrl} 
-            alt={getUserDisplayName()}
-            className="h-full w-full object-cover rounded-full transition-all duration-200"
-          />
+          {!imageError && avatarUrl ? (
+            <img 
+              src={avatarUrl} 
+              alt={getUserDisplayName()}
+              className="h-full w-full object-cover rounded-full transition-all duration-200"
+              onError={handleImageError}
+              crossOrigin="anonymous"
+              referrerPolicy="no-referrer"
+            />
+          ) : (
+            <div className="h-full w-full bg-blue-600 text-white flex items-center justify-center rounded-full text-sm font-medium">
+              {getUserInitials()}
+            </div>
+          )}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56" align="end" forceMount>
