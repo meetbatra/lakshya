@@ -1,0 +1,133 @@
+[
+  {
+    "name": "Joint Entrance Examination Main",
+    "shortName": "JEE Main",
+    "streams": ["science_pcm"],
+    "eligibility": "12th PCM",
+    "examMonth": "January & April ",
+    "description": "National-level engineering entrance exam for B.Tech/B.E. admissions.",
+    "syllabus": ["Physics (11th & 12th)", "Chemistry (11th & 12th)", "Mathematics (11th & 12th)"],
+    "officialLink": "https://jeemain.nta.nic.in/"
+  },
+  {
+  "name": "Joint Entrance Examination Advanced",
+  "shortName": "JEE Advanced",
+  "streams": ["science_pcm"],
+  "eligibility": "Qualified in JEE Main among top 2,50,000 candidates with 12th PCM",
+  "examMonth": "June",
+  "description": "National-level entrance exam for admission into Indian Institutes of Technology (IITs).",
+  "syllabus": ["Physics (11th & 12th)", "Chemistry (11th & 12th)", "Mathematics (11th & 12th)"],
+  "officialLink": "https://jeeadv.ac.in/"
+},
+{
+  "name": "Birla Institute of Technology and Science Admission Test",
+  "shortName": "BITSAT",
+  "streams": ["science_pcm"],
+  "eligibility": "12th PCM with minimum 75% aggregate in Physics, Chemistry, and Mathematics, and 60% in each subject individually",
+  "examMonth": "May & June",
+  "description": "University-level entrance exam conducted by BITS Pilani for admission into its integrated first-degree programs in Engineering, Sciences, and Pharmacy.",
+  "syllabus": [
+    "Physics (11th & 12th)",
+    "Chemistry (11th & 12th)",
+    "Mathematics (11th & 12th)",
+    "English Proficiency",
+    "Logical Reasoning"
+  ],
+  "officialLink": "https://www.bitsadmission.com/"
+},
+{
+  "name": "Vellore Institute of Technology Engineering Entrance Examination",
+  "shortName": "VITEEE",
+  "streams": ["science_pcm"],
+  "eligibility": "12th PCM with minimum 60% aggregate in Physics, Chemistry, and Mathematics (50% for reserved categories)",
+  "examMonth": "April",
+  "description": "University-level entrance exam conducted by VIT for admission into B.Tech programs at its campuses in Vellore, Chennai, Bhopal, and Amaravati.",
+  "syllabus": [
+    "Physics (11th & 12th)",
+    "Chemistry (11th & 12th)",
+    "Mathematics (11th & 12th)",
+    "English",
+    "Aptitude"
+  ],
+  "officialLink": "https://viteee.vit.ac.in/"
+},
+{
+  "name": "Vellore Institute of Technology Engineering Entrance Examination",
+  "shortName": "VITEEE",
+  "streams": ["science_pcm"],
+  "eligibility": "12th PCM with minimum 60% aggregate in Physics, Chemistry, and Mathematics (50% for reserved categories)",
+  "examMonth": "April",
+  "description": "University-level entrance exam conducted by VIT for admission into B.Tech programs at its campuses in Vellore, Chennai, Bhopal, and Amaravati.",
+  "syllabus": [
+    "Physics (11th & 12th)",
+    "Chemistry (11th & 12th)",
+    "Mathematics (11th & 12th)",
+    "English",
+    "Aptitude"
+  ],
+  "officialLink": "https://viteee.vit.ac.in/"
+},
+{
+  "name": "SRM Joint Engineering Entrance Examination",
+  "shortName": "SRMJEEE",
+  "streams": ["science_pcm"],
+  "eligibility": "12th PCM with minimum 60% aggregate in Physics, Chemistry, and Mathematics",
+  "examMonth": "April & June",
+  "description": "University-level entrance exam conducted by SRM Institute of Science and Technology for admission into B.Tech programs at its campuses.",
+  "syllabus": [
+    "Physics (11th & 12th)",
+    "Chemistry (11th & 12th)",
+    "Mathematics (11th & 12th)",
+    "English",
+    "Aptitude"
+  ],
+  "officialLink": "https://www.srmist.edu.in/admission-india/engineering/"
+},
+{
+  "name": "Manipal Entrance Test",
+  "shortName": "MET",
+  "streams": ["science_pcm"],
+  "eligibility": "12th PCM with minimum 50% aggregate in Physics, Chemistry, and Mathematics",
+  "examMonth": "April & May",
+  "description": "University-level entrance exam conducted by Manipal Academy of Higher Education (MAHE) for admission into B.Tech and other undergraduate programs.",
+  "syllabus": [
+    "Physics (11th & 12th)",
+    "Chemistry (11th & 12th)",
+    "Mathematics (11th & 12th)",
+    "English",
+    "Aptitude"
+  ],
+  "officialLink": "https://www.manipal.edu/mu/admission/indian-students/online-entrance-exam-overview/overview.html"
+},
+{
+  "name": "National Eligibility cum Entrance Test (UG)",
+  "shortName": "NEET",
+  "streams": ["science_pcb"],
+  "eligibility": "12th PCB with minimum 50% aggregate in Physics, Chemistry, and Biology (40% for reserved categories)",
+  "examMonth": "May",
+  "description": "National-level medical entrance exam conducted by NTA for admission into MBBS, BDS, AYUSH, Nursing, and other undergraduate medical courses across India.",
+  "syllabus": [
+    "Physics (11th & 12th)",
+    "Chemistry (11th & 12th)",
+    "Biology (11th & 12th)"
+  ],
+  "officialLink": "https://neet.nta.nic.in/"
+},
+{
+  "name": "AIIMS B.Sc Nursing Entrance Exam",
+  "shortName": "AIIMS Nursing",
+  "streams": ["science_pcb"],
+  "eligibility": "12th PCB with English and minimum 55% aggregate (50% for reserved categories)",
+  "examMonth": "June",
+  "description": "National-level entrance exam conducted by the All India Institute of Medical Sciences (AIIMS) for admission into B.Sc (Hons) Nursing programs.",
+  "syllabus": [
+    "Physics (11th & 12th)",
+    "Chemistry (11th & 12th)",
+    "Biology (11th & 12th)",
+    "General Knowledge"
+  ],
+  "officialLink": "https://bsccourses.aiimsexams.ac.in/"
+}
+
+
+]
