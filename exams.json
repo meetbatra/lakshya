@@ -30,7 +30,7 @@
   {
     "name": "Birla Institute of Technology and Science Admission Test",
     "shortName": "BITSAT",
-    "streams": ["science_pcm"],
+    "streams": ["science_pcm", "science_pcb"],
     "eligibility": "12th PCM with minimum 75% aggregate in Physics, Chemistry, and Mathematics, and 60% in each subject individually",
     "examMonth": "May & June",
     "description": "University-level entrance exam conducted by BITS Pilani for admission into its integrated first-degree programs in Engineering, Sciences, and Pharmacy.",
