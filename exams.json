@@ -213,5 +213,133 @@
       "Written Ability Test / Personal Interview (later stages)"
     ],
     "officialLink": "https://www.iimidr.ac.in/academic-programmes/five-year-integrated-programme-in-management-ipm/"
+  },
+  
+  
+  {
+    "name": "Common University Entrance Test ",
+    "shortName": "CUET",
+    "streams": ["science_pcm", "science_pcb", "commerce", "arts"],
+    "eligibility": "Class 12th pass from a recognized board.",
+    "examMonth": "May-June",
+    "description": "A national-level entrance exam for admission to undergraduate programs in central, state, deemed, and private universities across India, specifically for Arts and Humanities streams.",
+    "syllabus": [
+      "Language (Section 1)",
+      "Domain-specific subjects (e.g. Chemistry, Biology, Mathematics, Physics, History, Political Science, Sociology)",
+      "General Test (Section 3)"
+    ],
+    "officialLink": "https://exams.nta.ac.in/CUET-UG/"
+  },
+  {
+    "name": "National Council for Hotel Management and Catering Technology Joint Entrance Examination",
+    "shortName": "NCHMCT JEE",
+    "streams": ["science_pcm", "science_pcb", "commerce", "arts"],
+    "eligibility": "Class 12th pass with English as one of the subjects.",
+    "examMonth": "April-May",
+    "description": "A national-level entrance exam for admission to B.Sc. in Hospitality and Hotel Administration programs offered by Institutes of Hotel Management (IHMs).",
+    "syllabus": [
+      "Numerical Ability and Analytical Aptitude",
+      "Reasoning and Logical Deduction",
+      "General Knowledge & Current Affairs",
+      "English Language",
+      "Aptitude for Service Sector"
+    ],
+    "officialLink": "https://nchm.gov.in/"
+  },
+  {
+    "name": "National Institute of Design Design Aptitude Test",
+    "shortName": "NID DAT",
+    "streams": ["science_pcm", "science_pcb", "commerce", "arts"],
+    "eligibility": "Class 12th pass from any recognized board.",
+    "examMonth": "January (Prelims), April-May (Mains)",
+    "description": "A two-stage national-level entrance exam for admission to Bachelor of Design (B.Des) programs at the National Institutes of Design (NIDs).",
+    "syllabus": [
+      "Visualisation and Spatial Ability",
+      "Observation and Design Sensitivity",
+      "Analytical and Logical Reasoning",
+      "Environmental and Social Awareness",
+      "Problem Solving",
+      "Drawing and Sketching"
+    ],
+    "officialLink": "https://admissions.nid.edu/"
+  },
+  {
+    "name": "Undergraduate Common Entrance Examination for Design",
+    "shortName": "UCEED",
+    "streams": ["science_pcm", "science_pcb", "commerce", "arts"],
+    "eligibility": "Class 12th pass from any recognized board.",
+    "examMonth": "January",
+    "description": "A national-level entrance exam for admission to Bachelor of Design (B.Des) programs at IIT Bombay, IIT Delhi, IIT Guwahati, IIT Hyderabad, and IIITDM Jabalpur.",
+    "syllabus": [
+      "Visualization and Spatial Ability",
+      "Observation and Design Sensitivity",
+      "Environmental and Social Awareness",
+      "Analytical and Logical Reasoning",
+      "Language and Creativity",
+      "Design Thinking and Problem Solving"
+    ],
+    "officialLink": "https://www.uceed.iitb.ac.in/"
+  },
+  {
+    "name": "National Institute of Fashion Technology Entrance Exam",
+    "shortName": "NIFT Entrance Exam",
+    "streams": ["science_pcm", "science_pcb", "commerce", "arts"],
+    "eligibility": "Class 12th pass from a recognized board. (For B.F.Tech, PCM is mandatory).",
+    "examMonth": "February",
+    "description": "A national-level entrance exam for admission to undergraduate design and technology programs at National Institutes of Fashion Technology (NIFT) campuses.",
+    "syllabus": [
+      "Quantitative Ability",
+      "Communication Ability",
+      "English Comprehension",
+      "Analytical Ability",
+      "General Knowledge and Current Affairs"
+    ],
+    "officialLink": "https://www.nift.ac.in/"
+  },
+  {
+    "name": "Common Law Admission Test",
+    "shortName": "CLAT",
+    "streams": ["science_pcm", "science_pcb", "commerce", "arts"],
+    "eligibility": "Class 12th pass with a minimum of 45% marks (40% for SC/ST).",
+    "examMonth": "December",
+    "description": "A national-level entrance exam for admission to undergraduate and postgraduate law programs offered by 24 National Law Universities (NLUs).",
+    "syllabus": [
+      "English Language",
+      "Current Affairs including General Knowledge",
+      "Legal Reasoning",
+      "Logical Reasoning",
+      "Quantitative Techniques"
+    ],
+    "officialLink": "https://consortiumofnlus.ac.in/"
+  },
+  {
+    "name": "All India Law Entrance Test",
+    "shortName": "AILET",
+    "streams": ["science_pcm", "science_pcb", "commerce", "arts"],
+    "eligibility": "Class 12th pass with a minimum of 45% marks (40% for SC/ST).",
+    "examMonth": "December",
+    "description": "A national-level entrance exam conducted by National Law University, Delhi (NLU Delhi) for admission to its undergraduate (BA LLB Hons.) and postgraduate law programs.",
+    "syllabus": [
+      "English Language",
+      "Current Affairs & General Knowledge",
+      "Logical Reasoning"
+    ],
+    "officialLink": "https://nationallawuniversitydelhi.in/"
+  },
+  {
+    "name": "Symbiosis Law Admission Test",
+    "shortName": "SLAT",
+    "streams": ["science_pcm", "science_pcb", "commerce", "arts"],
+    "eligibility": "Class 12th pass with a minimum of 45% marks (40% for SC/ST).",
+    "examMonth": "May",
+    "description": "A common entrance exam for admission to undergraduate law programs at Symbiosis Law Schools in Pune, Noida, Hyderabad, and Nagpur.",
+    "syllabus": [
+      "Logical Reasoning",
+      "Legal Reasoning",
+      "Analytical Reasoning",
+      "Reading Comprehension",
+      "General Knowledge"
+    ],
+    "officialLink": "https://www.slat-test.org/"
   }
 ]
