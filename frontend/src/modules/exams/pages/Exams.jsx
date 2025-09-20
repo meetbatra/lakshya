@@ -284,7 +284,7 @@ const Exams = () => {
                     {filteredExams?.length || 0} Exams
                   </h2>
                   <p className="text-gray-600">
-                    {filters.search || filters.streams !== 'all' || filters.examMonth !== 'all' ? 
+                    {filters.search || filters.streams !== 'all' || autoFiltersApplied ? 
                       `Showing ${filteredExams?.length || 0} filtered results` : 
                       `${filteredExams?.length || 0} exams available`
                     }

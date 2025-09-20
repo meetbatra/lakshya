@@ -33,7 +33,7 @@ const GoogleLoginButton = () => {
         navigate('/auth/complete-profile');
         toast.info('Please complete your profile to get personalized recommendations');
       } else {
-        navigate('/dashboard');
+        navigate('/');
         toast.success('Successfully logged in with Google!');
       }
     } catch (error) {

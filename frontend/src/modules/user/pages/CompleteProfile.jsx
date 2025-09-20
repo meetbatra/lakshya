@@ -159,7 +159,7 @@ const CompleteProfile = () => {
       login({ user: response.user, token: response.token });
       
       toast.success('Profile completed successfully!');
-      navigate('/dashboard');
+      navigate('/');
     } catch (error) {
       console.error('Profile completion error:', error);
       toast.error(error.message || 'Failed to complete profile');

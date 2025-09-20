@@ -19,7 +19,10 @@ import {
   faSpinner,
   faExclamationTriangle,
   faHeart,
-  faTimes
+  faTimes,
+  faPhone,
+  faEnvelope,
+  faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
 import { useAuth } from '../store/userStore';
 import { useBookmarkStore } from '../../../shared/store/bookmarkStore';
@@ -434,8 +437,33 @@ const Dashboard = () => {
                       {item.location && (
                         <p className="text-xs text-gray-600 flex items-center gap-1">
                           <FontAwesomeIcon icon={faMapMarkerAlt} className="h-3 w-3" />
-                          {[item.location.city, item.location.state].filter(Boolean).join(', ')}
+                          {item.location.address ? 
+                            `${item.location.address}, ${[item.location.city, item.location.state].filter(Boolean).join(', ')}` :
+                            [item.location.city, item.location.state].filter(Boolean).join(', ')
+                          }
                         </p>
+                      )}
+                      {item.contact && (
+                        <div className="space-y-1">
+                          {item.contact.phone && item.contact.phone.length > 0 && (
+                            <p className="text-xs text-gray-600 flex items-center gap-1">
+                              <FontAwesomeIcon icon={faPhone} className="h-3 w-3" />
+                              {item.contact.phone[0]}
+                            </p>
+                          )}
+                          {item.contact.email && item.contact.email.length > 0 && (
+                            <p className="text-xs text-gray-600 flex items-center gap-1">
+                              <FontAwesomeIcon icon={faEnvelope} className="h-3 w-3" />
+                              {item.contact.email[0]}
+                            </p>
+                          )}
+                          {item.contact.website && (
+                            <p className="text-xs text-blue-600 flex items-center gap-1">
+                              <FontAwesomeIcon icon={faExternalLinkAlt} className="h-3 w-3" />
+                              <span className="truncate">Website available</span>
+                            </p>
+                          )}
+                        </div>
                       )}
                     </div>
                   )}

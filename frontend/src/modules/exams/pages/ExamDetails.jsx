@@ -55,6 +55,16 @@ const ExamDetails = () => {
     return colors[stream] || 'bg-gray-100 text-gray-800';
   };
 
+  const getStreamBorderColor = (stream) => {
+    const borderColors = {
+      'science_pcm': 'border-l-blue-500',
+      'science_pcb': 'border-l-green-500',
+      'commerce': 'border-l-yellow-500',
+      'arts': 'border-l-purple-500'
+    };
+    return borderColors[stream] || 'border-l-gray-500';
+  };
+
   const formatStreamName = (stream) => {
     const names = {
       'science_pcm': 'Science (PCM)',
@@ -263,10 +273,9 @@ const ExamDetails = () => {
                     {exam.streams.map((stream, index) => (
                       <div 
                         key={index}
-                        className={`p-4 rounded-lg border-l-4 border-l-blue-500 ${getStreamBadgeColor(stream)}`}
+                        className={`p-4 rounded-lg border-l-4 ${getStreamBorderColor(stream)} ${getStreamBadgeColor(stream)}`}
                       >
-                        <h4 className="font-semibold mb-1">{formatStreamName(stream)}</h4>
-                        <p className="text-sm opacity-75">Stream qualification required</p>
+                        <h4 className="font-semibold">{formatStreamName(stream)}</h4>
                       </div>
                     ))}
                   </div>
