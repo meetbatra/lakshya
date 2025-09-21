@@ -27,7 +27,14 @@ const GoogleLoginButton = ({ onLoadingChange }) => {
       if (result.success) {
         toast.success(result.message);
         // Add a slight delay to show success before navigation
-        setTimeout(() => navigate('/'), 500);
+        setTimeout(() => {
+          // Check if profile completion is required
+          if (result.requiresProfileCompletion) {
+            navigate('/auth/complete-profile');
+          } else {
+            navigate('/');
+          }
+        }, 500);
       } else {
         toast.error(result.message);
         setIsLoading(false);

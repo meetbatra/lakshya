@@ -77,7 +77,11 @@ export const useAuth = create(
               isAuthenticated: true,
               error: null
             });
-            return { success: true, message: 'Login successful' };
+            return { 
+              success: true, 
+              message: 'Login successful',
+              requiresProfileCompletion: result.requiresProfileCompletion || false
+            };
           } else {
             set({ error: 'Google login failed' });
             return { success: false, message: 'Google login failed' };

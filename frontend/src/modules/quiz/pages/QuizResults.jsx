@@ -382,7 +382,7 @@ ${primaryRecommendation.studyTips}
           
           <Button onClick={handleGoHome} className="flex items-center gap-2">
             <Home className="w-4 h-4" />
-            Go to Dashboard
+            Go Home
           </Button>
         </div>
 

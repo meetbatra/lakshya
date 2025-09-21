@@ -318,8 +318,8 @@ const handleGoogleAuth = async (idToken) => {
       // Generate token and return user data
       const token = generateToken(user._id);
       
-      // Check if profile is complete (has state, class, stream)
-      const isProfileComplete = user.state && user.class && user.stream;
+      // Check if profile is complete (has state, class, and stream if class 12)
+      const isProfileComplete = user.state && user.class && (user.class === '10' || user.stream);
       
       return {
         success: true,
