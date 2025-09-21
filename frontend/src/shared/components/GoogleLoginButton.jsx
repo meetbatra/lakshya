@@ -1,47 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { GoogleLogin } from '@react-oauth/google';
-import { Button } from '../../components/ui/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { useAuth } from '../../modules/user/store/userStore';
-import { authAPI } from '../../modules/user/api/authAPI';
 import { toast } from 'sonner';
 
-const GoogleLoginButton = () => {
+const GoogleLoginButton = ({ onLoadingChange }) => {
   const navigate = useNavigate();
-  const { login } = useAuth();
-  const [loading, setLoading] = useState(false);
+  const { googleLogin } = useAuth();
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Notify parent component of loading state changes
+  useEffect(() => {
+    if (onLoadingChange) {
+      onLoadingChange(isLoading);
+    }
+  }, [isLoading, onLoadingChange]);
 
   const handleGoogleSuccess = async (credentialResponse) => {
-    setLoading(true);
+    setIsLoading(true);
     try {
-      // Use the ID token from Google
-      const response = await authAPI.googleLogin(credentialResponse.credential);
+      const result = await googleLogin(credentialResponse.credential);
       
-      // Ensure we have the correct structure for login
-      const loginData = {
-        user: response.user,
-        token: response.token
-      };
-      
-      // Login the user with response data
-      login(loginData);
-      
-      // Check if profile completion is required
-      if (response.requiresProfileCompletion) {
-        navigate('/auth/complete-profile');
-        toast.info('Please complete your profile to get personalized recommendations');
+      if (result.success) {
+        toast.success(result.message);
+        // Add a slight delay to show success before navigation
+        setTimeout(() => navigate('/'), 500);
       } else {
-        navigate('/');
-        toast.success('Successfully logged in with Google!');
+        toast.error(result.message);
+        setIsLoading(false);
       }
     } catch (error) {
       console.error('Google login error:', error);
-      toast.error(error.message || 'Google login failed. Please try again.');
-    } finally {
-      setLoading(false);
+      toast.error('Failed to sign in with Google. Please try again.');
+      setIsLoading(false);
     }
+    // Don't set loading to false on success - let navigation handle it
   };
 
   const handleGoogleError = () => {
@@ -51,11 +47,15 @@ const GoogleLoginButton = () => {
 
   return (
     <div className="w-full">
-      {loading ? (
-        <Button disabled className="w-full bg-gray-100 text-gray-400 cursor-not-allowed">
-          <FontAwesomeIcon icon={faSpinner} className="animate-spin h-4 w-4 mr-2" />
-          Signing in with Google...
-        </Button>
+      {isLoading ? (
+        <button
+          type="button"
+          className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-gray-300 rounded-lg bg-white text-gray-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled={true}
+        >
+          <FontAwesomeIcon icon={faSpinner} className="h-5 w-5 animate-spin text-blue-600" />
+          <span>Verifying with Google...</span>
+        </button>
       ) : (
         <GoogleLogin
           onSuccess={handleGoogleSuccess}

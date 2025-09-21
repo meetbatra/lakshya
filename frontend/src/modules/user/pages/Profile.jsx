@@ -49,8 +49,13 @@ const Profile = () => {
   }, []);
 
   // Redirect to login if not authenticated
+  useEffect(() => {
+    if (!user) {
+      navigate('/auth/login');
+    }
+  }, [user, navigate]);
+
   if (!user) {
-    navigate('/auth/login');
     return null;
   }
 
@@ -184,7 +189,7 @@ const Profile = () => {
       const response = await authAPI.updateProfile(updateData);
       
       // Update the user in the store
-      login({ user: response.user, token: response.token || user.token });
+      login({ user: response.user, token: response.token });
       
       setIsEditing(false);
       setMessage({ 
@@ -231,9 +236,9 @@ const Profile = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-        <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-white shadow-xl">
+            <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden mx-auto mb-4 sm:mb-6 border-4 border-white shadow-xl">
               {!imageError && avatarUrl ? (
                 <img 
                   src={avatarUrl} 
@@ -244,28 +249,31 @@ const Profile = () => {
                   referrerPolicy="no-referrer"
                 />
               ) : (
-                <div className="h-full w-full bg-blue-600 text-white flex items-center justify-center text-2xl font-bold">
+                <div className="h-full w-full bg-blue-600 text-white flex items-center justify-center text-xl sm:text-2xl font-bold">
                   {getUserInitials()}
                 </div>
               )}
             </div>
-            <h1 className="text-4xl font-bold mb-2">{user.name}</h1>
-            <p className="text-blue-100 text-lg mb-4">{user.email}</p>
-            <div className="flex justify-center gap-2">
-              <Badge className="bg-blue-500 text-white">
-                <FontAwesomeIcon icon={faGraduationCap} className="h-3 w-3 mr-1" />
-                Class {user.class}
-              </Badge>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 px-4">{user.name}</h1>
+            <p className="text-blue-100 text-base sm:text-lg mb-4 px-4 break-all">{user.email}</p>
+            <div className="flex flex-wrap justify-center gap-2 px-4">
+              {isProfileComplete() && (
+                <Badge className="bg-blue-500 text-white text-xs sm:text-sm">
+                  <FontAwesomeIcon icon={faGraduationCap} className="h-3 w-3 mr-1" />
+                  Class {user.class}
+                </Badge>
+              )}
               {user.stream && (
-                <Badge className="bg-indigo-500 text-white">
+                <Badge className="bg-indigo-500 text-white text-xs sm:text-sm">
                   <FontAwesomeIcon icon={faStream} className="h-3 w-3 mr-1" />
-                  {formatStreamName(user.stream)}
+                  <span className="hidden sm:inline">{formatStreamName(user.stream)}</span>
+                  <span className="sm:hidden">{formatStreamName(user.stream).split(' ')[0]}</span>
                 </Badge>
               )}
               {user.field && (
-                <Badge className="bg-purple-500 text-white">
+                <Badge className="bg-purple-500 text-white text-xs sm:text-sm max-w-xs truncate">
                   <FontAwesomeIcon icon={faBullseye} className="h-3 w-3 mr-1" />
-                  {formatFieldName(user.field)}
+                  <span className="truncate">{formatFieldName(user.field)}</span>
                 </Badge>
               )}
             </div>
@@ -291,18 +299,21 @@ const Profile = () => {
         {!isProfileComplete() && (
           <Alert className="mb-6 bg-amber-50 border-amber-200">
             <FontAwesomeIcon icon={faQuestionCircle} className="h-4 w-4 text-amber-600" />
-            <AlertDescription className="text-amber-800 flex items-center justify-between">
-              <div>
-                <span className="font-medium">Complete your profile</span> to get personalized course and college recommendations.
+            <AlertDescription className="text-amber-800">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div>
+                  <span className="font-medium">Complete your profile</span> to get personalized course and college recommendations.
+                </div>
+                <Button 
+                  onClick={handleCompleteProfile}
+                  size="sm"
+                  className="bg-amber-600 hover:bg-amber-700 text-white whitespace-nowrap"
+                >
+                  <FontAwesomeIcon icon={faEdit} className="h-3 w-3 mr-1" />
+                  <span className="hidden sm:inline">Complete Profile</span>
+                  <span className="sm:hidden">Complete</span>
+                </Button>
               </div>
-              <Button 
-                onClick={handleCompleteProfile}
-                size="sm"
-                className="ml-4 bg-amber-600 hover:bg-amber-700 text-white"
-              >
-                <FontAwesomeIcon icon={faEdit} className="h-3 w-3 mr-1" />
-                Complete Profile
-              </Button>
             </AlertDescription>
           </Alert>
         )}
@@ -312,8 +323,8 @@ const Profile = () => {
           <div className="lg:col-span-2">
             <Card className="shadow-lg border-0">
               <CardHeader>
-                <div className="flex items-center justify-between">
-                  <CardTitle className="text-2xl text-gray-900 flex items-center">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                  <CardTitle className="text-xl sm:text-2xl text-gray-900 flex items-center">
                     <FontAwesomeIcon icon={faUser} className="h-5 w-5 mr-2 text-blue-600" />
                     Profile Information
                   </CardTitle>
@@ -322,10 +333,11 @@ const Profile = () => {
                       onClick={handleEdit}
                       variant="outline"
                       size="sm"
-                      className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                      className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white whitespace-nowrap"
                     >
                       <FontAwesomeIcon icon={faEdit} className="h-4 w-4 mr-1" />
-                      Edit Preferences
+                      <span className="hidden sm:inline">Edit Preferences</span>
+                      <span className="sm:hidden">Edit</span>
                     </Button>
                   ) : (
                     <div className="flex gap-2">
@@ -352,14 +364,18 @@ const Profile = () => {
                 </div>
               </CardHeader>
               
-              <CardContent className="p-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <CardContent className="p-4 sm:p-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                   <div className="space-y-1">
                     <dt className="text-sm font-medium text-gray-500 flex items-center">
                       <FontAwesomeIcon icon={faMapMarkerAlt} className="h-4 w-4 mr-2 text-gray-400" />
                       State
                     </dt>
-                    <dd className="text-lg text-gray-900 font-medium">{user.state}</dd>
+                    <dd className="text-base sm:text-lg font-medium">
+                      <span className={user.state ? 'text-gray-900' : 'text-gray-500'}>
+                        {user.state || 'Not selected'}
+                      </span>
+                    </dd>
                   </div>
 
                   <div className="space-y-1">
@@ -367,7 +383,7 @@ const Profile = () => {
                       <FontAwesomeIcon icon={faCalendarAlt} className="h-4 w-4 mr-2 text-gray-400" />
                       Member Since
                     </dt>
-                    <dd className="text-lg text-gray-900 font-medium">
+                    <dd className="text-base sm:text-lg text-gray-900 font-medium">
                       {user.createdAt ? new Date(user.createdAt).toLocaleDateString() : 'Recently'}
                     </dd>
                   </div>
@@ -376,11 +392,14 @@ const Profile = () => {
                   <div className="space-y-2">
                     <dt className="text-sm font-medium text-gray-500 flex items-center">
                       <FontAwesomeIcon icon={faStream} className="h-4 w-4 mr-2 text-gray-400" />
-                      Stream {user.class === '10' ? '(Planning to Choose)' : '(Currently Studying)'}
+                      <span>Stream </span>
+                      <span className="hidden sm:inline">{user.class === '10' ? '(Planning to Choose)' : '(Currently Studying)'}</span>
                     </dt>
                     {!isEditing ? (
-                      <dd className="text-lg text-gray-900 font-medium">
-                        {user.stream ? formatStreamName(user.stream) : 'Not specified'}
+                      <dd className="text-base sm:text-lg font-medium">
+                        <span className={user.stream ? 'text-gray-900' : 'text-gray-500'}>
+                          {user.stream ? formatStreamName(user.stream) : 'Not selected'}
+                        </span>
                       </dd>
                     ) : (
                       <Select value={editData.stream} onValueChange={handleStreamChange}>
@@ -406,8 +425,10 @@ const Profile = () => {
                         Field of Interest
                       </dt>
                       {!isEditing ? (
-                        <dd className="text-lg text-gray-900 font-medium">
-                          {user.field ? formatFieldName(user.field) : 'Not specified'}
+                        <dd className="text-base sm:text-lg font-medium">
+                          <span className={user.field ? 'text-gray-900' : 'text-gray-500'}>
+                            {user.field ? formatFieldName(user.field) : 'Not selected'}
+                          </span>
                         </dd>
                       ) : (
                         <Select 
@@ -432,8 +453,8 @@ const Profile = () => {
                 </div>
 
                 {isEditing && (
-                  <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                    <p className="text-sm text-blue-800">
+                  <div className="mt-6 p-3 sm:p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                    <p className="text-xs sm:text-sm text-blue-800">
                       <FontAwesomeIcon icon={faCheckCircle} className="h-4 w-4 mr-2" />
                       Updating your preferences will automatically apply filters when you visit the courses page, 
                       showing you the most relevant content based on your academic profile.
@@ -451,10 +472,10 @@ const Profile = () => {
               <CardHeader>
                 <CardTitle className="text-xl text-gray-900">Quick Actions</CardTitle>
               </CardHeader>
-              <CardContent className="p-6 space-y-4">
+              <CardContent className="p-4 sm:p-6 space-y-3 sm:space-y-4">
                 <Button 
                   onClick={() => navigate('/courses')}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm sm:text-base"
                 >
                   <FontAwesomeIcon icon={faBook} className="h-4 w-4 mr-2" />
                   Explore Courses
@@ -463,7 +484,7 @@ const Profile = () => {
                 <Button 
                   onClick={() => navigate('/colleges')}
                   variant="outline"
-                  className="w-full border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                  className="w-full border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white text-sm sm:text-base"
                 >
                   <FontAwesomeIcon icon={faUniversity} className="h-4 w-4 mr-2" />
                   Browse Colleges
@@ -472,17 +493,17 @@ const Profile = () => {
                 <Button 
                   onClick={handleRetakeQuiz}
                   variant="outline"
-                  className="w-full border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white"
+                  className="w-full border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white text-sm sm:text-base"
                 >
                   <FontAwesomeIcon icon={faQuestionCircle} className="h-4 w-4 mr-2" />
                   Take Career Quiz
                 </Button>
                 
-                <div className="pt-4 border-t">
+                <div className="pt-3 sm:pt-4 border-t">
                   <Button 
                     onClick={handleLogout}
                     variant="destructive"
-                    className="w-full"
+                    className="w-full text-sm sm:text-base"
                   >
                     <FontAwesomeIcon icon={faSignOutAlt} className="h-4 w-4 mr-2" />
                     Logout
@@ -496,11 +517,11 @@ const Profile = () => {
               <CardHeader>
                 <CardTitle className="text-xl text-gray-900">Your Journey</CardTitle>
               </CardHeader>
-              <CardContent className="p-6">
-                <div className="space-y-4">
+              <CardContent className="p-4 sm:p-6">
+                <div className="space-y-3 sm:space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-600">Profile Completion</span>
-                    <span className="text-sm font-medium text-gray-900">
+                    <span className="text-xs sm:text-sm text-gray-600">Profile Completion</span>
+                    <span className="text-xs sm:text-sm font-medium text-gray-900">
                       {user.stream && (user.class === '10' || user.field) ? '100%' : user.stream ? '75%' : '50%'}
                     </span>
                   </div>
@@ -513,25 +534,25 @@ const Profile = () => {
                     ></div>
                   </div>
                   
-                  <div className="pt-4 space-y-2">
-                    <div className="flex items-center text-sm">
-                      <FontAwesomeIcon icon={faCheckCircle} className="h-4 w-4 mr-2 text-green-500" />
+                  <div className="pt-3 sm:pt-4 space-y-2">
+                    <div className="flex items-center text-xs sm:text-sm">
+                      <FontAwesomeIcon icon={faCheckCircle} className="h-4 w-4 mr-2 text-green-500 flex-shrink-0" />
                       <span className="text-gray-600">Basic profile created</span>
                     </div>
-                    <div className="flex items-center text-sm">
+                    <div className="flex items-center text-xs sm:text-sm">
                       <FontAwesomeIcon 
                         icon={user.stream ? faCheckCircle : faTimes} 
-                        className={`h-4 w-4 mr-2 ${user.stream ? 'text-green-500' : 'text-gray-300'}`} 
+                        className={`h-4 w-4 mr-2 flex-shrink-0 ${user.stream ? 'text-green-500' : 'text-gray-300'}`} 
                       />
                       <span className={user.stream ? 'text-gray-600' : 'text-gray-400'}>
                         Stream preference set
                       </span>
                     </div>
                     {user.class === '12' && (
-                      <div className="flex items-center text-sm">
+                      <div className="flex items-center text-xs sm:text-sm">
                         <FontAwesomeIcon 
                           icon={user.field ? faCheckCircle : faTimes} 
-                          className={`h-4 w-4 mr-2 ${user.field ? 'text-green-500' : 'text-gray-300'}`} 
+                          className={`h-4 w-4 mr-2 flex-shrink-0 ${user.field ? 'text-green-500' : 'text-gray-300'}`} 
                         />
                         <span className={user.field ? 'text-gray-600' : 'text-gray-400'}>
                           Field of interest selected

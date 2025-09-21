@@ -18,6 +18,7 @@ const SignUp = () => {
   
   // Local state for error handling (not persisted in Zustand)
   const [localError, setLocalError] = useState(null);
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
   
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -152,7 +153,17 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 relative">
+      {/* Loading overlay during Google OAuth */}
+      {isGoogleLoading && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 flex items-center space-x-3">
+            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
+            <span className="text-gray-700">Signing up with Google...</span>
+          </div>
+        </div>
+      )}
+      
       <div className="flex items-center justify-center min-h-[calc(100vh-5rem)] px-4 sm:px-6 lg:px-8">
         <Card className="w-full max-w-2xl">
           <CardHeader className="text-center">
@@ -183,6 +194,7 @@ const SignUp = () => {
                       placeholder="Enter your full name"
                       className={errors.name ? "border-red-500" : ""}
                       {...register("name")}
+                      disabled={isGoogleLoading}
                     />
                     {errors.name && (
                       <p className="text-sm text-red-600">{errors.name.message}</p>
@@ -197,6 +209,7 @@ const SignUp = () => {
                       placeholder="Enter your email"
                       className={errors.email ? "border-red-500" : ""}
                       {...register("email")}
+                      disabled={isGoogleLoading}
                     />
                     {errors.email && (
                       <p className="text-sm text-red-600">{errors.email.message}</p>
@@ -325,7 +338,7 @@ const SignUp = () => {
                   </div>
                 )}
 
-                <Button type="submit" className="w-full" disabled={isLoading}>
+                <Button type="submit" className="w-full" disabled={isLoading || isGoogleLoading}>
                   {isLoading ? 'Creating account...' : 'Create Account'}
                 </Button>
 
@@ -339,7 +352,7 @@ const SignUp = () => {
                     </div>
                   </div>
                   <div className="mt-6">
-                    <GoogleLoginButton />
+                    <GoogleLoginButton onLoadingChange={setIsGoogleLoading} />
                   </div>
                 </div>
               </div>

@@ -13,9 +13,15 @@ const api = axios.create({
 // Request interceptor to add token to requests
 api.interceptors.request.use(
   (config) => {
-    // Get token from Zustand persisted store
-    const authStore = JSON.parse(localStorage.getItem('auth-store') || '{}');
-    const token = authStore.state?.token;
+    // Try to get token from localStorage directly
+    let token = null;
+    try {
+      const authStore = JSON.parse(localStorage.getItem('auth-store') || '{}');
+      token = authStore.state?.token;
+    } catch (error) {
+      console.warn('Could not get token from localStorage:', error);
+    }
+    
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }

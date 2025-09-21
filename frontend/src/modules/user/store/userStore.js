@@ -66,6 +66,29 @@ export const useAuth = create(
 
       clearError: () => set({ error: null }),
 
+      // Google OAuth login
+      googleLogin: async (credential) => {
+        try {
+          const result = await authAPI.googleLogin(credential);
+          if (result.user && result.token) {
+            set({
+              user: result.user,
+              token: result.token,
+              isAuthenticated: true,
+              error: null
+            });
+            return { success: true, message: 'Login successful' };
+          } else {
+            set({ error: 'Google login failed' });
+            return { success: false, message: 'Google login failed' };
+          }
+        } catch (error) {
+          console.error('Google login error:', error);
+          set({ error: error.message });
+          return { success: false, message: error.message };
+        }
+      },
+
       // Helper functions
       getUserInitials: () => {
         const { user } = get();

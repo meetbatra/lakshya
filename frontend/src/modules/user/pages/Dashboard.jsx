@@ -211,41 +211,6 @@ const Dashboard = () => {
     }
   }, [isAuthenticated, token, fetchBookmarks]);
 
-  // Set active tab to the section with the most bookmarks (only on initial load)
-  useEffect(() => {
-    if (bookmarks && Object.keys(bookmarks).length > 0 && isInitialLoad) {
-      const counts = {
-        courses: bookmarks.courses?.length || 0,
-        colleges: bookmarks.colleges?.length || 0,
-        exams: bookmarks.exams?.length || 0
-      };
-      const maxSection = Object.keys(counts).reduce((a, b) => counts[a] > counts[b] ? a : b);
-      setActiveTab(maxSection);
-    }
-  }, [bookmarks, isInitialLoad]);
-
-  // Switch to a tab with bookmarks if current tab becomes empty (but not on initial load)
-  useEffect(() => {
-    if (bookmarks && !isInitialLoad) {
-      const currentTabCount = bookmarks[activeTab]?.length || 0;
-      
-      // If current tab is empty, switch to a tab that has bookmarks
-      if (currentTabCount === 0) {
-        const counts = {
-          courses: bookmarks.courses?.length || 0,
-          colleges: bookmarks.colleges?.length || 0,
-          exams: bookmarks.exams?.length || 0
-        };
-        
-        // Find a tab with bookmarks
-        const tabWithBookmarks = Object.keys(counts).find(tab => counts[tab] > 0);
-        if (tabWithBookmarks) {
-          setActiveTab(tabWithBookmarks);
-        }
-      }
-    }
-  }, [bookmarks, activeTab, isInitialLoad]);
-
   // Show loading state only on initial load
   if (isInitialLoad && isLoading) {
     return (
@@ -259,8 +224,13 @@ const Dashboard = () => {
   }
 
   // Redirect to login if not authenticated
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate('/auth/login');
+    }
+  }, [isAuthenticated, navigate]);
+
   if (!isAuthenticated) {
-    navigate('/auth/login');
     return null;
   }
 
@@ -344,7 +314,7 @@ const Dashboard = () => {
               {displayItems.map((item) => (
                 <div 
                   key={item._id} 
-                  className="border rounded-lg p-4 transition-shadow bg-white hover:shadow-md"
+                  className="border rounded-lg p-4 bg-white"
                 >
                   <div className="flex justify-between items-start mb-2">
                     <h4 className="font-semibold text-gray-900 text-sm leading-tight">
@@ -573,7 +543,7 @@ const Dashboard = () => {
 
         {/* Bookmark Summary Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <Card className="cursor-pointer hover:shadow-md transition-shadow" onClick={() => setActiveTab('courses')}>
+          <Card className="cursor-pointer" onClick={() => setActiveTab('courses')}>
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -585,7 +555,7 @@ const Dashboard = () => {
             </CardContent>
           </Card>
           
-          <Card className="cursor-pointer hover:shadow-md transition-shadow" onClick={() => setActiveTab('colleges')}>
+          <Card className="cursor-pointer" onClick={() => setActiveTab('colleges')}>
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -597,7 +567,7 @@ const Dashboard = () => {
             </CardContent>
           </Card>
           
-          <Card className="cursor-pointer hover:shadow-md transition-shadow" onClick={() => setActiveTab('exams')}>
+          <Card className="cursor-pointer" onClick={() => setActiveTab('exams')}>
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div>
@@ -639,7 +609,7 @@ const Dashboard = () => {
                 <BookmarkTabSection
                   items={bookmarks.courses || []}
                   type="courses"
-                  emptyMessage="No bookmarked courses yet. Start exploring to find courses that interest you!"
+                  emptyMessage="Bookmarked courses will show here"
                   onViewItem={handleViewCourse}
                 />
               </TabsContent>
@@ -648,7 +618,7 @@ const Dashboard = () => {
                 <BookmarkTabSection
                   items={bookmarks.colleges || []}
                   type="colleges"
-                  emptyMessage="No bookmarked colleges yet. Browse colleges to bookmark your favorites!"
+                  emptyMessage="Bookmarked colleges will show here"
                   onViewItem={handleViewCollege}
                 />
               </TabsContent>
@@ -657,7 +627,7 @@ const Dashboard = () => {
                 <BookmarkTabSection
                   items={bookmarks.exams || []}
                   type="exams"
-                  emptyMessage="No bookmarked exams yet. Check out available exams to stay updated!"
+                  emptyMessage="Bookmarked exams will show here"
                   onViewItem={handleViewExam}
                 />
               </TabsContent>

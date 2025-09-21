@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -14,6 +14,7 @@ import GoogleLoginButton from '../../../shared/components/GoogleLoginButton';
 const Login = () => {
   const navigate = useNavigate();
   const { login, setLoading, setError, clearError, isLoading, error } = useAuth();
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
   
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -44,7 +45,17 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 relative">
+      {/* Loading overlay during Google OAuth */}
+      {isGoogleLoading && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 flex items-center space-x-3">
+            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
+            <span className="text-gray-700">Signing in with Google...</span>
+          </div>
+        </div>
+      )}
+      
       <div className="flex items-center justify-center min-h-[calc(100vh-5rem)] px-4 sm:px-6 lg:px-8">
         <Card className="w-full max-w-md">
           <CardHeader className="text-center">
@@ -59,7 +70,7 @@ const Login = () => {
             </CardDescription>
           </CardHeader>
           <CardContent>
-                        {error && (
+            {error && (
               <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
                 <p className="text-red-600 text-sm">{error}</p>
               </div>
@@ -74,6 +85,7 @@ const Login = () => {
                     placeholder="Enter your email"
                     className={errors.email ? "border-red-500" : ""}
                     {...register("email")}
+                    disabled={isGoogleLoading}
                   />
                   {errors.email && (
                     <p className="text-sm text-red-600">{errors.email.message}</p>
@@ -87,6 +99,7 @@ const Login = () => {
                     placeholder="Enter your password"
                     className={errors.password ? "border-red-500" : ""}
                     {...register("password")}
+                    disabled={isGoogleLoading}
                   />
                   {errors.password && (
                     <p className="text-sm text-red-600">{errors.password.message}</p>
@@ -94,7 +107,11 @@ const Login = () => {
                 </div>
               </div>
 
-              <Button type="submit" className="w-full cursor-pointer" disabled={isLoading}>
+              <Button 
+                type="submit" 
+                className="w-full cursor-pointer" 
+                disabled={isLoading || isGoogleLoading}
+              >
                 {isLoading ? 'Signing in...' : 'Sign in'}
               </Button>
             </form>
@@ -109,7 +126,7 @@ const Login = () => {
                 </div>
               </div>
               <div className="mt-6">
-                <GoogleLoginButton />
+                <GoogleLoginButton onLoadingChange={setIsGoogleLoading} />
               </div>
             </div>
           </CardContent>

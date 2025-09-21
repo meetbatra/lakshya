@@ -246,7 +246,10 @@ const updateUserProfile = async (userId, updateData) => {
     return {
       success: true,
       message: 'Profile updated successfully',
-      data: { user }
+      data: { 
+        user,
+        token: generateToken(user._id) // Generate a fresh token after profile update
+      }
     };
 
   } catch (error) {
@@ -332,6 +335,7 @@ const handleGoogleAuth = async (idToken) => {
             state: user.state,
             stream: user.stream,
             field: user.field,
+            createdAt: user.createdAt,
             isProfileComplete
           },
           token,
@@ -369,6 +373,7 @@ const handleGoogleAuth = async (idToken) => {
             state: newUser.state,
             stream: newUser.stream,
             field: newUser.field,
+            createdAt: newUser.createdAt,
             isProfileComplete: false
           },
           token,

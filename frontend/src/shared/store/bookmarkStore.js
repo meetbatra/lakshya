@@ -7,14 +7,14 @@ const API_BASE_URL = 'http://localhost:8080/api';
 // Helper function to get auth token
 const getAuthToken = () => {
   try {
-    // First try to get from localStorage directly
-    const authStore = JSON.parse(localStorage.getItem('auth-store') || '{}');
-    let token = authStore.state?.token;
+    // First try to get from useAuth store (current state)
+    const authState = useAuth.getState();
+    let token = authState.token;
     
-    // If no token found, try to get from useAuth store
+    // If no token found, try to get from localStorage as fallback
     if (!token) {
-      const authState = useAuth.getState();
-      token = authState.token;
+      const authStore = JSON.parse(localStorage.getItem('auth-store') || '{}');
+      token = authStore.state?.token;
     }
     
     return token;
@@ -89,24 +89,13 @@ const useBookmarkStore = create((set, get) => ({
 
   // Remove bookmark
   removeBookmark: async (type, itemId, token = null) => {
-    // Optimistic update - remove from UI immediately
-    const currentState = get();
-    const optimisticBookmarks = { ...currentState.bookmarks };
-    optimisticBookmarks[type] = optimisticBookmarks[type].filter(item => item._id !== itemId);
-    
-    set({ 
-      bookmarks: optimisticBookmarks,
-      loading: true, 
-      error: null 
-    });
+    set({ loading: true, error: null });
 
     try {
       const authToken = token || getAuthToken();
       
       if (!authToken) {
-        // Revert optimistic update on auth failure
         set({ 
-          bookmarks: currentState.bookmarks,
           error: 'Authentication required',
           loading: false 
         });
@@ -131,19 +120,15 @@ const useBookmarkStore = create((set, get) => ({
         });
         return { success: true };
       } else {
-        // Revert optimistic update on failure
         set({ 
-          bookmarks: currentState.bookmarks,
           error: response.data.message || 'Failed to remove bookmark',
           loading: false 
         });
         return { success: false, message: response.data.message };
       }
     } catch (error) {
-      // Revert optimistic update on error
       const errorMessage = error.response?.data?.message || 'Failed to remove bookmark';
       set({ 
-        bookmarks: currentState.bookmarks,
         error: errorMessage,
         loading: false 
       });
