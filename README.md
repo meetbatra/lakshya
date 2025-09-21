@@ -1,7 +1,5 @@
 # 🎯 Lakshya - AI-Powered Career Guidance Platform
 
-![Lakshya Logo](frontend/src/assets/lakshya-logo.png)
-
 **Lakshya** is a comprehensive career guidance platform that combines interactive assessments, AI-powered recommendations, and extensive educational resource discovery to help students make informed decisions about their academic and career paths.
 
 ## 🌟 Overview
