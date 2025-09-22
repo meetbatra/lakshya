@@ -13,8 +13,10 @@ import GoogleLoginButton from '../../../shared/components/GoogleLoginButton';
 
 const Login = () => {
   const navigate = useNavigate();
-  const { login, setLoading, setError, clearError, isLoading, error } = useAuth();
+  const { login } = useAuth();
   const [isGoogleLoading, setIsGoogleLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [localError, setLocalError] = useState(null);
   
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -29,8 +31,8 @@ const Login = () => {
   });
 
   const onSubmit = async (data) => {
-    setLoading(true);
-    clearError();
+    setIsLoading(true);
+    setLocalError(null); // Clear local error
 
     try {
       const response = await authAPI.login(data);
@@ -38,9 +40,9 @@ const Login = () => {
       login(response); // Now expects { user, token }
       navigate('/'); // Redirect to home page after successful login
     } catch (error) {
-      setError(error.message);
+      setLocalError(error.message);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
@@ -70,9 +72,9 @@ const Login = () => {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            {error && (
-              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded">
-                <p className="text-red-600 text-sm">{error}</p>
+            {localError && (
+              <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded mb-4">
+                <p className="text-red-600 text-sm">{localError}</p>
               </div>
             )}
             <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
@@ -86,6 +88,10 @@ const Login = () => {
                     className={errors.email ? "border-red-500" : ""}
                     {...register("email")}
                     disabled={isGoogleLoading}
+                    onChange={(e) => {
+                      register("email").onChange(e);
+                      if (localError) setLocalError(null); // Clear error when user types
+                    }}
                   />
                   {errors.email && (
                     <p className="text-sm text-red-600">{errors.email.message}</p>
@@ -100,6 +106,10 @@ const Login = () => {
                     className={errors.password ? "border-red-500" : ""}
                     {...register("password")}
                     disabled={isGoogleLoading}
+                    onChange={(e) => {
+                      register("password").onChange(e);
+                      if (localError) setLocalError(null); // Clear error when user types
+                    }}
                   />
                   {errors.password && (
                     <p className="text-sm text-red-600">{errors.password.message}</p>

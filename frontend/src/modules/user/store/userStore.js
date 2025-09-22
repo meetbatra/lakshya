@@ -9,14 +9,12 @@ export const useAuth = create(
       token: null,
       isAuthenticated: false,
       isLoading: false,
-      error: null,
 
       login: ({ user, token }) => {
         set({
           user,
           token,
-          isAuthenticated: true,
-          error: null
+          isAuthenticated: true
         });
       },
 
@@ -25,8 +23,7 @@ export const useAuth = create(
         set({
           user: null,
           token: null,
-          isAuthenticated: false,
-          error: null
+          isAuthenticated: false
         });
         
         // Clear course filters from courses store
@@ -62,10 +59,6 @@ export const useAuth = create(
 
       setLoading: (loading) => set({ isLoading: loading }),
 
-      setError: (error) => set({ error }),
-
-      clearError: () => set({ error: null }),
-
       // Google OAuth login
       googleLogin: async (credential) => {
         try {
@@ -74,8 +67,7 @@ export const useAuth = create(
             set({
               user: result.user,
               token: result.token,
-              isAuthenticated: true,
-              error: null
+              isAuthenticated: true
             });
             return { 
               success: true, 
@@ -83,12 +75,10 @@ export const useAuth = create(
               requiresProfileCompletion: result.requiresProfileCompletion || false
             };
           } else {
-            set({ error: 'Google login failed' });
             return { success: false, message: 'Google login failed' };
           }
         } catch (error) {
           console.error('Google login error:', error);
-          set({ error: error.message });
           return { success: false, message: error.message };
         }
       },
