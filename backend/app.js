@@ -17,15 +17,7 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors({
-  origin: ['http://localhost:5173', 'https://lakshya-six.vercel.app'],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  // Add headers for Google OAuth
-  exposedHeaders: ['Access-Control-Allow-Origin'],
-  optionsSuccessStatus: 200
-}));
+app.use(cors());
 
 // Add security headers for Google OAuth
 app.use((req, res, next) => {
