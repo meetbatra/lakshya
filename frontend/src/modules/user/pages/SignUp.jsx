@@ -154,7 +154,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 relative">
+    <div className="h-full bg-gray-50 relative">
       {/* Loading overlay during Google OAuth */}
       {isGoogleLoading && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">

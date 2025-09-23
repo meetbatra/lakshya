@@ -7,7 +7,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="bg-white">
+    <div className="h-full bg-white">
       <HeroSection />
     </div>
   );

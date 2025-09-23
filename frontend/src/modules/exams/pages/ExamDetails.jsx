@@ -77,7 +77,7 @@ const ExamDetails = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="h-full bg-gray-50">
         <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center items-center py-20">
             <FontAwesomeIcon icon={faSpinner} className="h-6 w-6 text-blue-600 animate-spin mr-3" />
@@ -90,7 +90,7 @@ const ExamDetails = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="h-full bg-gray-50">
         <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
           <Button 
             onClick={handleBack} 
@@ -111,7 +111,7 @@ const ExamDetails = () => {
 
   if (!selectedExam) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="h-full bg-gray-50">
         <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
           <Button 
             onClick={handleBack} 
@@ -135,7 +135,7 @@ const ExamDetails = () => {
   const exam = selectedExam;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="h-full bg-gray-50">
       {/* Header Section */}
       <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

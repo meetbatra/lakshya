@@ -105,7 +105,7 @@ const QuizStart = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="h-full bg-gray-50">
         <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
           {/* Loading State */}
           <div className="flex justify-center items-center py-20">
@@ -173,7 +173,7 @@ const QuizStart = () => {
     }
 
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="h-full bg-gray-50 flex items-center justify-center">
         <Card className="w-full max-w-md">
           <CardHeader>
             <CardTitle>No Quiz Available</CardTitle>
@@ -192,7 +192,7 @@ const QuizStart = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="h-full bg-gray-50">
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

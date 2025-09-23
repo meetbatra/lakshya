@@ -47,7 +47,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 relative">
+    <div className="h-full bg-gray-50 relative">
       {/* Loading overlay during Google OAuth */}
       {isGoogleLoading && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -58,7 +58,7 @@ const Login = () => {
         </div>
       )}
       
-      <div className="flex items-center justify-center min-h-[calc(100vh-5rem)] px-4 sm:px-6 lg:px-8">
+      <div className="flex items-center justify-center h-full px-4 sm:px-6 lg:px-8">
         <Card className="w-full max-w-md">
           <CardHeader className="text-center">
             <CardTitle className="text-3xl font-extrabold text-gray-900">

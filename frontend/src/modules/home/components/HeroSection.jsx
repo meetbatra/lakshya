@@ -35,10 +35,10 @@ const HeroSection = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100">
+    <div className="h-full bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-100">
       {/* Hero Section */}
-      <section className="py-15 md:py-0 min-h-[90vh] flex items-center">
-        <div className="max-w-7xl mx-auto px-6">
+      <div className="h-full flex items-center py-8 md:py-0">
+        <div className="max-w-7xl mx-auto px-6 w-full">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             {/* Left Content */}
             <div className="max-w-2xl">
@@ -109,7 +109,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 };

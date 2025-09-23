@@ -58,7 +58,7 @@ const CollegeDetails = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="h-full bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <FontAwesomeIcon icon={faSpinner} className="h-8 w-8 text-blue-600 animate-spin mb-4" />
           <p className="text-gray-600">Loading college details...</p>
@@ -69,7 +69,7 @@ const CollegeDetails = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-50 py-8 px-4">
+      <div className="h-full bg-gray-50 py-8 px-4">
         <div className="max-w-4xl mx-auto">
           <Button 
             onClick={handleBack} 
@@ -90,7 +90,7 @@ const CollegeDetails = () => {
 
   if (!selectedCollege) {
     return (
-      <div className="min-h-screen bg-gray-50 py-8 px-4">
+      <div className="h-full bg-gray-50 py-8 px-4">
         <div className="max-w-4xl mx-auto">
           <Button 
             onClick={handleBack} 
@@ -114,7 +114,7 @@ const CollegeDetails = () => {
   const college = selectedCollege;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="h-full bg-gray-50">
       {/* Header Section */}
       <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
