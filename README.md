@@ -7,14 +7,14 @@
 Lakshya addresses the critical challenge of career confusion among students by providing:
 - **Personalized Career Assessments** for different educational streams
 - **AI-Powered Recommendations** using Google Gemini AI
-- **Comprehensive College & Course Database** with 3000+ institutions
+- **Comprehensive Educational Database** with 16 courses, 65 colleges, and 22 entrance exams
 - **Interactive User Experience** with modern, responsive design
 - **Secure Authentication** with Google OAuth integration
 
 ## 🚀 Live Demo
 
-- **Frontend**: [http://localhost:5173](http://localhost:5173)
-- **Backend API**: [http://localhost:8080/api](http://localhost:8080/api)
+- **Frontend**: [https://lakshya-six.vercel.app](https://lakshya-six.vercel.app)
+- **Backend API**: [https://frightened-deer-meetbatra-f54f6301.koyeb.app/api](https://frightened-deer-meetbatra-f54f6301.koyeb.app/api)
 
 ## 📋 Table of Contents
 
@@ -37,9 +37,9 @@ Lakshya addresses the critical challenge of career confusion among students by p
 - **Interactive Quiz Interface**: Engaging UI with progress tracking and detailed explanations
 
 ### 🏛️ **Educational Resource Discovery**
-- **College Explorer**: Browse 3000+ colleges with advanced filtering
-- **Course Catalog**: Comprehensive course database with detailed information
-- **Exam Information**: Entrance exam details and preparation resources
+- **College Explorer**: Browse 65 colleges with advanced filtering
+- **Course Catalog**: Comprehensive database with 16 courses and detailed information
+- **Exam Information**: Details for 22 entrance exams and preparation resources
 - **Smart Search**: AI-powered search with filters by location, fees, ratings, and more
 
 ### 👤 **User Management**
@@ -222,8 +222,11 @@ Lakshya/
 
    Create `.env` file in frontend directory:
    ```env
-   # API Configuration
+   # API Configuration (Development)
    VITE_API_URL=http://localhost:8080/api
+   
+   # API Configuration (Production)
+   # VITE_API_URL=https://frightened-deer-meetbatra-f54f6301.koyeb.app/api
    
    # Google OAuth
    VITE_GOOGLE_CLIENT_ID=your-google-client-id
@@ -250,8 +253,10 @@ Lakshya/
    ```
 
 6. **Access the Application**
-   - Frontend: [http://localhost:5173](http://localhost:5173)
-   - Backend API: [http://localhost:8080/api](http://localhost:8080/api)
+   - **Development Frontend**: [http://localhost:5173](http://localhost:5173)
+   - **Development Backend API**: [http://localhost:8080/api](http://localhost:8080/api)
+   - **Production Frontend**: [https://lakshya-six.vercel.app](https://lakshya-six.vercel.app)
+   - **Production Backend API**: [https://frightened-deer-meetbatra-f54f6301.koyeb.app/api](https://frightened-deer-meetbatra-f54f6301.koyeb.app/api)
 
 ## 📚 API Documentation
 
@@ -486,6 +491,11 @@ const getPersonalizedRecommendations = async (userProfile, quizResults) => {
 
 ## 🚀 Deployment
 
+### **Current Production Deployment**
+- **Frontend**: Deployed on [Vercel](https://vercel.com) - [https://lakshya-six.vercel.app](https://lakshya-six.vercel.app)
+- **Backend**: Deployed on [Koyeb](https://koyeb.com) - [https://frightened-deer-meetbatra-f54f6301.koyeb.app](https://frightened-deer-meetbatra-f54f6301.koyeb.app)
+- **Database**: MongoDB Atlas (Cloud)
+
 ### **Frontend Deployment**
 ```bash
 cd frontend
@@ -509,16 +519,16 @@ NODE_ENV=production
 ## 📈 Performance Optimizations
 
 ### **Frontend**
-- **Code Splitting**: Lazy loading of route components
-- **Image Optimization**: Optimized images and lazy loading
-- **Bundle Size**: Tree shaking and dynamic imports
-- **Caching**: Service worker for offline functionality
+- **Vite Build Optimization**: Fast build tool with optimized bundling
+- **Component Architecture**: Modular design for better code splitting potential
+- **Efficient State Management**: Zustand for lightweight state management
+- **Optimized Rendering**: React 18 with modern hooks and patterns
 
 ### **Backend**
-- **Database Indexing**: Optimized queries with proper indexes
-- **Response Compression**: Gzip compression for API responses
-- **Rate Limiting**: API rate limiting to prevent abuse
-- **Caching**: Redis for frequently accessed data
+- **MongoDB Indexing**: Database queries optimized with proper field indexing
+- **Efficient API Design**: RESTful endpoints with focused data responses
+- **JWT Authentication**: Stateless authentication for scalability
+- **Environment-based Configuration**: Optimized settings for development and production
 
 ## 🧪 Testing
 
@@ -553,13 +563,12 @@ npm run test
 - Ensure all tests pass before submitting PR
 - Update documentation for new features
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 👥 Team
 
 - **Meet Batra** - Full Stack Developer - [GitHub](https://github.com/meetbatra)
+- **Pranav Gupta** - Developer - [GitHub](https://github.com/pranavgupta6)
+- **Shashwat** - Developer - [GitHub](https://github.com/Shashwat1306)
+- **Lakshya** - Developer - [GitHub](https://github.com/LAKSHYAA005)
 
 ## 🙏 Acknowledgments
 
@@ -571,7 +580,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-For support, email your-email@example.com or open an issue on GitHub.
+For support, contact **Meet Batra** at [GitHub](https://github.com/meetbatra) or open an issue on GitHub.
 
 ---
 
@@ -586,9 +595,11 @@ For support, email your-email@example.com or open an issue on GitHub.
 - **Components**: 50+ React components
 - **API Endpoints**: 25+ RESTful endpoints
 - **Database Models**: 5 comprehensive schemas
-- **College Database**: 3,000+ institutions
+- **College Database**: 65 colleges
 - **Quiz Questions**: 100+ assessment questions
 - **Supported Streams**: PCM, PCB, Commerce, Arts
+- **Course Database**: 16 courses  
+- **Exam Database**: 22 entrance exams
 - **Authentication**: Google OAuth + JWT
 - **AI Integration**: Google Gemini AI
 - **Responsive Design**: Mobile-first approach
