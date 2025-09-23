@@ -4,12 +4,18 @@ import { Button } from '../../../components/ui/button';
 import { Card, CardContent } from '../../../components/ui/card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBullseye, faBrain, faUniversity, faStar, faArrowRight, faUsers, faAward, faChartLine, faRocket } from '@fortawesome/free-solid-svg-icons';
+import { useAuth } from '../../user/store/userStore';
 
 const HeroSection = () => {
   const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
 
   const handleStartJourney = () => {
-    navigate('/quiz/start');
+    if (isAuthenticated) {
+      navigate('/quiz/start');
+    } else {
+      navigate('/auth/login');
+    }
   };
 
   const handleLearnMore = () => {
