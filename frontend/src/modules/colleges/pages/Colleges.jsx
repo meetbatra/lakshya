@@ -124,10 +124,10 @@ const Colleges = () => {
         {/* Auto-Filter Message */}
         {autoFiltersApplied && (
           <Alert className="mb-6 bg-blue-50 border-blue-200">
-            <AlertDescription className="flex items-center justify-between">
+            <AlertDescription className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
               <div className="flex items-center">
-                <FontAwesomeIcon icon={faMapMarkerAlt} className="h-4 w-4 mr-2 text-blue-600" />
-                <span className="text-blue-800">
+                <FontAwesomeIcon icon={faMapMarkerAlt} className="h-4 w-4 mr-2 text-blue-600 flex-shrink-0" />
+                <span className="text-blue-800 text-sm">
                   Colleges are automatically filtered according to your state ({filters.state})
                 </span>
               </div>
@@ -135,7 +135,7 @@ const Colleges = () => {
                 variant="ghost"
                 size="sm"
                 onClick={clearAllFilters}
-                className="text-blue-600 hover:text-blue-800 hover:bg-blue-100 ml-4"
+                className="text-blue-600 hover:text-blue-800 hover:bg-blue-100 self-start sm:self-auto"
               >
                 <FontAwesomeIcon icon={faTimes} className="h-4 w-4 mr-1" />
                 Clear Filter
