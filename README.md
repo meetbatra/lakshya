@@ -347,55 +347,62 @@ GET  /api/bookmarks/counts       # Get bookmark counts
 ### College Model
 ```javascript
 {
-  name: String,
-  type: String,
-  state: String,
-  city: String,
-  established: Number,
-  affiliation: String,
-  courses: [String],
-  fees: {
-    undergraduate: Number,
-    postgraduate: Number
+  name: String (required),
+  shortName: String (uppercase),
+  type: String (enum: ['government', 'private', 'deemed', 'autonomous']),
+  location: {
+    address: String (required),
+    city: String (required),
+    state: String (required),
+    pincode: String (6 digits)
   },
-  ratings: {
-    overall: Number,
-    academics: Number,
-    placements: Number,
-    infrastructure: Number
-  },
-  facilities: [String],
   contact: {
-    website: String,
-    phone: String,
-    email: String
-  }
+    phone: [String],
+    email: [String],
+    website: String
+  },
+  courses: [{
+    courseId: ObjectId (ref: 'Course'),
+    courseName: String
+  }],
+  images: [String],
+  isActive: Boolean (default: true),
+  createdAt: Date,
+  updatedAt: Date
 }
 ```
 
 ### Quiz Model
 ```javascript
 {
-  title: String,
-  description: String,
-  targetClass: String,
-  targetStream: String,
+  title: String (required),
+  description: String (required),
+  targetClass: String (enum: ['10', '12']),
+  stream: String (enum: ['science_pcm', 'science_pcb', 'commerce', 'arts']),
+  purpose: String (enum: ['stream_selection', 'field_recommendation']),
   questions: [{
-    question: String,
-    options: [String],
-    correctAnswer: Number,
-    explanation: String,
-    category: String
+    question: String (required),
+    options: [String] (2-6 options required)
   }],
-  scoring: {
-    categories: [String],
-    recommendations: Map
-  },
-  metadata: {
-    duration: Number,
-    difficulty: String,
-    totalQuestions: Number
-  }
+  createdAt: Date,
+  updatedAt: Date
+}
+```
+
+### Exam Model
+```javascript
+{
+  name: String (required),
+  shortName: String (uppercase),
+  streams: [String] (enum: ['science_pcm', 'science_pcb', 'commerce', 'arts']),
+  eligibility: String (required),
+  examMonth: String,
+  description: String,
+  syllabus: [String],
+  officialLink: String (URL validation),
+  isActive: Boolean (default: true),
+  createdAt: Date,
+  updatedAt: Date
 }
 ```
 
