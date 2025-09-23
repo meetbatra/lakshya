@@ -64,17 +64,20 @@ const GoogleLoginButton = ({ onLoadingChange }) => {
           <span>Verifying with Google...</span>
         </button>
       ) : (
-        <GoogleLogin
-          onSuccess={handleGoogleSuccess}
-          onError={handleGoogleError}
-          useOneTap={false}
-          theme="outline"
-          size="large"
-          text="continue_with"
-          shape="rectangular"
-          logo_alignment="left"
-          auto_select={false}
-        />
+        <div className="w-full [&>div]:w-full [&>div>div]:w-full">
+          <GoogleLogin
+            onSuccess={handleGoogleSuccess}
+            onError={handleGoogleError}
+            useOneTap={false}
+            theme="outline"
+            size="large"
+            text="continue_with"
+            shape="rectangular"
+            logo_alignment="left"
+            auto_select={false}
+            width="100%"
+          />
+        </div>
       )}
     </div>
   );
