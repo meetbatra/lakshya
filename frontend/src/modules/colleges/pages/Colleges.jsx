@@ -18,52 +18,158 @@ import {
   faFilter,
   faTimes
 } from '@fortawesome/free-solid-svg-icons';
-import { useCollegesStore } from '../store/collegesStore';
+import collegesAPI from '../api/collegesAPI';
 import { useAuth } from '../../user/store/userStore';
 import BookmarkButton from '../../../shared/components/BookmarkButton';
 
 const Colleges = () => {
   const navigate = useNavigate();
-  const [showFilters, setShowFilters] = useState(false);
-  const { user } = useAuth();
+  const { user, isAuthenticated } = useAuth();
   
-  const {
-    colleges,
-    loading,
-    error,
-    searchQuery,
-    filters,
-    filterOptions,
-    autoFiltersApplied,
-    fetchAllColleges,
-    fetchFilterOptions,
-    updateFilters,
-    setSearchQuery,
-    clearFilters,
-    clearAllFilters,
-    applyAutoFilters,
-    clearError,
-    getFilteredColleges
-  } = useCollegesStore();
+  // Local state for component
+  const [colleges, setColleges] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [showFilters, setShowFilters] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filters, setFilters] = useState({
+    type: 'all',
+    state: 'all',
+    city: 'all',
+    sortBy: 'name',
+    sortOrder: 'asc'
+  });
+  const [autoFiltersApplied, setAutoFiltersApplied] = useState(false);
 
-  // Get filtered colleges for display
-  const filteredColleges = getFilteredColleges();
-
+  // Fetch colleges data when component mounts
   useEffect(() => {
-    window.scrollTo(0, 0);
-    
-    const initializeColleges = async () => {
-      await fetchFilterOptions();
-      await fetchAllColleges();
+    const loadColleges = async () => {
+      window.scrollTo(0, 0);
+      setLoading(true);
+      setError(null);
       
-      // Apply auto-filters if user is logged in and has a state
-      if (user && user.state) {
-        applyAutoFilters(user);
+      try {
+        const params = {
+          limit: 10000,
+          sortBy: 'name',
+          sortOrder: 'asc'
+        };
+        const result = await collegesAPI.getAllColleges(params);
+        if (result.success) {
+          setColleges(result.data.colleges);
+        } else {
+          setError(result.message || 'Failed to fetch colleges');
+        }
+      } catch (error) {
+        setError('Failed to fetch colleges');
+      } finally {
+        setLoading(false);
       }
     };
+
+    loadColleges();
+  }, []);
+
+  // Apply auto-filters based on user preferences when data is loaded
+  useEffect(() => {
+    if (isAuthenticated && user && colleges.length > 0 && !autoFiltersApplied) {
+      applyAutoFilters(user);
+    }
+  }, [isAuthenticated, user, colleges, autoFiltersApplied]);
+
+  // Client-side filtering functions
+  const filterColleges = (colleges, filters) => {
+    const { searchQuery, type, state, city } = filters;
     
-    initializeColleges();
-  }, [user]);
+    return colleges.filter(college => {
+      // Type filter
+      const matchesType = type === 'all' || college.type === type;
+      
+      // State filter
+      const matchesState = state === 'all' || college.location?.state === state;
+      
+      // City filter
+      const matchesCity = city === 'all' || college.location?.city === city;
+      
+      // Search filter - search across multiple fields
+      const matchesSearch = !searchQuery || (() => {
+        const query = searchQuery.toLowerCase();
+        
+        // Basic college info
+        const basicMatch = college.name?.toLowerCase().includes(query) ||
+                          college.shortName?.toLowerCase().includes(query) ||
+                          college.location?.city?.toLowerCase().includes(query) ||
+                          college.location?.state?.toLowerCase().includes(query) ||
+                          college.type?.toLowerCase().includes(query);
+        
+        // Course search within college
+        const courseMatch = college.courses?.some(course => 
+          course.courseId?.name?.toLowerCase().includes(query) ||
+          course.courseId?.shortName?.toLowerCase().includes(query) ||
+          course.field?.toLowerCase().includes(query)
+        );
+        
+        return basicMatch || courseMatch;
+      })();
+      
+      return matchesType && matchesState && matchesCity && matchesSearch;
+    });
+  };
+
+  // Get unique filter values from colleges data
+  const getFilterOptions = (colleges) => {
+    const states = [...new Set(colleges.map(college => college.location?.state).filter(Boolean))];
+    const types = [...new Set(colleges.map(college => college.type).filter(Boolean))];
+    const cities = [...new Set(colleges.map(college => college.location?.city).filter(Boolean))];
+    
+    return { states, types, cities };
+  };
+
+  // Apply auto-filters based on user preferences
+  const applyAutoFilters = (user) => {
+    if (!user || !user.state) return;
+    
+    // Get available filter options from data
+    const filterOptions = getFilterOptions(colleges);
+    
+    // If user's state is available, apply the filter
+    if (filterOptions.states?.includes(user.state)) {
+      setFilters(prev => ({
+        ...prev,
+        state: user.state
+      }));
+      setAutoFiltersApplied(true);
+    }
+  };
+
+  // Clear all filters
+  const clearAllFilters = () => {
+    setFilters({
+      type: 'all',
+      state: 'all',
+      city: 'all',
+      sortBy: 'name',
+      sortOrder: 'asc'
+    });
+    setSearchQuery('');
+    setAutoFiltersApplied(false);
+  };
+
+  // Update filters
+  const updateFilters = (newFilters) => {
+    setFilters(prev => ({ ...prev, ...newFilters }));
+  };
+
+  // Get filtered colleges using utility function
+  const filteredColleges = filterColleges(colleges, {
+    searchQuery,
+    ...filters
+  });
+
+  // Get available filter options from data
+  const filterOptions = getFilterOptions(colleges);
+
+  // This useEffect was already defined earlier in the component - removing duplicate
 
   const handleSearch = (e) => {
     const query = e.target.value;
@@ -162,7 +268,7 @@ const Colleges = () => {
             {(filters.type !== 'all' || filters.state !== 'all' || searchQuery) && (
               <Button
                 variant="ghost"
-                onClick={clearFilters}
+                onClick={clearAllFilters}
                 className="text-sm text-gray-600"
               >
                 Clear all filters
@@ -398,7 +504,7 @@ const Colleges = () => {
                 <p className="text-gray-600 mb-4">
                   Try adjusting your search criteria or filters.
                 </p>
-                <Button onClick={clearFilters} variant="outline">
+                <Button onClick={clearAllFilters} variant="outline">
                   Clear filters
                 </Button>
               </div>

@@ -18,26 +18,42 @@ import {
   faBookOpen,
   faChartLine
 } from '@fortawesome/free-solid-svg-icons';
-import { useCoursesStore } from '../store/coursesStore';
+import { coursesAPI } from '../api/coursesAPI';
 import BookmarkButton from '../../../shared/components/BookmarkButton';
 
 const CourseDetails = () => {
   const { courseId } = useParams();
   const navigate = useNavigate();
-  const {
-    selectedCourse,
-    loading,
-    error,
-    fetchCourseById,
-    clearError
-  } = useCoursesStore();
+  
+  // Local state for component
+  const [selectedCourse, setSelectedCourse] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    if (courseId) {
-      fetchCourseById(courseId);
-    }
-  }, [courseId, fetchCourseById]);
+    const loadCourse = async () => {
+      window.scrollTo(0, 0);
+      if (!courseId) return;
+      
+      setLoading(true);
+      setError(null);
+      
+      try {
+        const result = await coursesAPI.getCourseById(courseId);
+        if (result.success) {
+          setSelectedCourse(result.data.course);
+        } else {
+          setError(result.message || 'Failed to fetch course details');
+        }
+      } catch (error) {
+        setError('Failed to fetch course details');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadCourse();
+  }, [courseId]);
 
   const formatDuration = (duration) => {
     if (!duration) return 'N/A';
@@ -157,7 +173,7 @@ const CourseDetails = () => {
               </h1>
               <BookmarkButton 
                 type="courses" 
-                itemId={course.id}
+                itemId={course.id || course._id}
                 className="ml-4"
               />
             </div>

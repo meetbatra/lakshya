@@ -1,90 +1,66 @@
-import { create } from 'zustand';
 import { coursesAPI } from '../api/coursesAPI';
 
-export const useCoursesStore = create((set, get) => ({
-  // State
-  courses: [],
-  selectedCourse: null,
-  loading: false,
-  error: null,
-  selectedStream: 'all',
-  selectedField: 'all',
-  searchQuery: '',
-  autoFiltersApplied: false, // Track if auto-filters are applied
-
-  // Actions
-  setLoading: (loading) => set({ loading }),
-  setError: (error) => set({ error }),
-  clearError: () => set({ error: null }),
-  setSearchQuery: (query) => set({ searchQuery: query }),
-  setSelectedStream: (stream) => set({ selectedStream: stream }),
-  setSelectedField: (field) => set({ selectedField: field }),
-  setSelectedCourse: (course) => set({ selectedCourse: course }),
-  setAutoFiltersApplied: (applied) => set({ autoFiltersApplied: applied }),
-
-  // Fetch all courses
+// Direct API functions without state management
+export const useCoursesStore = {
+  // Fetch all courses directly
   fetchAllCourses: async () => {
-    set({ loading: true, error: null });
     try {
       const result = await coursesAPI.getAllCourses();
       if (result.success) {
-        set({ courses: result.data.courses || [], loading: false });
+        return { success: true, data: result.data.courses || [] };
       } else {
-        set({ error: result.message, loading: false });
+        return { success: false, error: result.message };
       }
     } catch (error) {
-      set({ error: 'Failed to fetch courses', loading: false });
+      return { success: false, error: 'Failed to fetch courses' };
     }
   },
 
-  // Fetch courses by stream
+  // Fetch courses by stream directly
   fetchCoursesByStream: async (stream) => {
-    set({ loading: true, error: null });
     try {
       const result = await coursesAPI.getCoursesByStream(stream);
       if (result.success) {
-        set({ courses: result.data.courses || [], loading: false });
+        return { success: true, data: result.data.courses || [] };
       } else {
-        set({ error: result.message, loading: false });
+        return { success: false, error: result.message };
       }
     } catch (error) {
-      set({ error: 'Failed to fetch courses by stream', loading: false });
+      return { success: false, error: 'Failed to fetch courses by stream' };
     }
   },
 
-  // Fetch courses by field
+  // Fetch courses by field directly
   fetchCoursesByField: async (field) => {
-    set({ loading: true, error: null });
     try {
       const result = await coursesAPI.getCoursesByField(field);
       if (result.success) {
-        set({ courses: result.data.courses || [], loading: false });
+        return { success: true, data: result.data.courses || [] };
       } else {
-        set({ error: result.message, loading: false });
+        return { success: false, error: result.message };
       }
     } catch (error) {
-      set({ error: 'Failed to fetch courses by field', loading: false });
+      return { success: false, error: 'Failed to fetch courses by field' };
     }
   },
 
-  // Fetch course by ID
+  // Fetch course by ID directly
   fetchCourseById: async (courseId) => {
-    set({ loading: true, error: null, selectedCourse: null });
     try {
       const result = await coursesAPI.getCourseById(courseId);
       if (result.success) {
-        set({ selectedCourse: result.data.course || null, loading: false });
+        return { success: true, data: result.data.course };
       } else {
-        set({ error: result.message, loading: false });
+        return { success: false, error: result.message };
       }
     } catch (error) {
-      set({ error: 'Failed to fetch course details', loading: false });
+      return { success: false, error: 'Failed to fetch course details' };
     }
   },
 
-  // Get filtered courses based on search, stream, and field
-  getFilteredCourses: () => {
-    const { courses, searchQuery, selectedStream, selectedField } = get();
+  // Client-side filtering utility functions
+  filterCourses: (courses, filters) => {
+    const { searchQuery, selectedStream, selectedField } = filters;
     
     return courses.filter(course => {
       // Stream filter
@@ -129,53 +105,15 @@ export const useCoursesStore = create((set, get) => ({
     });
   },
 
-  // Apply auto-filters based on user preferences
-  applyAutoFilters: (user) => {
-    if (!user) return;
-    
-    // For Class 10 users - apply stream filter only
-    if (user.class === '10' && user.stream) {
-      set({ 
-        selectedStream: user.stream, 
-        selectedField: 'all',
-        autoFiltersApplied: true 
-      });
-    }
-    // For Class 12 users - apply both stream and field filters
-    else if (user.class === '12' && user.stream) {
-      set({ 
-        selectedStream: user.stream, 
-        selectedField: user.field || 'all',
-        autoFiltersApplied: true 
-      });
-    }
-  },
-
-  // Clear all filters including auto-applied ones
-  clearAllFilters: () => set({
-    selectedStream: 'all',
-    selectedField: 'all',
-    searchQuery: '',
-    autoFiltersApplied: false
-  }),  // Get unique streams from courses
-  getAvailableStreams: () => {
-    const { courses } = get();
+  // Get unique streams from courses
+  getAvailableStreams: (courses) => {
     const streams = [...new Set(courses.map(course => course.stream))].filter(Boolean);
     return streams;
   },
 
   // Get unique fields from courses
-  getAvailableFields: () => {
-    const { courses } = get();
+  getAvailableFields: (courses) => {
     const fields = [...new Set(courses.map(course => course.field))].filter(Boolean);
     return fields;
-  },
-
-  // Reset filters
-  resetFilters: () => set({
-    selectedStream: 'all',
-    selectedField: 'all',
-    searchQuery: '',
-    autoFiltersApplied: false
-  })
-}));
+  }
+};

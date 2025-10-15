@@ -16,29 +16,41 @@ import {
   faUniversity,
   faExternalLinkAlt
 } from '@fortawesome/free-solid-svg-icons';
-import { useCollegesStore } from '../store/collegesStore';
+import collegesAPI from '../api/collegesAPI';
 import BookmarkButton from '../../../shared/components/BookmarkButton';
 
 const CollegeDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(true);
   
-  const {
-    selectedCollege,
-    error,
-    fetchCollegeById,
-    clearSelectedCollege,
-    clearError
-  } = useCollegesStore();
+  // Local state for component
+  const [selectedCollege, setSelectedCollege] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    if (id) {
-      fetchCollegeById(id).finally(() => setLoading(false));
-    }
-    
-    return () => clearSelectedCollege();
+    const loadCollege = async () => {
+      window.scrollTo(0, 0);
+      if (!id) return;
+      
+      setLoading(true);
+      setError(null);
+      
+      try {
+        const result = await collegesAPI.getCollegeById(id);
+        if (result.success) {
+          setSelectedCollege(result.data);
+        } else {
+          setError(result.message || 'Failed to fetch college details');
+        }
+      } catch (error) {
+        setError('Failed to fetch college details');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadCollege();
   }, [id]);
 
   const handleBack = () => {

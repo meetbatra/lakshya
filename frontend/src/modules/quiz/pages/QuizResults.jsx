@@ -1,24 +1,29 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useQuizStore } from '../store/quizStore';
+import { useAuth } from '../../user/store/userStore';
+import { authAPI } from '../../user/api/authAPI';
 import { Button } from '../../../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../../../components/ui/card';
 import { Badge } from '../../../components/ui/badge';
 import { Alert, AlertDescription } from '../../../components/ui/alert';
+import { toast } from 'sonner';
 import { 
   Trophy, 
   BookOpen, 
   Lightbulb, 
   Target, 
   Download, 
-  Share2,
   RefreshCw,
   Home,
-  Sparkles
+  Sparkles,
+  Settings,
 } from 'lucide-react';
 
 const QuizResults = () => {
   const navigate = useNavigate();
+  const { user, isAuthenticated, login } = useAuth();
+  const [isUpdatingProfile, setIsUpdatingProfile] = useState(false);
   const {
     quizResults,
     isQuizCompleted,
@@ -44,6 +49,72 @@ const QuizResults = () => {
 
   const { recommendations, totalQuestions, submittedAt, courses } = quizResults;
   const primaryRecommendation = recommendations?.[0];
+
+  // Check if recommended stream/field differs from user's current profile
+  const isRecommendationDifferent = () => {
+    if (!user || !primaryRecommendation) {
+      return false;
+    }
+    
+    // Get user's current stream and field (could be in user directly or in user.profile)
+    const userStream = user.stream || user.profile?.stream;
+    const userField = user.field || user.profile?.field;
+    
+    if (primaryRecommendation.fieldId) {
+      // This is a field recommendation (Class 12)
+      return userField !== primaryRecommendation.fieldId;
+    } else if (primaryRecommendation.stream) {
+      // This is a stream recommendation (Class 10 or 12)
+      return userStream !== primaryRecommendation.stream;
+    }
+    
+    return false;
+  };
+
+  // Handle profile update to match recommendation
+  const handleUpdateProfile = async () => {
+    if (!user || !primaryRecommendation) {
+      toast.error('Unable to update profile. User or recommendation data not available.');
+      return;
+    }
+    
+    setIsUpdatingProfile(true);
+    try {
+      const updateData = {};
+      
+      if (primaryRecommendation.fieldId) {
+        // Update field for Class 12 students
+        updateData.field = primaryRecommendation.fieldId;
+      } else if (primaryRecommendation.stream) {
+        // Update stream
+        updateData.stream = primaryRecommendation.stream;
+        
+        // If updating stream, clear field as it might not be compatible
+        const currentUserStream = user.stream || user.profile?.stream;
+        if ((user.field || user.profile?.field) && primaryRecommendation.stream !== currentUserStream) {
+          updateData.field = null;
+        }
+      }
+      
+      const result = await authAPI.updateProfile(updateData);
+      
+      // Update user in auth store
+      login({ user: result.user, token: result.token });
+      
+      const successMessage = primaryRecommendation.fieldId 
+        ? `Profile updated! Your field has been changed to ${getFieldDisplayName(primaryRecommendation.fieldId)}`
+        : `Profile updated! Your stream has been changed to ${getStreamDisplayName(primaryRecommendation.stream)}`;
+      
+      toast.success(successMessage);
+      
+    } catch (error) {
+      console.error('Profile update error:', error);
+      const errorMessage = error.message || 'Failed to update profile. Please try again.';
+      toast.error(errorMessage);
+    } finally {
+      setIsUpdatingProfile(false);
+    }
+  };
 
   const getStreamDisplayName = (stream) => {
     const streamMap = {
@@ -284,6 +355,100 @@ ${primaryRecommendation.studyTips}
                     </Badge>
                   </div>
                 )}
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Profile Update Recommendation */}
+        {isAuthenticated && user && primaryRecommendation && isRecommendationDifferent() && (
+          <Card className="mb-6 bg-gradient-to-r from-green-50 to-blue-50 border-green-200">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Settings className="w-5 h-5 text-green-600" />
+                Update Your Profile
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="p-4 bg-white rounded-lg border">
+                  <p className="text-gray-700 mb-3">
+                    Based on your quiz results, we recommend updating your profile to better match your interests and goals. 
+                    This will help us provide more accurate course and career recommendations.
+                  </p>
+                  
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="flex-1">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div>
+                          <span className="font-medium text-gray-600">Current:</span>
+                          <div className="mt-1">
+                            {primaryRecommendation.fieldId ? (
+                              <Badge className="bg-gray-100 text-gray-800 border-gray-200">
+                                {(user.field || user.profile?.field) ? getFieldDisplayName(user.field || user.profile?.field) : 'No field selected'}
+                              </Badge>
+                            ) : (
+                              <Badge className="bg-gray-100 text-gray-800 border-gray-200">
+                                {(user.stream || user.profile?.stream) ? getStreamDisplayName(user.stream || user.profile?.stream) : 'No stream selected'}
+                              </Badge>
+                            )}
+                          </div>
+                        </div>
+                        
+                        <div>
+                          <span className="font-medium text-gray-600">Recommended:</span>
+                          <div className="mt-1">
+                            <Badge className={`${
+                              primaryRecommendation.fieldId 
+                                ? getFieldColor(primaryRecommendation.fieldId)
+                                : getStreamColor(primaryRecommendation.stream)
+                            }`}>
+                              {primaryRecommendation.fieldId 
+                                ? (primaryRecommendation.fieldName || getFieldDisplayName(primaryRecommendation.fieldId))
+                                : (primaryRecommendation.streamName || getStreamDisplayName(primaryRecommendation.stream))
+                              }
+                            </Badge>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <Button 
+                      onClick={handleUpdateProfile}
+                      disabled={isUpdatingProfile}
+                      className="flex items-center gap-2 bg-green-600 hover:bg-green-700"
+                    >
+                      {isUpdatingProfile ? (
+                        <>
+                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                          Updating...
+                        </>
+                      ) : (
+                        <>
+                          Update Profile
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                </div>
+                
+                <div className="space-y-2">
+                  <div className="text-xs text-gray-500 flex items-start gap-2">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-1 flex-shrink-0"></div>
+                    <p>
+                      Updating your profile will help us provide more accurate course and career recommendations 
+                      tailored to your interests and goals.
+                    </p>
+                  </div>
+                  {primaryRecommendation.stream && (user.field || user.profile?.field) && (
+                    <div className="text-xs text-amber-600 flex items-start gap-2">
+                      <div className="w-2 h-2 bg-amber-500 rounded-full mt-1 flex-shrink-0"></div>
+                      <p>
+                        Note: Changing your stream will also clear your current field selection as it may no longer be compatible.
+                      </p>
+                    </div>
+                  )}
+                </div>
               </div>
             </CardContent>
           </Card>

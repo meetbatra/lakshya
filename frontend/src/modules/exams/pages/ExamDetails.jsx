@@ -16,29 +16,41 @@ import {
   faGraduationCap,
   faInfoCircle
 } from '@fortawesome/free-solid-svg-icons';
-import useExamsStore from '../store/examsStore';
+import examsAPI from '../api/examsAPI';
 import BookmarkButton from '../../../shared/components/BookmarkButton';
 
 const ExamDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(true);
   
-  const {
-    selectedExam,
-    error,
-    fetchExamById,
-    clearSelectedExam,
-    clearError
-  } = useExamsStore();
+  // Local state for component
+  const [selectedExam, setSelectedExam] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    if (id) {
-      fetchExamById(id).finally(() => setLoading(false));
-    }
-    
-    return () => clearSelectedExam();
+    const loadExam = async () => {
+      window.scrollTo(0, 0);
+      if (!id) return;
+      
+      setLoading(true);
+      setError(null);
+      
+      try {
+        const result = await examsAPI.getExamById(id);
+        if (result.success) {
+          setSelectedExam(result.data.exam);
+        } else {
+          setError(result.message || 'Failed to fetch exam details');
+        }
+      } catch (error) {
+        setError('Failed to fetch exam details');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadExam();
   }, [id]);
 
   const handleBack = () => {

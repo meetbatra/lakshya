@@ -13,6 +13,8 @@ const BookmarkButton = ({
   size = 'sm',
   showTooltip = true 
 }) => {
+
+  
   const { user, token, isAuthenticated } = useAuth();
   const {
     isBookmarked,
@@ -22,6 +24,13 @@ const BookmarkButton = ({
   } = useBookmarkStore();
 
   const [localLoading, setLocalLoading] = useState(false);
+  
+  // Don't render if no itemId is provided
+  if (!itemId) {
+    console.warn('BookmarkButton: No itemId provided');
+    return null;
+  }
+  
   const bookmarked = isBookmarked(type, itemId);
 
   // Fetch bookmarks when component mounts and user is authenticated
@@ -36,13 +45,13 @@ const BookmarkButton = ({
     e.stopPropagation();
     
     if (!isAuthenticated) {
-      // You could show a login modal here
-      alert('Please log in to bookmark items');
+      // Show a user-friendly message for unauthenticated users
+      alert('Please log in to bookmark courses and save them for later!');
       return;
     }
 
     if (!token) {
-      alert('Authentication required');
+      alert('Authentication required. Please log in again.');
       return;
     }
 
@@ -60,10 +69,10 @@ const BookmarkButton = ({
     }
   };
 
-  // Don't render if user is not authenticated
-  if (!isAuthenticated) {
-    return null;
-  }
+  // Show bookmark button even for unauthenticated users, but handle login prompt
+  // if (!isAuthenticated) {
+  //   return null;
+  // }
 
   const isLoading = loading || localLoading;
 
@@ -72,13 +81,16 @@ const BookmarkButton = ({
       onClick={handleToggleBookmark}
       variant="outline"
       size={size}
-      disabled={isLoading}
+      disabled={isLoading || !isAuthenticated}
       className={`p-2 h-auto aspect-square min-w-0 ${
-        bookmarked 
+        bookmarked && isAuthenticated
           ? 'text-yellow-600 border-yellow-300 bg-yellow-50 hover:bg-yellow-100' 
           : 'text-gray-500 border-gray-300 hover:text-yellow-600 hover:border-yellow-300'
-      } ${className}`}
-      title={showTooltip ? (bookmarked ? 'Remove bookmark' : 'Add bookmark') : undefined}
+      } ${!isAuthenticated ? 'opacity-50 cursor-not-allowed' : ''} ${className}`}
+      title={showTooltip ? (
+        !isAuthenticated ? 'Login to bookmark' : 
+        (bookmarked ? 'Remove bookmark' : 'Add bookmark')
+      ) : undefined}
     >
       {isLoading ? (
         <div className="animate-spin h-4 w-4 border-2 border-current border-t-transparent rounded-full" />

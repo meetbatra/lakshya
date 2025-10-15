@@ -7,50 +7,150 @@ import { Badge } from '../../../components/ui/badge';
 import { Alert, AlertDescription } from '../../../components/ui/alert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faClock, faUsers, faSpinner, faFilter, faTimes, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
-import { useCoursesStore } from '../store/coursesStore';
+import { coursesAPI } from '../api/coursesAPI';
 import { useAuth } from '../../user/store/userStore';
 import BookmarkButton from '../../../shared/components/BookmarkButton';
 
 const Courses = () => {
   const navigate = useNavigate();
   const { user, isAuthenticated } = useAuth();
-  const [showFilters, setShowFilters] = useState(false);
   
-  const {
-    courses,
-    loading,
-    error,
-    searchQuery,
-    selectedStream,
-    selectedField,
-    autoFiltersApplied,
-    fetchAllCourses,
-    setSearchQuery,
-    setSelectedStream,
-    setSelectedField,
-    getFilteredCourses,
-    getAvailableStreams,
-    getAvailableFields,
-    applyAutoFilters,
-    clearAllFilters,
-    clearError
-  } = useCoursesStore();
+  // Local state for component
+  const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [showFilters, setShowFilters] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedStream, setSelectedStream] = useState('all');
+  const [selectedField, setSelectedField] = useState('all');
+  const [autoFiltersApplied, setAutoFiltersApplied] = useState(false);
 
+  // Fetch courses data when component mounts
   useEffect(() => {
-    window.scrollTo(0, 0);
-    fetchAllCourses();
+    const loadCourses = async () => {
+      window.scrollTo(0, 0);
+      setLoading(true);
+      setError(null);
+      
+      try {
+        const result = await coursesAPI.getAllCourses();
+        if (result.success) {
+          setCourses(result.data.courses || []);
+        } else {
+          setError(result.message || 'Failed to fetch courses');
+        }
+      } catch (error) {
+        setError('Failed to fetch courses');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadCourses();
   }, []);
 
-  // Apply auto-filters based on user preferences
+  // Apply auto-filters based on user preferences when data is loaded
   useEffect(() => {
-    if (isAuthenticated && user && courses.length > 0) {
+    if (isAuthenticated && user && courses.length > 0 && !autoFiltersApplied) {
       applyAutoFilters(user);
     }
-  }, [isAuthenticated, user, courses, applyAutoFilters]);
+  }, [isAuthenticated, user, courses, autoFiltersApplied]);
 
-  const filteredCourses = getFilteredCourses();
-  const availableStreams = getAvailableStreams();
-  const availableFields = getAvailableFields();
+  // Apply auto-filters based on user preferences
+  const applyAutoFilters = (user) => {
+    if (!user) return;
+    
+    // For Class 10 users - apply stream filter only
+    if (user.class === '10' && user.stream) {
+      setSelectedStream(user.stream);
+      setSelectedField('all');
+      setAutoFiltersApplied(true);
+    }
+    // For Class 12 users - apply both stream and field filters
+    else if (user.class === '12' && user.stream) {
+      setSelectedStream(user.stream);
+      setSelectedField(user.field || 'all');
+      setAutoFiltersApplied(true);
+    }
+  };
+
+  // Clear all filters
+  const clearAllFilters = () => {
+    setSelectedStream('all');
+    setSelectedField('all');
+    setSearchQuery('');
+    setAutoFiltersApplied(false);
+  };
+
+  // Client-side filtering functions
+  const filterCourses = (courses, filters) => {
+    const { searchQuery, selectedStream, selectedField } = filters;
+    
+    return courses.filter(course => {
+      // Stream filter
+      const matchesStream = selectedStream === 'all' || course.stream === selectedStream;
+      
+      // Field filter
+      const matchesField = selectedField === 'all' || course.field === selectedField;
+      
+      // Search filter - search across multiple fields
+      const matchesSearch = !searchQuery || (() => {
+        const query = searchQuery.toLowerCase();
+        
+        // Basic course info
+        const basicMatch = course.name?.toLowerCase().includes(query) ||
+                          course.shortName?.toLowerCase().includes(query) ||
+                          course.description?.toLowerCase().includes(query) ||
+                          course.field?.toLowerCase().includes(query);
+        
+        // Career options search
+        const careerMatch = course.careerOptions?.some(career => 
+          career.jobTitle?.toLowerCase().includes(query) ||
+          career.description?.toLowerCase().includes(query)
+        );
+        
+        // Skills search (both technical and soft skills)
+        const skillsMatch = course.skills?.technical?.some(skill => 
+          skill?.toLowerCase().includes(query)
+        ) || course.skills?.soft?.some(skill => 
+          skill?.toLowerCase().includes(query)
+        );
+        
+        // College search
+        const collegeMatch = course.topColleges?.some(college =>
+          college.name?.toLowerCase().includes(query) ||
+          college.location?.toLowerCase().includes(query)
+        );
+        
+        return basicMatch || careerMatch || skillsMatch || collegeMatch;
+      })();
+
+      return matchesStream && matchesField && matchesSearch;
+    });
+  };
+
+  // Get available streams from courses
+  const getAvailableStreams = (courses) => {
+    const streams = [...new Set(courses.map(course => course.stream))].filter(Boolean);
+    return streams;
+  };
+
+  // Get available fields from courses
+  const getAvailableFields = (courses) => {
+    const fields = [...new Set(courses.map(course => course.field))].filter(Boolean);
+    return fields;
+  };
+
+  // Get filtered courses using utility function
+  const filteredCourses = filterCourses(courses, {
+    searchQuery,
+    selectedStream,
+    selectedField
+  });
+
+  // Get available options for filters
+  const availableStreams = getAvailableStreams(courses);
+  const availableFields = getAvailableFields(courses);
 
   // Helper function to format stream name for display
   const formatStreamName = (stream) => {

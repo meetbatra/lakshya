@@ -179,6 +179,26 @@ const Profile = () => {
     setLoading(true);
     setMessage({ type: '', text: '' });
 
+    // Validation: Stream is mandatory for all users
+    if (!editData.stream) {
+      setMessage({ 
+        type: 'error', 
+        text: 'Stream is required. Please select a stream before saving.' 
+      });
+      setLoading(false);
+      return;
+    }
+
+    // Validation: Field is mandatory for Class 12 students
+    if (user.class === '12' && !editData.field) {
+      setMessage({ 
+        type: 'error', 
+        text: 'Field is required for Class 12 students. Please select a field before saving.' 
+      });
+      setLoading(false);
+      return;
+    }
+
     try {
       // Call API to update user profile
       const updateData = {
@@ -211,6 +231,13 @@ const Profile = () => {
       stream: value,
       field: '' // Reset field when stream changes
     });
+  };
+
+  // Check if all required fields are filled
+  const areRequiredFieldsFilled = () => {
+    const hasStream = !!editData.stream;
+    const hasField = user.class !== '12' || !!editData.field;
+    return hasStream && hasField;
   };
 
   const handleLogout = async () => {
@@ -344,8 +371,8 @@ const Profile = () => {
                       <Button 
                         onClick={handleSave}
                         size="sm"
-                        disabled={loading}
-                        className="bg-green-600 hover:bg-green-700"
+                        disabled={loading || !areRequiredFieldsFilled()}
+                        className={`${!areRequiredFieldsFilled() ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700'}`}
                       >
                         <FontAwesomeIcon icon={faSave} className="h-4 w-4 mr-1" />
                         {loading ? 'Saving...' : 'Save'}
@@ -393,18 +420,19 @@ const Profile = () => {
                     <dt className="text-sm font-medium text-gray-500 flex items-center">
                       <FontAwesomeIcon icon={faStream} className="h-4 w-4 mr-2 text-gray-400" />
                       <span>Stream </span>
-                      <span className="hidden sm:inline">{user.class === '10' ? '(Planning to Choose)' : '(Currently Studying)'}</span>
+                      <span className="text-red-500">*</span>
+                      <span className="hidden sm:inline ml-1">{user.class === '10' ? '(Planning to Choose)' : '(Currently Studying)'}</span>
                     </dt>
                     {!isEditing ? (
                       <dd className="text-base sm:text-lg font-medium">
-                        <span className={user.stream ? 'text-gray-900' : 'text-gray-500'}>
-                          {user.stream ? formatStreamName(user.stream) : 'Not selected'}
+                        <span className={user.stream ? 'text-gray-900' : 'text-red-500'}>
+                          {user.stream ? formatStreamName(user.stream) : 'Not selected (required)'}
                         </span>
                       </dd>
                     ) : (
                       <Select value={editData.stream} onValueChange={handleStreamChange}>
                         <SelectTrigger className="w-full">
-                          <SelectValue placeholder="Select your stream" />
+                          <SelectValue placeholder="Select your stream (required)" />
                         </SelectTrigger>
                         <SelectContent>
                           {streamOptions.map((option) => (
@@ -423,11 +451,12 @@ const Profile = () => {
                       <dt className="text-sm font-medium text-gray-500 flex items-center">
                         <FontAwesomeIcon icon={faBullseye} className="h-4 w-4 mr-2 text-gray-400" />
                         Field of Interest
+                        <span className="text-red-500 ml-1">*</span>
                       </dt>
                       {!isEditing ? (
                         <dd className="text-base sm:text-lg font-medium">
-                          <span className={user.field ? 'text-gray-900' : 'text-gray-500'}>
-                            {user.field ? formatFieldName(user.field) : 'Not selected'}
+                          <span className={user.field ? 'text-gray-900' : 'text-red-500'}>
+                            {user.field ? formatFieldName(user.field) : 'Not selected (required)'}
                           </span>
                         </dd>
                       ) : (
@@ -437,7 +466,7 @@ const Profile = () => {
                           disabled={!editData.stream}
                         >
                           <SelectTrigger className="w-full">
-                            <SelectValue placeholder={editData.stream ? "Select your field of interest" : "Select stream first"} />
+                            <SelectValue placeholder={editData.stream ? "Select your field of interest (required)" : "Select stream first"} />
                           </SelectTrigger>
                           <SelectContent>
                             {getFieldOptions(editData.stream).map((option) => (
@@ -453,13 +482,26 @@ const Profile = () => {
                 </div>
 
                 {isEditing && (
-                  <div className="mt-6 p-3 sm:p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                    <p className="text-xs sm:text-sm text-blue-800">
-                      <FontAwesomeIcon icon={faCheckCircle} className="h-4 w-4 mr-2" />
-                      Updating your preferences will automatically apply filters when you visit the courses page, 
-                      showing you the most relevant content based on your academic profile.
-                    </p>
-                  </div>
+                  <>
+                    <div className="mt-6 p-3 sm:p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                      <p className="text-xs sm:text-sm text-blue-800">
+                        <FontAwesomeIcon icon={faCheckCircle} className="h-4 w-4 mr-2" />
+                        Updating your preferences will automatically apply filters when you visit the courses page, 
+                        showing you the most relevant content based on your academic profile.
+                      </p>
+                    </div>
+                    
+                    {!areRequiredFieldsFilled() && (
+                      <div className="mt-3 p-3 sm:p-4 bg-red-50 border border-red-200 rounded-lg">
+                        <p className="text-xs sm:text-sm text-red-800">
+                          <span className="text-red-500 mr-1">*</span>
+                          Please fill in all required fields to save your profile. 
+                          {!editData.stream && ' Stream selection is required.'}
+                          {user.class === '12' && !editData.field && ' Field selection is required for Class 12 students.'}
+                        </p>
+                      </div>
+                    )}
+                  </>
                 )}
               </CardContent>
             </Card>

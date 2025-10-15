@@ -19,57 +19,137 @@ import {
   faCheckCircle,
   faInfoCircle
 } from '@fortawesome/free-solid-svg-icons';
-import useExamsStore from '../store/examsStore';
+import examsAPI from '../api/examsAPI';
 import { useAuth } from '../../user/store/userStore';
 import BookmarkButton from '../../../shared/components/BookmarkButton';
 
 const Exams = () => {
   const navigate = useNavigate();
-  const [showFilters, setShowFilters] = useState(false);
   const { user, isAuthenticated } = useAuth();
   
-  const {
-    exams,
-    loading,
-    error,
-    filters,
-    filterOptions,
-    autoFiltersApplied,
-    fetchAllExams,
-    fetchFilterOptions,
-    setFilters,
-    resetFilters,
-    clearError,
-    getFilteredExams,
-    applyAutoFilters,
-    clearAllFilters
-  } = useExamsStore();
+  // Local state for component
+  const [exams, setExams] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [showFilters, setShowFilters] = useState(false);
+  const [filters, setFilters] = useState({
+    search: '',
+    streams: 'all'
+  });
+  const [autoFiltersApplied, setAutoFiltersApplied] = useState(false);
 
-  // Get filtered exams for display
-  const filteredExams = getFilteredExams();
-
+  // Fetch exams data when component mounts
   useEffect(() => {
-    window.scrollTo(0, 0);
-    
-    const initializeExams = async () => {
-      await fetchFilterOptions();
-      await fetchAllExams();
+    const loadExams = async () => {
+      window.scrollTo(0, 0);
+      setLoading(true);
+      setError(null);
       
-      // Apply auto-filters if user is logged in and has a stream
-      if (user && user.stream) {
-        applyAutoFilters(user);
+      try {
+        const result = await examsAPI.getAllExams({ limit: 10000 });
+        if (result.success) {
+          setExams(result.data.exams);
+        } else {
+          setError(result.message || 'Failed to fetch exams');
+        }
+      } catch (error) {
+        setError('Failed to fetch exams');
+      } finally {
+        setLoading(false);
       }
     };
+
+    loadExams();
+  }, []);
+
+  // Apply auto-filters based on user preferences when data is loaded
+  useEffect(() => {
+    if (isAuthenticated && user && exams.length > 0 && !autoFiltersApplied) {
+      applyAutoFilters(user);
+    }
+  }, [isAuthenticated, user, exams, autoFiltersApplied]);
+
+  // Client-side filtering functions
+  const filterExams = (exams, filters) => {
+    const { search, streams } = filters;
     
-    initializeExams();
-  }, [user]);
+    return exams.filter((exam) => {
+      // Search filter
+      if (search) {
+        const searchLower = search.toLowerCase();
+        const matchesSearch = 
+          exam.name.toLowerCase().includes(searchLower) ||
+          (exam.shortName && exam.shortName.toLowerCase().includes(searchLower)) ||
+          (exam.description && exam.description.toLowerCase().includes(searchLower)) ||
+          (exam.syllabus && exam.syllabus.some(subject => 
+            subject.toLowerCase().includes(searchLower)
+          ));
+        
+        if (!matchesSearch) return false;
+      }
+      
+      // Streams filter
+      if (streams && streams !== 'all') {
+        if (!exam.streams || !exam.streams.includes(streams)) {
+          return false;
+        }
+      }
+      
+      return true;
+    });
+  };
+
+  // Get unique streams from exams data
+  const getAvailableStreams = (exams) => {
+    const streamSet = new Set();
+    exams.forEach(exam => {
+      if (exam.streams) {
+        exam.streams.forEach(stream => streamSet.add(stream));
+      }
+    });
+    return Array.from(streamSet);
+  };
+
+  // Apply auto-filters based on user preferences
+  const applyAutoFilters = (user) => {
+    if (!user || !user.stream) return;
+    
+    // Get available streams from data
+    const availableStreams = getAvailableStreams(exams);
+    
+    // If user's stream is available, apply the filter
+    if (availableStreams.includes(user.stream)) {
+      setFilters(prev => ({
+        ...prev,
+        streams: user.stream
+      }));
+      setAutoFiltersApplied(true);
+    }
+  };
+
+  // Clear all filters
+  const clearAllFilters = () => {
+    setFilters({
+      search: '',
+      streams: 'all'
+    });
+    setAutoFiltersApplied(false);
+  };
+
+  // Get filtered exams using utility function
+  const filteredExams = filterExams(exams, filters);
+  
+  // Get available streams for filter
+  const availableStreams = getAvailableStreams(exams);
+
+  // This useEffect was already defined earlier in the component - removing duplicate
 
   const handleSearchChange = (e) => {
-    setFilters({ search: e.target.value });
+    setFilters(prev => ({ ...prev, search: e.target.value }));
   };
 
   const handleFilterChange = (filterName, value) => {
-    setFilters({ [filterName]: value });
+    setFilters(prev => ({ ...prev, [filterName]: value }));
   };
 
   const handleClearFilters = () => {
@@ -123,19 +203,6 @@ const Exams = () => {
     
     return 'N/A';
   };
-
-  if (loading && exams.length === 0) {
-    return (
-      <div className="h-full bg-gray-50">
-        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center items-center py-20">
-            <FontAwesomeIcon icon={faSpinner} className="h-6 w-6 text-blue-600 animate-spin mr-3" />
-            <span className="text-base text-gray-600">Loading exams...</span>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="h-full bg-gray-50">
@@ -267,7 +334,7 @@ const Exams = () => {
         </div>
 
         {/* Loading State */}
-        {loading && (
+        {loading && exams.length === 0 && (
           <div className="flex justify-center items-center py-20">
             <FontAwesomeIcon icon={faSpinner} className="h-6 w-6 text-blue-600 animate-spin mr-3" />
             <span className="text-base text-gray-600">Loading exams...</span>
@@ -433,7 +500,7 @@ const Exams = () => {
                   className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
                   variant="outline"
                   onClick={() => {
-                    setFilters({ search: '' });
+                    setFilters(prev => ({ ...prev, search: '' }));
                   }}
                 >
                   Clear Search
