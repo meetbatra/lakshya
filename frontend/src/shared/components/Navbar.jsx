@@ -8,6 +8,7 @@ import {
   NavigationMenuList,
 } from '../../components/ui/navigation-menu';
 import { UserAvatar, useAuth } from '../../modules/user';
+import NotificationCenter from './NotificationCenter';
 import { Menu, X, GraduationCap, Target, Users, BookOpen, ClipboardList } from 'lucide-react';
 import lakshyaLogo from '../../assets/lakshya-logo.png';
 
@@ -143,6 +144,7 @@ const Navbar = () => {
             {isAuthenticated ? (
               <div className="flex items-center space-x-3">
                 <span className="text-sm text-gray-600">Welcome back!</span>
+                <NotificationCenter />
                 <UserAvatar />
               </div>
             ) : (
@@ -166,7 +168,12 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-2 ml-auto">
-            {isAuthenticated && <UserAvatar />}
+            {isAuthenticated && (
+              <>
+                <NotificationCenter />
+                <UserAvatar />
+              </>
+            )}
             <Button
               variant="ghost"
               size="sm"

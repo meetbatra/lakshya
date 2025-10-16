@@ -37,6 +37,7 @@ const Exams = () => {
     streams: 'all'
   });
   const [autoFiltersApplied, setAutoFiltersApplied] = useState(false);
+  const [manuallyClearedFilters, setManuallyClearedFilters] = useState(false);
 
   // Fetch exams data when component mounts
   useEffect(() => {
@@ -64,10 +65,10 @@ const Exams = () => {
 
   // Apply auto-filters based on user preferences when data is loaded
   useEffect(() => {
-    if (isAuthenticated && user && exams.length > 0 && !autoFiltersApplied) {
+    if (isAuthenticated && user && exams.length > 0 && !autoFiltersApplied && !manuallyClearedFilters) {
       applyAutoFilters(user);
     }
-  }, [isAuthenticated, user, exams, autoFiltersApplied]);
+  }, [isAuthenticated, user, exams, autoFiltersApplied, manuallyClearedFilters]);
 
   // Client-side filtering functions
   const filterExams = (exams, filters) => {
@@ -134,6 +135,7 @@ const Exams = () => {
       streams: 'all'
     });
     setAutoFiltersApplied(false);
+    setManuallyClearedFilters(true);
   };
 
   // Get filtered exams using utility function

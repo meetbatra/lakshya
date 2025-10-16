@@ -2,7 +2,7 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import { Home } from '../../modules/home';
 import { Login, SignUp, Profile, Dashboard, CompleteProfile } from '../../modules/user';
-import { QuizStart, QuizQuestion, QuizReview, QuizResults } from '../../modules/quiz';
+import { QuizStart, QuizQuestion, QuizReview, QuizResults, QuizPage } from '../../modules/quiz';
 import { Courses, CourseDetails } from '../../modules/courses';
 import { Colleges, CollegeDetails } from '../../modules/colleges';
 import { Exams, ExamDetails } from '../../modules/exams';
@@ -58,6 +58,19 @@ const router = createBrowserRouter([
           {
             path: 'results',
             element: <QuizResults />
+          }
+        ]
+      },
+      {
+        path: 'practice-quiz',
+        children: [
+          {
+            index: true,
+            element: <QuizPage />
+          },
+          {
+            path: 'daily',
+            element: <QuizPage />
           }
         ]
       },

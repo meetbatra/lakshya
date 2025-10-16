@@ -219,5 +219,115 @@ export const quizAPI = {
     } catch (error) {
       throw new Error(error.response?.data?.message || 'Failed to submit Class 12 Arts quiz');
     }
+  },
+
+  // Daily Quiz APIs
+  /**
+   * Get today's daily quiz
+   * @returns {Promise<Object>} Daily quiz data with questions and config
+   */
+  getDailyQuiz: async () => {
+    try {
+      const response = await api.get('/daily-quiz');
+      return response.data;
+    } catch (error) {
+      throw new Error(error.response?.data?.message || 'Failed to fetch daily quiz');
+    }
+  },
+
+  /**
+   * Submit daily quiz answers
+   * @param {Object} submission - Quiz submission data
+   * @param {string} submission.quizId - Quiz ID
+   * @param {Array<Object>} submission.answers - Array of answer objects
+   * @param {number} submission.timeTaken - Time taken in seconds
+   * @returns {Promise<Object>} Quiz results and analytics
+   */
+  submitDailyQuiz: async (submission) => {
+    try {
+      const response = await api.post('/daily-quiz/submit', submission);
+      return response.data;
+    } catch (error) {
+      throw new Error(error.response?.data?.message || 'Failed to submit daily quiz');
+    }
+  },
+
+  /**
+   * Get user's quiz analytics
+   * @param {number} days - Number of days to analyze (default: 30)
+   * @returns {Promise<Object>} User analytics data
+   */
+  getQuizAnalytics: async (days = 30) => {
+    try {
+      const response = await api.get(`/daily-quiz/analytics?days=${days}`);
+      return response.data;
+    } catch (error) {
+      throw new Error(error.response?.data?.message || 'Failed to fetch quiz analytics');
+    }
+  },
+
+  /**
+   * Get user's quiz history
+   * @param {number} page - Page number (default: 1)
+   * @param {number} limit - Items per page (default: 10)
+   * @returns {Promise<Object>} Quiz history data
+   */
+  getQuizHistory: async (page = 1, limit = 10) => {
+    try {
+      const response = await api.get(`/daily-quiz/history?page=${page}&limit=${limit}`);
+      return response.data;
+    } catch (error) {
+      throw new Error(error.response?.data?.message || 'Failed to fetch quiz history');
+    }
+  },
+
+  /**
+   * Get available question counts by subject
+   * @returns {Promise<Object>} Question counts and recommendations for different quiz types
+   */
+  getQuestionCounts: async () => {
+    try {
+      const response = await api.get('/daily-quiz/question-counts');
+      return response.data;
+    } catch (error) {
+      throw new Error(error.response?.data?.message || 'Failed to fetch question counts');
+    }
+  },
+
+  /**
+   * Get custom quiz by subjects (for JEE/NEET)
+   * @param {Object} config - Quiz configuration
+   * @param {Array<string>} config.subjects - Array of subjects (e.g., ['Physics', 'Chemistry', 'Mathematics'])
+   * @param {number} config.questionCount - Number of questions
+   * @param {string} config.difficulty - Difficulty level ('Easy', 'Medium', 'Hard', or null for mixed)
+   * @param {number} config.timeLimit - Time limit in seconds
+   * @returns {Promise<Object>} Custom quiz data
+   */
+  getCustomQuiz: async (config) => {
+    try {
+      const response = await api.post('/daily-quiz/custom', config);
+      return response.data;
+    } catch (error) {
+      throw new Error(error.response?.data?.message || 'Failed to fetch custom quiz');
+    }
+  },
+
+  /**
+   * Submit custom quiz answers
+   * @param {Object} quizData - Quiz submission data
+   * @param {string} quizData.quizId - Quiz ID
+   * @param {string} quizData.examId - Exam ID
+   * @param {Array} quizData.answers - Array of answers with questionId and selectedOptionId
+   * @param {string} quizData.startTime - Quiz start time (ISO string)
+   * @param {string} quizData.endTime - Quiz end time (ISO string)
+   * @returns {Promise<Object>} Quiz results
+   */
+  submitCustomQuiz: async (quizData) => {
+    try {
+      const response = await api.post('/daily-quiz/submit', quizData);
+      return response.data;
+    } catch (error) {
+      throw new Error(error.response?.data?.message || 'Failed to submit quiz');
+    }
   }
 };

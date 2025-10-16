@@ -40,6 +40,7 @@ const Colleges = () => {
     sortOrder: 'asc'
   });
   const [autoFiltersApplied, setAutoFiltersApplied] = useState(false);
+  const [manuallyClearedFilters, setManuallyClearedFilters] = useState(false);
 
   // Fetch colleges data when component mounts
   useEffect(() => {
@@ -72,10 +73,10 @@ const Colleges = () => {
 
   // Apply auto-filters based on user preferences when data is loaded
   useEffect(() => {
-    if (isAuthenticated && user && colleges.length > 0 && !autoFiltersApplied) {
+    if (isAuthenticated && user && colleges.length > 0 && !autoFiltersApplied && !manuallyClearedFilters) {
       applyAutoFilters(user);
     }
-  }, [isAuthenticated, user, colleges, autoFiltersApplied]);
+  }, [isAuthenticated, user, colleges, autoFiltersApplied, manuallyClearedFilters]);
 
   // Client-side filtering functions
   const filterColleges = (colleges, filters) => {
@@ -153,6 +154,7 @@ const Colleges = () => {
     });
     setSearchQuery('');
     setAutoFiltersApplied(false);
+    setManuallyClearedFilters(true);
   };
 
   // Update filters

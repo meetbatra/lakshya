@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faSignOutAlt, faTachometerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faSignOutAlt, faTachometerAlt, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -39,6 +39,10 @@ const UserAvatar = () => {
 
   const handleDashboard = () => {
     navigate('/dashboard');
+  };
+
+  const handleDailyQuiz = () => {
+    navigate('/practice-quiz');
   };
 
   const handleProfile = () => {
@@ -90,6 +94,13 @@ const UserAvatar = () => {
         >
           <FontAwesomeIcon icon={faTachometerAlt} className="mr-2 h-4 w-4" />
           <span>Dashboard</span>
+        </DropdownMenuItem>
+        <DropdownMenuItem 
+          onClick={handleDailyQuiz}
+          className="cursor-pointer"
+        >
+          <FontAwesomeIcon icon={faQuestionCircle} className="mr-2 h-4 w-4" />
+          <span>Practice Quiz</span>
         </DropdownMenuItem>
         <DropdownMenuItem 
           onClick={handleProfile}

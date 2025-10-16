@@ -24,6 +24,7 @@ const Courses = () => {
   const [selectedStream, setSelectedStream] = useState('all');
   const [selectedField, setSelectedField] = useState('all');
   const [autoFiltersApplied, setAutoFiltersApplied] = useState(false);
+  const [manuallyClearedFilters, setManuallyClearedFilters] = useState(false);
 
   // Fetch courses data when component mounts
   useEffect(() => {
@@ -51,10 +52,10 @@ const Courses = () => {
 
   // Apply auto-filters based on user preferences when data is loaded
   useEffect(() => {
-    if (isAuthenticated && user && courses.length > 0 && !autoFiltersApplied) {
+    if (isAuthenticated && user && courses.length > 0 && !autoFiltersApplied && !manuallyClearedFilters) {
       applyAutoFilters(user);
     }
-  }, [isAuthenticated, user, courses, autoFiltersApplied]);
+  }, [isAuthenticated, user, courses, autoFiltersApplied, manuallyClearedFilters]);
 
   // Apply auto-filters based on user preferences
   const applyAutoFilters = (user) => {
@@ -80,9 +81,8 @@ const Courses = () => {
     setSelectedField('all');
     setSearchQuery('');
     setAutoFiltersApplied(false);
-  };
-
-  // Client-side filtering functions
+    setManuallyClearedFilters(true);
+  };  // Client-side filtering functions
   const filterCourses = (courses, filters) => {
     const { searchQuery, selectedStream, selectedField } = filters;
     
