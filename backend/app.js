@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const { connectDB } = require('./utils/database');
 const chalk = require('chalk');
 const { errorHandler, notFoundHandler } = require('./utils/errors');
+const CronJobs = require('./utils/cronJobs');
 
 // Load environment variables
 dotenv.config();
@@ -43,4 +44,7 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(chalk.greenBright.bold(`🚀 Lakshya server running on port ${PORT}`));
   console.log(chalk.greenBright.bold(`📱 Environment: ${process.env.NODE_ENV}`));
+  
+  // Initialize cron jobs after server starts
+  CronJobs.init();
 });

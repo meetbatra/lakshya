@@ -4,20 +4,22 @@ const router = express.Router();
 // Import all route modules
 const authRoutes = require('./authRoutes');
 const quizRoutes = require('./quizRoutes');
+const dailyQuizRoutes = require('./dailyQuizRoutes');
 const courseRoutes = require('./courseRoutes');
 const collegeRoutes = require('./collegeRoutes');
 const examRoutes = require('./examRoutes');
 const bookmarkRoutes = require('./bookmarkRoutes');
-const avatarRoutes = require('./avatarRoutes');
+const notificationRoutes = require('./notificationRoutes');
 
 // Mount routes with their base paths
 router.use('/auth', authRoutes);
 router.use('/quiz', quizRoutes);
+router.use('/daily-quiz', dailyQuizRoutes);
 router.use('/courses', courseRoutes);
 router.use('/colleges', collegeRoutes);
 router.use('/exams', examRoutes);
 router.use('/bookmarks', bookmarkRoutes);
-router.use('/avatar', avatarRoutes);
+router.use('/notifications', notificationRoutes);
 
 // Health check route (can be moved here or kept in app.js)
 router.get('/health', (req, res) => {
